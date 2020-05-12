@@ -22,7 +22,7 @@ import com.jakting.shareclean.utils.toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-open class MainActivity : AppCompatActivity(),SwipeRefreshLayout.OnRefreshListener{
+open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
     var recyclerView: RecyclerView? = null
     var adapterA: RecyclerView.Adapter<*>? = null
     private var mSwipeLayout: SwipeRefreshLayout? = null
@@ -36,7 +36,10 @@ open class MainActivity : AppCompatActivity(),SwipeRefreshLayout.OnRefreshListen
         recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         mSwipeLayout = findViewById(R.id.swipe_layout)
         (mSwipeLayout as SwipeRefreshLayout).setOnRefreshListener(this)
-        (mSwipeLayout as SwipeRefreshLayout).setColorSchemeResources(R.color.colorAccent,R.color.colorPrimary)
+        (mSwipeLayout as SwipeRefreshLayout).setColorSchemeResources(
+            R.color.colorAccent,
+            R.color.colorPrimary
+        )
         spe = this.getSharedPreferences("data", Context.MODE_PRIVATE).edit()
         AlertDialog.Builder(this)
             .setTitle(resources.getString(R.string.dialog_title))
@@ -65,7 +68,7 @@ open class MainActivity : AppCompatActivity(),SwipeRefreshLayout.OnRefreshListen
             //Thread.sleep(1000)
             init()
             mSwipeLayout?.isRefreshing = false
-        },1000)
+        }, 1000)
     }
 
     private fun init() {
@@ -85,11 +88,11 @@ open class MainActivity : AppCompatActivity(),SwipeRefreshLayout.OnRefreshListen
             val map = (adapterA as AppsAdapter).map
             map.entries.forEach {
                 //logd(it.key)
-                if(it.value){
+                if (it.value) {
                     val list = it.key.split('/')
                     //logd("list: $list")
                     //logd("${list[0]} // ${list[1]}")
-                    spe.putBoolean("${list[0]}/${list[1]}",it.value)
+                    spe.putBoolean("${list[0]}/${list[1]}", it.value)
                     ifw += String.format(ifw_content, list[0], list[1])
                 }
             }

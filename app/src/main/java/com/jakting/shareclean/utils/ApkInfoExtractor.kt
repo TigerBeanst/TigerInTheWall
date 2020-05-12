@@ -30,7 +30,8 @@ class ApkInfoExtractor(context2: Context?) {
                 appObject["app_name"] = getAppName(activityInfo.packageName)
                 appObject["package_name"] = activityInfo.packageName
                 appObject["activity"] = activityInfo.name
-                appObject["activity_name"] = (resolveInfo.loadLabel(context1?.packageManager!!) as String).replace("\n","")
+                appObject["activity_name"] =
+                    (resolveInfo.loadLabel(context1?.packageManager!!) as String).replace("\n", "")
 //                if (json.containsKey(activityInfo.packageName)) {
 //                    var jsonObj = json.getJSONObject(activityInfo.packageName)
 //                    appObject = jsonObj.getJSONArray("app_activity")

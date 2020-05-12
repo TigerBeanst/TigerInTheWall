@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">氡·分享清理</string>
+    <string name="after_start">已清理本应用写入的IFW规则，请再次提交以生效</string>
+    <string name="submit_finish">IFW规则已生效</string>
+
+    <string name="dialog_title">向导</string>
+    <string name="dialog_content">此应用需要 Root 权限以正常工作。\n\n您需要安装 Magisk，并启用 Riru - Core 和 Riru - IFW Enhance 模块。\n\n此应用每次启动，当您点击「明白了」后将会清空由本应用创建的 IFW 规则，在您点击提交后会重新生成。</string>
+    <string name="dialog_positive">明白了</string>
+    <string name="dialog_negative">不了不了</string>
+
+    <string name="menu_select_all">全选</string>
+    <string name="menu_clear">全不选</string>
+    <string name="menu_clear_toast">清理完毕，请重新启动应用</string>
+    <string name="menu_about">关于</string>
+    <string name="menu_about_dialog">应用开发者： hjthjthjt\nRiru - Core 开发者： Rikka\nRiru - IFW Enhance 开发者： Kr328</string>
+    <string name="menu_about_p">我的博客</string>
+    <string name="menu_about_n">Riru - Core</string>
+    <string name="menu_about_nn">Riru - IFW Enhance</string>
+</resources>

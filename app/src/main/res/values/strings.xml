@@ -1,19 +1,25 @@
 <resources>
     <string name="app_name">RnShareClean</string>
     <string name="after_start">The IFW rules written by this application have been cleared. Please submit again to take effect.</string>
+    <string name="without_root">Your device is not yet Rooted or you have forbidden this application to obtain Root permission.</string>
     <string name="submit_finish">The IFW rules are in force</string>
 
     <string name="dialog_title">Guide</string>
-    <string name="dialog_content">This application requires Root permission to work properly.\n\nYou need to install Magisk and enable the Riru - Core and Riru - IFW Enhance modules.\n\nThe IFW rule created by this application will be cleared every time when this application starts and you clicked "Get it", and will be regenerated after you click submit.</string>
-    <string name="dialog_positive">Get it</string>
+    <string name="dialog_content">This application requires Root permission to work properly.If your device is not yet Rooted or if you forbidden this application to obtain Root permission, it will not take effect.\n\nYou need to install Magisk and enable the Riru - Core and Riru - IFW Enhance modules.\n\nEach time this application is launched, the IFW rules created by this application will be cleared when you click "Got it" and the set rules will be invalidated and will take effect again after you click Submit.</string>
+    <string name="dialog_positive">Got it</string>
     <string name="dialog_negative">Don\'t</string>
+
+    <string name="ifw_success">Share Clean Applied</string>
 
     <string name="menu_select_all">Select all</string>
     <string name="menu_clear">Unselect All</string>
     <string name="menu_clear_toast">Clean up, please restart the application</string>
+    <string name="menu_magisk">Install Module</string>
     <string name="menu_about">About</string>
-    <string name="menu_about_dialog">App Developer： hjthjthjt\nRiru - Core Developer：Rikka\nRiru - IFW Enhance Developer: Kr328</string>
-    <string name="menu_about_p">My Blog</string>
-    <string name="menu_about_n">Riru - Core</string>
-    <string name="menu_about_nn">Riru - IFW Enhance</string>
+    <string name="menu_developer">Developer</string>
+    <string name="menu_about_dialog">App: hjthjthjt\nRiru - Core: Rikka\nRiru - IFW Enhance: Kr328</string>
+    <string name="menu_about_blog">My Blog</string>
+    <string name="menu_magisk_msg">The implementation of this application relies on the following two Magisk modules, you must install them or RnShareClean will not take effect.\n\nYou can find them in the Magisk repository, or go directly to the Github release download from the link below.\n\nPlease note: Due to version uncertainty, Riru - Core and Riru - IFW Enhance will most likely not support the version of Magisk that you have installed.</string>
+    <string name="menu_magisk_core">Riru - Core</string>
+    <string name="menu_magisk_ifwenhance">Riru - IFW Enhance</string>
 </resources>

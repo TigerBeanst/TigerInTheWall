@@ -1,19 +1,25 @@
 <resources>
     <string name="app_name">氡·分享清理</string>
     <string name="after_start">已清理本应用写入的IFW规则，请再次提交以生效</string>
+    <string name="without_root">您的设备暂未 Root，亦或是您拒绝了应用申请 Root 权限。</string>
     <string name="submit_finish">IFW规则已生效</string>
 
     <string name="dialog_title">向导</string>
-    <string name="dialog_content">此应用需要 Root 权限以正常工作。\n\n您需要安装 Magisk，并启用 Riru - Core 和 Riru - IFW Enhance 模块。\n\n此应用每次启动，当您点击「明白了」后将会清空由本应用创建的 IFW 规则，在您点击提交后会重新生成。</string>
+    <string name="dialog_content">此应用需要 Root 权限以正常工作，如若您的设备暂未 Root 或您拒绝了应用申请 Root 权限，此应用不会生效。\n\n您需要安装 Magisk，并启用 Riru - Core 和 Riru - IFW Enhance 模块。\n\n此应用每次启动，当您点击「明白了」后将会清空由本应用创建的 IFW 规则，已设置的规则将失效，在您点击提交后会重新生效。</string>
     <string name="dialog_positive">明白了</string>
     <string name="dialog_negative">不了不了</string>
+
+    <string name="ifw_success">分享清理已应用</string>
 
     <string name="menu_select_all">全选</string>
     <string name="menu_clear">全不选</string>
     <string name="menu_clear_toast">清理完毕，请重新启动应用</string>
+    <string name="menu_magisk">安装模块</string>
     <string name="menu_about">关于</string>
-    <string name="menu_about_dialog">应用开发者： hjthjthjt\nRiru - Core 开发者： Rikka\nRiru - IFW Enhance 开发者： Kr328</string>
-    <string name="menu_about_p">我的博客</string>
-    <string name="menu_about_n">Riru - Core</string>
-    <string name="menu_about_nn">Riru - IFW Enhance</string>
+    <string name="menu_developer">开发者</string>
+    <string name="menu_about_dialog">应用： hjthjthjt\nRiru - Core： Rikka\nRiru - IFW Enhance： Kr328</string>
+    <string name="menu_about_blog">我的博客</string>
+    <string name="menu_magisk_msg">此应用的实现依赖于以下两个 Magisk 模块，您必须安装他们，否则 氡·分享清理 不会生效。\n\n您可以在 Magisk 仓库中找到它们，或是直接从以下链接进入 Github release 下载。\n\n请注意：由于版本的不确定性，Riru - Core 和 Riru - IFW Enhance 很有可能不支持您已安装的 Magisk 版本。</string>
+    <string name="menu_magisk_core">Riru - Core</string>
+    <string name="menu_magisk_ifwenhance">Riru - IFW Enhance</string>
 </resources>

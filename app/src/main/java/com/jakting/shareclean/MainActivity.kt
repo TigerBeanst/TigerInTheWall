@@ -6,19 +6,21 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.jakting.shareclean.adapter.AppsAdapter
-import com.jakting.shareclean.utils.ApkInfoExtractor
+import com.jakting.shareclean.utils.*
 import com.jakting.shareclean.utils.SystemManager.RootCommand
-import com.jakting.shareclean.utils.ifw_content
-import com.jakting.shareclean.utils.logd
-import com.jakting.shareclean.utils.toast
+import com.microsoft.appcenter.AppCenter
+import com.microsoft.appcenter.analytics.Analytics
+import com.microsoft.appcenter.crashes.Crashes
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -27,6 +29,7 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
     var adapterA: RecyclerView.Adapter<*>? = null
     private var mSwipeLayout: SwipeRefreshLayout? = null
     var recyclerViewLayoutManager: RecyclerView.LayoutManager? = null
+    lateinit var sp: SharedPreferences
     lateinit var spe: SharedPreferences.Editor
     val ifw_file_path = "/data/system/ifw/RnShareClean.xml"
 
@@ -40,6 +43,7 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
             R.color.colorAccent,
             R.color.colorPrimary
         )
+        sp = this.getSharedPreferences("data", Context.MODE_PRIVATE)
         spe = this.getSharedPreferences("data", Context.MODE_PRIVATE).edit()
         AlertDialog.Builder(this)
             .setTitle(resources.getString(R.string.dialog_title))
@@ -60,6 +64,10 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
                 toast(getString(R.string.after_start))
             }
             .show()
+        AppCenter.start(
+            application, "7c5baeda-9936-430b-a034-15db48a113b7",
+            Analytics::class.java, Crashes::class.java
+        )
     }
 
     override fun onRefresh() {
@@ -68,6 +76,7 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
             //Thread.sleep(1000)
             init()
             mSwipeLayout?.isRefreshing = false
+            mSwipeLayout?.isEnabled = false
         }, 1000)
     }
 
@@ -82,10 +91,16 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
             apkInfoExtractor.getAllInstalledApkInfo()!!
         )
         recyclerView!!.adapter = adapterA
+        var map = (adapterA as AppsAdapter).map
+        map.entries.forEach {
+            if (sp.getBoolean(it.key, false)) {
+                map[it.key] = true
+            }
+        }
+        (adapterA as AppsAdapter).notifyDataSetChanged()
         floating_action_button.setOnClickListener {
             var ifw: String = "<rules>\n"
             spe.clear()
-            val map = (adapterA as AppsAdapter).map
             map.entries.forEach {
                 //logd(it.key)
                 if (it.value) {
@@ -101,7 +116,11 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
             //val ifw_file_path = "/sdcard/RnShareClean.xml"
             RootCommand("touch $ifw_file_path")
             RootCommand("echo '$ifw' > $ifw_file_path")
-            toast("执行完成")
+            val toastApply =
+                Toast.makeText(this, getString(R.string.ifw_success), Toast.LENGTH_SHORT)
+            toastApply.setGravity(Gravity.CENTER, 0, 0)
+            toastApply.show()
+            toast(getString(R.string.ifw_success))
             //logd(ifw)
         }
     }
@@ -131,22 +150,31 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
                 (adapterA as AppsAdapter).notifyDataSetChanged()
                 true
             }
+            R.id.magisk_menu -> {
+                AlertDialog.Builder(this)
+                    .setTitle(getString(R.string.menu_magisk))
+                    .setMessage(getString(R.string.menu_magisk_msg))
+                    .setPositiveButton(getString(R.string.menu_magisk_core)) { dialog, which ->
+                        val uri: Uri =
+                            Uri.parse("https://github.com/RikkaApps/Riru/releases/latest")
+                        val intent = Intent(Intent.ACTION_VIEW, uri)
+                        startActivity(intent)
+                    }
+                    .setNegativeButton(getString(R.string.menu_magisk_ifwenhance)) { dialog, which ->
+                        val uri: Uri =
+                            Uri.parse("https://github.com/Kr328/Riru-IFWEnhance/releases/latest")
+                        val intent = Intent(Intent.ACTION_VIEW, uri)
+                        startActivity(intent)
+                    }
+                    .show()
+                true
+            }
             R.id.about_menu -> {
                 AlertDialog.Builder(this)
-                    .setTitle(getString(R.string.menu_about))
+                    .setTitle(getString(R.string.menu_developer))
                     .setMessage(getString(R.string.menu_about_dialog))
-                    .setPositiveButton(getString(R.string.menu_about_p)) { dialog, which ->
+                    .setPositiveButton(getString(R.string.menu_about_blog)) { dialog, which ->
                         val uri: Uri = Uri.parse("https://jakting.com")
-                        val intent = Intent(Intent.ACTION_VIEW, uri)
-                        startActivity(intent)
-                    }
-                    .setNegativeButton(getString(R.string.menu_about_n)) { dialog, which ->
-                        val uri: Uri = Uri.parse("https://github.com/RikkaApps/Riru")
-                        val intent = Intent(Intent.ACTION_VIEW, uri)
-                        startActivity(intent)
-                    }
-                    .setNeutralButton(getString(R.string.menu_about_nn)) { dialog, which ->
-                        val uri: Uri = Uri.parse("https://github.com/Kr328/Riru-IFWEnhance")
                         val intent = Intent(Intent.ACTION_VIEW, uri)
                         startActivity(intent)
                     }

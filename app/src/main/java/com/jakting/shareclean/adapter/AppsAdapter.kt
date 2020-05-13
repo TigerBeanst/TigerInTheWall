@@ -79,13 +79,13 @@ class AppsAdapter : RecyclerView.Adapter<AppsAdapter.ViewHolder> {
         viewHolder.cardView.setOnClickListener {
             viewHolder.check_box.isChecked = viewHolder.check_box.isChecked != true
         }
-        var ing = 0
-        if (sp?.getBoolean("$PackgeName/$ActivityS", false) == true && ing == 0) {
-            //sp里有这个，勾选
-            viewHolder.check_box.isChecked = true
-            map["$PackgeName/$ActivityS"] = true
-            ing = 1
-        }
+//        var ing = 0
+//        if (sp?.getBoolean("$PackgeName/$ActivityS", false) == true && ing == 0) {
+//            //sp里有这个，勾选
+//            viewHolder.check_box.isChecked = true
+//            map["$PackgeName/$ActivityS"] = true
+//            ing = 1
+//        }
 
         viewHolder.check_box.setOnCheckedChangeListener { compoundButton, isCheckBox ->
             if (isCheckBox) {

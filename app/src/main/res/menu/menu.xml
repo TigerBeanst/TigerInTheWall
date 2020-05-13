@@ -9,6 +9,9 @@
         android:id="@+id/clear_menu"
         android:title="@string/menu_clear"/>
     <item
+        android:id="@+id/magisk_menu"
+        android:title="@string/menu_magisk"/>
+    <item
         android:id="@+id/about_menu"
         android:title="@string/menu_about"/>
 

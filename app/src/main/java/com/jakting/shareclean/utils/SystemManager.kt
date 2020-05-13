@@ -17,12 +17,7 @@ object SystemManager : Activity() {
         try {
             process = Runtime.getRuntime().exec("su")
             os = DataOutputStream(process.outputStream)
-            os.writeBytes(
-                """
-                    $command
-                    
-                    """.trimIndent()
-            )
+            os.writeBytes(command + "\n")
             os.writeBytes("exit\n")
             os.flush()
             process.waitFor()
@@ -31,9 +26,7 @@ object SystemManager : Activity() {
             return false
         } finally {
             try {
-                if (os != null) {
-                    os.close()
-                }
+                os?.close()
                 process!!.destroy()
             } catch (e: Exception) {
             }

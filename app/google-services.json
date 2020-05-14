@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "829467718655",
+    "firebase_url": "https://jakting-shareclean.firebaseio.com",
+    "project_id": "jakting-shareclean",
+    "storage_bucket": "jakting-shareclean.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829467718655:android:9ba189cb138f4516ec6dca",
+        "android_client_info": {
+          "package_name": "com.jakting.shareclean"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829467718655-o9o2nedr36kie0mc554fdbd9qt32eaml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEDRF2A0fK6D2417WvC5sny5ixa7Awuh0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "829467718655-o9o2nedr36kie0mc554fdbd9qt32eaml.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

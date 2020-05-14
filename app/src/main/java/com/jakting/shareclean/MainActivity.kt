@@ -18,9 +18,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.jakting.shareclean.adapter.AppsAdapter
 import com.jakting.shareclean.utils.*
 import com.jakting.shareclean.utils.SystemManager.RootCommand
-import com.microsoft.appcenter.AppCenter
-import com.microsoft.appcenter.analytics.Analytics
-import com.microsoft.appcenter.crashes.Crashes
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -64,10 +61,6 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
                 toast(getString(R.string.after_start))
             }
             .show()
-        AppCenter.start(
-            application, "7c5baeda-9936-430b-a034-15db48a113b7",
-            Analytics::class.java, Crashes::class.java
-        )
     }
 
     override fun onRefresh() {
@@ -99,6 +92,7 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
         }
         (adapterA as AppsAdapter).notifyDataSetChanged()
         floating_action_button.setOnClickListener {
+            floating_action_button.setImageResource(R.drawable.ic_cached_black_24dp)
             var ifw: String = "<rules>\n"
             spe.clear()
             map.entries.forEach {
@@ -117,10 +111,11 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
             RootCommand("touch $ifw_file_path")
             RootCommand("echo '$ifw' > $ifw_file_path")
             val toastApply =
-                Toast.makeText(this, getString(R.string.ifw_success), Toast.LENGTH_SHORT)
-            toastApply.setGravity(Gravity.CENTER, 0, 0)
+                Toast.makeText(this, getString(R.string.ifw_success), Toast.LENGTH_LONG)
+            toastApply.setGravity(Gravity.BOTTOM, 0, this.resources.displayMetrics.heightPixels/8)
+            floating_action_button.setImageResource(R.drawable.ic_check_black_24dp)
             toastApply.show()
-            toast(getString(R.string.ifw_success))
+            //toast(getString(R.string.ifw_success))
             //logd(ifw)
         }
     }

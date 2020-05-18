@@ -17,7 +17,7 @@ class ApkInfoExtractor(context2: Context?) {
     var context1: Context? = context2
     var json: JSONArray = JSONArray()
 
-    fun getAllInstalledApkInfo(): JSONArray? {
+    fun getAllInstalledApkInfo(isShowSystemApp:Boolean): JSONArray? {
         //val ApkActivityPosition: MutableList<Double> = ArrayList()
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "*/*"
@@ -25,7 +25,7 @@ class ApkInfoExtractor(context2: Context?) {
             context1?.packageManager!!.queryIntentActivities(intent, 0)
         for (resolveInfo in resolveInfoList) {
             val activityInfo = resolveInfo.activityInfo
-            if (!isSystemPackage(resolveInfo)) {
+            if (isShowSystemApp || !isSystemPackage(resolveInfo)) {
                 var appObject = JSONObject()
                 appObject["app_name"] = getAppName(activityInfo.packageName)
                 appObject["package_name"] = activityInfo.packageName

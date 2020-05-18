@@ -3,11 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/select_all_menu"
+        android:icon="@drawable/ic_select_all_black_24dp"
         android:title="@string/menu_select_all"
         app:showAsAction="always"/>
     <item
         android:id="@+id/clear_menu"
         android:title="@string/menu_clear"/>
+    <item
+        android:id="@+id/display_system_menu"
+        android:title="@string/menu_show_system"
+        android:checkable="true" />
+    <item
+        android:id="@+id/disable_direct_menu"
+        android:title="@string/menu_disable_direct"
+        android:checkable="true" />
     <item
         android:id="@+id/magisk_menu"
         android:title="@string/menu_magisk"/>

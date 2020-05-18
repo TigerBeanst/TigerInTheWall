@@ -13,6 +13,8 @@
 
     <string name="menu_select_all">Select all</string>
     <string name="menu_clear">Unselect All</string>
+    <string name="menu_show_system">Show System Apps</string>
+    <string name="menu_disable_direct">Disable Direct Share</string>
     <string name="menu_clear_toast">Clean up, please restart the application</string>
     <string name="menu_magisk">Install Module</string>
     <string name="menu_about">About</string>

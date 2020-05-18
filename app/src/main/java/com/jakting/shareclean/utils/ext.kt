@@ -19,6 +19,12 @@ val ifw_content =
         "      </not>\n" +
         "    </or>\n" +
         "  </activity>\n"
+val ifw_content_direct_share =
+            "   <service block=\"true\" log=\"true\">\n" +
+            "    <intent-filter>\n" +
+            "      <action name=\"android.service.chooser.ChooserTargetService\"/>\n" +
+            "    </intent-filter>\n" +
+            "  </service>\n"
 fun logd(message: String) =
     Log.d("debug", message)
 

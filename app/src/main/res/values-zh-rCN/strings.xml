@@ -13,6 +13,8 @@
 
     <string name="menu_select_all">全选</string>
     <string name="menu_clear">全不选</string>
+    <string name="menu_show_system">显示系统应用</string>
+    <string name="menu_disable_direct">禁用 Direct Share</string>
     <string name="menu_clear_toast">清理完毕，请重新启动应用</string>
     <string name="menu_magisk">安装模块</string>
     <string name="menu_about">关于</string>

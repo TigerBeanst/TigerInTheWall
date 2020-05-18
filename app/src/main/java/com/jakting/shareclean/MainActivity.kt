@@ -19,16 +19,22 @@ import com.jakting.shareclean.adapter.AppsAdapter
 import com.jakting.shareclean.utils.*
 import com.jakting.shareclean.utils.SystemManager.RootCommand
 import kotlinx.android.synthetic.main.activity_main.*
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 
 open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
-    var recyclerView: RecyclerView? = null
-    var adapterA: RecyclerView.Adapter<*>? = null
+    private var recyclerView: RecyclerView? = null
+    private var adapterA: RecyclerView.Adapter<*>? = null
     private var mSwipeLayout: SwipeRefreshLayout? = null
-    var recyclerViewLayoutManager: RecyclerView.LayoutManager? = null
+    private var recyclerViewLayoutManager: RecyclerView.LayoutManager? = null
     lateinit var sp: SharedPreferences
     lateinit var spe: SharedPreferences.Editor
-    val ifw_file_path = "/data/system/ifw/RnShareClean.xml"
+    private val ifw_file_path = "/data/system/ifw/RnShareClean.xml"
+    private var isShowSystemApp = false
+    private var isDisableDirectShare = false
+    var map: MutableMap<String, Boolean>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +48,9 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
         )
         sp = this.getSharedPreferences("data", Context.MODE_PRIVATE)
         spe = this.getSharedPreferences("data", Context.MODE_PRIVATE).edit()
+
+        recyclerViewLayoutManager = GridLayoutManager(this@MainActivity, 1)
+        recyclerView!!.layoutManager = recyclerViewLayoutManager
         AlertDialog.Builder(this)
             .setTitle(resources.getString(R.string.dialog_title))
             .setMessage(resources.getString(R.string.dialog_content))
@@ -61,6 +70,10 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
                 toast(getString(R.string.after_start))
             }
             .show()
+        AppCenter.start(
+            application, "7c5baeda-9936-430b-a034-15db48a113b7",
+            Analytics::class.java, Crashes::class.java
+        )
     }
 
     override fun onRefresh() {
@@ -74,20 +87,16 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
     }
 
     private fun init() {
-        recyclerViewLayoutManager = GridLayoutManager(this@MainActivity, 1)
-
-        recyclerView!!.layoutManager = recyclerViewLayoutManager
-
         var apkInfoExtractor = ApkInfoExtractor(this@MainActivity)
         adapterA = AppsAdapter(
             this@MainActivity,
-            apkInfoExtractor.getAllInstalledApkInfo()!!
+            apkInfoExtractor.getAllInstalledApkInfo(isShowSystemApp)!!
         )
         recyclerView!!.adapter = adapterA
-        var map = (adapterA as AppsAdapter).map
-        map.entries.forEach {
+        map = (adapterA as AppsAdapter).map
+        (map as MutableMap<String, Boolean>).entries.forEach {
             if (sp.getBoolean(it.key, false)) {
-                map[it.key] = true
+                (map as MutableMap<String, Boolean>)[it.key] = true
             }
         }
         (adapterA as AppsAdapter).notifyDataSetChanged()
@@ -95,7 +104,7 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
             floating_action_button.setImageResource(R.drawable.ic_cached_black_24dp)
             var ifw: String = "<rules>\n"
             spe.clear()
-            map.entries.forEach {
+            (map as MutableMap<String, Boolean>).entries.forEach {
                 //logd(it.key)
                 if (it.value) {
                     val list = it.key.split('/')
@@ -105,6 +114,9 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
                     ifw += String.format(ifw_content, list[0], list[1])
                 }
             }
+            if (isDisableDirectShare) {
+                ifw += ifw_content_direct_share
+            }
             ifw += "</rules>"
             spe.apply()
             //val ifw_file_path = "/sdcard/RnShareClean.xml"
@@ -112,7 +124,7 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
             RootCommand("echo '$ifw' > $ifw_file_path")
             val toastApply =
                 Toast.makeText(this, getString(R.string.ifw_success), Toast.LENGTH_LONG)
-            toastApply.setGravity(Gravity.BOTTOM, 0, this.resources.displayMetrics.heightPixels/8)
+            toastApply.setGravity(Gravity.BOTTOM, 0, this.resources.displayMetrics.heightPixels / 8)
             floating_action_button.setImageResource(R.drawable.ic_check_black_24dp)
             toastApply.show()
             //toast(getString(R.string.ifw_success))
@@ -129,20 +141,52 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.getItemId()) {
             R.id.select_all_menu -> {
-                var map = (adapterA as AppsAdapter).map
-                map.entries.forEach {
-                    map[it.key] = true
+                map = (adapterA as AppsAdapter).map
+                (map as MutableMap<String, Boolean>).entries.forEach {
+                    (map as MutableMap<String, Boolean>)[it.key] = true
                 }
                 (adapterA as AppsAdapter).notifyDataSetChanged()
                 //finish()
                 true
             }
             R.id.clear_menu -> {
-                var map = (adapterA as AppsAdapter).map
-                map.entries.forEach {
-                    map[it.key] = false
+                map = (adapterA as AppsAdapter).map
+                (map as MutableMap<String, Boolean>).entries.forEach {
+                    (map as MutableMap<String, Boolean>)[it.key] = false
                 }
                 (adapterA as AppsAdapter).notifyDataSetChanged()
+                true
+            }
+            R.id.display_system_menu -> {
+                if (item.isChecked) {
+                    // If item already checked then unchecked it
+                    item.isChecked = false;
+                    isShowSystemApp = false;
+                } else {
+                    // If item is unchecked then checked it
+                    item.isChecked = true;
+                    isShowSystemApp = true;
+                }
+                val apkRoot = "chmod 777 $packageCodePath"
+                RootCommand(apkRoot)
+                RootCommand("rm -f $ifw_file_path")
+                mSwipeLayout?.post {
+                    mSwipeLayout?.isRefreshing = true
+                }
+                onRefresh()
+                toast(getString(R.string.after_start))
+                true
+            }
+            R.id.disable_direct_menu -> {
+                if (item.isChecked) {
+                    // If item already checked then unchecked it
+                    item.isChecked = false
+                    isDisableDirectShare = false
+                } else {
+                    // If item is unchecked then checked it
+                    item.isChecked = true
+                    isDisableDirectShare = true
+                }
                 true
             }
             R.id.magisk_menu -> {

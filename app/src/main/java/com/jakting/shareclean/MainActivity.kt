@@ -139,7 +139,7 @@ open class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListe
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.getItemId()) {
+        return when (item.itemId) {
             R.id.select_all_menu -> {
                 map = (adapterA as AppsAdapter).map
                 (map as MutableMap<String, Boolean>).entries.forEach {

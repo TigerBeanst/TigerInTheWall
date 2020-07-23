@@ -80,6 +80,10 @@
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
     },
     {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_applist.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\layout\\activity_applist.xml"
+    },
+    {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },

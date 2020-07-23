@@ -3,6 +3,7 @@ package com.jakting.shareclean.utils
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
+import com.jakting.shareclean.utils.SystemManager.RootCommand
 
 val ifw_content =
         "   <activity block=\"true\" log=\"true\">\n" +
@@ -33,3 +34,8 @@ fun Context?.toast(message: CharSequence) =
 
 fun Context?.longtoast(message: CharSequence) =
     Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+
+fun getRoot(packageCodePath:String):Boolean{
+    val apkRoot = "chmod 777 $packageCodePath"
+    return RootCommand(apkRoot)
+}

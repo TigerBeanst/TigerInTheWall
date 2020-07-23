@@ -1,1 +1,24 @@
-[{"outputType":{"type":"METADATA_FEATURE_MANIFEST"},"apkData":{"type":"MAIN","splits":[],"versionCode":20200517,"versionName":"0.1.3","enabled":true,"outputFile":"app-debug.apk","fullName":"debug","baseName":"debug","dirName":""},"path":"AndroidManifest.xml","properties":{}}]
+{
+  "version": 1,
+  "applicationId": "com.jakting.shareclean",
+  "variantType": "BASE_APK",
+  "elements": [
+    {
+      "outputType": {
+        "type": "METADATA_FEATURE_MANIFEST"
+      },
+      "apkData": {
+        "type": "MAIN",
+        "splits": [],
+        "versionCode": 20200723,
+        "versionName": "0.1.4",
+        "outputFile": "app-debug.apk",
+        "fullName": "debug",
+        "baseName": "debug",
+        "dirName": ""
+      },
+      "path": "AndroidManifest.xml",
+      "properties": {}
+    }
+  ]
+}

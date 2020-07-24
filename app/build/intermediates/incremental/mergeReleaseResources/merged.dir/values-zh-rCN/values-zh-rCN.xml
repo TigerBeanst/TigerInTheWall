@@ -47,6 +47,12 @@
     <string name="menu_magisk_msg">此应用的实现依赖于以下两个 Magisk 模块，您必须安装他们，否则 氡·分享清理 不会生效。\n\n您可以在 Magisk 仓库中找到它们，或是直接从以下链接进入 Github release 下载。\n\n请注意：由于版本的不确定性，Riru - Core 和 Riru - IFW Enhance 很有可能不支持您已安装的 Magisk 版本。</string>
     <string name="menu_select_all">全选</string>
     <string name="menu_show_system">显示系统应用</string>
+    <string name="riru_status_card_cannot">无法获取模块状态</string>
+    <string name="riru_status_card_cannot_detail">请给予 Root 权限后重启应用</string>
+    <string name="riru_status_card_exist">已激活模块</string>
+    <string name="riru_status_card_exist_detail">Riru - IFW Enhance 已被正确应用</string>
+    <string name="riru_status_card_not">未激活模块</string>
+    <string name="riru_status_card_not_detail">Riru - IFW Enhance 未被正确应用</string>
     <string msgid="730395136688082741" name="search_menu_title">"搜索"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
     <string name="submit_finish">IFW规则已生效</string>

@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">RnShareClean</string>
+    <string name="riru_status_card_cannot">Unable to get module status</string>
+    <string name="riru_status_card_cannot_detail">Please restart the application after giving Root permission</string>
+    <string name="riru_status_card_exist">Activated module</string>
+    <string name="riru_status_card_exist_detail">Riru - IFW Enhance has been properly applied</string>
+    <string name="riru_status_card_not">Inactive module</string>
+    <string name="riru_status_card_not_detail">Riru - IFW Enhance has not been properly applied</string>
     <string name="after_start">The IFW rules written by this application have been cleared. Please submit again to take effect.</string>
     <string name="without_root">Your device is not yet Rooted or you have forbidden this application to obtain Root permission.</string>
     <string name="submit_finish">The IFW rules are in force</string>

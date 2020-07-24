@@ -4,12 +4,12 @@
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\debug\\layout_cardview_layout.xml.flat",
-        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\layout\\cardview_layout.xml"
-    },
-    {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\debug\\layout_cardview_layout.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\layout\\cardview_layout.xml"
     },
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -26,6 +26,10 @@
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_cached_black_24dp.xml.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_cached_black_24dp.xml"
+    },
+    {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_round_help_24.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_round_help_24.xml"
     },
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
@@ -54,6 +58,10 @@
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_check_circle_24.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_baseline_check_circle_24.xml"
     },
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_select_all_black_24dp.xml.flat",
@@ -98,6 +106,10 @@
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_build_black_24dp.xml.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_build_black_24dp.xml"
+    },
+    {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_round_error_24.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_round_error_24.xml"
     },
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",

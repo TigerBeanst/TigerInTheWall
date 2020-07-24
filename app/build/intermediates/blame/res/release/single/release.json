@@ -44,6 +44,10 @@
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_baseline_check_circle_24.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_baseline_check_circle_24.xml"
+    },
+    {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
@@ -64,6 +68,10 @@
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_build_black_24dp.xml"
     },
     {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_round_error_24.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_round_error_24.xml"
+    },
+    {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
@@ -74,6 +82,10 @@
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\layout_cardview_layout.xml.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\layout\\cardview_layout.xml"
+    },
+    {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_applist.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\layout\\activity_applist.xml"
     },
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher_round.png.flat",
@@ -102,5 +114,9 @@
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_round_help_24.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_round_help_24.xml"
     }
 ]

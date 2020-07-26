@@ -244,12 +244,15 @@
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
     <color name="colorAccent">#004c40</color>
+    <color name="colorBrown">#8c6d62</color>
+    <color name="colorCyan">#0097a7</color>
     <color name="colorFont">#ffffff</color>
+    <color name="colorFontSecond">#f5f5f5</color>
     <color name="colorGrey">#757575</color>
     <color name="colorPrimary">#00796b</color>
     <color name="colorPrimaryDark">#004c40</color>
     <color name="colorPrimaryLight">#48a697</color>
-    <color name="colorRed">#ffcc0000</color>
+    <color name="colorRed">#bc0513</color>
     <color name="design_bottom_navigation_shadow_color">#14000000</color>
     <color name="design_dark_default_color_background">#121212</color>
     <color name="design_dark_default_color_error">#CF6679</color>
@@ -820,6 +823,10 @@
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="after_start">The IFW rules written by this application have been cleared. Please submit again to take effect.</string>
+    <string name="app_manage_card_detail">Go to hell you f*ck app always occupy share sheet</string>
+    <string name="app_manage_card_title">Apps Management</string>
+    <string name="app_manage_dialog_desc">Riru - IFW Enhance has not been properly applied. Anything you do may not take effect.</string>
+    <string name="app_manage_dialog_title">Notice</string>
     <string name="app_name">RnShareClean</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
@@ -853,6 +860,8 @@
     <string name="menu_magisk_msg">The implementation of this application relies on the following two Magisk modules, you must install them or RnShareClean will not take effect.\n\nYou can find them in the Magisk repository, or go directly to the Github release download from the link below.\n\nPlease note: Due to version uncertainty, Riru - Core and Riru - IFW Enhance will most likely not support the version of Magisk that you have installed.</string>
     <string name="menu_select_all">Select all</string>
     <string name="menu_show_system">Show System Apps</string>
+    <string name="misc_card_detail">Other features you might want</string>
+    <string name="misc_card_title">Miscellaneous</string>
     <string description="Content description for new notification (no number count) [CHAR_LIMIT=NONE]" name="mtrl_badge_numberless_content_description">New notification</string>
     <string description="Content description for a close icon that lets the user remove content from the screen" name="mtrl_chip_close_icon_content_description">Remove %1$s</string>
     <string description="Plural form content description for when the number of new notifications exceeds a maximum count[CHAR_LIMIT=NONE]" name="mtrl_exceed_max_badge_number_content_description" ns2:ignore="PluralsCandidate">More than <ns1:g example="999" id="maximum number">%1$d</ns1:g> new notifications</string>
@@ -921,7 +930,12 @@
     <item name="android:windowExitAnimation">@anim/mtrl_bottom_sheet_slide_out</item>
   </style>
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="actionBarStyle">@style/Widget.MaterialComponents.ActionBar.Surface</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.MaterialComponents.ActionBar</item>
+        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">@android:color/transparent</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>

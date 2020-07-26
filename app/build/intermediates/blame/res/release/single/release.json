@@ -52,6 +52,10 @@
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_baseline_category_24.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_baseline_category_24.xml"
+    },
+    {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_launcher_background.xml.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
@@ -82,6 +86,10 @@
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\layout_cardview_layout.xml.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\layout\\cardview_layout.xml"
+    },
+    {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_baseline_apps_24.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_baseline_apps_24.xml"
     },
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_applist.xml.flat",

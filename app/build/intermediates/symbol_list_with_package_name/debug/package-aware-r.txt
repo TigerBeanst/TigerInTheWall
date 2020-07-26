@@ -821,6 +821,8 @@ color cardview_shadow_end_color
 color cardview_shadow_start_color
 color checkbox_themeable_attribute_color
 color colorAccent
+color colorBrown
+color colorCyan
 color colorFont
 color colorFontSecond
 color colorGrey
@@ -1432,6 +1434,8 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_baseline_apps_24
+drawable ic_baseline_category_24
 drawable ic_baseline_check_circle_24
 drawable ic_build_black_24dp
 drawable ic_cached_black_24dp
@@ -1548,6 +1552,10 @@ id all
 id always
 id app_checkbox
 id app_info
+id app_manage_card
+id app_manage_card_desc
+id app_manage_card_icon
+id app_manage_card_title
 id async
 id auto
 id barrier
@@ -1648,6 +1656,10 @@ id masked
 id message
 id middle
 id mini
+id misc_card
+id misc_card_desc
+id misc_card_icon
+id misc_card_title
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -1665,6 +1677,9 @@ id mtrl_calendar_year_selector_frame
 id mtrl_card_checked_layer_id
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
+id mtrl_list_item_icon
+id mtrl_list_item_secondary_text
+id mtrl_list_item_text
 id mtrl_motion_snapshot_view
 id mtrl_picker_fullscreen
 id mtrl_picker_header
@@ -1971,6 +1986,10 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string after_start
+string app_manage_card_detail
+string app_manage_card_title
+string app_manage_dialog_desc
+string app_manage_dialog_title
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -2004,6 +2023,8 @@ string menu_magisk_ifwenhance
 string menu_magisk_msg
 string menu_select_all
 string menu_show_system
+string misc_card_detail
+string misc_card_title
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_content_description

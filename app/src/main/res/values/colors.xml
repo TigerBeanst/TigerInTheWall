@@ -5,7 +5,9 @@
     <color name="colorPrimaryDark">#004c40</color>
     <color name="colorAccent">#004c40</color>
     <color name="colorFont">#ffffff</color>
-    <color name="colorFontSecond">#e0e0e0</color>
+    <color name="colorFontSecond">#f5f5f5</color>
     <color name="colorGrey">#757575</color>
+    <color name="colorCyan">#0097a7</color>
+    <color name="colorBrown">#8c6d62</color>
     <color name="colorRed">#bc0513</color>
 </resources>

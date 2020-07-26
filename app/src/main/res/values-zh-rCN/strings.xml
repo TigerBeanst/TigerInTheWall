@@ -1,11 +1,21 @@
 <resources>
     <string name="app_name">氡·分享清理</string>
+
     <string name="riru_status_card_cannot">无法获取模块状态</string>
     <string name="riru_status_card_cannot_detail">请给予 Root 权限后重启应用</string>
     <string name="riru_status_card_exist">已激活模块</string>
     <string name="riru_status_card_exist_detail">Riru - IFW Enhance 已被正确应用</string>
     <string name="riru_status_card_not">未激活模块</string>
     <string name="riru_status_card_not_detail">Riru - IFW Enhance 未被正确应用</string>
+
+    <string name="app_manage_card_title">应用管理</string>
+    <string name="app_manage_card_detail">天天占着分享面板的辣鸡应用给爷死！！！</string>
+    <string name="app_manage_dialog_title">提示</string>
+    <string name="app_manage_dialog_desc">Riru - IFW Enhance 未被正确应用。您所做的任何操作可能都不会生效。</string>
+
+    <string name="misc_card_title">杂项</string>
+    <string name="misc_card_detail">另外的一些您也许想要的功能</string>
+
     <string name="after_start">已清理本应用写入的IFW规则，请再次提交以生效</string>
     <string name="without_root">您的设备暂未 Root，亦或是您拒绝了应用申请 Root 权限。</string>
     <string name="submit_finish">IFW规则已生效</string>

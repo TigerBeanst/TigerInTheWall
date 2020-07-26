@@ -28,6 +28,10 @@
     <string msgid="9009661856846212431" name="abc_shareactionprovider_share_with_application">"与<ns1:g id="APPLICATION_NAME">%s</ns1:g>分享"</string>
     <string msgid="6389460216547290468" name="abc_toolbar_collapse_description">"收起"</string>
     <string name="after_start">已清理本应用写入的IFW规则，请再次提交以生效</string>
+    <string name="app_manage_card_detail">天天占着分享面板的辣鸡应用给爷死！！！</string>
+    <string name="app_manage_card_title">应用管理</string>
+    <string name="app_manage_dialog_desc">Riru - IFW Enhance 未被正确应用。您所做的任何操作可能都不会生效。</string>
+    <string name="app_manage_dialog_title">提示</string>
     <string name="app_name">氡·分享清理</string>
     <string name="dialog_content">此应用需要 Root 权限以正常工作，如若您的设备暂未 Root 或您拒绝了应用申请 Root 权限，此应用不会生效。\n\n您需要安装 Magisk，并启用 Riru - Core 和 Riru - IFW Enhance 模块。\n\n此应用每次启动，当您点击「明白了」后将会清空由本应用创建的 IFW 规则，已设置的规则将失效，在您点击提交后会重新生效。</string>
     <string name="dialog_negative">不了不了</string>
@@ -47,6 +51,8 @@
     <string name="menu_magisk_msg">此应用的实现依赖于以下两个 Magisk 模块，您必须安装他们，否则 氡·分享清理 不会生效。\n\n您可以在 Magisk 仓库中找到它们，或是直接从以下链接进入 Github release 下载。\n\n请注意：由于版本的不确定性，Riru - Core 和 Riru - IFW Enhance 很有可能不支持您已安装的 Magisk 版本。</string>
     <string name="menu_select_all">全选</string>
     <string name="menu_show_system">显示系统应用</string>
+    <string name="misc_card_detail">另外的一些您也许想要的功能</string>
+    <string name="misc_card_title">杂项</string>
     <string name="riru_status_card_cannot">无法获取模块状态</string>
     <string name="riru_status_card_cannot_detail">请给予 Root 权限后重启应用</string>
     <string name="riru_status_card_exist">已激活模块</string>

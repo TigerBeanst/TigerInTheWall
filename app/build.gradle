@@ -29,6 +29,7 @@ android {
 }
 repositories {
     maven { url 'https://jitpack.io' }
+    maven {url "https://dl.bintray.com/rikkaw/MaterialPreference"}
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -44,4 +45,8 @@ dependencies {
     implementation 'com.alibaba:fastjson:1.1.71.android'
     implementation "com.github.topjohnwu.libsu:core:2.5.2"
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation 'com.drakeet.about:about:2.4.1'
+    implementation 'com.drakeet.multitype:multitype:4.0.0'
+    implementation 'moe.shizuku.preference:preference-android:4.2.0-alpha03'
+    implementation 'moe.shizuku.preference:preference-simplemenu-android:4.2.0-alpha03'
 }

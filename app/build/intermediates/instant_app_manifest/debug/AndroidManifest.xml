@@ -23,6 +23,12 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.jakting.shareclean.SettingsActivity"
+            android:label="@string/setting_title" />
+        <activity
+            android:name="com.jakting.shareclean.AboutActivity"
+            android:theme="@style/AppTheme.About" />
         <activity android:name="com.jakting.shareclean.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

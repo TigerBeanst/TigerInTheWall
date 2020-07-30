@@ -18,7 +18,7 @@
 12-->[com.microsoft.appcenter:appcenter:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\684a29eb8e6745da85d65a442e74af57\jetified-appcenter-3.2.2\AndroidManifest.xml:16:22-76
 13
 14    <application
-14-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:6:5-21:19
+14-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:6:5-27:19
 15        android:allowBackup="true"
 15-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:7:9-35
 16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -34,23 +34,37 @@
 21-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:11:9-35
 22        android:theme="@style/AppTheme" >
 22-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:12:9-40
-23        <activity android:name="com.jakting.shareclean.MainActivity" >
-23-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:13:9-19:20
-23-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:13:19-47
-24            <intent-filter>
-24-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:14:13-18:29
-25                <action android:name="android.intent.action.MAIN" />
-25-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:15:17-69
-25-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:15:25-66
-26
-27                <category android:name="android.intent.category.LAUNCHER" />
-27-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:17:17-77
-27-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:17:27-74
-28            </intent-filter>
-29        </activity>
-30        <activity android:name="com.jakting.shareclean.AppListActivity" />
-30-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:20:9-53
-30-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:20:19-50
-31    </application>
-32
-33</manifest>
+23        <activity
+23-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:13:9-15:53
+24            android:name="com.jakting.shareclean.AboutActivity"
+24-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:14:13-42
+25            android:theme="@style/AppTheme.About" />
+25-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:15:13-50
+26        <activity
+26-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:16:9-19:47
+27            android:name="com.jakting.shareclean.SettingsActivity"
+27-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:17:13-45
+28            android:label="@string/title_activity_settings"
+28-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:18:13-60
+29            android:theme="@style/AppTheme" />
+29-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:19:13-44
+30        <activity android:name="com.jakting.shareclean.MainActivity" >
+30-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:20:9-25:20
+30-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:20:19-47
+31            <intent-filter>
+31-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:21:13-24:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:22:17-69
+32-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:22:25-66
+33
+34                <category android:name="android.intent.category.LAUNCHER" />
+34-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:23:17-77
+34-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:23:27-74
+35            </intent-filter>
+36        </activity>
+37        <activity android:name="com.jakting.shareclean.AppListActivity" />
+37-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:26:9-53
+37-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:26:19-50
+38    </application>
+39
+40</manifest>

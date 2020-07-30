@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
+    <string-array name="default_value" translatable="false">
+        <item>999</item>
+        <item>0</item>
+    </string-array>
+    <string-array name="entries">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+        <item>Item 4</item>
+        <item>Item 5</item>
+        <item>Item 6</item>
+        <item>Item 7</item>
+        <item>Item 8</item>
+        <item>Item 9</item>
+        <item>Item 10</item>
+        <item>Item 11</item>
+        <item>Item 12</item>
+        <item>Item 13</item>
+        <item>Item 14 (</item>
+        <item>Item 15 ) ○(￣^￣○)</item>
+    </string-array>
+    <string-array name="entries_2">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+    </string-array>
+    <string-array name="entry_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+    <string-array name="reply_entries">
+        <item>Reply</item>
+        <item>Reply to all</item>
+    </string-array>
+    <string-array name="reply_values">
+        <item>reply</item>
+        <item>reply_all</item>
+    </string-array>
     <attr format="reference" name="appBarLayoutStyle"/>
     <attr format="reference" name="badgeStyle"/>
     <attr format="boolean" name="barrierAllowsGoneWidgets"/>
@@ -223,6 +275,18 @@
     <color name="abc_search_url_text_normal">#7fa87f</color>
     <color name="abc_search_url_text_pressed">@android:color/black</color>
     <color name="abc_search_url_text_selected">@android:color/black</color>
+    <color name="about_page_background">#f1f1f1</color>
+    <color name="about_page_card_normal">#ffffff</color>
+    <color name="about_page_card_ripple">#33000000</color>
+    <color name="about_page_card_selected">#44000000</color>
+    <color name="about_page_card_text_color">#de000000</color>
+    <color name="about_page_category_text_color">#757575</color>
+    <color name="about_page_desc_color">@color/about_page_hint</color>
+    <color name="about_page_hint">#757575</color>
+    <color name="about_page_license_title">@color/about_page_card_text_color</color>
+    <color name="about_page_line">#eae9e9</color>
+    <color name="about_page_link_text_color">@android:color/black</color>
+    <color name="about_page_name_color">@color/about_page_card_text_color</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
     <color name="androidx_core_ripple_material_light">#1f000000</color>
@@ -243,7 +307,7 @@
     <color name="cardview_light_background">#FFFFFFFF</color>
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
-    <color name="colorAccent">#004c40</color>
+    <color name="colorAccent">#48a697</color>
     <color name="colorBrown">#8c6d62</color>
     <color name="colorCyan">#0097a7</color>
     <color name="colorFont">#ffffff</color>
@@ -419,6 +483,12 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
+    <dimen name="about_page_avatar_size">38dp</dimen>
+    <dimen name="about_page_bottom_sheet_item_height">48dp</dimen>
+    <dimen name="about_page_header_height">212dp</dimen>
+    <dimen name="about_page_item_category_padding_horizontal">16dp</dimen>
+    <dimen name="about_page_license_text_size">13sp</dimen>
+    <dimen name="about_page_recommendation_icon_size">48dp</dimen>
     <dimen name="action_bar_size">16dp</dimen>
     <dimen name="appcompat_dialog_background_inset">16dp</dimen>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
@@ -679,6 +749,9 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="simple_menu_dialog_max_width">600dp</dimen>
+    <dimen name="simple_menu_margin">15dp</dimen>
+    <dimen name="simple_menu_unit">56dp</dimen>
     <dimen name="test_mtrl_calendar_day_cornerSize">52dp</dimen>
     <dimen name="tooltip_corner_radius">2dp</dimen>
     <dimen name="tooltip_horizontal_padding">16dp</dimen>
@@ -727,6 +800,7 @@
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
+    <item name="fragment_container_view_tag" type="id"/>
     <item name="ghost_view" type="id"/>
     <item name="ghost_view_holder" type="id"/>
     <item name="home" type="id"/>
@@ -770,11 +844,14 @@
     <item name="transition_transform" type="id"/>
     <item name="up" type="id"/>
     <item name="view_offset_helper" type="id"/>
+    <item name="visible_removing_fragment_view_tag" type="id"/>
     <integer name="abc_config_activityDefaultDur">220</integer>
     <integer name="abc_config_activityShortDur">150</integer>
     <integer name="app_bar_elevation_anim_duration">150</integer>
     <integer name="bottom_sheet_slide_duration">150</integer>
     <integer name="cancel_button_image_alpha">127</integer>
+    <integer name="config_activityDefaultDur">220</integer>
+    <integer name="config_activityShortDur">550</integer>
     <integer name="config_tooltipAnimTime">150</integer>
     <integer name="design_snackbar_text_max_lines">2</integer>
     <integer name="design_tab_indicator_anim_duration_ms">300</integer>
@@ -790,6 +867,7 @@
     <integer name="mtrl_chip_anim_duration">100</integer>
     <integer name="mtrl_tab_indicator_anim_duration_ms">250</integer>
     <integer name="show_password_duration">200</integer>
+    <integer name="simple_menu_max_units">5</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <plurals description="Plural form content description for number of new notifications [CHAR_LIMIT=NONE]" name="mtrl_badge_content_description">
     <item quantity="one"><ns1:g id="count">%d</ns1:g> new notification</item>
@@ -822,6 +900,16 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="about_page_browser">Web Browser</string>
+    <string name="about_page_dev_1">RnShareClean Developers</string>
+    <string name="about_page_dev_2">Riru - Core Developers</string>
+    <string name="about_page_dev_3">Riru - IFW Enhance Developers</string>
+    <string name="about_page_dev_title">Developers</string>
+    <string name="about_page_info">Are you tired of sharing pictures, scouring through long lists of apps just to find LINE, WhatsApp, Telegram and a few other apps you use?\n\nFacebook, Youtube, Twitter........\nWhy are you guys on my picture sharing list?\nIf I needed you, I\'d open the app myself to use it, so why take over my share list?\n\nRnShareClean is an APP that works with the Magisk modules Riru-Core and Riru-IFW Enhance, and you need to give them Root permission for writing IFW rules.</string>
+    <string name="about_page_info_title">Introduction</string>
+    <string name="about_page_open_title">Open Source Licenses</string>
+    <string name="about_page_open_with">Open with:</string>
+    <string name="about_title">About</string>
     <string name="after_start">The IFW rules written by this application have been cleared. Please submit again to take effect.</string>
     <string name="app_manage_card_detail">Go to hell you f*ck app always occupy share sheet</string>
     <string name="app_manage_card_title">Apps Management</string>
@@ -829,6 +917,11 @@
     <string name="app_manage_dialog_title">Notice</string>
     <string name="app_name">RnShareClean</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="backup_title">Backup &amp; Restore</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
     <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
     <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
@@ -860,6 +953,7 @@
     <string name="menu_magisk_msg">The implementation of this application relies on the following two Magisk modules, you must install them or RnShareClean will not take effect.\n\nYou can find them in the Magisk repository, or go directly to the Github release download from the link below.\n\nPlease note: Due to version uncertainty, Riru - Core and Riru - IFW Enhance will most likely not support the version of Magisk that you have installed.</string>
     <string name="menu_select_all">Select all</string>
     <string name="menu_show_system">Show System Apps</string>
+    <string name="messages_header">Messages</string>
     <string name="misc_card_detail">Other features you might want</string>
     <string name="misc_card_title">Miscellaneous</string>
     <string description="Content description for new notification (no number count) [CHAR_LIMIT=NONE]" name="mtrl_badge_numberless_content_description">New notification</string>
@@ -898,11 +992,13 @@
     <string description="a11y string to indicate this button changes the input mode to a text field [CHAR_LIMIT=NONE]" name="mtrl_picker_toggle_to_text_input_mode">Switch to text input mode</string>
     <string description="a11y string to indicate this button switches the user to choosing a year [CHAR_LIMIT=NONE]" name="mtrl_picker_toggle_to_year_selection">Tap to switch to selecting a year</string>
     <string description="Content description for the range of a slider, minimum to maximum. [CHAR_LIMIT=NONE]" name="mtrl_slider_range_content_description">%1$s to %2$s</string>
+    <string name="on_preference_change_toast_message">onPreferenceChange: key = %1$s, newValue = %2$s</string>
     <string name="password_toggle_content_description">Show password</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
+    <string name="reply_title">Default reply action</string>
     <string name="riru_status_card_cannot">Unable to get module status</string>
     <string name="riru_status_card_cannot_detail">Please restart the application after giving Root permission</string>
     <string name="riru_status_card_exist">Activated module</string>
@@ -910,9 +1006,117 @@
     <string name="riru_status_card_not">Inactive module</string>
     <string name="riru_status_card_not_detail">Riru - IFW Enhance has not been properly applied</string>
     <string name="search_menu_title">Search</string>
+    <string name="setting_title">Settings</string>
+    <string name="signature_title">Your signature</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="submit_finish">The IFW rules are in force</string>
+    <string name="sync_header">Sync</string>
+    <string name="sync_title">Sync email periodically</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="v7_preference_off">OFF</string>
+    <string name="v7_preference_on">ON</string>
     <string name="without_root">Your device is not yet Rooted or you have forbidden this application to obtain Root permission.</string>
+    <style name="AboutPage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="AboutPage.BottomSheetItem">
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:gravity">center|left</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/about_page_card_text_color</item>
+        <item name="android:background">?selectableItemBackground</item>
+    </style>
+    <style name="AboutPage.CardContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:autoLink">web</item>
+        <item name="android:textColorLink">@color/about_page_link_text_color</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/about_page_card_text_color</item>
+        <item name="android:textIsSelectable">true</item>
+    </style>
+    <style name="AboutPage.ContributorAvatar">
+        <item name="android:layout_width">@dimen/about_page_avatar_size</item>
+        <item name="android:layout_height">@dimen/about_page_avatar_size</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+    <style name="AboutPage.ContributorDesc">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/about_page_desc_color</item>
+    </style>
+    <style name="AboutPage.ContributorName">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/about_page_name_color</item>
+    </style>
+    <style name="AboutPage.Header"/>
+    <style name="AboutPage.Header.Icon">
+        <item name="android:layout_width">92dp</item>
+        <item name="android:layout_height">92dp</item>
+    </style>
+    <style name="AboutPage.Header.Slogan">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+    </style>
+    <style name="AboutPage.Header.ToolbarTitleExpanded" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+    <style name="AboutPage.Header.Version">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="AboutPage.Item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="AboutPage.Item.Card">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:background">@drawable/about_page_card</item>
+        <item name="android:elevation" ns2:ignore="NewApi">1dp
+        </item>
+    </style>
+    <style name="AboutPage.Item.Category">
+        <item name="android:layout_marginLeft">1dp</item>
+        <item name="android:layout_marginRight">1dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingLeft">@dimen/about_page_item_category_padding_horizontal</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:paddingStart">@dimen/about_page_item_category_padding_horizontal</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:textColor">@color/about_page_category_text_color</item>
+    </style>
+    <style name="AboutPage.Item.Line">
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/about_page_line</item>
+    </style>
+    <style name="AboutPage.LicenseHint">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/about_page_license_text_size</item>
+        <item name="android:textColor">@color/about_page_hint</item>
+    </style>
+    <style name="AboutPage.LicenseTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/about_page_license_title</item>
+    </style>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="AndroidThemeColorAccentYellow" ns2:ignore="NewApi">
@@ -929,8 +1133,13 @@
     <item name="android:windowEnterAnimation">@anim/mtrl_bottom_sheet_slide_in</item>
     <item name="android:windowExitAnimation">@anim/mtrl_bottom_sheet_slide_out</item>
   </style>
+    <style name="Animation.Preference.SimpleMenuCenter" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowExitAnimation">@anim/shrink_fade_out_center</item>
+    </style>
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="android:windowActivityTransitions">true</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
         <item name="actionBarStyle">@style/Widget.MaterialComponents.ActionBar.Surface</item>
         <item name="actionBarTheme">@style/ThemeOverlay.MaterialComponents.ActionBar</item>
         <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar</item>
@@ -939,6 +1148,15 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme.About" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@android:color/black</item>
+        <item name="aboutPageHeaderBackground">@color/colorPrimary</item>
+<!--        <item name="aboutPageHeaderContentScrim">reference|color</item>-->
+<!--        <item name="aboutPageHeaderTextColor">color</item>-->
+<!--        <item name="aboutPageNavigationIcon">reference</item>-->
     </style>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
@@ -3050,6 +3268,115 @@
         <item name="android:dropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
     </style>
     <style name="Platform.Widget.AppCompat.Spinner" parent="android:Widget.Holo.Spinner"/>
+    <style name="Preference">
+        <item name="android:layout">@layout/preference_material</item>
+    </style>
+    <style name="Preference.Category">
+        <item name="android:layout">@layout/preference_category_material</item>
+        <!-- The title should not dim if the category is disabled, instead only the preference children should dim. -->
+        <item name="android:shouldDisableView">false</item>
+        <item name="android:selectable">false</item>
+    </style>
+    <style name="Preference.Category.Material">
+        <item name="android:layout">@layout/preference_category_material</item>
+        <!-- The title should not dim if the category is disabled, instead only the preference children should dim. -->
+        <item name="android:shouldDisableView">false</item>
+        <item name="android:selectable">false</item>
+    </style>
+    <style name="Preference.CheckBoxPreference">
+        <item name="android:widgetLayout">@layout/preference_widget_checkbox</item>
+    </style>
+    <style name="Preference.CheckBoxPreference.Material">
+        <item name="android:layout">@layout/preference_material</item>
+    </style>
+    <style name="Preference.DialogPreference">
+        <item name="android:positiveButtonText">@android:string/ok</item>
+        <item name="android:negativeButtonText">@android:string/cancel</item>
+    </style>
+    <style name="Preference.DialogPreference.EditTextPreference">
+        <item name="android:dialogLayout">@layout/preference_dialog_edittext</item>
+    </style>
+    <style name="Preference.DialogPreference.EditTextPreference.Material">
+        <item name="android:layout">@layout/preference_material</item>
+    </style>
+    <style name="Preference.DialogPreference.Material">
+        <item name="android:layout">@layout/preference_material</item>
+    </style>
+    <style name="Preference.DropDownPreference">
+        <item name="android:layout">@layout/preference_dropdown</item>
+    </style>
+    <style name="Preference.Information">
+        <item name="android:layout">@layout/preference_information_material</item>
+        <item name="android:enabled">false</item>
+        <item name="android:shouldDisableView">false</item>
+    </style>
+    <style name="Preference.Information.Material">
+        <item name="android:layout">@layout/preference_information_material</item>
+        <item name="android:enabled">false</item>
+        <item name="android:shouldDisableView">false</item>
+    </style>
+    <style name="Preference.Material">
+        <item name="android:layout">@layout/preference_material</item>
+    </style>
+    <style name="Preference.PreferenceScreen"/>
+    <style name="Preference.PreferenceScreen.Material">
+        <item name="android:layout">@layout/preference_material</item>
+    </style>
+    <style name="Preference.RingtonePreference">
+        <item name="android:layout">@layout/preference_material</item>
+    </style>
+    <style name="Preference.SeekBarPreference">
+        <item name="android:layout">@layout/preference_seekbar_material</item>
+        <item name="adjustable">true</item>
+        <item name="showSeekBarValue">true</item>
+    </style>
+    <style name="Preference.SimpleMenuPreference">
+        <item name="android:layout">@layout/preference_simplemenu</item>
+        <item name="android:popupMenuStyle">@style/Widget.Preference.SimpleMenuPreference.PopupMenu</item>
+        <item name="android:popupTheme">@style/ThemeOverlay.Preference.SimpleMenuPreference.PopupMenu</item>
+    </style>
+    <style name="Preference.SwitchPreference">
+        <item name="android:widgetLayout">@layout/preference_widget_switch</item>
+        <item name="android:switchTextOn">@string/v7_preference_on</item>
+        <item name="android:switchTextOff">@string/v7_preference_off</item>
+    </style>
+    <style name="Preference.SwitchPreference.Material">
+        <item name="android:layout">@layout/preference_material</item>
+    </style>
+    <style name="PreferenceFragment">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:divider">?android:attr/listDivider</item>
+    </style>
+    <style name="PreferenceFragment.Material">
+        <item name="android:divider">@drawable/preference_list_divider_material</item>
+    </style>
+    <style name="PreferenceFragmentList">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+    </style>
+    <style name="PreferenceFragmentList.Material">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+    <style name="PreferenceThemeOverlay">
+        <item name="preferenceScreenStyle">@style/Preference.PreferenceScreen.Material</item>
+        <item name="preferenceFragmentStyle">@style/PreferenceFragment.Material</item>
+        <item name="preferenceCategoryStyle">@style/Preference.Category.Material</item>
+        <item name="preferenceStyle">@style/Preference.Material</item>
+        <item name="preferenceInformationStyle">@style/Preference.Information.Material</item>
+        <item name="checkBoxPreferenceStyle">@style/Preference.CheckBoxPreference.Material</item>
+        <item name="switchPreferenceStyle">@style/Preference.SwitchPreference.Material</item>
+        <item name="dialogPreferenceStyle">@style/Preference.DialogPreference.Material</item>
+        <item name="editTextPreferenceStyle">@style/Preference.DialogPreference.EditTextPreference.Material</item>
+        <item name="preferenceFragmentListStyle">@style/PreferenceFragmentList.Material</item>
+        <item name="dropDownPreferenceStyle">@style/Preference.DropDownPreference</item>
+        <item name="ringtonePreferenceStyle">@style/Preference.RingtonePreference</item>
+        <item name="seekBarPreferenceStyle">@style/Preference.SeekBarPreference</item>
+        <item name="preferenceTitleTextAppearance">?android:textAppearanceListItem</item>
+        <item name="preferenceSummaryTextAppearance">?android:textAppearanceSmall</item>
+        <item name="preferenceCategoryTextAppearance">@android:style/TextAppearance.Material.Body2</item>
+    </style>
     <style name="RtlOverlay.DialogWindowTitle.AppCompat" parent="Base.DialogWindowTitle.AppCompat">
     </style>
     <style name="RtlOverlay.Widget.AppCompat.ActionBar.TitleItem" parent="android:Widget">
@@ -3721,6 +4048,9 @@
     <item name="colorControlNormal">@color/material_on_surface_emphasis_medium</item>
     <item name="actionMenuTextColor">@color/material_on_surface_emphasis_medium</item>
   </style>
+    <style name="ThemeOverlay.Preference.SimpleMenuPreference.PopupMenu" parent="android:ThemeOverlay">
+        <item name="popupBackgroundRadius">4dp</item>
+    </style>
     <style name="ThemeOverlayColorAccentRed" ns2:ignore="NewApi">
     <item name="android:colorAccent">#FFFF0000</item>
   </style>
@@ -4539,9 +4869,37 @@
     <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Tooltip</item>
     <item name="shapeAppearance">@style/ShapeAppearance.MaterialComponents.Tooltip</item>
   </style>
+    <style name="Widget.Preference.SimpleMenuPreference.PopupMenu" parent="android:Widget">
+        <item name="android:popupBackground">@drawable/simple_menu_background</item>
+
+        <item name="listMarginHorizontal">@dimen/simple_menu_margin</item>
+        <item name="listMarginVertical">8dp</item>
+        <item name="listItemPadding">16dp</item>
+        <item name="listElevation">8dp</item>
+
+        <item name="dialogMarginHorizontal">16dp</item>
+        <item name="dialogMarginVertical">24dp</item>
+        <item name="dialogItemPadding">24dp</item>
+        <item name="dialogElevation">24dp</item>
+        <item name="dialogMaxWidth">@dimen/simple_menu_dialog_max_width</item>
+
+        <item name="unit">@dimen/simple_menu_unit</item>
+        <item name="maxUnits">@integer/simple_menu_max_units</item>
+    </style>
     <style name="Widget.Support.CoordinatorLayout" parent="android:Widget">
         <item name="statusBarBackground">#000000</item>
     </style>
+    <declare-styleable name="AbsAboutActivity" ns2:ignore="ResourceName">
+
+        <attr format="reference|color" name="aboutPageHeaderBackground"/>
+
+        <attr format="reference|color" name="aboutPageHeaderContentScrim"/>
+
+        <attr format="color" name="aboutPageHeaderTextColor"/>
+
+        <attr format="reference" name="aboutPageNavigationIcon"/>
+
+    </declare-styleable>
     <declare-styleable name="ActionBar">
         <!-- The type of navigation to use. -->
         <attr name="navigationMode">
@@ -5521,6 +5879,22 @@
         <!-- Workaround to read user defined minimum height -->
         <attr name="android:minHeight"/>
     </declare-styleable>
+    <declare-styleable name="CheckBoxPreference">
+        <!-- The summary for the Preference in a PreferenceActivity screen when the
+             CheckBoxPreference is checked. If separate on/off summaries are not
+             needed, the summary attribute can be used instead. -->
+        <attr format="string" name="summaryOn"/>
+        <attr name="android:summaryOn"/>
+        <!-- The summary for the Preference in a PreferenceActivity screen when the
+             CheckBoxPreference is unchecked. If separate on/off summaries are not
+             needed, the summary attribute can be used instead. -->
+        <attr format="string" name="summaryOff"/>
+        <attr name="android:summaryOff"/>
+        <!-- The state (true for on, or false for off) that causes dependents to be disabled. By default,
+             dependents will be disabled when this is unchecked, so the value of this preference is false. -->
+        <attr format="boolean" name="disableDependentsState"/>
+        <attr name="android:disableDependentsState"/>
+    </declare-styleable>
     <declare-styleable name="Chip">
     <!-- Surface layer color to apply to the chip. -->
     <!-- Do not expose publicly because there is no public getter/setter and the user doesn't need
@@ -5904,6 +6278,29 @@
             <flag name="all" value="0x77"/>
         </attr>
     </declare-styleable>
+    <declare-styleable name="DialogPreference">
+        <!-- The title in the dialog. -->
+        <attr format="string" name="dialogTitle"/>
+        <attr name="android:dialogTitle"/>
+        <!-- The message in the dialog. If a dialogLayout is provided and contains
+             a TextView with ID android:id/message, this message will be placed in there. -->
+        <attr format="string" name="dialogMessage"/>
+        <attr name="android:dialogMessage"/>
+        <!-- The icon for the dialog. -->
+        <attr format="reference" name="dialogIcon"/>
+        <attr name="android:dialogIcon"/>
+        <!-- The positive button text for the dialog. Set to @null to hide the positive button. -->
+        <attr format="string" name="positiveButtonText"/>
+        <attr name="android:positiveButtonText"/>
+        <!-- The negative button text for the dialog. Set to @null to hide the negative button. -->
+        <attr format="string" name="negativeButtonText"/>
+        <attr name="android:negativeButtonText"/>
+        <!-- A layout to be used as the content View for the dialog. By default, this shouldn't
+             be needed. If a custom DialogPreference is required, this should be set. For example,
+             the EditTextPreference uses a layout with an EditText as this attribute. -->
+        <attr format="reference" name="dialogLayout"/>
+        <attr name="android:dialogLayout"/>
+    </declare-styleable>
     <declare-styleable name="DrawerArrowToggle">
         <!-- The drawing color for the bars -->
         <attr format="color" name="color"/>
@@ -5921,6 +6318,23 @@
         <attr format="dimension" name="barLength"/>
         <!-- The thickness (stroke size) for the bar paint -->
         <attr format="dimension" name="thickness"/>
+    </declare-styleable>
+    <declare-styleable name="DropDownPreference">
+        <attr name="entries"/>
+        <attr name="android:entries"/>
+        <attr name="entryValues"/>
+        <attr name="android:entryValues"/>
+    </declare-styleable>
+    <declare-styleable name="EditTextPreference">
+        <attr format="reference" name="inputType"/>
+        <attr name="android:inputType"/>
+        <attr format="boolean" name="singleLine"/>
+        <attr name="android:singleLine"/>
+        <attr format="boolean" name="selectAllOnFocus"/>
+        <attr name="android:selectAllOnFocus"/>
+        <attr format="boolean" name="commitOnEnter"/>
+        <attr format="string" name="hint"/>
+        <attr name="android:hint"/>
     </declare-styleable>
     <declare-styleable name="ExtendedFloatingActionButton">
     <!-- Elevation for the ExtendedFloatingActionButton. -->
@@ -6071,12 +6485,26 @@
         <attr name="android:fontVariationSettings"/>
         <attr name="android:ttcIndex"/>
     </declare-styleable>
+    <declare-styleable name="ForegroundCheckTextView">
+        <attr name="android:foregroundGravity"/>
+        <attr name="android:foreground"/>
+        <attr format="boolean" name="foregroundInsidePadding"/>
+    </declare-styleable>
     <declare-styleable name="ForegroundLinearLayout">
     <attr name="android:foreground"/>
     <attr name="android:foregroundGravity"/>
     <!-- Do not expose publicly, used by ForegroundLinearLayout but never set by any style.  -->
     <attr format="boolean" name="foregroundInsidePadding"/>
   </declare-styleable>
+    <declare-styleable name="Fragment">
+        <attr name="android:name"/>
+        <attr name="android:id"/>
+        <attr name="android:tag"/>
+    </declare-styleable>
+    <declare-styleable name="FragmentContainerView">
+        <attr name="android:name"/>
+        <attr name="android:tag"/>
+    </declare-styleable>
     <declare-styleable name="GradientColor">
         <!-- Start color of the gradient. -->
         <attr name="android:startColor"/>
@@ -6176,6 +6604,17 @@
         <attr name="android:dropDownVerticalOffset"/>
         <!-- Amount of pixels by which the drop down should be offset horizontally. -->
         <attr name="android:dropDownHorizontalOffset"/>
+    </declare-styleable>
+    <declare-styleable name="ListPreference">
+        <!-- The human-readable array to present as a list. Each entry must have a corresponding
+             index in entryValues. -->
+        <attr format="reference" name="entries"/>
+        <attr name="android:entries"/>
+        <!-- The array to find the value to save for a preference when an entry from
+             entries is selected. If a user clicks on the second item in entries, the
+             second item in this array will be saved to the preference. -->
+        <attr format="reference" name="entryValues"/>
+        <attr name="android:entryValues"/>
     </declare-styleable>
     <declare-styleable name="MaterialAlertDialog">
     <attr format="dimension" name="backgroundInsetStart"/>
@@ -6538,6 +6977,17 @@
         <!-- Drawable for the arrow icon indicating a particular item is a submenu. -->
         <attr format="reference" name="subMenuArrow"/>
     </declare-styleable>
+    <declare-styleable name="MultiSelectListPreference">
+        <!-- The human-readable array to present as a list. Each entry must have a corresponding
+             index in entryValues. -->
+        <attr name="entries"/>
+        <attr name="android:entries"/>
+        <!-- The array to find the value to save for a preference when an entry from
+             entries is selected. If a user clicks the second item in entries, the
+             second item in this array will be saved to the preference. -->
+        <attr name="entryValues"/>
+        <attr name="android:entryValues"/>
+    </declare-styleable>
     <declare-styleable name="NavigationView">
     <attr name="android:background"/>
     <attr name="android:fitsSystemWindows"/>
@@ -6586,6 +7036,10 @@
          itemShapeAppearance or itemShapeAppearanceOverlay. -->
     <attr format="color" name="itemShapeFillColor"/>
   </declare-styleable>
+    <declare-styleable name="NumberPickerPreference">
+        <attr format="integer" name="min"/>
+        <attr format="integer" name="max"/>
+    </declare-styleable>
     <declare-styleable name="PopupWindow">
         <!-- Whether the popup window should overlap its anchor view. -->
         <attr format="boolean" name="overlapAnchor"/>
@@ -6595,6 +7049,108 @@
     <declare-styleable name="PopupWindowBackgroundState">
         <!-- State identifier indicating the popup will be above the anchor. -->
         <attr format="boolean" name="state_above_anchor"/>
+    </declare-styleable>
+    <declare-styleable name="Preference">
+        <!-- The optional icon for the preference -->
+        <attr format="reference" name="icon"/>
+        <attr name="android:icon"/>
+        <!-- The key to store the Preference value. -->
+        <attr format="string" name="key"/>
+        <attr name="android:key"/>
+        <!-- The title for the Preference in a PreferenceActivity screen. -->
+        <attr format="string" name="title"/>
+        <attr name="android:title"/>
+        <!-- The summary for the Preference in a PreferenceActivity screen. -->
+        <attr format="string" name="summary"/>
+        <attr name="android:summary"/>
+        <!-- The order for the Preference (lower values are to be ordered first). If this is not
+             specified, the default ordering will be alphabetic. -->
+        <attr format="integer" name="order"/>
+        <attr name="android:order"/>
+        <!-- When used inside of a modern PreferenceActivity, this declares
+             a new PreferenceFragment to be shown when the user selects this item. -->
+        <attr format="string" name="fragment"/>
+        <attr name="android:fragment"/>
+        <!-- The layout for the Preference in a PreferenceActivity screen. This should
+             rarely need to be changed, look at widgetLayout instead. -->
+        <attr format="reference" name="layout"/>
+        <attr name="android:layout"/>
+        <!-- The layout for the controllable widget portion of a Preference. This is inflated
+             into the layout for a Preference and should be used more frequently than
+             the layout attribute. For example, a checkbox preference would specify
+             a custom layout (consisting of just the CheckBox) here. -->
+        <attr format="reference" name="widgetLayout"/>
+        <attr name="android:widgetLayout"/>
+        <!-- Whether the Preference is enabled. -->
+        <attr format="boolean" name="enabled"/>
+        <attr name="android:enabled"/>
+        <!-- Whether the Preference is selectable. -->
+        <attr format="boolean" name="selectable"/>
+        <attr name="android:selectable"/>
+        <!-- The key of another Preference that this Preference will depend on.  If the other
+             Preference is not set or is off, this Preference will be disabled. -->
+        <attr format="string" name="dependency"/>
+        <attr name="android:dependency"/>
+        <!-- Whether the Preference stores its value to the shared preferences. -->
+        <attr format="boolean" name="persistent"/>
+        <attr name="android:persistent"/>
+        <!-- The default value for the preference, which will be set either if persistence
+             is off or persistence is on and the preference is not found in the persistent
+             storage.  -->
+        <attr format="string|boolean|integer|reference|float" name="defaultValue"/>
+        <attr name="android:defaultValue"/>
+        <!-- Whether the view of this Preference should be disabled when
+             this Preference is disabled. -->
+        <attr format="boolean" name="shouldDisableView"/>
+        <attr name="android:shouldDisableView"/>
+
+        <!-- Whether the preference allows displaying divider below it -->
+        <attr format="enum" name="dividerBelowVisibility">
+            <!-- Unspecified, display or not is depend on DividerDecoration -->
+            <enum name="unspecified" value="0"/>
+            <!-- Forced to show the divider -->
+            <enum name="enforced" value="1"/>
+            <!-- Forbid the display of divder -->
+            <enum name="forbidden" value="2"/>
+        </attr>
+
+        <!-- Whether to use single line for the preference title text. By default, preference title
+             will be constrained to one line, so the default value of this attribute is true. -->
+        <attr format="boolean" name="singleLineTitle"/>
+        <attr name="android:singleLineTitle"/>
+
+        <!-- Whether the space for the preference icon view will be reserved. If set to true, the
+             preference will be offset as if it would have the icon and thus aligned with other
+             preferences having icons. By default, preference icon view visibility will be set to
+             GONE when there is no icon provided, so the default value of this attribute is false.
+             -->
+        <attr format="boolean" name="iconSpaceReserved"/>
+        <attr name="android:iconSpaceReserved"/>
+    </declare-styleable>
+    <declare-styleable name="PreferenceFragment">
+        <!-- The layout for the PreferenceFragment. This should rarely need to be changed. -->
+        <attr name="android:layout"/>
+        <!-- List separator to draw between preference views -->
+        <attr name="android:divider"/>
+        <!-- List separator height -->
+        <attr name="android:dividerHeight"/>
+        <!-- Whether a divider is allowed to draw after the last item -->
+        <attr format="boolean" name="allowDividerAfterLastItem"/>
+    </declare-styleable>
+    <declare-styleable name="PreferenceFragmentCompat">
+        <!-- The layout for the PreferenceFragment. This should rarely need to be changed. -->
+        <attr name="android:layout"/>
+        <!-- List separator to draw between preference views -->
+        <attr name="android:divider"/>
+        <!-- List separator height -->
+        <attr name="android:dividerHeight"/>
+    </declare-styleable>
+    <declare-styleable name="PreferenceGroup">
+        <!-- Whether to order the Preference under this group as they appear in the XML file.
+             If this is false, the ordering will follow the Preference order attribute and
+             default to alphabetic for those without the order attribute. -->
+        <attr format="boolean" name="orderingFromXml"/>
+        <attr name="android:orderingFromXml"/>
     </declare-styleable>
     <declare-styleable name="ProgressIndicator">
     <!-- The type of the progress indicator, either linear or circular. -->
@@ -6716,6 +7272,26 @@
         <attr format="reference" name="fastScrollHorizontalThumbDrawable"/>
         <attr format="reference" name="fastScrollHorizontalTrackDrawable"/>
     </declare-styleable>
+    <declare-styleable name="RingtonePreference">
+        <!-- Which ringtone type(s) to show in the picker. -->
+        <attr name="ringtoneType">
+            <flag name="ringtone" value="1"/>
+            <flag name="notification" value="2"/>
+            <flag name="alarm" value="4"/>
+            <flag name="all" value="7"/>
+        </attr>
+        <attr name="android:ringtoneType"/>
+
+        <!-- Whether to show an item for a default sound. -->
+        <attr format="boolean" name="showDefault"/>
+        <attr name="android:showDefault"/>
+
+        <!-- Whether to show an item for 'Silent'. -->
+        <attr format="boolean" name="showSilent"/>
+        <attr name="android:showSilent"/>
+
+        <attr format="string" name="summaryNone"/>
+    </declare-styleable>
     <declare-styleable name="ScrimInsetsFrameLayout">
     <attr format="color|reference" name="insetForeground"/>
   </declare-styleable>
@@ -6759,6 +7335,23 @@
         <!-- Background for the section containing the action (e.g. voice search) -->
         <attr format="reference" name="submitBackground"/>
         <attr name="android:focusable"/>
+    </declare-styleable>
+    <declare-styleable name="SeekBarPreference">
+        <attr format="integer" name="min"/>
+        <attr name="android:max"/>
+        <attr name="android:layout"/>
+        <!--Attribute controlling the amount to increment or decrement the seekbar when the user
+        presses the arrow keys-->
+        <attr format="integer" name="seekBarIncrement"/>
+        <!-- Attribute indicating whether the slider within this preference can be adjusted, that is
+        pressing left/right keys when this preference is focused will move the slider accordingly
+        (e.g. inline adjustable preferences). False, if the slider within the preference is
+        read-only and cannot be adjusted. By default, the seekbar is adjustable. -->
+        <attr format="boolean" name="adjustable"/>
+        <!-- Flag indicating whether the TextView next to the seekbar that shows the current seekbar
+        value will be displayed. If true, the view is VISIBLE; if false, the view will be GONE.
+        By default, this view is VISIBLE. -->
+        <attr format="boolean" name="showSeekBarValue"/>
     </declare-styleable>
     <declare-styleable name="ShapeAppearance">
     <!-- Corner size to be used in the ShapeAppearance. All corners default to this value -->
@@ -6810,6 +7403,29 @@
          -->
     <attr name="shapeAppearanceOverlay"/>
   </declare-styleable>
+    <declare-styleable name="SimpleMenuPopup">
+        <!--<attr name="animationStyle" format="reference" />-->
+        <eat-comment/>
+
+        <attr format="dimension" name="listMarginHorizontal"/>
+        <attr format="dimension" name="listMarginVertical"/>
+        <attr format="dimension" name="listItemPadding"/>
+        <attr format="dimension" name="listElevation"/>
+
+        <attr format="dimension" name="dialogMarginHorizontal"/>
+        <attr format="dimension" name="dialogMarginVertical"/>
+        <attr format="dimension" name="dialogItemPadding"/>
+        <attr format="dimension" name="dialogElevation"/>
+        <attr format="dimension" name="dialogMaxWidth"/>
+
+        <attr format="dimension" name="unit"/>
+        <attr format="integer" name="maxUnits"/>
+    </declare-styleable>
+    <declare-styleable name="SimpleMenuPreference">
+        <attr name="android:popupMenuStyle"/>
+        <attr name="android:popupTheme"/>
+        <attr format="dimension" name="popupBackgroundRadius"/>
+    </declare-styleable>
     <declare-styleable name="Slider">
     <attr name="android:value"/>
     <attr name="android:valueFrom"/>
@@ -7005,6 +7621,30 @@
       that should not be tinted. This value is ignored if a buttonTint is set. -->
     <attr name="useMaterialThemeColors"/>
   </declare-styleable>
+    <declare-styleable name="SwitchPreference">
+        <!-- The summary for the Preference in a PreferenceActivity screen when the
+             SwitchPreference is checked. If separate on/off summaries are not
+             needed, the summary attribute can be used instead. -->
+        <attr name="summaryOn"/>
+        <attr name="android:summaryOn"/>
+        <!-- The summary for the Preference in a PreferenceActivity screen when the
+             SwitchPreference is unchecked. If separate on/off summaries are not
+             needed, the summary attribute can be used instead. -->
+        <attr name="summaryOff"/>
+        <attr name="android:summaryOff"/>
+        <!-- The text used on the switch itself when in the "on" state.
+             This should be a very SHORT string, as it appears in a small space. -->
+        <attr format="string" name="switchTextOn"/>
+        <attr name="android:switchTextOn"/>
+        <!-- The text used on the switch itself when in the "off" state.
+             This should be a very SHORT string, as it appears in a small space. -->
+        <attr format="string" name="switchTextOff"/>
+        <attr name="android:switchTextOff"/>
+        <!-- The state (true for on, or false for off) that causes dependents to be disabled. By default,
+             dependents will be disabled when this is unchecked, so the value of this preference is false. -->
+        <attr name="disableDependentsState"/>
+        <attr name="android:disableDependentsState"/>
+    </declare-styleable>
     <declare-styleable name="TabItem">
     <!-- Text to display in the tab. -->
     <attr name="android:text"/>
@@ -7367,6 +8007,7 @@
       <enum name="screen" value="15"/>
     </attr>
   </declare-styleable>
+    <declare-styleable name="Theme"><attr format="reference" name="preferenceTheme"/><attr format="reference" name="preferenceScreenStyle"/><attr format="reference" name="preferenceActivityStyle"/><attr format="reference" name="preferenceFragmentStyle"/><attr format="reference" name="preferenceFragmentCompatStyle"/><attr format="reference" name="preferenceCategoryStyle"/><attr format="reference" name="preferenceStyle"/><attr format="reference" name="preferenceInformationStyle"/><attr format="reference" name="checkBoxPreferenceStyle"/><attr format="reference" name="yesNoPreferenceStyle"/><attr format="reference" name="dialogPreferenceStyle"/><attr format="reference" name="editTextPreferenceStyle"/><attr format="reference" name="ringtonePreferenceStyle"/><attr format="reference" name="dropDownPreferenceStyle"/><attr format="reference" name="preferenceLayoutChild"/><attr format="reference" name="preferencePanelStyle"/><attr format="reference" name="preferenceHeaderPanelStyle"/><attr format="reference" name="preferenceListStyle"/><attr format="reference" name="preferenceFragmentListStyle"/><attr format="dimension" name="preferenceFragmentPaddingSide"/><attr format="reference" name="switchPreferenceStyle"/><attr format="reference" name="seekBarPreferenceStyle"/><attr format="reference" name="preferenceTitleTextAppearance"/><attr format="reference" name="preferenceSummaryTextAppearance"/><attr format="reference" name="preferenceCategoryTextAppearance"/><attr format="reference" name="simpleMenuPreferenceStyle"/></declare-styleable>
     <declare-styleable name="ThemeEnforcement">
     <!-- Internal flag used to denote that a style uses new attributes defined by
          Theme.MaterialComponents, and that the component should check via ThemeEnforcement that the

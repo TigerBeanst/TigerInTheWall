@@ -27,12 +27,23 @@
     <string msgid="2650565705514630347" name="abc_shareactionprovider_share_with">"分享对象"</string>
     <string msgid="9009661856846212431" name="abc_shareactionprovider_share_with_application">"与<ns1:g id="APPLICATION_NAME">%s</ns1:g>分享"</string>
     <string msgid="6389460216547290468" name="abc_toolbar_collapse_description">"收起"</string>
+    <string name="about_page_browser">浏览器</string>
+    <string name="about_page_dev_1">氡·分享清理 开发者</string>
+    <string name="about_page_dev_2">Riru - Core 开发者</string>
+    <string name="about_page_dev_3">Riru - IFW Enhance 开发者</string>
+    <string name="about_page_dev_title">开发者</string>
+    <string name="about_page_info">你是否已经厌倦了分享图片时，在冗长的分享列表里翻找APP，只为找到微信、QQ 等几个你常用的应用？\n\n百X网盘、高X地图、菜鸟X裹、X瓣、京X、淘X……\n你们为什么要出现在我的图片分享列表里？\n我如果需要你们，我自己会打开 App 来用啊，为什么要占领我的分享列表呢？\n\n「氡·分享清理」是借助 Magisk 模块 Riru - Core 和 Riru - IFW Enhance 来实现作用的 APP，同时你需要赋予其 Root 权限以进行写入 IFW 规则的操作。</string>
+    <string name="about_page_info_title">介绍</string>
+    <string name="about_page_open_title">开放源代码许可</string>
+    <string name="about_page_open_with">打开方式：</string>
+    <string name="about_title">关于</string>
     <string name="after_start">已清理本应用写入的IFW规则，请再次提交以生效</string>
     <string name="app_manage_card_detail">天天占着分享面板的辣鸡应用给爷死！！！</string>
     <string name="app_manage_card_title">应用管理</string>
     <string name="app_manage_dialog_desc">Riru - IFW Enhance 未被正确应用。您所做的任何操作可能都不会生效。</string>
     <string name="app_manage_dialog_title">提示</string>
     <string name="app_name">氡·分享清理</string>
+    <string name="backup_title">备份 &amp; 还原</string>
     <string name="dialog_content">此应用需要 Root 权限以正常工作，如若您的设备暂未 Root 或您拒绝了应用申请 Root 权限，此应用不会生效。\n\n您需要安装 Magisk，并启用 Riru - Core 和 Riru - IFW Enhance 模块。\n\n此应用每次启动，当您点击「明白了」后将会清空由本应用创建的 IFW 规则，已设置的规则将失效，在您点击提交后会重新生效。</string>
     <string name="dialog_negative">不了不了</string>
     <string name="dialog_positive">明白了</string>
@@ -60,6 +71,7 @@
     <string name="riru_status_card_not">未激活模块</string>
     <string name="riru_status_card_not_detail">Riru - IFW Enhance 未被正确应用</string>
     <string msgid="730395136688082741" name="search_menu_title">"搜索"</string>
+    <string name="setting_title">设置</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
     <string name="submit_finish">IFW规则已生效</string>
     <string name="without_root">您的设备暂未 Root，亦或是您拒绝了应用申请 Root 权限。</string>

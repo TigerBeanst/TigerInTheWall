@@ -27,6 +27,8 @@
     <string msgid="2650565705514630347" name="abc_shareactionprovider_share_with">"इससे शेयर करें:"</string>
     <string msgid="9009661856846212431" name="abc_shareactionprovider_share_with_application">"<ns1:g id="APPLICATION_NAME">%s</ns1:g> से शेयर करें"</string>
     <string msgid="6389460216547290468" name="abc_toolbar_collapse_description">"छोटा करें"</string>
+    <string name="about_page_browser">वेब ब्राउज़र</string>
+    <string name="about_page_open_with">के साथ खोलें:</string>
     <string msgid="730395136688082741" name="search_menu_title">"खोजें"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

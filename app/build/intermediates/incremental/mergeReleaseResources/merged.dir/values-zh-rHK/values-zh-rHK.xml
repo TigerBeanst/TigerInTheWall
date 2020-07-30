@@ -27,6 +27,8 @@
     <string msgid="2650565705514630347" name="abc_shareactionprovider_share_with">"分享對象"</string>
     <string msgid="9009661856846212431" name="abc_shareactionprovider_share_with_application">"使用「<ns1:g id="APPLICATION_NAME">%s</ns1:g>」分享"</string>
     <string msgid="6389460216547290468" name="abc_toolbar_collapse_description">"收合"</string>
+    <string name="about_page_browser">瀏覽器</string>
+    <string name="about_page_open_with">打開方式：</string>
     <string msgid="730395136688082741" name="search_menu_title">"搜尋"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

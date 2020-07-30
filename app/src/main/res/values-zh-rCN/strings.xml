@@ -16,6 +16,28 @@
     <string name="misc_card_title">杂项</string>
     <string name="misc_card_detail">另外的一些您也许想要的功能</string>
 
+    <string name="setting_title">设置</string>
+    <string name="backup_title">备份 &amp; 还原</string>
+    <string name="about_title">关于</string>
+
+    <string name="setting_page_dark_title">暗色模式</string>
+    <string name="setting_page_lang_title">多语言</string>
+    <string name="setting_page_1_title">隐私</string>
+    <string name="setting_page_appcenter_title">使用 AppCenter</string>
+    <string name="setting_page_appcenter_summary">错误日志将会被上传</string>
+    <string name="setting_page_appcenter_summaryNo">错误日志将不会被上传</string>
+
+
+
+
+    <string name="about_page_info_title">介绍</string>
+    <string name="about_page_info">你是否已经厌倦了分享图片时，在冗长的分享列表里翻找APP，只为找到微信、QQ 等几个你常用的应用？\n\n百X网盘、高X地图、菜鸟X裹、X瓣、京X、淘X……\n你们为什么要出现在我的图片分享列表里？\n我如果需要你们，我自己会打开 App 来用啊，为什么要占领我的分享列表呢？\n\n「氡·分享清理」是借助 Magisk 模块 Riru - Core 和 Riru - IFW Enhance 来实现作用的 APP，同时你需要赋予其 Root 权限以进行写入 IFW 规则的操作。</string>
+    <string name="about_page_dev_title">开发者</string>
+    <string name="about_page_dev_1">氡·分享清理 开发者</string>
+    <string name="about_page_dev_2">Riru - Core 开发者</string>
+    <string name="about_page_dev_3">Riru - IFW Enhance 开发者</string>
+    <string name="about_page_open_title">开放源代码许可</string>
+
     <string name="after_start">已清理本应用写入的IFW规则，请再次提交以生效</string>
     <string name="without_root">您的设备暂未 Root，亦或是您拒绝了应用申请 Root 权限。</string>
     <string name="submit_finish">IFW规则已生效</string>
@@ -40,4 +62,16 @@
     <string name="menu_magisk_msg">此应用的实现依赖于以下两个 Magisk 模块，您必须安装他们，否则 氡·分享清理 不会生效。\n\n您可以在 Magisk 仓库中找到它们，或是直接从以下链接进入 Github release 下载。\n\n请注意：由于版本的不确定性，Riru - Core 和 Riru - IFW Enhance 很有可能不支持您已安装的 Magisk 版本。</string>
     <string name="menu_magisk_core">Riru - Core</string>
     <string name="menu_magisk_ifwenhance">Riru - IFW Enhance</string>
+
+    <string-array name="entries_dark">
+        <item>跟随系统</item>
+        <item>总是开启</item>
+        <item>总是关闭</item>
+    </string-array>
+
+    <string-array name="entries_lang">
+        <item>跟随系统</item>
+        <item>简体中文</item>
+        <item>English</item>
+    </string-array>
 </resources>

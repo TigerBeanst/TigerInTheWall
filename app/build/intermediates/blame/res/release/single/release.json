@@ -12,6 +12,10 @@
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\drawable_dev_kr328.png.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\dev_kr328.png"
+    },
+    {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\menu_menu.xml.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\menu\\menu.xml"
     },
@@ -24,12 +28,32 @@
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\drawable_dev_hjthjthjt.jpg.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\dev_hjthjthjt.jpg"
+    },
+    {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\xml_settings.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\xml\\settings.xml"
+    },
+    {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_baseline_emoji_people_24.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_baseline_emoji_people_24.xml"
+    },
+    {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\menu_menu_settings.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\menu\\menu_settings.xml"
+    },
+    {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_launcher_foreground.png.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_settings.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\layout\\activity_settings.xml"
     },
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_ic_launcher_foreground.xml.flat",
@@ -46,6 +70,10 @@
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_baseline_check_circle_24.xml.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_baseline_check_circle_24.xml"
+    },
+    {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_baseline_settings_24.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_baseline_settings_24.xml"
     },
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -66,6 +94,10 @@
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher_foreground.png.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\drawable_dev_rikkaw.png.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\dev_rikkaw.png"
     },
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_build_black_24dp.xml.flat",
@@ -98,6 +130,10 @@
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_baseline_settings_backup_restore_24.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\src\\main\\res\\drawable\\ic_baseline_settings_backup_restore_24.xml"
     },
     {
         "merged": "D:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",

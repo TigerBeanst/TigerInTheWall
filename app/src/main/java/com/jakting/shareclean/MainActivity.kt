@@ -25,8 +25,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setModuleStatusCard()
     }
 
-    private fun init(){
+    private fun init() {
         app_manage_card.setOnClickListener(this)
+        setting_menu.setOnClickListener(this)
+        about_menu.setOnClickListener(this)
     }
 
     private fun setModuleStatusCard() {
@@ -43,6 +45,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 riru_status_card_title.text = getString(R.string.riru_status_card_exist)
                 riru_status_card_desc.text = getString(R.string.riru_status_card_exist_detail)
                 riru_status_card_icon.setImageResource(R.drawable.ic_baseline_check_circle_24)
+                isWorked = true
             } else {
                 //Riru - IFW Enhance 未生效
                 riru_status_card.setCardBackgroundColor(resources.getColor(R.color.colorRed))
@@ -79,6 +82,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         }
                         .show()
                 }
+            }
+            R.id.setting_menu->{
+                val intent = Intent(this,SettingsActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.about_menu->{
+                val intent = Intent(this,AboutActivity::class.java)
+                startActivity(intent)
             }
         }
     }

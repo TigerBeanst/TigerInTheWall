@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="about_page_background">#141414</color>
+    <color name="about_page_card_normal">#282828</color>
+    <color name="about_page_card_ripple">#33000000</color>
+    <color name="about_page_card_selected">#363636</color>
+    <color name="about_page_card_text_color">#deffffff</color>
+    <color name="about_page_category_text_color">#abaaaa</color>
+    <color name="about_page_desc_color">@color/about_page_hint</color>
+    <color name="about_page_hint">#80ffffff</color>
+    <color name="about_page_license_title">@color/about_page_card_text_color</color>
+    <color name="about_page_line">@android:color/black</color>
+    <color name="about_page_link_text_color">@color/about_page_card_text_color</color>
+    <color name="about_page_name_color">@color/about_page_card_text_color</color>
     <style name="Theme.AppCompat.DayNight" parent="Theme.AppCompat"/>
     <style name="Theme.AppCompat.DayNight.DarkActionBar" parent="Theme.AppCompat"/>
     <style name="Theme.AppCompat.DayNight.Dialog" parent="Theme.AppCompat.Dialog"/>

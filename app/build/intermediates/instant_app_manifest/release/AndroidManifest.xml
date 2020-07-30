@@ -21,6 +21,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.jakting.shareclean.AboutActivity"
+            android:theme="@style/AppTheme.About" />
+        <activity
+            android:name="com.jakting.shareclean.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme" />
         <activity android:name="com.jakting.shareclean.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

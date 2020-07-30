@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="夜间模式"
+        android:id="@+id/menu_night_mode" />
+
+    <item
+        android:title="从右到左"
+        android:id="@+id/rtl" />
+</menu>

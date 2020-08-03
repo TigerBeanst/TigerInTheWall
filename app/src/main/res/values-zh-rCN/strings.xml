@@ -20,9 +20,13 @@
     <string name="backup_title">备份 &amp; 还原</string>
     <string name="about_title">关于</string>
 
+    <string name="setting_page_1_title">界面</string>
     <string name="setting_page_dark_title">暗色模式</string>
+    <string name="setting_page_2_title">语言</string>
     <string name="setting_page_lang_title">多语言</string>
-    <string name="setting_page_1_title">隐私</string>
+    <string name="setting_page_helplang_title">帮助翻译</string>
+    <string name="setting_page_helplang_summary">帮忙将 氡·分享清理 翻译成您的语言</string>
+    <string name="setting_page_3_title">隐私</string>
     <string name="setting_page_appcenter_title">使用 AppCenter</string>
     <string name="setting_page_appcenter_summary">错误日志将会被上传</string>
     <string name="setting_page_appcenter_summaryNo">错误日志将不会被上传</string>

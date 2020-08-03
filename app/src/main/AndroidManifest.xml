@@ -12,7 +12,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/setting_title" />
+            android:label="@string/setting_title"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".AboutActivity"
             android:theme="@style/AppTheme.About" />

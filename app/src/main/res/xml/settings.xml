@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <SimpleMenuPreference
-        android:key="drop_dark"
-        android:entries="@array/entries_dark"
-        android:entryValues="@array/entry_values"
-        android:title="@string/setting_page_dark_title"
-        android:summary="%s" />
-
-    <SimpleMenuPreference
-        android:key="drop_lang"
-        android:entries="@array/entries_lang"
-        android:entryValues="@array/entry_values"
-        android:title="@string/setting_page_lang_title"
-        android:summary="%s" />
-
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory android:title="@string/setting_page_1_title">
+        <SimpleMenuPreference
+            android:key="drop_dark"
+            android:entries="@array/entries_dark"
+            android:entryValues="@array/entry_values"
+            android:title="@string/setting_page_dark_title"
+            android:summary="%s" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/setting_page_2_title">
+        <SimpleMenuPreference
+            android:key="drop_lang"
+            android:entries="@array/entries_lang"
+            android:entryValues="@array/entry_values"
+            android:title="@string/setting_page_lang_title"
+            android:summary="%s" />
+        <Preference
+            android:key="drop_helplang"
+            android:title="@string/setting_page_helplang_title"
+            android:summary="@string/setting_page_helplang_summary" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://poeditor.com/join/project/6xirMXaNwq" />
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/setting_page_3_title">
         <SwitchPreference
             android:key="switch_appcenter"
             android:title="@string/setting_page_appcenter_title"

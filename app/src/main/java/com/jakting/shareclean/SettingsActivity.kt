@@ -13,6 +13,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.jakting.shareclean.utils.logd
+import com.jakting.shareclean.utils.setDark
+import com.jakting.shareclean.utils.setLang
 import moe.shizuku.preference.*
 import java.util.*
 
@@ -27,6 +29,7 @@ class SettingsActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().replace(R.id.settings, fragment).commit()
         }
 
+        setSupportActionBar(findViewById(R.id.toolbar))
         if (supportActionBar != null) {
             supportActionBar!!.title = getString(R.string.setting_title)
             //supportActionBar!!.subtitle = "v" + BuildConfig.VERSION_NAME
@@ -43,37 +46,6 @@ class SettingsActivity : AppCompatActivity() {
         return mode == Configuration.UI_MODE_NIGHT_YES
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_settings, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.menu_night_mode -> {
-                AppCompatDelegate.setDefaultNightMode(if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) AppCompatDelegate.MODE_NIGHT_NO else AppCompatDelegate.MODE_NIGHT_YES)
-                recreate()
-                return true
-            }
-            R.id.rtl -> {
-                val resources: Resources = baseContext.resources
-                val locale = if (resources.getConfiguration()
-                        .getLayoutDirection() === View.LAYOUT_DIRECTION_RTL
-                ) Locale.ENGLISH else Locale("ar")
-                Locale.setDefault(locale)
-                resources.getConfiguration().setLocale(locale)
-                resources.updateConfiguration(
-                    resources.getConfiguration(),
-                    resources.getDisplayMetrics()
-                )
-                startActivity(Intent(this, this.javaClass))
-                finish()
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
     internal class SettingsFragment : PreferenceFragment(),
         OnSharedPreferenceChangeListener, Preference.OnPreferenceChangeListener {
         override fun onCreatePreferences(bundle: Bundle?, s: String?) {
@@ -83,17 +55,17 @@ class SettingsActivity : AppCompatActivity() {
             setPreferencesFromResource(R.xml.settings, null)
 
             //暗色模式
-            var listPreference = findPreference("drop_dark") as ListPreference
-            if (listPreference.value == null) {
-                listPreference.setValueIndex(0)
+            val darkPreference = findPreference("drop_dark") as ListPreference
+            if (darkPreference.value == null) {
+                darkPreference.setValueIndex(0)
             }
-            listPreference.onPreferenceChangeListener = this
+            darkPreference.onPreferenceChangeListener = this
             //多语言
-            listPreference = findPreference("drop_lang") as ListPreference
-            if (listPreference.value == null) {
-                listPreference.setValueIndex(0)
+            val langPreference = findPreference("drop_lang") as ListPreference
+            if (langPreference.value == null) {
+                langPreference.setValueIndex(0)
             }
-            listPreference.onPreferenceChangeListener = this
+            langPreference.onPreferenceChangeListener = this
         }
 
         override fun onCreateItemDecoration(): DividerDecoration {
@@ -118,10 +90,21 @@ class SettingsActivity : AppCompatActivity() {
             key: String
         ) {
             logd("onSharedPreferenceChanged $key")
+            val sp = activity!!.getSharedPreferences("settings", Context.MODE_PRIVATE)
+            when (key) {
+                "drop_dark" -> setDark(sp)
+                "drop_lang" -> setLang(sp, activity!!)
+            }
         }
 
         override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean {
-            logd(getString(R.string.on_preference_change_toast_message,preference.key,newValue.toString()))
+            logd(
+                getString(
+                    R.string.on_preference_change_toast_message,
+                    preference.key,
+                    newValue.toString()
+                )
+            )
             return true
         }
     }

@@ -3,36 +3,49 @@ package com.jakting.shareclean
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.jakting.shareclean.utils.SystemManager
+import com.jakting.shareclean.utils.setAppCenter
+import com.jakting.shareclean.utils.setDark
+import com.jakting.shareclean.utils.setLang
 import com.topjohnwu.superuser.Shell
 import com.topjohnwu.superuser.ShellUtils.isValidOutput
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+
     var isWorked = false //模块是否被检测到正常工作
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (!getDarkModeStatus(this)) {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         }
         setContentView(R.layout.activity_main)
-        init()
+        val sp = getSharedPreferences("settings", Context.MODE_PRIVATE)
+        setSupportActionBar(findViewById(R.id.toolbar))
+        init(sp)
         setModuleStatusCard()
     }
 
-    private fun init() {
+    private fun init(sp:SharedPreferences) {
+        setAppCenter(sp,this)
+        setDark(sp)
+        setLang(sp,this)
         app_manage_card.setOnClickListener(this)
         setting_menu.setOnClickListener(this)
         about_menu.setOnClickListener(this)
     }
 
     private fun setModuleStatusCard() {
-        var pid = android.os.Process.myPid()
+        val pid = android.os.Process.myPid()
         val isRoot: Shell.Result =
             Shell.su("cat /proc/$pid/maps").exec()
         if (isValidOutput(isRoot.out)) {
@@ -83,12 +96,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         .show()
                 }
             }
-            R.id.setting_menu->{
-                val intent = Intent(this,SettingsActivity::class.java)
+            R.id.setting_menu -> {
+                val intent = Intent(this, SettingsActivity::class.java)
                 startActivity(intent)
             }
-            R.id.about_menu->{
-                val intent = Intent(this,AboutActivity::class.java)
+            R.id.about_menu -> {
+                val intent = Intent(this, AboutActivity::class.java)
                 startActivity(intent)
             }
         }

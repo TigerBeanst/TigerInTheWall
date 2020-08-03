@@ -1,27 +1,27 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowDisablePreview">true</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
         <item name="actionBarStyle">@style/Widget.MaterialComponents.ActionBar.Surface</item>
         <item name="actionBarTheme">@style/ThemeOverlay.MaterialComponents.ActionBar</item>
         <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar</item>
-<!--        <item name="android:statusBarColor">@android:color/transparent</item>-->
-        <item name="android:statusBarColor">@color/colorBackground</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">@android:color/transparent</item>
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorBackground</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="android:colorBackgroundCacheHint">@color/colorBackground</item>
     </style>
+
     <style name="AppTheme.About" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@android:color/black</item>
         <item name="aboutPageHeaderBackground">@color/colorPrimary</item>
-<!--        <item name="aboutPageHeaderContentScrim">reference|color</item>-->
-<!--        <item name="aboutPageHeaderTextColor">color</item>-->
-<!--        <item name="aboutPageNavigationIcon">reference</item>-->
     </style>
 
 </resources>

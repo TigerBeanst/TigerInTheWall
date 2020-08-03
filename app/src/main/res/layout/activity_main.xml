@@ -2,14 +2,21 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         tools:context=".MainActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/riru_status_card"
@@ -261,6 +268,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/setting_menu"
             android:layout_width="match_parent"

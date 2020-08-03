@@ -20,9 +20,13 @@
     <string name="setting_title">Settings</string>
     <string name="about_title">About</string>
 
+    <string name="setting_page_1_title">Appearance</string>
     <string name="setting_page_dark_title">Dark Mode</string>
+    <string name="setting_page_2_title">Languages</string>
     <string name="setting_page_lang_title">Languages</string>
-    <string name="setting_page_1_title">Privacy</string>
+    <string name="setting_page_helplang_title">Help translation</string>
+    <string name="setting_page_helplang_summary">Help to translate RnShareClean into your language</string>
+    <string name="setting_page_3_title">Privacy</string>
     <string name="setting_page_appcenter_title">Use AppCenter</string>
     <string name="setting_page_appcenter_summary">Error logs will be uploaded</string>
     <string name="setting_page_appcenter_summaryNo">Error logs will not be uploaded</string>

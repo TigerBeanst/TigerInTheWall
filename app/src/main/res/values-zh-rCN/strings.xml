@@ -27,9 +27,9 @@
     <string name="setting_page_helplang_title">帮助翻译</string>
     <string name="setting_page_helplang_summary">帮忙将 氡·分享清理 翻译成您的语言</string>
     <string name="setting_page_3_title">隐私</string>
-    <string name="setting_page_appcenter_title">使用 AppCenter</string>
-    <string name="setting_page_appcenter_summary">错误日志将会被上传</string>
-    <string name="setting_page_appcenter_summaryNo">错误日志将不会被上传</string>
+    <string name="setting_page_appcenter_title">使用 AppCenter 分析</string>
+    <string name="setting_page_appcenter_summary">分析日志将会被上传</string>
+    <string name="setting_page_appcenter_summaryNo">分析日志将不会被上传</string>
 
 
 

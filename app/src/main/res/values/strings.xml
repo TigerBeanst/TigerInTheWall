@@ -27,9 +27,9 @@
     <string name="setting_page_helplang_title">Help translation</string>
     <string name="setting_page_helplang_summary">Help to translate RnShareClean into your language</string>
     <string name="setting_page_3_title">Privacy</string>
-    <string name="setting_page_appcenter_title">Use AppCenter</string>
-    <string name="setting_page_appcenter_summary">Error logs will be uploaded</string>
-    <string name="setting_page_appcenter_summaryNo">Error logs will not be uploaded</string>
+    <string name="setting_page_appcenter_title">Use AppCenter Analysis</string>
+    <string name="setting_page_appcenter_summary">Analysis logs will be uploaded</string>
+    <string name="setting_page_appcenter_summaryNo">Analysis logs will not be uploaded</string>
 
     <string name="about_page_info_title">Introduction</string>
     <string name="about_page_info">Are you tired of sharing pictures, scouring through long lists of apps just to find LINE, WhatsApp, Telegram and a few other apps you use?\n\nFacebook, Youtube, Twitter........\nWhy are you guys on my picture sharing list?\nIf I needed you, I\'d open the app myself to use it, so why take over my share list?\n\nRnShareClean is an APP that works with the Magisk modules Riru-Core and Riru-IFW Enhance, and you need to give them Root permission for writing IFW rules.</string>

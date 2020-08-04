@@ -53,7 +53,7 @@ class AboutActivity : AbsAboutActivity() {
         items.add(
             Contributor(
                 R.drawable.dev_kr328,
-                "dev_hjthjthjt",
+                "Kr328",
                 getString(R.string.about_page_dev_3),
                 "https://github.com/Kr328"
             )

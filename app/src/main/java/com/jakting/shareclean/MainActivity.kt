@@ -10,10 +10,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.jakting.shareclean.utils.SystemManager
-import com.jakting.shareclean.utils.setAppCenter
-import com.jakting.shareclean.utils.setDark
-import com.jakting.shareclean.utils.setLang
+import com.jakting.shareclean.utils.*
 import com.topjohnwu.superuser.Shell
 import com.topjohnwu.superuser.ShellUtils.isValidOutput
 import kotlinx.android.synthetic.main.activity_main.*
@@ -58,6 +55,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 riru_status_card_title.text = getString(R.string.riru_status_card_exist)
                 riru_status_card_desc.text = getString(R.string.riru_status_card_exist_detail)
                 riru_status_card_icon.setImageResource(R.drawable.ic_baseline_check_circle_24)
+                app_manage_card.setCardBackgroundColor(resources.getColor(R.color.colorCyan))
+                misc_card.setCardBackgroundColor(resources.getColor(R.color.colorBrown))
                 isWorked = true
             } else {
                 //Riru - IFW Enhance 未生效
@@ -94,6 +93,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                             goAppManage()
                         }
                         .show()
+                }else{
+                    goAppManage()
                 }
             }
             R.id.setting_menu -> {

@@ -11,6 +11,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/setting_page_2_title">
         <SimpleMenuPreference
+            android:enabled="false"
             android:key="drop_lang"
             android:entries="@array/entries_lang"
             android:entryValues="@array/entry_values"

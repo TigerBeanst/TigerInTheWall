@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/misc_disable">
+        <SwitchPreference
+            android:key="switch_disable_direct_share"
+            android:title="@string/misc_disable_direct"
+            android:defaultValue="tr"
+            android:summaryOn="@string/misc_disable_direct_msg"
+            android:summaryOff="@string/misc_disable_direct_msgNo" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

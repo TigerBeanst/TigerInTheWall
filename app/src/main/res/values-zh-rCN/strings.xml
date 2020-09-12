@@ -7,6 +7,8 @@
     <string name="riru_status_card_exist_detail">Riru - IFW Enhance 已被正确应用</string>
     <string name="riru_status_card_not">未激活模块</string>
     <string name="riru_status_card_not_detail">Riru - IFW Enhance 未被正确应用</string>
+    <string name="riru_status_card_download">您的设备可能未安装 Riru - IFW Enhance 模块。\n\n点击「下载」，前往下载页下载。</string>
+    <string name="riru_status_card_download_btn">下载</string>
 
     <string name="app_manage_card_title">应用管理</string>
     <string name="app_manage_card_detail">天天占着分享面板的辣鸡应用给爷死！！！</string>
@@ -31,9 +33,6 @@
     <string name="setting_page_appcenter_summary">分析日志将会被上传</string>
     <string name="setting_page_appcenter_summaryNo">分析日志将不会被上传</string>
 
-
-
-
     <string name="about_page_info_title">介绍</string>
     <string name="about_page_info">你是否已经厌倦了分享图片时，在冗长的分享列表里翻找APP，只为找到微信、QQ 等几个你常用的应用？\n\n百X网盘、高X地图、菜鸟X裹、X瓣、京X、淘X……\n你们为什么要出现在我的图片分享列表里？\n我如果需要你们，我自己会打开 App 来用啊，为什么要占领我的分享列表呢？\n\n「氡·分享清理」是借助 Magisk 模块 Riru - Core 和 Riru - IFW Enhance 来实现作用的 APP，同时你需要赋予其 Root 权限以进行写入 IFW 规则的操作。</string>
     <string name="about_page_dev_title">开发者</string>
@@ -42,30 +41,28 @@
     <string name="about_page_dev_3">Riru - IFW Enhance 开发者</string>
     <string name="about_page_open_title">开放源代码许可</string>
 
-    <string name="after_start">已清理本应用写入的IFW规则，请再次提交以生效</string>
-    <string name="without_root">您的设备暂未 Root，亦或是您拒绝了应用申请 Root 权限。</string>
-    <string name="submit_finish">IFW规则已生效</string>
+    <string name="appmanage_start">已清理本应用写入的IFW规则，请再次提交以生效</string>
+    <string name="appmanage_ifw_success">分享清理已应用</string>
 
-    <string name="dialog_title">向导</string>
-    <string name="dialog_content">此应用需要 Root 权限以正常工作，如若您的设备暂未 Root 或您拒绝了应用申请 Root 权限，此应用不会生效。\n\n您需要安装 Magisk，并启用 Riru - Core 和 Riru - IFW Enhance 模块。\n\n此应用每次启动，当您点击「明白了」后将会清空由本应用创建的 IFW 规则，已设置的规则将失效，在您点击提交后会重新生效。</string>
+    <string name="misc_disable">禁用</string>
+    <string name="misc_disable_direct">禁用 Direct Share</string>
+    <string name="misc_disable_direct_msg">禁用未经魔改的分享面板中的 Direct Share。此选项并不一定有效。</string>
+    <string name="misc_disable_direct_msgNo">启用未经魔改的分享面板中的 Direct Share。此选项并不一定有效。</string>
+    <string name="misc_disable_direct_toastEnable">Direct Share 已启用</string>
+    <string name="misc_disable_direct_toastDisable">Direct Share 已禁用</string>
+
+    <string name="br_backup">备份</string>
+    <string name="br_restore">还原</string>
+    <string name="br_msg">如若您的设备支持 Google 服务且已登录，氡·分享清理 将会执行自动备份，您也可以进行手动备份。\n\n但无论如何请获悉：随着版本更替，未来版本有可能不会支持旧版本的数据格式。</string>
+    <string name="br_backup_ok">备份已完成</string>
+    <string name="br_restore_ok">还原已完成，请手动重启 氡·分享清理</string>
+
     <string name="dialog_positive">明白了</string>
     <string name="dialog_negative">不了不了</string>
-
-    <string name="ifw_success">分享清理已应用</string>
 
     <string name="menu_select_all">全选</string>
     <string name="menu_clear">全不选</string>
     <string name="menu_show_system">显示系统应用</string>
-    <string name="menu_disable_direct">禁用 Direct Share</string>
-    <string name="menu_clear_toast">清理完毕，请重新启动应用</string>
-    <string name="menu_magisk">安装模块</string>
-    <string name="menu_about">关于</string>
-    <string name="menu_developer">开发者</string>
-    <string name="menu_about_dialog">应用： hjthjthjt\nRiru - Core： Rikka\nRiru - IFW Enhance： Kr328</string>
-    <string name="menu_about_blog">我的博客</string>
-    <string name="menu_magisk_msg">此应用的实现依赖于以下两个 Magisk 模块，您必须安装他们，否则 氡·分享清理 不会生效。\n\n您可以在 Magisk 仓库中找到它们，或是直接从以下链接进入 Github release 下载。\n\n请注意：由于版本的不确定性，Riru - Core 和 Riru - IFW Enhance 很有可能不支持您已安装的 Magisk 版本。</string>
-    <string name="menu_magisk_core">Riru - Core</string>
-    <string name="menu_magisk_ifwenhance">Riru - IFW Enhance</string>
 
     <string-array name="entries_dark">
         <item>跟随系统</item>

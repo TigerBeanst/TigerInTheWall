@@ -16,9 +16,6 @@ class AboutActivity : AbsAboutActivity() {
         slogan: TextView,
         version: TextView
     ) {
-//        if (!getDarkModeStatus(this)) {
-//            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-//        }
         icon.setImageResource(R.mipmap.ic_launcher)
         slogan.text = getString(R.string.app_name)
         version.text = "v" + BuildConfig.VERSION_NAME
@@ -31,9 +28,9 @@ class AboutActivity : AbsAboutActivity() {
     }
 
     override fun onItemsCreated(items: MutableList<Any>) {
-        items.add(Category("介绍与帮助"))
+        items.add(Category(getString(R.string.about_page_info_title)))
         items.add(Card(getString(R.string.about_page_info)))
-        items.add(Category("Developers"))
+        items.add(Category(getString(R.string.about_page_dev_title)))
         items.add(
             Contributor(
                 R.drawable.dev_hjthjthjt,
@@ -125,6 +122,14 @@ class AboutActivity : AbsAboutActivity() {
         )
         items.add(
             License(
+                "SmartRefreshLayout",
+                "scwang90",
+                License.APACHE_2,
+                "https://github.com/scwang90/SmartRefreshLayout"
+            )
+        )
+        items.add(
+            License(
                 "AndroidX Core",
                 "Google",
                 License.APACHE_2,
@@ -150,14 +155,6 @@ class AboutActivity : AbsAboutActivity() {
         items.add(
             License(
                 "AndroidX CardView",
-                "Google",
-                License.APACHE_2,
-                "https://source.android.com/"
-            )
-        )
-        items.add(
-            License(
-                "AndroidX SwipeRefreshLayout",
                 "Google",
                 License.APACHE_2,
                 "https://source.android.com/"

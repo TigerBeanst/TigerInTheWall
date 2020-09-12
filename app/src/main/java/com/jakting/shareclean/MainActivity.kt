@@ -1,24 +1,26 @@
 package com.jakting.shareclean
 
+import android.app.Activity
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
-import android.content.res.Configuration
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jakting.shareclean.utils.*
 import com.topjohnwu.superuser.Shell
-import com.topjohnwu.superuser.ShellUtils.isValidOutput
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.*
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     var isWorked = false //模块是否被检测到正常工作
+    private val WRITE_REQUEST_CODE: Int = 43
+    private val READ_REQUEST_CODE: Int = 42
+    private val time = System.currentTimeMillis()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,20 +34,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setModuleStatusCard()
     }
 
-    private fun init(sp:SharedPreferences) {
-        setAppCenter(sp,this)
+    private fun init(sp: SharedPreferences) {
+        setAppCenter(sp, this)
         setDark(sp)
-        setLang(sp,this)
+        //setLang(sp,this)
+        riru_status_card.setOnClickListener(this)
         app_manage_card.setOnClickListener(this)
+        misc_card.setOnClickListener(this)
+        backup_menu.setOnClickListener(this)
         setting_menu.setOnClickListener(this)
         about_menu.setOnClickListener(this)
     }
 
     private fun setModuleStatusCard() {
         val pid = android.os.Process.myPid()
-        val isRoot: Shell.Result =
-            Shell.su("cat /proc/$pid/maps").exec()
-        if (isValidOutput(isRoot.out)) {
+        if (isRoot()) {
             //授予了 Root 权限
             val result: Shell.Result =
                 Shell.su("cat /proc/$pid/maps | grep libriru_ifw_enhance.so").exec()
@@ -71,19 +74,68 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //        }
     }
 
-    private fun getDarkModeStatus(context: Context): Boolean {
-        val mode: Int =
-            context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
-        return mode == Configuration.UI_MODE_NIGHT_YES
+    private fun goAppManage() {
+        val intent = Intent(this, AppsManagementActivity::class.java)
+        startActivity(intent)
     }
 
-    private fun goAppManage() {
-        val intent = Intent(this, AppListActivity::class.java)
-        startActivity(intent)
+    private fun clickBackupRestore() {
+        MaterialAlertDialogBuilder(this)
+            .setTitle(getString(R.string.backup_title))
+            .setMessage(getString(R.string.br_msg))
+            .setNegativeButton(resources.getString(R.string.br_restore)) { dialog, which ->
+                //还原
+                val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                    addCategory(Intent.CATEGORY_OPENABLE)
+                    type = "text/plain"
+                }
+                startActivityForResult(intent, READ_REQUEST_CODE)
+            }
+            .setPositiveButton(resources.getString(R.string.br_backup)) { dialog, which ->
+                //备份
+                val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                    addCategory(Intent.CATEGORY_OPENABLE)
+                    type = "text/plain"
+                    putExtra(Intent.EXTRA_TITLE, "RnShareClean_Backup_$time")
+                }
+                startActivityForResult(intent, WRITE_REQUEST_CODE)
+            }
+            .show()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
+        super.onActivityResult(requestCode, resultCode, resultData)
+        if (requestCode == WRITE_REQUEST_CODE && resultData != null && resultData.data != null) {
+            alterDocument(resultData.data as Uri)
+            toast(getString(R.string.br_backup_ok))
+        }
+        if (requestCode == READ_REQUEST_CODE && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
+            var xml: String = readTextFromUri(resultData.data as Uri)
+            xml = xml.replace("'", "\"")
+            logd(xml)
+            if (Shell.su("touch $sc_sp_path").exec().isSuccess &&
+                Shell.su("echo '$xml' > $sc_sp_path").exec().isSuccess
+            ) {
+                toast(getString(R.string.br_restore_ok))
+            }
+        }
     }
 
     override fun onClick(p0: View?) {
         when (p0!!.id) {
+            R.id.riru_status_card -> {
+                if (!isWorked) {
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle(R.string.app_manage_dialog_title)
+                        .setMessage(R.string.riru_status_card_download)
+                        .setPositiveButton(R.string.riru_status_card_download_btn) { dialog, which ->
+                            val uri = Uri.parse("https://sc.into.icu")
+                            val intent = Intent(Intent.ACTION_VIEW, uri)
+                            startActivity(intent)
+                        }
+                        .show()
+                }
+            }
             R.id.app_manage_card -> {
                 if (!isWorked) {
                     MaterialAlertDialogBuilder(this)
@@ -93,9 +145,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                             goAppManage()
                         }
                         .show()
-                }else{
+                } else {
                     goAppManage()
                 }
+            }
+            R.id.misc_card -> {
+                val intent = Intent(this, MiscActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.backup_menu -> {
+                clickBackupRestore()
             }
             R.id.setting_menu -> {
                 val intent = Intent(this, SettingsActivity::class.java)
@@ -106,5 +165,39 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
             }
         }
+    }
+
+    private fun alterDocument(uri: Uri) {
+        try {
+            val result = Shell.su("cat $sc_sp_path").exec()
+            if (result.isSuccess) {
+                var resultS: String = result.out.joinToString("")
+                resultS = resultS.replace("'", "\"")
+                contentResolver.openFileDescriptor(uri, "w")?.use {
+                    FileOutputStream(it.fileDescriptor).use {
+                        it.write((resultS).toByteArray())
+                    }
+                }
+            }
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
+
+    @Throws(IOException::class)
+    private fun readTextFromUri(uri: Uri): String {
+        val stringBuilder = StringBuilder()
+        contentResolver.openInputStream(uri)?.use { inputStream ->
+            BufferedReader(InputStreamReader(inputStream)).use { reader ->
+                var line: String? = reader.readLine()
+                while (line != null) {
+                    stringBuilder.append(line)
+                    line = reader.readLine()
+                }
+            }
+        }
+        return stringBuilder.toString()
     }
 }

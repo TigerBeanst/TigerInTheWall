@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
-    card_view:cardElevation="5dp"
+    android:layout_height="wrap_content"
     card_view:contentPadding="5dp"
     card_view:cardCornerRadius="5dp"
-    card_view:cardMaxElevation="5dp"
+    card_view:cardElevation="5dp"
     android:layout_margin="5dp">
 
     <LinearLayout
@@ -17,7 +16,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:layout_height="60dp">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/imageview"
@@ -51,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="App Name"
-                    android:textColor="#000"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textStyle="bold"
                     card_view:layout_constraintBottom_toTopOf="@+id/Apk_Package_Name"
                     card_view:layout_constraintStart_toStartOf="parent"
@@ -66,7 +65,7 @@
                     android:layout_toEndOf="@id/imageview"
                     android:hint="ssssssssssss"
                     android:singleLine="false"
-                    android:textColor="#795548"
+                    android:textColor="?android:attr/textColorSecondary"
                     card_view:layout_constraintBottom_toBottomOf="parent"
                     card_view:layout_constraintEnd_toEndOf="parent"
                     card_view:layout_constraintHorizontal_bias="0.0"
@@ -96,4 +95,4 @@
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

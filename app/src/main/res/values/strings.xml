@@ -7,9 +7,11 @@
     <string name="riru_status_card_exist_detail">Riru - IFW Enhance has been properly applied</string>
     <string name="riru_status_card_not">Inactive module</string>
     <string name="riru_status_card_not_detail">Riru - IFW Enhance has not been properly applied</string>
+    <string name="riru_status_card_download">Your device may not have the Riru-IFW Enhance module installed.\n\nClick DOWNLOAD to go to the Download page.</string>
+    <string name="riru_status_card_download_btn">DOWNLOAD</string>
 
     <string name="app_manage_card_title">Apps Management</string>
-    <string name="app_manage_card_detail">Go to hell you f*ck app always occupy share sheet</string>
+    <string name="app_manage_card_detail">Go to hell you f*ck app always occupy my sharesheet</string>
     <string name="app_manage_dialog_title">Notice</string>
     <string name="app_manage_dialog_desc">Riru - IFW Enhance has not been properly applied. Anything you do may not take effect.</string>
 
@@ -32,41 +34,35 @@
     <string name="setting_page_appcenter_summaryNo">Analysis logs will not be uploaded</string>
 
     <string name="about_page_info_title">Introduction</string>
-    <string name="about_page_info">Are you tired of sharing pictures, scouring through long lists of apps just to find LINE, WhatsApp, Telegram and a few other apps you use?\n\nFacebook, Youtube, Twitter........\nWhy are you guys on my picture sharing list?\nIf I needed you, I\'d open the app myself to use it, so why take over my share list?\n\nRnShareClean is an APP that works with the Magisk modules Riru-Core and Riru-IFW Enhance, and you need to give them Root permission for writing IFW rules.</string>
+    <string name="about_page_info">Are you tired of sharing pictures, scouring through long lists of apps just to find LINE, WhatsApp, Telegram and a few other apps you use?\n\nFacebook, Youtube, Twitter........\nWhy are you guys on my picture sharesheet?\nIf I needed you, I\'d open the app myself to use it, so why take over my share list?\n\nRnShareClean is an APP that works with the Magisk modules Riru-Core and Riru-IFW Enhance, and you need to give them Root permission for writing IFW rules.</string>
     <string name="about_page_dev_title">Developers</string>
     <string name="about_page_dev_1">RnShareClean Developers</string>
     <string name="about_page_dev_2">Riru - Core Developers</string>
     <string name="about_page_dev_3">Riru - IFW Enhance Developers</string>
     <string name="about_page_open_title">Open Source Licenses</string>
 
+    <string name="appmanage_start">The IFW rules written by this application have been cleared. Please submit again to take effect.</string>
+    <string name="appmanage_ifw_success">Share Clean Applied</string>
 
+    <string name="misc_disable">Disable</string>
+    <string name="misc_disable_direct">Disable Direct Share</string>
+    <string name="misc_disable_direct_msg">Disable Direct Share in the unmodified Android Sharesheet. This may not take effect.</string>
+    <string name="misc_disable_direct_msgNo">Enable Direct Share in the unmodified Android Sharesheet. This may not take effect.</string>
+    <string name="misc_disable_direct_toastEnable">Direct Share has been enabled</string>
+    <string name="misc_disable_direct_toastDisable">Direct Share has been disabled</string>
 
+    <string name="br_backup">Backup</string>
+    <string name="br_restore">Restore</string>
+    <string name="br_msg">If your device supports Google services and already logged in, RnShareClean will do an automatic backup, or you can do a manual backup. \n\n Please be aware, however: as versions change, future versions may not support older versions of the data format.</string>
+    <string name="br_backup_ok">Backup completed</string>
+    <string name="br_restore_ok">Restore completed. Please restart RnShareClean manually.</string>
 
-
-    <string name="after_start">The IFW rules written by this application have been cleared. Please submit again to take effect.</string>
-    <string name="without_root">Your device is not yet Rooted or you have forbidden this application to obtain Root permission.</string>
-    <string name="submit_finish">The IFW rules are in force</string>
-
-    <string name="dialog_title">Guide</string>
-    <string name="dialog_content">This application requires Root permission to work properly.If your device is not yet Rooted or if you forbidden this application to obtain Root permission, it will not take effect.\n\nYou need to install Magisk and enable the Riru - Core and Riru - IFW Enhance modules.\n\nEach time this application is launched, the IFW rules created by this application will be cleared when you click "Got it" and the set rules will be invalidated and will take effect again after you click Submit.</string>
     <string name="dialog_positive">Got it</string>
     <string name="dialog_negative">Don\'t</string>
-
-    <string name="ifw_success">Share Clean Applied</string>
 
     <string name="menu_select_all">Select all</string>
     <string name="menu_clear">Unselect All</string>
     <string name="menu_show_system">Show System Apps</string>
-    <string name="menu_disable_direct">Disable Direct Share</string>
-    <string name="menu_clear_toast">Clean up, please restart the application</string>
-    <string name="menu_magisk">Install Module</string>
-    <string name="menu_about">About</string>
-    <string name="menu_developer">Developer</string>
-    <string name="menu_about_dialog">App: hjthjthjt\nRiru - Core: Rikka\nRiru - IFW Enhance: Kr328</string>
-    <string name="menu_about_blog">My Blog</string>
-    <string name="menu_magisk_msg">The implementation of this application relies on the following two Magisk modules, you must install them or RnShareClean will not take effect.\n\nYou can find them in the Magisk repository, or go directly to the Github release download from the link below.\n\nPlease note: Due to version uncertainty, Riru - Core and Riru - IFW Enhance will most likely not support the version of Magisk that you have installed.</string>
-    <string name="menu_magisk_core">Riru - Core</string>
-    <string name="menu_magisk_ifwenhance">Riru - IFW Enhance</string>
 
     <string-array name="entries_dark">
         <item>Follow system</item>

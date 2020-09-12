@@ -6,26 +6,23 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.jakting.shareclean.utils.getDarkModeStatus
-import com.jakting.shareclean.utils.logd
-import com.jakting.shareclean.utils.setDark
-import com.jakting.shareclean.utils.setLang
+import com.jakting.shareclean.utils.*
 import moe.shizuku.preference.*
 
 
-class SettingsActivity : AppCompatActivity() {
+class MiscActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_settings)
+        setContentView(R.layout.activity_misc)
         if (savedInstanceState == null) {
-            val fragment = SettingsFragment()
-            supportFragmentManager.beginTransaction().replace(R.id.settings, fragment).commit()
+            val fragment = MiscFragment()
+            supportFragmentManager.beginTransaction().replace(R.id.misc, fragment).commit()
         }
 
         setSupportActionBar(findViewById(R.id.toolbar))
         if (supportActionBar != null) {
-            supportActionBar!!.title = getString(R.string.setting_title)
+            supportActionBar!!.title = getString(R.string.misc_card_title)
             //supportActionBar!!.subtitle = "v" + BuildConfig.VERSION_NAME
         }
         if (!getDarkModeStatus(this)) {
@@ -34,26 +31,14 @@ class SettingsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    internal class SettingsFragment : PreferenceFragment(),
+    internal class MiscFragment : PreferenceFragment(),
         OnSharedPreferenceChangeListener, Preference.OnPreferenceChangeListener {
         override fun onCreatePreferences(bundle: Bundle?, s: String?) {
             preferenceManager.defaultPackages = arrayOf(BuildConfig.APPLICATION_ID + ".")
             preferenceManager.sharedPreferencesName = "settings"
             preferenceManager.sharedPreferencesMode = Context.MODE_PRIVATE
-            setPreferencesFromResource(R.xml.settings, null)
+            setPreferencesFromResource(R.xml.misc, null)
 
-            //暗色模式
-            val darkPreference = findPreference("drop_dark") as ListPreference
-            if (darkPreference.value == null) {
-                darkPreference.setValueIndex(0)
-            }
-            darkPreference.onPreferenceChangeListener = this
-            //多语言
-            val langPreference = findPreference("drop_lang") as ListPreference
-            if (langPreference.value == null) {
-                langPreference.setValueIndex(0)
-            }
-            langPreference.onPreferenceChangeListener = this
         }
 
         override fun onCreateItemDecoration(): DividerDecoration {
@@ -80,8 +65,7 @@ class SettingsActivity : AppCompatActivity() {
             logd("onSharedPreferenceChanged $key")
             val sp = activity!!.getSharedPreferences("settings", Context.MODE_PRIVATE)
             when (key) {
-                "drop_dark" -> setDark(sp)
-                "drop_lang" -> setLang(sp, activity!!)
+                "switch_disable_direct_share" -> setDirectShare(sp,context)
             }
         }
 

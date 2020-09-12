@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.jakting.shareclean">
-
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="*/*" />
+        </intent>
+    </queries>
     <application
         android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -15,6 +20,10 @@
             android:label="@string/setting_title"
             android:parentActivityName=".MainActivity"/>
         <activity
+            android:name=".MiscActivity"
+            android:label="@string/misc_card_title"
+            android:parentActivityName=".MainActivity"/>
+        <activity
             android:name=".AboutActivity"
             android:theme="@style/AppTheme.About" />
         <activity android:name=".MainActivity">
@@ -23,7 +32,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AppListActivity" />
+        <activity android:name=".AppsManagementActivity"
+            android:label="@string/app_manage_card_title"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

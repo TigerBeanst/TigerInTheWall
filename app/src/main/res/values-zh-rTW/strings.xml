@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RnShareClean</string>
+    <string name="riru_status_card_cannot">無法取得模組狀態</string>
+    <string name="riru_status_card_cannot_detail">請給予Root權限後重啟此應用程式</string>
+    <string name="riru_status_card_exist">模組已啟用</string>
+    <string name="riru_status_card_exist_detail">Riru - IFW Enhance 正常運作中</string>
+    <string name="riru_status_card_not">模組未啟用</string>
+    <string name="riru_status_card_not_detail">無法偵測到Riru - IFW Enhance運作中</string>
+    <string name="riru_status_card_download">您的設備可能未安裝Riru-IFW Enhance模組。
+點擊下載來前往下載頁面。</string>
+    <string name="riru_status_card_download_btn">下載</string>
+    <string name="app_manage_card_title">應用程式管理</string>
+    <string name="app_manage_card_detail">他X的一直占據我的分享清單，滾出去</string>
+    <string name="app_manage_dialog_title">注意</string>
+    <string name="app_manage_dialog_desc">由於無偵測到Riru - IFW Enhance運作中，此處任何設定皆不會生效。</string>
+    <string name="misc_card_title">其他</string>
+    <string name="misc_card_detail">一些您可能想啟用的功能</string>
+    <string name="backup_title">備份 &amp; 還原</string>
+    <string name="setting_title">設定</string>
+    <string name="about_title">關於</string>
+    <string name="setting_page_1_title">外觀</string>
+    <string name="setting_page_dark_title">黑暗模式</string>
+    <string name="setting_page_2_title">語言</string>
+    <string name="setting_page_lang_title">語言</string>
+    <string name="setting_page_helplang_title">貢獻翻譯</string>
+    <string name="setting_page_helplang_summary">協助RnShareClean其他語言的翻譯</string>
+    <string name="setting_page_3_title">隱私</string>
+    <string name="setting_page_appcenter_title">使用AppCenter Analysis</string>
+    <string name="setting_page_appcenter_summary">分析日誌將會被上傳</string>
+    <string name="setting_page_appcenter_summaryNo">分析日誌將不會被上傳</string>
+    <string name="about_page_info_title">介紹</string>
+    <string name="about_page_info">您是否厭倦了共享圖片時，需要瀏覽一長串應用程序後才能找到LINE、WhatsApp、Telegram或您使用的其他一些應用程序?
+
+Facebook、Youtube、Twitter ........
+為什麼你們會在我照片的分享清單上?
+如果需要你們的話，我會自己打開這些APP來分享照片，那為什麼還要出現在我的分享清單中?
+
+RnShareClean是一款透過Magisk模塊(Riru-Core &amp; Riru-IFW Enhance)執行的APP，您需要給予Root權限才能編輯IFW規則。</string>
+    <string name="about_page_dev_title">開發者</string>
+    <string name="about_page_dev_1">RnShareClean 開發者</string>
+    <string name="about_page_dev_2">Riru - Core 開發者</string>
+    <string name="about_page_dev_3">Riru - IFW Enhance 開發者</string>
+    <string name="about_page_open_title">開源許可證</string>
+    <string name="appmanage_start">此APP編寫的IFW規則已被清除。
+請再次提交以生效。</string>
+    <string name="appmanage_ifw_success">Share Clean Applied</string>
+    <string name="misc_disable">禁用</string>
+    <string name="misc_disable_direct">禁用Direct Share</string>
+    <string name="misc_disable_direct_msg">禁止Direct Share出現在Android的分享清單中。這有可能不會生效。</string>
+    <string name="misc_disable_direct_msgNo">允許Direct Share出現在Android的分享清單中。這有可能不會生效。</string>
+    <string name="misc_disable_direct_toastEnable">Direct Share已被啟用</string>
+    <string name="misc_disable_direct_toastDisable">Direct Share已被禁用</string>
+    <string name="br_backup">備份</string>
+    <string name="br_restore">還原</string>
+    <string name="br_msg">如果您的裝置支持Google服務並且已經登錄，則RnShareClean將自動備份，或者您也可以進行手動備份。
+
+但請注意：隨著版本的更改，未來的版本可能會無法支持舊版本的備份。</string>
+    <string name="br_backup_ok">備份完成</string>
+    <string name="br_restore_ok">還原完成。請手動重啟RnShareClean。</string>
+    <string name="dialog_positive">我知道了</string>
+    <string name="dialog_negative">先不要</string>
+    <string name="menu_select_all">全選</string>
+    <string name="menu_clear">反全選</string>
+    <string name="menu_show_system">顯示系統應用程式</string>
+    <string-array name="entries_dark">
+        <item>Follow system</item>
+        <item>Always on</item>
+        <item>Always off</item>
+    </string-array>
+    <string-array name="entries_lang">
+        <item>Follow system</item>
+        <item translatable="false">简体中文</item>
+        <item translatable="false">English</item>
+    </string-array>
+</resources>

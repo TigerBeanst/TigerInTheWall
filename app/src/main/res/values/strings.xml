@@ -12,13 +12,13 @@
 
     <string name="manage_dialog_title">Notice</string>
     <string name="manage_dialog_desc">Riru - IFW Enhance has not been properly applied. Anything you do may not take effect.</string>
-    <string name="send_manage_card_title">Share Clean</string>
-    <string name="send_manage_card_detail">Go to hell you f*ck app always occupy my sharesheet</string>
-    <string name="view_manage_card_title">Share Clean</string>
-    <string name="view_manage_card_detail">Go to hell you f*ck app always occupy my sharesheet</string>
+    <string name="send_manage_card_title">Share Via…</string>
+    <string name="send_manage_card_detail">Clean up apps that occupy the sharesheet</string>
+    <string name="view_manage_card_title">Open With…</string>
+    <string name="view_manage_card_detail">Clean up apps that occupy the open mode sheet</string>
 
-    <string name="misc_card_title">Miscellaneous</string>
-    <string name="misc_card_detail">Other features you might want</string>
+    <string name="misc_title">Miscellaneous</string>
+    <string name="misc_detail">Other features you might want</string>
 
     <string name="backup_title">Backup &amp; Restore</string>
     <string name="setting_title">Settings</string>
@@ -35,7 +35,7 @@
     <string name="setting_page_appcenter_summaryNo">Analysis logs will not be uploaded</string>
 
     <string name="about_page_info">Introduction</string>
-    <string name="about_page_info_desc">Are you tired of sharing pictures, scouring through long lists of apps just to find LINE, WhatsApp, Telegram and a few other apps you use?\n\nFacebook, Youtube, Twitter........\nWhy are you guys on my picture sharesheet?\nIf I needed you, I\'d open the app myself to use it, so why take over my share list?\n\nRnIntentClean is an APP that works with the Magisk modules Riru-Core and Riru-IFW Enhance, and you need to give them Root permission for writing IFW rules.</string>
+    <string name="about_page_info_desc">Are you tired of scouring through long lists of apps when sharing pictures or open a file just to find a few apps that you use a lot?\n\nWhy are you app in my sharesheet or open mode sheet??\nIf I needed you, I\'d open the app myself to use it!\n\nRnIntentClean is an App that allow you to clean up your sharesheet and open mode sheet, which works with the Magisk modules "Riru-Core" and "Riru-IFW Enhance", and root permission.</string>
     <string name="about_page_dev">Developers</string>
     <string name="about_page_dev_1">RnIntentClean Developers</string>
     <string name="about_page_dev_2">Riru - Core Developers</string>
@@ -47,8 +47,9 @@
 
     <string name="misc_disable">Disable</string>
     <string name="misc_disable_direct">Disable Direct Share</string>
-    <string name="misc_disable_direct_msg">Disable Direct Share in the unmodified Android Sharesheet. This may not take effect.</string>
-    <string name="misc_disable_direct_msgNo">Enable Direct Share in the unmodified Android Sharesheet. This may not take effect.</string>
+    <string name="misc_disable_direct_msg">Disable Direct Share in the unmodified Android Sharesheet. This is not available on Android 10+ devices.</string>
+    <string name="misc_disable_direct_msgNo">Enable Direct Share in the unmodified Android Sharesheet. This is not available on Android 10+ devices.</string>
+    <string name="misc_disable_direct_No">This is not available on Android 10+ devices.</string>
     <string name="misc_disable_direct_toastEnable">Direct Share has been enabled</string>
     <string name="misc_disable_direct_toastDisable">Direct Share has been disabled</string>
 

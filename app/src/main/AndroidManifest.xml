@@ -21,7 +21,7 @@
             android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".MiscActivity"
-            android:label="@string/misc_card_title"
+            android:label="@string/misc_title"
             android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".AboutActivity"

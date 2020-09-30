@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.res.Configuration
+import android.os.Build
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -97,17 +98,23 @@ fun getDarkModeStatus(context: Context): Boolean {
     return mode == Configuration.UI_MODE_NIGHT_YES
 }
 
-fun setDirectShare(sp: SharedPreferences,context: Context?) {
-    when (sp.getBoolean("switch_disable_direct_share", false)) {
-        false -> { //启用
-            if (Shell.su("rm -f $ifw_direct_share_file_path").exec().isSuccess) {
-                context.toast(context?.getString(R.string.misc_disable_direct_toastEnable) as String)
+fun setDirectShare(sp: SharedPreferences, context: Context?) {
+    if (Build.VERSION.SDK_INT >= 29) {
+        context.toast(context?.getString(R.string.misc_disable_direct_No) as String)
+    } else {
+        when (sp.getBoolean("switch_disable_direct_share", false)) {
+            false -> { //启用
+                if (Shell.su("rm -f $ifw_direct_share_file_path").exec().isSuccess) {
+                    context.toast(context?.getString(R.string.misc_disable_direct_toastEnable) as String)
+                }
             }
-        }
-        true -> { //禁用
-            if(Shell.su("touch $ifw_direct_share_file_path").exec().isSuccess &&
-                Shell.su("echo '$ifw_send_content_direct_share' > $ifw_direct_share_file_path").exec().isSuccess){
-                context.toast(context?.getString(R.string.misc_disable_direct_toastDisable) as String)
+            true -> { //禁用
+                if (Shell.su("touch $ifw_direct_share_file_path").exec().isSuccess &&
+                    Shell.su("echo '$ifw_send_content_direct_share' > $ifw_direct_share_file_path")
+                        .exec().isSuccess
+                ) {
+                    context.toast(context?.getString(R.string.misc_disable_direct_toastDisable) as String)
+                }
             }
         }
     }

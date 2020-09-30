@@ -22,7 +22,7 @@ class MiscActivity : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.toolbar))
         if (supportActionBar != null) {
-            supportActionBar!!.title = getString(R.string.misc_card_title)
+            supportActionBar!!.title = getString(R.string.misc_title)
             //supportActionBar!!.subtitle = "v" + BuildConfig.VERSION_NAME
         }
         if (!getDarkModeStatus(this)) {

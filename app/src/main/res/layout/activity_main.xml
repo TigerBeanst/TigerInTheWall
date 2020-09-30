@@ -198,10 +198,10 @@
                     android:paddingEnd="16dp">
 
                     <TextView
-                        android:id="@+id/misc_card_title"
+                        android:id="@+id/misc_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/misc_card_title"
+                        android:text="@string/misc_title"
                         android:textSize="18sp"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         android:textColor="@color/colorFont"
@@ -213,7 +213,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:textSize="14sp"
-                        android:text="@string/misc_card_detail"
+                        android:text="@string/misc_detail"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="@color/colorFontSecond" />
                 </LinearLayout>

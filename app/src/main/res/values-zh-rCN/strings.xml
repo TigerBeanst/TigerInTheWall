@@ -10,13 +10,13 @@
     <string name="riru_status_card_download">您的设备可能未安装 Riru - IFW Enhance 模块。\n\n点击「下载」，前往下载页下载。</string>
     <string name="riru_status_card_download_btn">下载</string>
 
-    <string name="send_manage_card_title">应用管理</string>
-    <string name="send_manage_card_detail">天天占着分享面板的辣鸡应用给爷死！！！</string>
+    <string name="send_manage_card_title">分享到…</string>
+    <string name="send_manage_card_detail">清理占用分享面板的应用</string>
     <string name="manage_dialog_title">提示</string>
     <string name="manage_dialog_desc">Riru - IFW Enhance 未被正确应用。您所做的任何操作可能都不会生效。</string>
 
-    <string name="misc_card_title">杂项</string>
-    <string name="misc_card_detail">另外的一些您也许想要的功能</string>
+    <string name="misc_title">杂项</string>
+    <string name="misc_detail">另外的一些您也许想要的功能</string>
 
     <string name="setting_title">设置</string>
     <string name="backup_title">备份 &amp; 还原</string>
@@ -24,8 +24,6 @@
 
     <string name="setting_page_appearance">界面</string>
     <string name="setting_page_dark_mode">暗色模式</string>
-    <string name="setting_page_language">语言</string>
-    <string name="setting_page_language">多语言</string>
     <string name="setting_page_helplang">帮助翻译</string>
     <string name="setting_page_helplang_summary">帮忙将 氡·意图清理 翻译成您的语言</string>
     <string name="setting_page_privacy">隐私</string>
@@ -34,7 +32,7 @@
     <string name="setting_page_appcenter_summaryNo">分析日志将不会被上传</string>
 
     <string name="about_page_info">介绍</string>
-    <string name="about_page_info_desc">你是否已经厌倦了分享图片时，在冗长的分享列表里翻找APP，只为找到微信、QQ 等几个你常用的应用？\n\n百X网盘、高X地图、菜鸟X裹、X瓣、京X、淘X……\n你们为什么要出现在我的图片分享列表里？\n我如果需要你们，我自己会打开 App 来用啊，为什么要占领我的分享列表呢？\n\n「氡·意图清理」是借助 Magisk 模块 Riru - Core 和 Riru - IFW Enhance 来实现作用的 APP，同时你需要赋予其 Root 权限以进行写入 IFW 规则的操作。</string>
+    <string name="about_page_info_desc">你是否已经厌倦了分享图片或打开文件时，在冗长的分享列表里翻找，却只为找到几个你常用的应用？\n\n你们这些应用为什么要出现在我的图片分享面板和打开方式里？\n我如果需要你们，我自己会打开 App 来用啊！\n\n「氡·意图清理」是一款允许您清理分享面板和打开方式面板的应用，它借助 Magisk 模块 Riru - Core 和 Riru - IFW Enhance 来实现作用，当然 root 权限也是必需的。</string>
     <string name="about_page_dev">开发者</string>
     <string name="about_page_dev_1">氡·意图清理 开发者</string>
     <string name="about_page_dev_2">Riru - Core 开发者</string>
@@ -46,8 +44,8 @@
 
     <string name="misc_disable">禁用</string>
     <string name="misc_disable_direct">禁用 Direct Share</string>
-    <string name="misc_disable_direct_msg">禁用未经魔改的分享面板中的 Direct Share。此选项并不一定有效。</string>
-    <string name="misc_disable_direct_msgNo">启用未经魔改的分享面板中的 Direct Share。此选项并不一定有效。</string>
+    <string name="misc_disable_direct_msg">禁用未经魔改的分享面板中的 Direct Share。此选项无法在 Android 10 及以上的设备上使用。</string>
+    <string name="misc_disable_direct_msgNo">启用未经魔改的分享面板中的 Direct Share。此选项无法在 Android 10 及以上的设备上使用。</string>
     <string name="misc_disable_direct_toastEnable">Direct Share 已启用</string>
     <string name="misc_disable_direct_toastDisable">Direct Share 已禁用</string>
 
@@ -75,4 +73,8 @@
         <item>简体中文</item>
         <item>English</item>
     </string-array>
+    <string name="view_manage_card_title">打开方式…</string>
+    <string name="view_manage_card_detail">清理占用打开方式面板的应用</string>
+    <string name="setting_page_language">语言</string>
+    <string name="misc_disable_direct_No">此选项无法在 Android 10 及以上的设备上使用。</string>
 </resources>

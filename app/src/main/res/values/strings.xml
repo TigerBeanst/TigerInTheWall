@@ -41,8 +41,9 @@
     <string name="about_page_dev_3">Riru - IFW Enhance Developers</string>
     <string name="about_page_open_source">Open Source Licenses</string>
 
-    <string name="appmanage_start">The IFW rules written by this application have been cleared. Please submit again to take effect.</string>
-    <string name="appmanage_ifw_success">Share Clean Applied</string>
+    <string name="manage_start">The IFW rules written by this application have been cleared. Please submit again to take effect.</string>
+    <string name="manage_send_success">Share Clean Applied</string>
+    <string name="manage_view_success">Open Mode Clean Applied</string>
 
     <string name="misc_disable">Disable</string>
     <string name="misc_disable_direct">Disable Direct Share</string>

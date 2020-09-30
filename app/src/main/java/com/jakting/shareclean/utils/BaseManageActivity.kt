@@ -1,5 +1,6 @@
 package com.jakting.shareclean.utils
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -23,12 +24,10 @@ open class BaseManageActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefres
     open var mSwipeLayout: SwipeRefreshLayout? = null
     open var adapterA: RecyclerView.Adapter<*>? = null
     open var recyclerViewLayoutManager: RecyclerView.LayoutManager? = null
-    open lateinit var sp: SharedPreferences
-    open lateinit var spe: SharedPreferences.Editor
     open var isShowSystemApp = false
-    open var isDisableDirectShare = false
     open var map: MutableMap<String, Boolean>? = null
 
+    @SuppressLint("CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (!getDarkModeStatus(this)) {
@@ -48,8 +47,6 @@ open class BaseManageActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefres
             R.color.colorAccent,
             R.color.colorPrimary
         )
-        sp = this.getSharedPreferences("data", Context.MODE_PRIVATE)
-        spe = this.getSharedPreferences("data", Context.MODE_PRIVATE).edit()
 
         recyclerViewLayoutManager = GridLayoutManager(this@BaseManageActivity, 1)
         recyclerView!!.layoutManager = recyclerViewLayoutManager
@@ -63,16 +60,7 @@ open class BaseManageActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefres
         }, 1000)
     }
 
-    open fun clearIFW() {
-        if (Shell.su("rm -f $ifw_file_path").exec().isSuccess) {
-            mSwipeLayout?.post {
-                mSwipeLayout?.isRefreshing = true
-            }
-            onRefresh()
-            recyclerView?.sbarin(getString(R.string.appmanage_start))
-                ?.setAction(getString(R.string.dialog_positive)) {}?.show()
-        }
-    }
+    open fun clearIFW(){}
 
     open fun init() {
         //滑动隐藏 FAB
@@ -86,47 +74,6 @@ open class BaseManageActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefres
                 }
             }
         })
-//        val apkInfoExtractor = ApkInfoSend(this@BaseManageActivity)
-//        adapterA = AppsAdapter(
-//            this@BaseManageActivity,
-//            apkInfoExtractor.getAllInstalledApkInfo(isShowSystemApp)!!
-//        )
-//        recyclerView!!.adapter = adapterA
-//        map = (adapterA as AppsAdapter).map
-//        (map as MutableMap<String, Boolean>).entries.forEach {
-//            if (sp.getBoolean(it.key, false)) {
-//                (map as MutableMap<String, Boolean>)[it.key] = true
-//            }
-//        }
-//        (adapterA as AppsAdapter).notifyDataSetChanged()
-//        floating_action_button.setOnClickListener {
-//            floating_action_button.setImageResource(R.drawable.ic_cached_black_24dp)
-//            var ifw = "<rules>\n"
-//            spe.clear()
-//            (map as MutableMap<String, Boolean>).entries.forEach {
-//                //logd(it.key)
-//                if (it.value) {
-//                    val list = it.key.split('/')
-//                    //logd("list: $list")
-//                    //logd("${list[0]} // ${list[1]}")
-//                    spe.putBoolean("${list[0]}/${list[1]}", it.value)
-//                    ifw += String.format(ifw_send_content, list[0], list[1])
-//                }
-//            }
-//            if (isDisableDirectShare) {
-//                ifw += ifw_send_content_direct_share
-//            }
-//            ifw += "</rules>"
-//            spe.apply()
-//            if (Shell.su("touch $ifw_file_path").exec().isSuccess &&
-//                Shell.su("echo '$ifw' > $ifw_file_path").exec().isSuccess
-//            ) {
-//                recyclerView?.sbar(getString(R.string.appmanage_ifw_success))?.show()
-//                floating_action_button.setImageResource(R.drawable.ic_check_black_24dp)
-//            }
-//            //toast(getString(R.string.appmanage_ifw_success))
-//            //logd(ifw)
-//        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

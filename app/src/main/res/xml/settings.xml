@@ -22,7 +22,7 @@
             android:summary="@string/setting_page_helplang_summary" >
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://poeditor.com/join/project/6xirMXaNwq" />
+                android:data="https://crwd.in/rnintentclean" />
         </Preference>
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/setting_page_privacy">

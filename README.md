@@ -1,31 +1,20 @@
 # RnIntentClean
-Are you tired of sharing pictures, scouring through long lists of apps just to find LINE, WhatsApp, Telegram and a few other apps you use?
+![RnIntentClean Icon](https://raw.githubusercontent.com/hjthjthjt/RnIntentClean/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
+Are you tired of scouring through long lists of apps when sharing pictures or open a file just to find a few apps that you use a lot?
 
-Facebook, Youtube, Twitter........
-Why are you guys on my picture sharing list?
-If I needed you, I'd open the app myself to use it, so why take over my share list?
+Why are you app in my sharesheet or open mode sheet??
 
-RnIntentClean is an APP that works with the Magisk modules [Riru - Core](https://github.com/RikkaApps/Riru/releases/latest) and [Riru - IFW Enhance](https://github.com/Kr328/Riru-IFWEnhance/releases/latest), and you need to give them Root permission for writing IFW rules.
+If I needed you, I'd open the app myself to use it!
 
-# You need to follow these steps to use
-1. Install Magisk.
-2. Install [Riru - Core](https://github.com/RikkaApps/Riru/releases/latest) and [Riru - IFW Enhance](https://github.com/Kr328/Riru-IFWEnhance/releases/latest) modules, which can be found in "Downloads" of Magisk Manager, or you can go to their Github release to download them (the link can be found in RnIntentClean).
-3. You may need to reboot the device to apply the module.
-4. Open RnIntentClean and give it Root permission.
-5. Select the apps you DON'T WANT that appear in the list, you can make use of the Select All feature.
-6. Click Submit.
-7. Try to share picture and see if it works.
+RnIntentClean is an App that allow you to clean up your sharesheet and open mode sheet, which works with the Magisk modules "Riru-Core" and "Riru-IFW Enhance", and root permission.
 
-Come join the translation!: https://poeditor.com/join/project/6xirMXaNwq
+# Download
+See [https://ic.into.icu/download/](https://ic.into.icu/download/)
 
-# Note
-Note 1: Each time this application is launched, the IFW rules created by this application will be cleared when you click "Got it" and the set rules will be invalidated and will take effect again after you click Submit. It also clears when you switch the "Show System Apps" status.
+# Guide
+See [https://ic.into.icu/guide/](https://ic.into.icu/guide/)
 
-Note 2: The implementation of this application relies on the following two Magisk modules, you must install them or RnIntentClean will not take effect., even if you have given it Root permission. Due to version uncertainty, Riru - Core and Riru - IFW Enhance will most likely not support the version of Magisk that you have installed.
-
-Note 3: Riru - IFW Enhance requires Riru - Core v19+ and Android 8.0+. Disable Direct Share may not take effect on Android 10+.
-
-Note 4: RnIntentClean works with IFW, so there is no guarantee that all systems will support IFW, but it has been tested on the following systems.
+Come join the translation!: https://crwd.in/rnintentclean
 
 # Works System
 1. Hydrogen/Oxygen OS with Android 10
@@ -33,3 +22,19 @@ Note 4: RnIntentClean works with IFW, so there is no guarantee that all systems 
 
 # Legal attribution
 Google Play and the Google Play logo are trademarks of Google LLC.
+
+# License
+
+    Copyright (C) 2020 hjthjthjt
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.

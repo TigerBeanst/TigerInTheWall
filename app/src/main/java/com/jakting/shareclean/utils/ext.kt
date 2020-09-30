@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.activity_apps.*
 import java.util.*
 
 const val sc_sp_path = "/data/data/com.jakting.shareclean/shared_prefs/data.xml"
+const val ifw_file_path_old = "/data/system/ifw/RnShareClean.xml"
 const val ifw_send_file_path = "/data/system/ifw/RnIntentClean_send.xml"
 const val ifw_view_file_path = "/data/system/ifw/RnIntentClean_view.xml"
 const val ifw_direct_share_file_path = "/data/system/ifw/RnIntentClean_direct_share.xml"

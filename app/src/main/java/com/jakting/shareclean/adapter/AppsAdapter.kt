@@ -13,7 +13,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.alibaba.fastjson.JSONArray
 import com.jakting.shareclean.R
-import com.jakting.shareclean.utils.ApkInfoExtractor
+import com.jakting.shareclean.utils.ApkInfoSend
 import com.jakting.shareclean.utils.logd
 
 
@@ -64,7 +64,7 @@ class AppsAdapter : RecyclerView.Adapter<AppsAdapter.ViewHolder> {
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        val apkInfoExtractor = ApkInfoExtractor(context1)
+        val apkInfoExtractor = ApkInfoSend(context1)
         val ActivityJSONObject = json.getJSONObject(position)
         val PackgeName = ActivityJSONObject["package_name"] as String
         val ActivityS = ActivityJSONObject["activity"] as String

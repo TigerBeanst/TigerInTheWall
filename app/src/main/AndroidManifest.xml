@@ -32,7 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AppsManagementActivity"
+        <activity android:name=".SendManageActivity"
             android:label="@string/app_manage_card_title"
             android:parentActivityName=".MainActivity" />
     </application>

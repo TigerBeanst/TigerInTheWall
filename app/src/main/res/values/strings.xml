@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RnShareClean</string>
+    <string name="app_name">RnIntentClean</string>
 
     <string name="riru_status_card_cannot">Unable to get module status</string>
     <string name="riru_status_card_cannot_detail">Please restart the application after giving Root permission</string>
@@ -27,16 +27,16 @@
     <string name="setting_page_2_title">Languages</string>
     <string name="setting_page_lang_title">Languages</string>
     <string name="setting_page_helplang_title">Help translation</string>
-    <string name="setting_page_helplang_summary">Help to translate RnShareClean into your language</string>
+    <string name="setting_page_helplang_summary">Help to translate RnIntentClean into your language</string>
     <string name="setting_page_3_title">Privacy</string>
     <string name="setting_page_appcenter_title">Use AppCenter Analysis</string>
     <string name="setting_page_appcenter_summary">Analysis logs will be uploaded</string>
     <string name="setting_page_appcenter_summaryNo">Analysis logs will not be uploaded</string>
 
     <string name="about_page_info_title">Introduction</string>
-    <string name="about_page_info">Are you tired of sharing pictures, scouring through long lists of apps just to find LINE, WhatsApp, Telegram and a few other apps you use?\n\nFacebook, Youtube, Twitter........\nWhy are you guys on my picture sharesheet?\nIf I needed you, I\'d open the app myself to use it, so why take over my share list?\n\nRnShareClean is an APP that works with the Magisk modules Riru-Core and Riru-IFW Enhance, and you need to give them Root permission for writing IFW rules.</string>
+    <string name="about_page_info">Are you tired of sharing pictures, scouring through long lists of apps just to find LINE, WhatsApp, Telegram and a few other apps you use?\n\nFacebook, Youtube, Twitter........\nWhy are you guys on my picture sharesheet?\nIf I needed you, I\'d open the app myself to use it, so why take over my share list?\n\nRnIntentClean is an APP that works with the Magisk modules Riru-Core and Riru-IFW Enhance, and you need to give them Root permission for writing IFW rules.</string>
     <string name="about_page_dev_title">Developers</string>
-    <string name="about_page_dev_1">RnShareClean Developers</string>
+    <string name="about_page_dev_1">RnIntentClean Developers</string>
     <string name="about_page_dev_2">Riru - Core Developers</string>
     <string name="about_page_dev_3">Riru - IFW Enhance Developers</string>
     <string name="about_page_open_title">Open Source Licenses</string>
@@ -53,9 +53,9 @@
 
     <string name="br_backup">Backup</string>
     <string name="br_restore">Restore</string>
-    <string name="br_msg">If your device supports Google services and already logged in, RnShareClean will do an automatic backup, or you can do a manual backup. \n\n Please be aware, however: as versions change, future versions may not support older versions of the data format.</string>
+    <string name="br_msg">If your device supports Google services and already logged in, Android will do an automatic backup, or you can do a manual backup. \n\n Please be aware, however: as versions change, future versions may not support older versions of the data format.</string>
     <string name="br_backup_ok">Backup completed</string>
-    <string name="br_restore_ok">Restore completed. Please restart RnShareClean manually.</string>
+    <string name="br_restore_ok">Restore completed. Please restart RnIntentClean manually.</string>
 
     <string name="dialog_positive">Got it</string>
     <string name="dialog_negative">Don\'t</string>

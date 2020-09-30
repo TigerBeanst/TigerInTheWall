@@ -10,8 +10,8 @@ android {
         applicationId "com.jakting.shareclean"
         minSdkVersion 26
         targetSdkVersion 30
-        versionCode 20200912
-        versionName "1.0.0"
+        versionCode 20200913
+        versionName "1.0.1"
 
     }
 
@@ -33,7 +33,7 @@ repositories {
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    def appCenterSdkVersion = '3.2.2'
+    def appCenterSdkVersion = '3.3.0'
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

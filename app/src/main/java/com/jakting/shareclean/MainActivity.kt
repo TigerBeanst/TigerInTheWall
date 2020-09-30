@@ -17,10 +17,9 @@ import java.io.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    var isWorked = false //模块是否被检测到正常工作
+    var isWorked = false //标志 - 模块是否被检测到正常工作
     private val WRITE_REQUEST_CODE: Int = 43
     private val READ_REQUEST_CODE: Int = 42
-    private val time = System.currentTimeMillis()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,7 +74,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun goAppManage() {
-        val intent = Intent(this, AppsManagementActivity::class.java)
+        val intent = Intent(this, SendManageActivity::class.java)
         startActivity(intent)
     }
 
@@ -96,7 +95,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
                     type = "text/plain"
-                    putExtra(Intent.EXTRA_TITLE, "RnShareClean_Backup_$time")
+                    val time = System.currentTimeMillis() //用于 备份&恢复 的时间戳
+                    putExtra(Intent.EXTRA_TITLE, "RnIntentClean_Backup_$time")
                 }
                 startActivityForResult(intent, WRITE_REQUEST_CODE)
             }

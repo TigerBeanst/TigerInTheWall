@@ -18,10 +18,10 @@ import kotlinx.android.synthetic.main.activity_apps.*
 import java.util.*
 
 const val sc_sp_path = "/data/data/com.jakting.shareclean/shared_prefs/data.xml"
-const val ifw_file_path = "/data/system/ifw/RnShareClean.xml"
-const val ifw_direct_share_file_path = "/data/system/ifw/RnShareClean_direct_share.xml"
+const val ifw_file_path = "/data/system/ifw/RnIntentClean.xml"
+const val ifw_direct_share_file_path = "/data/system/ifw/RnIntentClean_direct_share.xml"
 
-const val ifw_content =
+const val ifw_send_content =
     "   <activity block=\"true\" log=\"true\">\n" +
             "    <intent-filter>\n" +
             "      <action name=\"android.intent.action.SEND\" />\n" +
@@ -36,7 +36,22 @@ const val ifw_content =
             "      </not>\n" +
             "    </or>\n" +
             "  </activity>\n"
-const val ifw_content_direct_share =
+const val ifw_view_content =
+    "   <activity block=\"true\" log=\"true\">\n" +
+            "    <intent-filter>\n" +
+            "      <action name=\"android.intent.action.VIEW\" />\n" +
+            "      <cat name=\"android.intent.category.DEFAULT\" />\n" +
+            "      <type name=\"*/*\" />\n" +
+            "    </intent-filter>\n" +
+            "    <component equals=\"%1\$s/%2\$s\" />\n" +
+            "    <or>\n" +
+            "      <sender type=\"system\" />\n" +
+            "      <not>\n" +
+            "        <sender type=\"userId\" />\n" +
+            "      </not>\n" +
+            "    </or>\n" +
+            "  </activity>\n"
+const val ifw_send_content_direct_share =
     "<rules>\n" +
             "  <service block=\"true\" log=\"true\">\n" +
             "    <intent-filter>\n" +
@@ -91,7 +106,7 @@ fun setDirectShare(sp: SharedPreferences,context: Context?) {
         }
         true -> { //禁用
             if(Shell.su("touch $ifw_direct_share_file_path").exec().isSuccess &&
-                Shell.su("echo '$ifw_content_direct_share' > $ifw_direct_share_file_path").exec().isSuccess){
+                Shell.su("echo '$ifw_send_content_direct_share' > $ifw_direct_share_file_path").exec().isSuccess){
                 context.toast(context?.getString(R.string.misc_disable_direct_toastDisable) as String)
             }
         }

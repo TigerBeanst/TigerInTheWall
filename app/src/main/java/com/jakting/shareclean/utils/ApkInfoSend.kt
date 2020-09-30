@@ -6,22 +6,26 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import androidx.core.content.ContextCompat
 import com.alibaba.fastjson.JSONArray
 import com.alibaba.fastjson.JSONObject
 import com.jakting.shareclean.R
+import java.io.File
 
-
-class ApkInfoExtractor(context2: Context?) {
+class ApkInfoSend(context2: Context?) {
     var context1: Context? = context2
     var json: JSONArray = JSONArray()
 
-    fun getAllInstalledApkInfo(isShowSystemApp:Boolean): JSONArray? {
+    fun getAllInstalledApkInfo(isShowSystemApp: Boolean): JSONArray? {
         //val ApkActivityPosition: MutableList<Double> = ArrayList()
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "*/*"
         val resolveInfoList: List<ResolveInfo> =
-            context1?.packageManager!!.queryIntentActivities(intent, PackageManager.MATCH_ALL)
+            context1?.packageManager!!.queryIntentActivities(
+                intent,
+                PackageManager.MATCH_DEFAULT_ONLY
+            )
         for (resolveInfo in resolveInfoList) {
             val activityInfo = resolveInfo.activityInfo
             if (isShowSystemApp || !isSystemPackage(resolveInfo)) {

@@ -17,7 +17,7 @@ import com.topjohnwu.superuser.Shell
 import kotlinx.android.synthetic.main.activity_apps.*
 
 
-open class AppsManagementActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
+open class SendManageActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
     private var recyclerView: RecyclerView? = null
     private var mSwipeLayout: SwipeRefreshLayout? = null
     private var adapterA: RecyclerView.Adapter<*>? = null
@@ -50,7 +50,7 @@ open class AppsManagementActivity : AppCompatActivity(), SwipeRefreshLayout.OnRe
         sp = this.getSharedPreferences("data", Context.MODE_PRIVATE)
         spe = this.getSharedPreferences("data", Context.MODE_PRIVATE).edit()
 
-        recyclerViewLayoutManager = GridLayoutManager(this@AppsManagementActivity, 1)
+        recyclerViewLayoutManager = GridLayoutManager(this@SendManageActivity, 1)
         recyclerView!!.layoutManager = recyclerViewLayoutManager
         clearIFW()
     }
@@ -62,13 +62,14 @@ open class AppsManagementActivity : AppCompatActivity(), SwipeRefreshLayout.OnRe
         }, 1000)
     }
 
-    private fun clearIFW(){
-        if(Shell.su("rm -f $ifw_file_path").exec().isSuccess){
+    private fun clearIFW() {
+        if (Shell.su("rm -f $ifw_file_path").exec().isSuccess) {
             mSwipeLayout?.post {
                 mSwipeLayout?.isRefreshing = true
             }
             onRefresh()
-            recyclerView?.sbarin(getString(R.string.appmanage_start))?.setAction(getString(R.string.dialog_positive)){}?.show()
+            recyclerView?.sbarin(getString(R.string.appmanage_start))
+                ?.setAction(getString(R.string.dialog_positive)) {}?.show()
         }
     }
 
@@ -84,9 +85,9 @@ open class AppsManagementActivity : AppCompatActivity(), SwipeRefreshLayout.OnRe
                 }
             }
         })
-        val apkInfoExtractor = ApkInfoExtractor(this@AppsManagementActivity)
+        val apkInfoExtractor = ApkInfoSend(this@SendManageActivity)
         adapterA = AppsAdapter(
-            this@AppsManagementActivity,
+            this@SendManageActivity,
             apkInfoExtractor.getAllInstalledApkInfo(isShowSystemApp)!!
         )
         recyclerView!!.adapter = adapterA
@@ -108,16 +109,17 @@ open class AppsManagementActivity : AppCompatActivity(), SwipeRefreshLayout.OnRe
                     //logd("list: $list")
                     //logd("${list[0]} // ${list[1]}")
                     spe.putBoolean("${list[0]}/${list[1]}", it.value)
-                    ifw += String.format(ifw_content, list[0], list[1])
+                    ifw += String.format(ifw_send_content, list[0], list[1])
                 }
             }
             if (isDisableDirectShare) {
-                ifw += ifw_content_direct_share
+                ifw += ifw_send_content_direct_share
             }
             ifw += "</rules>"
             spe.apply()
-            if(Shell.su("touch $ifw_file_path").exec().isSuccess &&
-                Shell.su("echo '$ifw' > $ifw_file_path").exec().isSuccess){
+            if (Shell.su("touch $ifw_file_path").exec().isSuccess &&
+                Shell.su("echo '$ifw' > $ifw_file_path").exec().isSuccess
+            ) {
                 recyclerView?.sbar(getString(R.string.appmanage_ifw_success))?.show()
                 floating_action_button.setImageResource(R.drawable.ic_check_black_24dp)
             }
@@ -156,12 +158,12 @@ open class AppsManagementActivity : AppCompatActivity(), SwipeRefreshLayout.OnRe
                     // If item already checked then unchecked it
                     item.isChecked = false
                     isShowSystemApp = false
-                    toast("此时状态："+item.isChecked)
+                    toast("此时状态：" + item.isChecked)
                 } else {
                     // If item is unchecked then checked it
                     item.isChecked = true
                     isShowSystemApp = true
-                    toast("此时状态："+item.isChecked)
+                    toast("此时状态：" + item.isChecked)
                 }
                 clearIFW()
 

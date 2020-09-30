@@ -10,10 +10,10 @@
     <string name="riru_status_card_download">您的设备可能未安装 Riru - IFW Enhance 模块。\n\n点击「下载」，前往下载页下载。</string>
     <string name="riru_status_card_download_btn">下载</string>
 
-    <string name="app_manage_card_title">应用管理</string>
-    <string name="app_manage_card_detail">天天占着分享面板的辣鸡应用给爷死！！！</string>
-    <string name="app_manage_dialog_title">提示</string>
-    <string name="app_manage_dialog_desc">Riru - IFW Enhance 未被正确应用。您所做的任何操作可能都不会生效。</string>
+    <string name="send_manage_card_title">应用管理</string>
+    <string name="send_manage_card_detail">天天占着分享面板的辣鸡应用给爷死！！！</string>
+    <string name="manage_dialog_title">提示</string>
+    <string name="manage_dialog_desc">Riru - IFW Enhance 未被正确应用。您所做的任何操作可能都不会生效。</string>
 
     <string name="misc_card_title">杂项</string>
     <string name="misc_card_detail">另外的一些您也许想要的功能</string>
@@ -22,24 +22,24 @@
     <string name="backup_title">备份 &amp; 还原</string>
     <string name="about_title">关于</string>
 
-    <string name="setting_page_1_title">界面</string>
-    <string name="setting_page_dark_title">暗色模式</string>
-    <string name="setting_page_2_title">语言</string>
-    <string name="setting_page_lang_title">多语言</string>
-    <string name="setting_page_helplang_title">帮助翻译</string>
+    <string name="setting_page_appearance">界面</string>
+    <string name="setting_page_dark_mode">暗色模式</string>
+    <string name="setting_page_language">语言</string>
+    <string name="setting_page_language">多语言</string>
+    <string name="setting_page_helplang">帮助翻译</string>
     <string name="setting_page_helplang_summary">帮忙将 氡·意图清理 翻译成您的语言</string>
-    <string name="setting_page_3_title">隐私</string>
-    <string name="setting_page_appcenter_title">使用 AppCenter 分析</string>
+    <string name="setting_page_privacy">隐私</string>
+    <string name="setting_page_appcenter">使用 AppCenter 分析</string>
     <string name="setting_page_appcenter_summary">分析日志将会被上传</string>
     <string name="setting_page_appcenter_summaryNo">分析日志将不会被上传</string>
 
-    <string name="about_page_info_title">介绍</string>
-    <string name="about_page_info">你是否已经厌倦了分享图片时，在冗长的分享列表里翻找APP，只为找到微信、QQ 等几个你常用的应用？\n\n百X网盘、高X地图、菜鸟X裹、X瓣、京X、淘X……\n你们为什么要出现在我的图片分享列表里？\n我如果需要你们，我自己会打开 App 来用啊，为什么要占领我的分享列表呢？\n\n「氡·意图清理」是借助 Magisk 模块 Riru - Core 和 Riru - IFW Enhance 来实现作用的 APP，同时你需要赋予其 Root 权限以进行写入 IFW 规则的操作。</string>
-    <string name="about_page_dev_title">开发者</string>
+    <string name="about_page_info">介绍</string>
+    <string name="about_page_info_desc">你是否已经厌倦了分享图片时，在冗长的分享列表里翻找APP，只为找到微信、QQ 等几个你常用的应用？\n\n百X网盘、高X地图、菜鸟X裹、X瓣、京X、淘X……\n你们为什么要出现在我的图片分享列表里？\n我如果需要你们，我自己会打开 App 来用啊，为什么要占领我的分享列表呢？\n\n「氡·意图清理」是借助 Magisk 模块 Riru - Core 和 Riru - IFW Enhance 来实现作用的 APP，同时你需要赋予其 Root 权限以进行写入 IFW 规则的操作。</string>
+    <string name="about_page_dev">开发者</string>
     <string name="about_page_dev_1">氡·意图清理 开发者</string>
     <string name="about_page_dev_2">Riru - Core 开发者</string>
     <string name="about_page_dev_3">Riru - IFW Enhance 开发者</string>
-    <string name="about_page_open_title">开放源代码许可</string>
+    <string name="about_page_open_source">开放源代码许可</string>
 
     <string name="appmanage_start">已清理本应用写入的IFW规则，请再次提交以生效</string>
     <string name="appmanage_ifw_success">分享清理已应用</string>

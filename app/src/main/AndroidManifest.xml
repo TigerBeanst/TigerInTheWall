@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SendManageActivity"
-            android:label="@string/app_manage_card_title"
+            android:label="@string/send_manage_card_title"
             android:parentActivityName=".MainActivity" />
     </application>
 

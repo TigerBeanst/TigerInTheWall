@@ -89,7 +89,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/app_manage_card"
+            android:id="@+id/send_manage_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/colorGrey"
@@ -111,7 +111,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/app_manage_card_icon"
+                        android:id="@+id/send_manage_card_icon"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center_vertical"
@@ -132,22 +132,22 @@
                     android:paddingEnd="16dp">
 
                     <TextView
-                        android:id="@+id/app_manage_card_title"
+                        android:id="@+id/send_manage_card_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/app_manage_card_title"
+                        android:text="@string/send_manage_card_title"
                         android:textSize="18sp"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         android:textColor="@color/colorFont"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/app_manage_card_desc"
+                        android:id="@+id/send_manage_card_desc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:textSize="14sp"
-                        android:text="@string/app_manage_card_detail"
+                        android:text="@string/send_manage_card_detail"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="@color/colorFontSecond" />
                 </LinearLayout>

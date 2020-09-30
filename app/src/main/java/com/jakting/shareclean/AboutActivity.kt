@@ -28,9 +28,9 @@ class AboutActivity : AbsAboutActivity() {
     }
 
     override fun onItemsCreated(items: MutableList<Any>) {
-        items.add(Category(getString(R.string.about_page_info_title)))
-        items.add(Card(getString(R.string.about_page_info)))
-        items.add(Category(getString(R.string.about_page_dev_title)))
+        items.add(Category(getString(R.string.about_page_info)))
+        items.add(Card(getString(R.string.about_page_info_desc)))
+        items.add(Category(getString(R.string.about_page_dev)))
         items.add(
             Contributor(
                 R.drawable.dev_hjthjthjt,
@@ -55,7 +55,7 @@ class AboutActivity : AbsAboutActivity() {
                 "https://github.com/Kr328"
             )
         )
-        items.add(Category(getString(R.string.about_page_open_title)))
+        items.add(Category(getString(R.string.about_page_open_source)))
         items.add(
             License(
                 "MultiType",

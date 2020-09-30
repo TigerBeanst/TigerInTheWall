@@ -1,4 +1,4 @@
-package com.jakting.shareclean.adapter
+package com.jakting.shareclean.utils
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -13,8 +13,6 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.alibaba.fastjson.JSONArray
 import com.jakting.shareclean.R
-import com.jakting.shareclean.utils.ApkInfoSend
-import com.jakting.shareclean.utils.logd
 
 
 class AppsAdapter : RecyclerView.Adapter<AppsAdapter.ViewHolder> {

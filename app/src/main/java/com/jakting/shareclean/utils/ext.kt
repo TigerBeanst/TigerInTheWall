@@ -22,6 +22,7 @@ const val sc_sp_path = "/data/data/com.jakting.shareclean/shared_prefs/data.xml"
 const val ifw_file_path_old = "/data/system/ifw/RnShareClean.xml"
 const val ifw_send_file_path = "/data/system/ifw/RnIntentClean_send.xml"
 const val ifw_view_file_path = "/data/system/ifw/RnIntentClean_view.xml"
+const val ifw_text_file_path = "/data/system/ifw/RnIntentClean_text.xml"
 const val ifw_direct_share_file_path = "/data/system/ifw/RnIntentClean_direct_share.xml"
 
 const val ifw_send_content =
@@ -43,6 +44,21 @@ const val ifw_view_content =
     "   <activity block=\"true\" log=\"true\">\n" +
             "    <intent-filter>\n" +
             "      <action name=\"android.intent.action.VIEW\" />\n" +
+            "      <cat name=\"android.intent.category.DEFAULT\" />\n" +
+            "      <type name=\"*/*\" />\n" +
+            "    </intent-filter>\n" +
+            "    <component equals=\"%1\$s/%2\$s\" />\n" +
+            "    <or>\n" +
+            "      <sender type=\"system\" />\n" +
+            "      <not>\n" +
+            "        <sender type=\"userId\" />\n" +
+            "      </not>\n" +
+            "    </or>\n" +
+            "  </activity>\n"
+const val ifw_text_content =
+    "   <activity block=\"true\" log=\"true\">\n" +
+            "    <intent-filter>\n" +
+            "      <action name=\"android.intent.action.PROCESS_TEXT\" />\n" +
             "      <cat name=\"android.intent.category.DEFAULT\" />\n" +
             "      <type name=\"*/*\" />\n" +
             "    </intent-filter>\n" +

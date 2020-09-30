@@ -35,10 +35,7 @@ open class BaseManageActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefres
         }
         setContentView(R.layout.activity_apps)
         setSupportActionBar(findViewById(R.id.toolbar))
-        if (supportActionBar != null) {
-            supportActionBar!!.title = getString(R.string.send_manage_card_title)
-            //supportActionBar!!.subtitle = "v" + BuildConfig.VERSION_NAME
-        }
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         mSwipeLayout = findViewById(R.id.swipe_layout)

@@ -38,6 +38,9 @@
         <activity android:name=".ViewManageActivity"
             android:label="@string/view_manage_card_title"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".TextManageActivity"
+            android:label="@string/text_manage_card_title"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

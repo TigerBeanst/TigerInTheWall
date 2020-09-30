@@ -9,7 +9,7 @@ import com.topjohnwu.superuser.Shell
 import kotlinx.android.synthetic.main.activity_apps.*
 
 
-open class SendManageActivity : BaseManageActivity(){
+open class TextManageActivity : BaseManageActivity(){
 
 
     lateinit var sp: SharedPreferences
@@ -19,11 +19,11 @@ open class SendManageActivity : BaseManageActivity(){
     override fun init() {
         super.init()
         if (supportActionBar != null) {
-            supportActionBar!!.title = getString(R.string.send_manage_card_title)
+            supportActionBar!!.title = getString(R.string.text_manage_card_title)
         }
-        sp = this.getSharedPreferences("send_list", Context.MODE_PRIVATE)
-        spe = this.getSharedPreferences("send_list", Context.MODE_PRIVATE).edit()
-        val apkInfoExtractor = ApkInfoSend(this)
+        sp = this.getSharedPreferences("text_list", Context.MODE_PRIVATE)
+        spe = this.getSharedPreferences("text_list", Context.MODE_PRIVATE).edit()
+        val apkInfoExtractor = ApkInfoText(this)
         adapterA = AppsAdapter(
             this,
             apkInfoExtractor.getAllInstalledApkInfo(isShowSystemApp)!!
@@ -47,15 +47,15 @@ open class SendManageActivity : BaseManageActivity(){
                     //logd("list: $list")
                     //logd("${list[0]} // ${list[1]}")
                     spe.putBoolean("${list[0]}/${list[1]}", it.value)
-                    ifw += String.format(ifw_send_content, list[0], list[1])
+                    ifw += String.format(ifw_text_content, list[0], list[1])
                 }
             }
             ifw += "</rules>"
             spe.apply()
-            if (Shell.su("touch $ifw_send_file_path").exec().isSuccess &&
-                Shell.su("echo '$ifw' > $ifw_send_file_path").exec().isSuccess
+            if (Shell.su("touch $ifw_text_file_path").exec().isSuccess &&
+                Shell.su("echo '$ifw' > $ifw_text_file_path").exec().isSuccess
             ) {
-                recyclerView?.sbar(getString(R.string.manage_send_success))?.show()
+                recyclerView?.sbar(getString(R.string.manage_text_success))?.show()
                 floating_action_button.setImageResource(R.drawable.ic_check_black_24dp)
             }
             //toast(getString(R.string.manage_send_success))
@@ -64,7 +64,7 @@ open class SendManageActivity : BaseManageActivity(){
     }
 
     override fun clearIFW(){
-        if (Shell.su("rm -f $ifw_file_path_old").exec().isSuccess && Shell.su("rm -f $ifw_send_file_path").exec().isSuccess) {
+        if (Shell.su("rm -f $ifw_file_path_old").exec().isSuccess && Shell.su("rm -f $ifw_view_file_path").exec().isSuccess) {
             mSwipeLayout?.post {
                 mSwipeLayout?.isRefreshing = true
             }

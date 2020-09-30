@@ -16,6 +16,8 @@
     <string name="send_manage_card_detail">Clean up apps that occupy the sharesheet</string>
     <string name="view_manage_card_title">Open With…</string>
     <string name="view_manage_card_detail">Clean up apps that occupy the open mode sheet</string>
+    <string name="text_manage_card_title">Text Operation</string>
+    <string name="text_manage_card_detail">Clean up apps when you long press the text</string>
 
     <string name="misc_title">Miscellaneous</string>
 
@@ -44,6 +46,7 @@
     <string name="manage_start">The IFW rules written by this application have been cleared. Please submit again to take effect.</string>
     <string name="manage_send_success">Share Clean Applied</string>
     <string name="manage_view_success">Open Mode Clean Applied</string>
+    <string name="manage_text_success">Text Operation Clean Applied</string>
 
     <string name="misc_disable">Disable</string>
     <string name="misc_disable_direct">Disable Direct Share</string>

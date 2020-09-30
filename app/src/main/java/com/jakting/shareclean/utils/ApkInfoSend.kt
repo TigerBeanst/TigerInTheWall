@@ -24,7 +24,7 @@ class ApkInfoSend(context2: Context?) {
         val resolveInfoList: List<ResolveInfo> =
             context1?.packageManager!!.queryIntentActivities(
                 intent,
-                PackageManager.MATCH_DEFAULT_ONLY
+                PackageManager.MATCH_ALL
             )
         for (resolveInfo in resolveInfoList) {
             val activityInfo = resolveInfo.activityInfo

@@ -1,19 +1,19 @@
-# RnIntentClean
+# 氡·意图清理
 ![RnIntentClean Icon](https://raw.githubusercontent.com/hjthjthjt/RnIntentClean/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
 
-Are you tired of scouring through long lists of apps when sharing pictures or open a file just to find a few apps that you use a lot?
+你是否已经厌倦了分享图片或打开文件时，在冗长的分享列表里翻找，却只为找到几个你常用的应用？
 
-Why are you app in my sharesheet or open mode sheet??
+你们这些应用为什么要出现在我的图片分享面板和打开方式里？
 
-If I needed you, I'd open the app myself to use it!
+我如果需要你们，我自己会打开 App 来用啊！
 
 ![License](https://img.shields.io/badge/License-Apache%202.0-red)
 [![Latest release](https://img.shields.io/github/release/hjthjthjt/RnIntentClean.svg?maxAge=3600&label=download)](https://github.com/hjthjthjt/RnIntentClean/releases)
 
-RnIntentClean is an App that allow you to clean up your sharesheet and open mode sheet, which works with the Magisk modules "Riru-Core" and "Riru-IFW Enhance", and root permission.
+「氡·意图清理」是一款允许您清理分享面板和打开方式面板的应用，它借助 Magisk 模块 Riru - Core 和 Riru - IFW Enhance 来实现作用，当然 root 权限也是必需的。
 
-# Download
-See [https://ic.into.icu/download/](https://ic.into.icu/download/)
+# 下载
+查阅 [https://ic.into.icu/download/](https://ic.into.icu/download/)
 
 <a href='https://play.google.com/store/apps/details?id=com.jakting.shareclean&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/zh-TW/badges/static/images/badges/en_badge_web_generic.png' height="60px" width="auto"/></a>
 

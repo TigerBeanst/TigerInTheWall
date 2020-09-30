@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         riru_status_card.setOnClickListener(this)
         send_manage_card.setOnClickListener(this)
         view_card.setOnClickListener(this)
+        text_card.setOnClickListener(this)
         backup_menu.setOnClickListener(this)
         misc_menu.setOnClickListener(this)
         setting_menu.setOnClickListener(this)
@@ -60,6 +61,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 riru_status_card_icon.setImageResource(R.drawable.ic_baseline_check_circle_24)
                 send_manage_card.setCardBackgroundColor(resources.getColor(R.color.colorCyan))
                 view_card.setCardBackgroundColor(resources.getColor(R.color.colorBrown))
+                text_card.setCardBackgroundColor(resources.getColor(R.color.colorPink))
                 isWorked = true
             } else {
                 //Riru - IFW Enhance 未生效
@@ -80,6 +82,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
     private fun startViewManage() {
         val intent = Intent(this, ViewManageActivity::class.java)
+        startActivity(intent)
+    }
+    private fun startTextManage() {
+        val intent = Intent(this, TextManageActivity::class.java)
         startActivity(intent)
     }
 
@@ -165,6 +171,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         .show()
                 } else {
                     startViewManage()
+                }
+            }
+            R.id.text_card -> {
+                if (!isWorked) {
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle(R.string.manage_dialog_title)
+                        .setMessage(R.string.manage_dialog_desc)
+                        .setPositiveButton(R.string.dialog_positive) { dialog, which ->
+                            startTextManage()
+                        }
+                        .show()
+                } else {
+                    startTextManage()
                 }
             }
             R.id.backup_menu -> {

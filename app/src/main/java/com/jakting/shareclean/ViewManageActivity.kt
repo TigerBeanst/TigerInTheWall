@@ -18,6 +18,9 @@ open class ViewManageActivity : BaseManageActivity(){
     @SuppressLint("CommitPrefEdits")
     override fun init() {
         super.init()
+        if (supportActionBar != null) {
+            supportActionBar!!.title = getString(R.string.view_manage_card_title)
+        }
         sp = this.getSharedPreferences("view_list", Context.MODE_PRIVATE)
         spe = this.getSharedPreferences("view_list", Context.MODE_PRIVATE).edit()
         val apkInfoExtractor = ApkInfoView(this)

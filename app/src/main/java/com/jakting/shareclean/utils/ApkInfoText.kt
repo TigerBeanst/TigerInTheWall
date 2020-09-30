@@ -13,15 +13,14 @@ import com.alibaba.fastjson.JSONObject
 import com.jakting.shareclean.R
 import java.io.File
 
-class ApkInfoView(context2: Context?) {
+class ApkInfoText(context2: Context?) {
     var context1: Context? = context2
     var json: JSONArray = JSONArray()
 
     fun getAllInstalledApkInfo(isShowSystemApp: Boolean): JSONArray? {
         //val ApkActivityPosition: MutableList<Double> = ArrayList()
-        val intent = Intent(Intent.ACTION_VIEW)
-        val uri = Uri.fromFile(File("/"))
-        intent.setDataAndType(uri, "*/*")
+        val intent = Intent(Intent.ACTION_PROCESS_TEXT)
+        intent.type = "*/*"
         //intent.type = "*/*"
         val resolveInfoList: List<ResolveInfo> =
             context1?.packageManager!!.queryIntentActivities(

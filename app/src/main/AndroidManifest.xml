@@ -35,6 +35,9 @@
         <activity android:name=".SendManageActivity"
             android:label="@string/send_manage_card_title"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".ViewManageActivity"
+            android:label="@string/view_manage_card_title"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

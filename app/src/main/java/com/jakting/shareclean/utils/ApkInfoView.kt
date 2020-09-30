@@ -20,7 +20,7 @@ class ApkInfoView(context2: Context?) {
     fun getAllInstalledApkInfo(isShowSystemApp: Boolean): JSONArray? {
         //val ApkActivityPosition: MutableList<Double> = ArrayList()
         val intent = Intent(Intent.ACTION_VIEW)
-        val uri = Uri.fromFile(File("/sdcard/Android/dctp"))
+        val uri = Uri.fromFile(File("/"))
         intent.setDataAndType(uri, "*/*")
         //intent.type = "*/*"
         val resolveInfoList: List<ResolveInfo> =

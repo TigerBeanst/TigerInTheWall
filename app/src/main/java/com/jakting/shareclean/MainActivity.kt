@@ -39,8 +39,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         //setLang(sp,this)
         riru_status_card.setOnClickListener(this)
         send_manage_card.setOnClickListener(this)
-        misc_card.setOnClickListener(this)
+        view_card.setOnClickListener(this)
         backup_menu.setOnClickListener(this)
+        misc_menu.setOnClickListener(this)
         setting_menu.setOnClickListener(this)
         about_menu.setOnClickListener(this)
     }
@@ -58,7 +59,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 riru_status_card_desc.text = getString(R.string.riru_status_card_exist_detail)
                 riru_status_card_icon.setImageResource(R.drawable.ic_baseline_check_circle_24)
                 send_manage_card.setCardBackgroundColor(resources.getColor(R.color.colorCyan))
-                misc_card.setCardBackgroundColor(resources.getColor(R.color.colorBrown))
+                view_card.setCardBackgroundColor(resources.getColor(R.color.colorBrown))
                 isWorked = true
             } else {
                 //Riru - IFW Enhance 未生效
@@ -73,8 +74,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //        }
     }
 
-    private fun goAppManage() {
+    private fun startSendManage() {
         val intent = Intent(this, SendManageActivity::class.java)
+        startActivity(intent)
+    }
+    private fun startViewManage() {
+        val intent = Intent(this, ViewManageActivity::class.java)
         startActivity(intent)
     }
 
@@ -142,19 +147,32 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         .setTitle(R.string.manage_dialog_title)
                         .setMessage(R.string.manage_dialog_desc)
                         .setPositiveButton(R.string.dialog_positive) { dialog, which ->
-                            goAppManage()
+                            startSendManage()
                         }
                         .show()
                 } else {
-                    goAppManage()
+                    startSendManage()
                 }
             }
-            R.id.misc_card -> {
-                val intent = Intent(this, MiscActivity::class.java)
-                startActivity(intent)
+            R.id.view_card -> {
+                if (!isWorked) {
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle(R.string.manage_dialog_title)
+                        .setMessage(R.string.manage_dialog_desc)
+                        .setPositiveButton(R.string.dialog_positive) { dialog, which ->
+                            startViewManage()
+                        }
+                        .show()
+                } else {
+                    startViewManage()
+                }
             }
             R.id.backup_menu -> {
                 clickBackupRestore()
+            }
+            R.id.misc_menu -> {
+                val intent = Intent(this, MiscActivity::class.java)
+                startActivity(intent)
             }
             R.id.setting_menu -> {
                 val intent = Intent(this, SettingsActivity::class.java)

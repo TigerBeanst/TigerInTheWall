@@ -6,10 +6,10 @@ import com.topjohnwu.superuser.Shell
 import kotlinx.android.synthetic.main.activity_apps.*
 
 
-open class SendManageActivity : BaseManageActivity(){
+open class ViewManageActivity : BaseManageActivity(){
     override fun init() {
         super.init()
-        val apkInfoExtractor = ApkInfoSend(this)
+        val apkInfoExtractor = ApkInfoView(this)
         adapterA = AppsAdapter(
             this,
             apkInfoExtractor.getAllInstalledApkInfo(isShowSystemApp)!!

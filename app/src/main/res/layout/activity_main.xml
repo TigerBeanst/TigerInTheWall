@@ -116,7 +116,7 @@
                         android:layout_height="30dp"
                         android:layout_gravity="center_vertical"
                         android:layout_margin="16dp"
-                        android:src="@drawable/ic_baseline_apps_24"
+                        android:src="@drawable/ic_baseline_share_24"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -155,7 +155,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/misc_card"
+            android:id="@+id/view_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/colorGrey"
@@ -177,12 +177,12 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/misc_card_icon"
+                        android:id="@+id/view_card_icon"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center_vertical"
                         android:layout_margin="16dp"
-                        android:src="@drawable/ic_baseline_category_24"
+                        android:src="@drawable/ic_baseline_open_in_new_24"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -201,19 +201,19 @@
                         android:id="@+id/misc_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/misc_title"
+                        android:text="@string/view_manage_card_title"
                         android:textSize="18sp"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         android:textColor="@color/colorFont"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/misc_card_desc"
+                        android:id="@+id/view_card_desc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:textSize="14sp"
-                        android:text="@string/misc_detail"
+                        android:text="@string/view_manage_card_detail"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="@color/colorFontSecond" />
                 </LinearLayout>
@@ -261,6 +261,55 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/backup_title"
+                    android:maxLines="1"
+                    android:textSize="18sp"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/misc_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginTop="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:clickable="true"
+            android:minHeight="64dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/ic_baseline_category_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="?attr/colorControlNormal" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/misc_title"
                     android:maxLines="1"
                     android:textSize="18sp"
                     android:textColor="?android:attr/textColorPrimary" />

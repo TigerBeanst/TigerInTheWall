@@ -3,15 +3,15 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.jakting.shareclean"
         minSdkVersion 26
         targetSdkVersion 30
-        versionCode 20200913
-        versionName "1.0.1"
+        versionCode 20201001
+        versionName "1.0.2"
 
     }
     lintOptions{

@@ -59,9 +59,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 riru_status_card_title.text = getString(R.string.riru_status_card_exist)
                 riru_status_card_desc.text = getString(R.string.riru_status_card_exist_detail)
                 riru_status_card_icon.setImageResource(R.drawable.ic_baseline_check_circle_24)
-                send_manage_card.setCardBackgroundColor(resources.getColor(R.color.colorCyan))
-                view_card.setCardBackgroundColor(resources.getColor(R.color.colorBrown))
-                text_card.setCardBackgroundColor(resources.getColor(R.color.colorPink))
+                send_manage_card.setCardBackgroundColor(resources.getColor(R.color.colorGreen1))
+                view_card.setCardBackgroundColor(resources.getColor(R.color.colorGreen2))
+                text_card.setCardBackgroundColor(resources.getColor(R.color.colorGreen3))
                 isWorked = true
             } else {
                 //Riru - IFW Enhance 未生效

@@ -7,8 +7,10 @@ Why are you app in my sharesheet or open mode sheet??
 
 If I needed you, I'd open the app myself to use it!
 
+[![Platform](https://img.shields.io/badge/platform-android-orange.svg)](https://github.com/hjthjthjt/RnIntentClean)
+[![Version](https://img.shields.io/github/v/release/hjthjthjt/RnIntentClean)](https://github.com/hjthjthjt/RnIntentClean/releases)
+[![Downloads](https://img.shields.io/github/downloads/hjthjthjt/RnIntentClean/total.svg)](https://github.com/hjthjthjt/RnIntentClean/releases)
 ![License](https://img.shields.io/badge/License-Apache%202.0-red)
-[![Latest release](https://img.shields.io/github/release/hjthjthjt/RnIntentClean.svg?maxAge=3600&label=download)](https://github.com/hjthjthjt/RnIntentClean/releases)
 
 RnIntentClean is an App that allow you to clean up your sharesheet and open mode sheet, which works with the Magisk modules "Riru-Core" and "Riru-IFW Enhance", and root permission.
 

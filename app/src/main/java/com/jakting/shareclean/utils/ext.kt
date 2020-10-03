@@ -1,14 +1,18 @@
 package com.jakting.shareclean.utils
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
 import android.content.res.Configuration
+import android.graphics.drawable.Drawable
 import android.os.Build
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.jakting.shareclean.R
 import com.microsoft.appcenter.AppCenter
@@ -18,6 +22,7 @@ import com.topjohnwu.superuser.Shell
 import kotlinx.android.synthetic.main.activity_apps.*
 import java.util.*
 
+@SuppressLint("SdCardPath")
 const val sc_sp_path = "/data/data/com.jakting.shareclean/shared_prefs/data.xml"
 const val ifw_file_path_old = "/data/system/ifw/RnShareClean.xml"
 const val ifw_send_file_path = "/data/system/ifw/RnIntentClean_send.xml"
@@ -99,6 +104,17 @@ fun View.sbarin(message: CharSequence) =
 
 fun isRoot(): Boolean {
     return Shell.su("command -v su >/dev/null").exec().isSuccess
+}
+
+fun Context?.getAppIconByPackageName(ApkTempSendActivityName: String): Drawable? {
+    val drawable: Drawable?
+    drawable = try {
+        this?.packageManager?.getApplicationIcon(ApkTempSendActivityName)
+    } catch (e: PackageManager.NameNotFoundException) {
+        e.printStackTrace()
+        this?.packageManager?.let { ContextCompat.getDrawable(this, R.mipmap.ic_launcher) }
+    }
+    return drawable
 }
 
 fun setAppCenter(sp: SharedPreferences, activity: Activity) {

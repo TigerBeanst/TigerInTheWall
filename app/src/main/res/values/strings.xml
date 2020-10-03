@@ -16,7 +16,7 @@
     <string name="send_manage_card_detail">Clean up apps that occupy the sharesheet</string>
     <string name="view_manage_card_title">Open With…</string>
     <string name="view_manage_card_detail">Clean up apps that occupy the open mode sheet</string>
-    <string name="text_manage_card_title">Text Operation</string>
+    <string name="text_manage_card_title">Text Operate…</string>
     <string name="text_manage_card_detail">Clean up apps when you long press the text</string>
 
     <string name="misc_title">Miscellaneous</string>

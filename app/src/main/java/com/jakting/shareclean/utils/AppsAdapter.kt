@@ -15,37 +15,26 @@ import com.alibaba.fastjson.JSONArray
 import com.jakting.shareclean.R
 
 
-class AppsAdapter : RecyclerView.Adapter<AppsAdapter.ViewHolder> {
-    var context1: Context? = null
-    var json = JSONArray()
+class AppsAdapter(context: Context, jsonA: JSONArray) :
+    RecyclerView.Adapter<AppsAdapter.ViewHolder>() {
+    var context1: Context? = context
+    var json = jsonA
     var map: MutableMap<String, Boolean> = HashMap()
     var sp: SharedPreferences? = null
     //var spe:SharedPreferences.Editor?=null
 
-    constructor(
-        context: Context,
-        jsonA: JSONArray
-    ) {
-        context1 = context
-        json = jsonA
+    init {
         sp = context1?.getSharedPreferences("data", Context.MODE_PRIVATE)
         initMap()
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var cardView: CardView
-        var imageView: ImageView
-        var textView_App_Name: TextView
-        var textView_App_Package_Name: TextView
-        var check_box: CheckBox
+        var cardView: CardView = view.findViewById(R.id.card_view)
+        var imageView: ImageView = view.findViewById(R.id.imageview) as ImageView
+        var textureAppName: TextView = view.findViewById(R.id.Apk_Name)
+        var textureAppPackageName: TextView = view.findViewById(R.id.Apk_Package_Name)
+        var checkBox: CheckBox = view.findViewById((R.id.check_box))
 
-        init {
-            cardView = view.findViewById(R.id.card_view)
-            imageView = view.findViewById(R.id.imageview) as ImageView
-            textView_App_Name = view.findViewById(R.id.Apk_Name)
-            textView_App_Package_Name = view.findViewById(R.id.Apk_Package_Name)
-            check_box = view.findViewById((R.id.check_box))
-        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -56,26 +45,25 @@ class AppsAdapter : RecyclerView.Adapter<AppsAdapter.ViewHolder> {
 
     private fun initMap() {
         for (i in 0 until json.size) {
-            val ActivityJSONObject = json.getJSONObject(i)
-            map["${ActivityJSONObject["package_name"]}/${ActivityJSONObject["activity"]}"] = false
+            val activityJSONObject = json.getJSONObject(i)
+            map["${activityJSONObject["package_name"]}/${activityJSONObject["activity"]}"] = false
         }
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        val apkInfoExtractor = ApkInfoSend(context1)
-        val ActivityJSONObject = json.getJSONObject(position)
-        val PackgeName = ActivityJSONObject["package_name"] as String
-        val ActivityS = ActivityJSONObject["activity"] as String
-        val AppName = ActivityJSONObject["app_name"] as String
-        val ActivityName = ActivityJSONObject["activity_name"] as String
-        val ApplicationLabelName = "$AppName - $ActivityName"
+        val activityJSONObject = json.getJSONObject(position)
+        val packgeName = activityJSONObject["package_name"] as String
+        val activityS = activityJSONObject["activity"] as String
+        val appName = activityJSONObject["app_name"] as String
+        val activityName = activityJSONObject["activity_name"] as String
+        val applicationLabelName = "$appName - $activityName"
         val drawable: Drawable =
-            apkInfoExtractor.getAppIconByPackageName(PackgeName)!!
-        viewHolder.textView_App_Name.text = ApplicationLabelName
-        viewHolder.textView_App_Package_Name.text = ActivityS
+            context1.getAppIconByPackageName(packgeName)!!
+        viewHolder.textureAppName.text = applicationLabelName
+        viewHolder.textureAppPackageName.text = activityS
         viewHolder.imageView.setImageDrawable(drawable)
         viewHolder.cardView.setOnClickListener {
-            viewHolder.check_box.isChecked = viewHolder.check_box.isChecked != true
+            viewHolder.checkBox.isChecked = viewHolder.checkBox.isChecked != true
         }
 //        var ing = 0
 //        if (sp?.getBoolean("$PackgeName/$ActivityS", false) == true && ing == 0) {
@@ -85,19 +73,19 @@ class AppsAdapter : RecyclerView.Adapter<AppsAdapter.ViewHolder> {
 //            ing = 1
 //        }
 
-        viewHolder.check_box.setOnCheckedChangeListener { compoundButton, isCheckBox ->
+        viewHolder.checkBox.setOnCheckedChangeListener { compoundButton, isCheckBox ->
             if (isCheckBox) {
                 //saveArray
                 //spe?.putBoolean("$PackgeName/$ActivityS",true)
-                map["$PackgeName/$ActivityS"] = true
-                logd("$PackgeName/$ActivityS 被选中")
+                map["$packgeName/$activityS"] = true
+                logd("$packgeName/$activityS 被选中")
             } else {
                 //spe?.remove("$PackgeName/$ActivityS")
-                map["$PackgeName/$ActivityS"] = false
-                logd("$PackgeName/$ActivityS 被取消选中")
+                map["$packgeName/$activityS"] = false
+                logd("$packgeName/$activityS 被取消选中")
             }
         }
-        viewHolder.check_box.isChecked = true && (map["$PackgeName/$ActivityS"] == true)
+        viewHolder.checkBox.isChecked = true && (map["$packgeName/$activityS"] == true)
 
     }
 

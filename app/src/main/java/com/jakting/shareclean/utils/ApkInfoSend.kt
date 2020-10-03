@@ -29,7 +29,7 @@ class ApkInfoSend(context2: Context?) {
         for (resolveInfo in resolveInfoList) {
             val activityInfo = resolveInfo.activityInfo
             if (isShowSystemApp || !isSystemPackage(resolveInfo)) {
-                var appObject = JSONObject()
+                val appObject = JSONObject()
                 appObject["app_name"] = getAppName(activityInfo.packageName)
                 appObject["package_name"] = activityInfo.packageName
                 appObject["activity"] = activityInfo.name
@@ -58,31 +58,18 @@ class ApkInfoSend(context2: Context?) {
         return json
     }
 
-    fun isSystemPackage(resolveInfo: ResolveInfo): Boolean {
+    private fun isSystemPackage(resolveInfo: ResolveInfo): Boolean {
         return resolveInfo.activityInfo.applicationInfo.flags and ApplicationInfo.FLAG_SYSTEM != 0
     }
 
-    fun getAppIconByPackageName(ApkTempSendActivityName: String?): Drawable? {
-        val drawable: Drawable?
-        drawable = try {
-            context1?.packageManager?.getApplicationIcon(ApkTempSendActivityName)
-        } catch (e: PackageManager.NameNotFoundException) {
-            e.printStackTrace()
-            context1?.let { ContextCompat.getDrawable(it, R.mipmap.ic_launcher) }
-        }
-        return drawable
-    }
-
-    fun getAppName(PackageName: String): String? {
+    private fun getAppName(PackageName: String): String? {
         //logd("包名 $PackageName")
         var Name = ""
         val applicationInfo: ApplicationInfo
         val packageManager: PackageManager = context1!!.packageManager
         try {
             applicationInfo = packageManager.getApplicationInfo(PackageName, 0)
-            if (applicationInfo != null) {
-                Name = packageManager.getApplicationLabel(applicationInfo) as String
-            }
+            Name = packageManager.getApplicationLabel(applicationInfo) as String
         } catch (e: PackageManager.NameNotFoundException) {
             e.printStackTrace()
         }

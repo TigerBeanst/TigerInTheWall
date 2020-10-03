@@ -79,4 +79,5 @@
     <string name="manage_view_success">打开方式清理已应用</string>
     <string name="text_manage_card_title">文本操作</string>
     <string name="text_manage_card_detail">清理长按文本时出现的应用</string>
+    <string name="manage_text_success">文本操作清理已应用</string>
 </resources>

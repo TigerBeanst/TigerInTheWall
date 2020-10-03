@@ -25,6 +25,10 @@
     <string name="setting_title">Settings</string>
     <string name="about_title">About</string>
 
+    <string name="setting_page_function">Function</string>
+    <string name="setting_page_showSystemApp">Show System Apps</string>
+    <string name="setting_page_showSystemApp_summary">Show System Apps. Disable system apps\' intent may cause unknown errors.</string>
+    <string name="setting_page_showSystemApp_summaryNo">Don\'t show System Apps.</string>
     <string name="setting_page_appearance">Appearance</string>
     <string name="setting_page_dark_mode">Dark Mode</string>
     <string name="setting_page_language">Languages</string>
@@ -67,7 +71,6 @@
 
     <string name="menu_select_all">Select all</string>
     <string name="menu_clear">Unselect All</string>
-    <string name="menu_show_system">Show System Apps</string>
 
     <string-array name="entries_dark">
         <item>Follow system</item>

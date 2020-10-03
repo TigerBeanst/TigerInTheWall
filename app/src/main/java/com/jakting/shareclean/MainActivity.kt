@@ -80,10 +80,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val intent = Intent(this, SendManageActivity::class.java)
         startActivity(intent)
     }
+
     private fun startViewManage() {
         val intent = Intent(this, ViewManageActivity::class.java)
         startActivity(intent)
     }
+
     private fun startTextManage() {
         val intent = Intent(this, TextManageActivity::class.java)
         startActivity(intent)
@@ -93,7 +95,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         MaterialAlertDialogBuilder(this)
             .setTitle(getString(R.string.backup_title))
             .setMessage(getString(R.string.br_msg))
-            .setNegativeButton(resources.getString(R.string.br_restore)) { dialog, which ->
+            .setNegativeButton(resources.getString(R.string.br_restore)) { _, _ ->
                 //还原
                 val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
@@ -101,7 +103,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 }
                 startActivityForResult(intent, READ_REQUEST_CODE)
             }
-            .setPositiveButton(resources.getString(R.string.br_backup)) { dialog, which ->
+            .setPositiveButton(resources.getString(R.string.br_backup)) { _, _ ->
                 //备份
                 val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
@@ -117,10 +119,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
         super.onActivityResult(requestCode, resultCode, resultData)
         if (requestCode == WRITE_REQUEST_CODE && resultData != null && resultData.data != null) {
+            //备份
             alterDocument(resultData.data as Uri)
             toast(getString(R.string.br_backup_ok))
         }
         if (requestCode == READ_REQUEST_CODE && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
+            //还原
             var xml: String = readTextFromUri(resultData.data as Uri)
             xml = xml.replace("'", "\"")
             logd(xml)

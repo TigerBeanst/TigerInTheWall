@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "applicationId": "com.jakting.shareclean",
+  "variantType": "BASE_APK",
+  "elements": [
+    {
+      "outputType": {
+        "type": "INSTANT_APP_MANIFEST"
+      },
+      "apkData": {
+        "type": "MAIN",
+        "splits": [],
+        "versionCode": 20201001,
+        "versionName": "1.0.2",
+        "outputFile": "app-debug.apk",
+        "fullName": "debug",
+        "baseName": "debug",
+        "dirName": ""
+      },
+      "path": "AndroidManifest.xml",
+      "properties": {
+        "packageId": "com.jakting.shareclean",
+        "split": "",
+        "minSdkVersion": "26"
+      }
+    }
+  ]
+}

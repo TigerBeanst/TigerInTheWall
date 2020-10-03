@@ -11,18 +11,14 @@ import kotlinx.android.synthetic.main.activity_apps.*
 
 open class TextManageActivity : BaseManageActivity(){
 
-
-    lateinit var sp: SharedPreferences
-    lateinit var spe: SharedPreferences.Editor
-
     @SuppressLint("CommitPrefEdits")
     override fun init() {
         super.init()
         if (supportActionBar != null) {
             supportActionBar!!.title = getString(R.string.text_manage_card_title)
         }
-        sp = this.getSharedPreferences("text_list", Context.MODE_PRIVATE)
-        spe = this.getSharedPreferences("text_list", Context.MODE_PRIVATE).edit()
+        sp = this.getSharedPreferences("intent_list", Context.MODE_PRIVATE)
+        spe = this.getSharedPreferences("intent_list", Context.MODE_PRIVATE).edit()
         val apkInfoExtractor = ApkInfoText(this)
         adapterA = AppsAdapter(
             this,
@@ -31,7 +27,7 @@ open class TextManageActivity : BaseManageActivity(){
         recyclerView!!.adapter = adapterA
         map = (adapterA as AppsAdapter).map
         (map as MutableMap<String, Boolean>).entries.forEach {
-            if (sp.getBoolean(it.key, false)) {
+            if (sp.getBoolean(it.key+"/text", false)) {
                 (map as MutableMap<String, Boolean>)[it.key] = true
             }
         }
@@ -39,14 +35,13 @@ open class TextManageActivity : BaseManageActivity(){
         floating_action_button.setOnClickListener {
             floating_action_button.setImageResource(R.drawable.ic_cached_black_24dp)
             var ifw = "<rules>\n"
-            spe.clear()
             (map as MutableMap<String, Boolean>).entries.forEach {
                 //logd(it.key)
                 if (it.value) {
                     val list = it.key.split('/')
                     //logd("list: $list")
                     //logd("${list[0]} // ${list[1]}")
-                    spe.putBoolean("${list[0]}/${list[1]}", it.value)
+                    spe.putBoolean("${list[0]}/${list[1]}/text", it.value)
                     ifw += String.format(ifw_text_content, list[0], list[1])
                 }
             }
@@ -64,7 +59,7 @@ open class TextManageActivity : BaseManageActivity(){
     }
 
     override fun clearIFW(){
-        if (Shell.su("rm -f $ifw_file_path_old").exec().isSuccess && Shell.su("rm -f $ifw_view_file_path").exec().isSuccess) {
+        if (Shell.su("rm -f $ifw_file_path_old").exec().isSuccess && Shell.su("rm -f $ifw_text_file_path").exec().isSuccess) {
             mSwipeLayout?.post {
                 mSwipeLayout?.isRefreshing = true
             }

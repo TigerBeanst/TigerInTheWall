@@ -13,9 +13,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.jakting.shareclean.R
-import com.jakting.shareclean.utils.AppsAdapter
-import com.jakting.shareclean.utils.*
-import com.topjohnwu.superuser.Shell
 import kotlinx.android.synthetic.main.activity_apps.*
 
 
@@ -26,6 +23,9 @@ open class BaseManageActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefres
     open var recyclerViewLayoutManager: RecyclerView.LayoutManager? = null
     open var isShowSystemApp = false
     open var map: MutableMap<String, Boolean>? = null
+    open lateinit var sp: SharedPreferences
+    open lateinit var spe: SharedPreferences.Editor
+    lateinit var spSetting: SharedPreferences
 
     @SuppressLint("CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +35,9 @@ open class BaseManageActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefres
         }
         setContentView(R.layout.activity_apps)
         setSupportActionBar(findViewById(R.id.toolbar))
-
+        sp = this.getSharedPreferences("intent_list", Context.MODE_PRIVATE)
+        spe = this.getSharedPreferences("intent_list", Context.MODE_PRIVATE).edit()
+        spSetting = this.getSharedPreferences("settings", Context.MODE_PRIVATE)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         mSwipeLayout = findViewById(R.id.swipe_layout)
@@ -71,6 +73,7 @@ open class BaseManageActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefres
                 }
             }
         })
+        isShowSystemApp = spSetting.getBoolean("switch_showSystemApp",false)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -98,65 +101,6 @@ open class BaseManageActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefres
                 (adapterA as AppsAdapter).notifyDataSetChanged()
                 true
             }
-            R.id.display_system_menu -> {
-                if (item.isChecked) {
-                    // If item already checked then unchecked it
-                    item.isChecked = false
-                    isShowSystemApp = false
-                    toast("此时状态：" + item.isChecked)
-                } else {
-                    // If item is unchecked then checked it
-                    item.isChecked = true
-                    isShowSystemApp = true
-                    toast("此时状态：" + item.isChecked)
-                }
-                clearIFW()
-
-                true
-            }
-//            R.id.disable_direct_menu -> {
-//                if (item.isChecked) {
-//                    // If item already checked then unchecked it
-//                    item.isChecked = false
-//                    isDisableDirectShare = false
-//                } else {
-//                    // If item is unchecked then checked it
-//                    item.isChecked = true
-//                    isDisableDirectShare = true
-//                }
-//                true
-//            }
-//            R.id.magisk_menu -> {
-//                AlertDialog.Builder(this)
-//                    .setTitle(getString(R.string.menu_magisk))
-//                    .setMessage(getString(R.string.menu_magisk_msg))
-//                    .setPositiveButton(getString(R.string.menu_magisk_core)) { dialog, which ->
-//                        val uri: Uri =
-//                            Uri.parse("https://github.com/RikkaApps/Riru/releases/latest")
-//                        val intent = Intent(Intent.ACTION_VIEW, uri)
-//                        startActivity(intent)
-//                    }
-//                    .setNegativeButton(getString(R.string.menu_magisk_ifwenhance)) { dialog, which ->
-//                        val uri: Uri =
-//                            Uri.parse("https://github.com/Kr328/Riru-IFWEnhance/releases/latest")
-//                        val intent = Intent(Intent.ACTION_VIEW, uri)
-//                        startActivity(intent)
-//                    }
-//                    .show()
-//                true
-//            }
-//            R.id.about_menu -> {
-//                AlertDialog.Builder(this)
-//                    .setTitle(getString(R.string.menu_developer))
-//                    .setMessage(getString(R.string.menu_about_dialog))
-//                    .setPositiveButton(getString(R.string.menu_about_blog)) { dialog, which ->
-//                        val uri: Uri = Uri.parse("https://jakting.com")
-//                        val intent = Intent(Intent.ACTION_VIEW, uri)
-//                        startActivity(intent)
-//                    }
-//                    .show()
-//                true
-//            }
             else -> super.onOptionsItemSelected(item)
         }
     }

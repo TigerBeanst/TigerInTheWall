@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="@string/setting_page_appearance">
+        <SwitchPreference
+            android:key="switch_showSystemApp"
+            android:title="@string/setting_page_showSystemApp"
+            android:defaultValue="false"
+            android:summaryOn="@string/setting_page_showSystemApp_summary"
+            android:summaryOff="@string/setting_page_showSystemApp_summaryNo" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/setting_page_appearance">
         <SimpleMenuPreference
             android:key="drop_dark"
             android:entries="@array/entries_dark"

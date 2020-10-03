@@ -11,18 +11,14 @@ import kotlinx.android.synthetic.main.activity_apps.*
 
 open class ViewManageActivity : BaseManageActivity(){
 
-
-    lateinit var sp: SharedPreferences
-    lateinit var spe: SharedPreferences.Editor
-
     @SuppressLint("CommitPrefEdits")
     override fun init() {
         super.init()
         if (supportActionBar != null) {
             supportActionBar!!.title = getString(R.string.view_manage_card_title)
         }
-        sp = this.getSharedPreferences("view_list", Context.MODE_PRIVATE)
-        spe = this.getSharedPreferences("view_list", Context.MODE_PRIVATE).edit()
+        sp = this.getSharedPreferences("intent_list", Context.MODE_PRIVATE)
+        spe = this.getSharedPreferences("intent_list", Context.MODE_PRIVATE).edit()
         val apkInfoExtractor = ApkInfoView(this)
         adapterA = AppsAdapter(
             this,
@@ -31,7 +27,7 @@ open class ViewManageActivity : BaseManageActivity(){
         recyclerView!!.adapter = adapterA
         map = (adapterA as AppsAdapter).map
         (map as MutableMap<String, Boolean>).entries.forEach {
-            if (sp.getBoolean(it.key, false)) {
+            if (sp.getBoolean(it.key+"/view", false)) {
                 (map as MutableMap<String, Boolean>)[it.key] = true
             }
         }
@@ -39,14 +35,13 @@ open class ViewManageActivity : BaseManageActivity(){
         floating_action_button.setOnClickListener {
             floating_action_button.setImageResource(R.drawable.ic_cached_black_24dp)
             var ifw = "<rules>\n"
-            spe.clear()
             (map as MutableMap<String, Boolean>).entries.forEach {
                 //logd(it.key)
                 if (it.value) {
                     val list = it.key.split('/')
                     //logd("list: $list")
                     //logd("${list[0]} // ${list[1]}")
-                    spe.putBoolean("${list[0]}/${list[1]}", it.value)
+                    spe.putBoolean("${list[0]}/${list[1]}/view", it.value)
                     ifw += String.format(ifw_view_content, list[0], list[1])
                 }
             }

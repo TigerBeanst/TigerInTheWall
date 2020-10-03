@@ -1,8 +1,6 @@
 package com.jakting.shareclean
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.content.SharedPreferences
 import com.jakting.shareclean.utils.AppsAdapter
 import com.jakting.shareclean.utils.*
 import com.topjohnwu.superuser.Shell
@@ -11,18 +9,12 @@ import kotlinx.android.synthetic.main.activity_apps.*
 
 open class SendManageActivity : BaseManageActivity(){
 
-
-    lateinit var sp: SharedPreferences
-    lateinit var spe: SharedPreferences.Editor
-
     @SuppressLint("CommitPrefEdits")
     override fun init() {
         super.init()
         if (supportActionBar != null) {
             supportActionBar!!.title = getString(R.string.send_manage_card_title)
         }
-        sp = this.getSharedPreferences("send_list", Context.MODE_PRIVATE)
-        spe = this.getSharedPreferences("send_list", Context.MODE_PRIVATE).edit()
         val apkInfoExtractor = ApkInfoSend(this)
         adapterA = AppsAdapter(
             this,
@@ -31,7 +23,7 @@ open class SendManageActivity : BaseManageActivity(){
         recyclerView!!.adapter = adapterA
         map = (adapterA as AppsAdapter).map
         (map as MutableMap<String, Boolean>).entries.forEach {
-            if (sp.getBoolean(it.key, false)) {
+            if (sp.getBoolean(it.key+"/send", false)) {
                 (map as MutableMap<String, Boolean>)[it.key] = true
             }
         }
@@ -39,14 +31,13 @@ open class SendManageActivity : BaseManageActivity(){
         floating_action_button.setOnClickListener {
             floating_action_button.setImageResource(R.drawable.ic_cached_black_24dp)
             var ifw = "<rules>\n"
-            spe.clear()
             (map as MutableMap<String, Boolean>).entries.forEach {
                 //logd(it.key)
                 if (it.value) {
                     val list = it.key.split('/')
                     //logd("list: $list")
                     //logd("${list[0]} // ${list[1]}")
-                    spe.putBoolean("${list[0]}/${list[1]}", it.value)
+                    spe.putBoolean("${list[0]}/${list[1]}/send", it.value)
                     ifw += String.format(ifw_send_content, list[0], list[1])
                 }
             }

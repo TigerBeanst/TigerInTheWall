@@ -1,0 +1,99 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.jakting.shareclean"
+4    android:versionCode="20200913"
+5    android:versionName="1.0.1" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+8-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
+10
+11    <queries>
+11-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:4:5-9:15
+12        <intent>
+12-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:5:9-8:18
+13            <action android:name="android.intent.action.SEND" />
+13-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:6:13-65
+13-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:6:21-62
+14
+15            <data android:mimeType="*/*" />
+15-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:7:13-44
+15-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:7:19-41
+16        </intent>
+17    </queries>
+18
+19    <uses-permission android:name="android.permission.INTERNET" />
+19-->[com.microsoft.appcenter:appcenter:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\684a29eb8e6745da85d65a442e74af57\jetified-appcenter-3.2.2\AndroidManifest.xml:15:5-67
+19-->[com.microsoft.appcenter:appcenter:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\684a29eb8e6745da85d65a442e74af57\jetified-appcenter-3.2.2\AndroidManifest.xml:15:22-64
+20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+20-->[com.microsoft.appcenter:appcenter:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\684a29eb8e6745da85d65a442e74af57\jetified-appcenter-3.2.2\AndroidManifest.xml:16:5-79
+20-->[com.microsoft.appcenter:appcenter:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\684a29eb8e6745da85d65a442e74af57\jetified-appcenter-3.2.2\AndroidManifest.xml:16:22-76
+21
+22    <application
+22-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:10:5-38:19
+23        android:allowBackup="true"
+23-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:11:9-35
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.3.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\3fad7ea4f0b845c6f6667debb95e1494\core-1.3.1\AndroidManifest.xml:24:18-86
+25        android:extractNativeLibs="false"
+26        android:fullBackupContent="@xml/backup_rules"
+26-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:12:9-54
+27        android:icon="@mipmap/ic_launcher"
+27-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:13:9-43
+28        android:label="@string/app_name"
+28-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:14:9-41
+29        android:roundIcon="@mipmap/ic_launcher_round"
+29-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:15:9-54
+30        android:supportsRtl="true"
+30-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:16:9-35
+31        android:theme="@style/AppTheme" >
+31-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:17:9-40
+32        <activity
+32-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:18:9-21:57
+33            android:name="com.jakting.shareclean.SettingsActivity"
+33-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:19:13-45
+34            android:label="@string/setting_title"
+34-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:20:13-50
+35            android:parentActivityName="com.jakting.shareclean.MainActivity" />
+35-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:21:13-55
+36        <activity
+36-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:22:9-25:57
+37            android:name="com.jakting.shareclean.MiscActivity"
+37-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:23:13-41
+38            android:label="@string/misc_card_title"
+38-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:24:13-52
+39            android:parentActivityName="com.jakting.shareclean.MainActivity" />
+39-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:25:13-55
+40        <activity
+40-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:26:9-28:53
+41            android:name="com.jakting.shareclean.AboutActivity"
+41-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:27:13-42
+42            android:theme="@style/AppTheme.About" />
+42-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:28:13-50
+43        <activity android:name="com.jakting.shareclean.MainActivity" >
+43-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:29:9-34:20
+43-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:29:19-47
+44            <intent-filter>
+44-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:30:13-33:29
+45                <action android:name="android.intent.action.MAIN" />
+45-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:31:17-69
+45-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:31:25-66
+46
+47                <category android:name="android.intent.category.LAUNCHER" />
+47-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:32:17-77
+47-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:32:27-74
+48            </intent-filter>
+49        </activity>
+50        <activity
+50-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:35:9-37:58
+51            android:name="com.jakting.shareclean.AppsManagementActivity"
+51-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:35:19-57
+52            android:label="@string/app_manage_card_title"
+52-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:36:13-58
+53            android:parentActivityName="com.jakting.shareclean.MainActivity" />
+53-->D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:37:13-55
+54    </application>
+55
+56</manifest>

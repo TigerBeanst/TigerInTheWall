@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="entries_dark">
+        <item>跟随系统</item>
+        <item>总是开启</item>
+        <item>总是关闭</item>
+    </string-array>
+    <string-array name="entries_lang">
+        <item>跟随系统</item>
+        <item>简体中文</item>
+        <item>English</item>
+    </string-array>
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"转到首页"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"转到上一层级"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"更多选项"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"完成"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"查看全部"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"选择应用"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"关闭"</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"开启"</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"Delete 键"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"Enter 键"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"Fn+"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"空格键"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"搜索…"</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"清除查询"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"搜索查询"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"搜索"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"提交查询"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"语音搜索"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"分享对象"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"与<ns1:g id="APPLICATION_NAME">%s</ns1:g>分享"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"收起"</string>
+    <string name="about_page_browser">浏览器</string>
+    <string name="about_page_dev">开发者</string>
+    <string name="about_page_dev_1">氡·意图清理 开发者</string>
+    <string name="about_page_dev_2">Riru - Core 开发者</string>
+    <string name="about_page_dev_3">Riru - IFW Enhance 开发者</string>
+    <string name="about_page_info">介绍</string>
+    <string name="about_page_info_desc">你是否已经厌倦了分享图片或打开文件时，在冗长的分享列表里翻找，却只为找到几个你常用的应用？\n\n你们这些应用为什么要出现在我的图片分享面板和打开方式里？\n我如果需要你们，我自己会打开 App 来用啊！\n\n「氡·意图清理」是一款允许您清理分享面板和打开方式面板的应用，它借助 Magisk 模块 Riru - Core 和 Riru - IFW Enhance 来实现作用，当然 root 权限也是必需的。</string>
+    <string name="about_page_open_source">开放源代码许可</string>
+    <string name="about_page_open_with">打开方式：</string>
+    <string name="about_title">关于</string>
+    <string name="app_name">氡·意图清理</string>
+    <string name="backup_title">备份 &amp; 还原</string>
+    <string name="br_backup">备份</string>
+    <string name="br_backup_ok">备份已完成</string>
+    <string name="br_msg">如若您的设备支持 Google 服务且已登录，Android 系统将会执行自动备份，您也可以进行手动备份。\n\n但无论如何请获悉：随着版本更替，未来版本有可能不会支持旧版本的数据格式。</string>
+    <string name="br_restore">还原</string>
+    <string name="br_restore_ok">还原已完成，请手动重启 氡·意图清理</string>
+    <string name="dialog_negative">不了不了</string>
+    <string name="dialog_positive">明白了</string>
+    <string name="manage_dialog_desc">Riru - IFW Enhance 未被正确应用。您所做的任何操作可能都不会生效。</string>
+    <string name="manage_dialog_title">提示</string>
+    <string name="manage_send_success">分享清理已应用</string>
+    <string name="manage_start">已清理本应用写入的 IFW 规则，请再次提交以生效</string>
+    <string name="manage_text_success">文本操作清理已应用</string>
+    <string name="manage_view_success">打开方式清理已应用</string>
+    <string name="menu_clear">全不选</string>
+    <string name="menu_select_all">全选</string>
+    <string name="misc_disable">禁用</string>
+    <string name="misc_disable_direct">禁用 Direct Share</string>
+    <string name="misc_disable_direct_No">此选项无法在 Android 10 及以上的设备上使用。</string>
+    <string name="misc_disable_direct_msg">禁用未经魔改的分享面板中的 Direct Share。此选项无法在 Android 10 及以上的设备上使用。</string>
+    <string name="misc_disable_direct_msgNo">启用未经魔改的分享面板中的 Direct Share。此选项无法在 Android 10 及以上的设备上使用。</string>
+    <string name="misc_disable_direct_toastDisable">Direct Share 已禁用</string>
+    <string name="misc_disable_direct_toastEnable">Direct Share 已启用</string>
+    <string name="misc_title">杂项</string>
+    <string name="riru_status_card_cannot">无法获取模块状态</string>
+    <string name="riru_status_card_cannot_detail">请给予 Root 权限后重启应用</string>
+    <string name="riru_status_card_download">您的设备可能未安装 Riru - IFW Enhance 模块。\n\n点击「下载」，前往下载页下载。</string>
+    <string name="riru_status_card_download_btn">下载</string>
+    <string name="riru_status_card_exist">已激活模块</string>
+    <string name="riru_status_card_exist_detail">Riru - IFW Enhance 已被正确应用</string>
+    <string name="riru_status_card_not">未激活模块</string>
+    <string name="riru_status_card_not_detail">Riru - IFW Enhance 未被正确应用</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"搜索"</string>
+    <string name="send_manage_card_detail">清理占用分享面板的应用</string>
+    <string name="send_manage_card_title">分享到…</string>
+    <string name="setting_page_appcenter">使用 AppCenter 分析</string>
+    <string name="setting_page_appcenter_summary">分析日志将会被上传</string>
+    <string name="setting_page_appcenter_summaryNo">分析日志将不会被上传</string>
+    <string name="setting_page_appearance">界面</string>
+    <string name="setting_page_dark_mode">暗色模式</string>
+    <string name="setting_page_function">功能</string>
+    <string name="setting_page_helplang">帮助翻译</string>
+    <string name="setting_page_helplang_summary">帮忙将 氡·意图清理 翻译成您的语言</string>
+    <string name="setting_page_language">语言</string>
+    <string name="setting_page_privacy">隐私</string>
+    <string name="setting_page_showSystemApp">显示系统应用</string>
+    <string name="setting_page_showSystemApp_summary">显示系统应用。禁用系统应用的意图可能会导致未知错误。</string>
+    <string name="setting_page_showSystemApp_summaryNo">不显示系统应用。</string>
+    <string name="setting_title">设置</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="text_manage_card_detail">清理长按文本时出现的应用</string>
+    <string name="text_manage_card_title">文本操作</string>
+    <string name="view_manage_card_detail">清理占用打开方式面板的应用</string>
+    <string name="view_manage_card_title">打开方式…</string>
+</resources>

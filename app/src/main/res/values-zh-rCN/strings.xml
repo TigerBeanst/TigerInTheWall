@@ -38,7 +38,7 @@
     <string name="about_page_dev_3">Riru - IFW Enhance 开发者</string>
     <string name="about_page_open_source">开放源代码许可</string>
 
-    <string name="manage_start">已清理本应用写入的IFW规则，请再次提交以生效</string>
+    <string name="manage_start">已清理本应用写入的 IFW 规则，请再次提交以生效</string>
     <string name="manage_send_success">分享清理已应用</string>
 
     <string name="misc_disable">禁用</string>
@@ -59,7 +59,6 @@
 
     <string name="menu_select_all">全选</string>
     <string name="menu_clear">全不选</string>
-    <string name="menu_show_system">显示系统应用</string>
 
     <string-array name="entries_dark">
         <item>跟随系统</item>
@@ -80,4 +79,8 @@
     <string name="text_manage_card_title">文本操作</string>
     <string name="text_manage_card_detail">清理长按文本时出现的应用</string>
     <string name="manage_text_success">文本操作清理已应用</string>
+    <string name="setting_page_function">功能</string>
+    <string name="setting_page_showSystemApp">显示系统应用</string>
+    <string name="setting_page_showSystemApp_summary">显示系统应用。禁用系统应用的意图可能会导致未知错误。</string>
+    <string name="setting_page_showSystemApp_summaryNo">不显示系统应用。</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.jakting.shareclean
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -8,6 +9,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.alibaba.fastjson.JSON
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jakting.shareclean.utils.*
 import com.topjohnwu.superuser.Shell
@@ -18,16 +20,22 @@ import java.io.*
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     var isWorked = false //标志 - 模块是否被检测到正常工作
+    lateinit var sp: SharedPreferences
+    lateinit var spIntent: SharedPreferences
+    lateinit var speIntent: SharedPreferences.Editor
     private val WRITE_REQUEST_CODE: Int = 43
     private val READ_REQUEST_CODE: Int = 42
 
+    @SuppressLint("CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (!getDarkModeStatus(this)) {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         }
         setContentView(R.layout.activity_main)
-        val sp = getSharedPreferences("settings", Context.MODE_PRIVATE)
+        sp = getSharedPreferences("settings", Context.MODE_PRIVATE)
+        spIntent = getSharedPreferences("intent_list", Context.MODE_PRIVATE)
+        speIntent = getSharedPreferences("intent_list", Context.MODE_PRIVATE).edit()
         setSupportActionBar(findViewById(R.id.toolbar))
         init(sp)
         setModuleStatusCard()
@@ -99,7 +107,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 //还原
                 val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
-                    type = "text/plain"
+                    type = "application/json"
                 }
                 startActivityForResult(intent, READ_REQUEST_CODE)
             }
@@ -107,7 +115,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 //备份
                 val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
-                    type = "text/plain"
+                    type = "application/json"
                     val time = System.currentTimeMillis() //用于 备份&恢复 的时间戳
                     putExtra(Intent.EXTRA_TITLE, "RnIntentClean_Backup_$time")
                 }
@@ -120,17 +128,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onActivityResult(requestCode, resultCode, resultData)
         if (requestCode == WRITE_REQUEST_CODE && resultData != null && resultData.data != null) {
             //备份
-            alterDocument(resultData.data as Uri)
-            toast(getString(R.string.br_backup_ok))
+            if (backupSharedPreferences(resultData.data as Uri)) {
+                toast(getString(R.string.br_backup_ok))
+            }else{
+                toast(getString(R.string.br_backup_error))
+            }
         }
         if (requestCode == READ_REQUEST_CODE && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
             //还原
-            var xml: String = readTextFromUri(resultData.data as Uri)
-            xml = xml.replace("'", "\"")
-            logd(xml)
-            if (Shell.su("touch $sc_sp_path").exec().isSuccess &&
-                Shell.su("echo '$xml' > $sc_sp_path").exec().isSuccess
-            ) {
+            if (restoreSharedPreferences(resultData.data as Uri)) {
                 toast(getString(R.string.br_restore_ok))
             }
         }
@@ -143,7 +149,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     MaterialAlertDialogBuilder(this)
                         .setTitle(R.string.manage_dialog_title)
                         .setMessage(R.string.riru_status_card_download)
-                        .setPositiveButton(R.string.riru_status_card_download_btn) { dialog, which ->
+                        .setPositiveButton(R.string.riru_status_card_download_btn) { _, _ ->
                             val uri = Uri.parse("https://sc.into.icu")
                             val intent = Intent(Intent.ACTION_VIEW, uri)
                             startActivity(intent)
@@ -208,27 +214,26 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun alterDocument(uri: Uri) {
+    private fun backupSharedPreferences(uri: Uri): Boolean {
         try {
-            val result = Shell.su("cat $sc_sp_path").exec()
-            if (result.isSuccess) {
-                var resultS: String = result.out.joinToString("")
-                resultS = resultS.replace("'", "\"")
-                contentResolver.openFileDescriptor(uri, "w")?.use {
-                    FileOutputStream(it.fileDescriptor).use {
-                        it.write((resultS).toByteArray())
-                    }
+            contentResolver.openFileDescriptor(uri, "w")?.use {
+                FileOutputStream(it.fileDescriptor).use {
+                    it.write(
+                        JSON.toJSONString(spIntent.all).toByteArray()
+                    )
                 }
             }
+            return true
         } catch (e: FileNotFoundException) {
             e.printStackTrace()
         } catch (e: IOException) {
             e.printStackTrace()
         }
+        return false
     }
 
     @Throws(IOException::class)
-    private fun readTextFromUri(uri: Uri): String {
+    private fun restoreSharedPreferences(uri: Uri): Boolean {
         val stringBuilder = StringBuilder()
         contentResolver.openInputStream(uri)?.use { inputStream ->
             BufferedReader(InputStreamReader(inputStream)).use { reader ->
@@ -239,6 +244,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
         }
-        return stringBuilder.toString()
+        val map = JSON.parseObject(stringBuilder.toString())
+        speIntent.clear()
+        map.forEach {
+            speIntent.putBoolean(it.key, it.value as Boolean)
+        }
+        speIntent.apply()
+        return true
     }
 }

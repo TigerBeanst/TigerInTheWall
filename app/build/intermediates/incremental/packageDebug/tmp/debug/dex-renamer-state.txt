@@ -1,4 +1,4 @@
-#Sun Oct 04 03:59:14 CST 2020
+#Sun Oct 04 05:28:37 CST 2020
 base.0=D\:\\Android\\JavaAndroid\\RnIntentClean\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

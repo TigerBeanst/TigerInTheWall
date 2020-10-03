@@ -50,10 +50,11 @@
     <string name="app_name">氡·意图清理</string>
     <string name="backup_title">备份 &amp; 还原</string>
     <string name="br_backup">备份</string>
+    <string name="br_backup_error">发生错误</string>
     <string name="br_backup_ok">备份已完成</string>
     <string name="br_msg">如若您的设备支持 Google 服务且已登录，Android 系统将会执行自动备份，您也可以进行手动备份。\n\n但无论如何请获悉：随着版本更替，未来版本有可能不会支持旧版本的数据格式。</string>
     <string name="br_restore">还原</string>
-    <string name="br_restore_ok">还原已完成，请手动重启 氡·意图清理</string>
+    <string name="br_restore_ok">还原已完成。</string>
     <string name="dialog_negative">不了不了</string>
     <string name="dialog_positive">明白了</string>
     <string name="manage_dialog_desc">Riru - IFW Enhance 未被正确应用。您所做的任何操作可能都不会生效。</string>

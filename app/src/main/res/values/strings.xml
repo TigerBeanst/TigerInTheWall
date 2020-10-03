@@ -63,8 +63,9 @@
     <string name="br_backup">Backup</string>
     <string name="br_restore">Restore</string>
     <string name="br_msg">If your device supports Google services and already logged in, Android will do an automatic backup, or you can do a manual backup. \n\n Please be aware, however: as versions change, future versions may not support older versions of the data format.</string>
-    <string name="br_backup_ok">Backup completed</string>
-    <string name="br_restore_ok">Restore completed. Please restart RnIntentClean manually.</string>
+    <string name="br_backup_ok">Backup completed.</string>
+    <string name="br_backup_error">An error occurred</string>
+    <string name="br_restore_ok">Restore completed.</string>
 
     <string name="dialog_positive">Got it</string>
     <string name="dialog_negative">Don\'t</string>

@@ -1067,10 +1067,11 @@
     <string name="backup_title">Backup &amp; Restore</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
     <string name="br_backup">Backup</string>
-    <string name="br_backup_ok">Backup completed</string>
+    <string name="br_backup_error">An error occurred</string>
+    <string name="br_backup_ok">Backup completed.</string>
     <string name="br_msg">If your device supports Google services and already logged in, Android will do an automatic backup, or you can do a manual backup. \n\n Please be aware, however: as versions change, future versions may not support older versions of the data format.</string>
     <string name="br_restore">Restore</string>
-    <string name="br_restore_ok">Restore completed. Please restart RnIntentClean manually.</string>
+    <string name="br_restore_ok">Restore completed.</string>
     <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
     <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d/%2$d</string>

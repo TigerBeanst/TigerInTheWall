@@ -1,7 +1,7 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.jakting.shareclean"
-4    android:versionCode="20201001"
+4    android:versionCode="20201004"
 5    android:versionName="1.0.2" >
 6
 7    <uses-sdk
@@ -36,7 +36,7 @@
 23        android:allowBackup="true"
 23-->D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:11:9-35
 24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-24-->[androidx.core:core:1.3.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\3fad7ea4f0b845c6f6667debb95e1494\core-1.3.1\AndroidManifest.xml:24:18-86
+24-->[androidx.core:core:1.3.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\81112976e9a5a57f038e5cfed90af170\core-1.3.2\AndroidManifest.xml:24:18-86
 25        android:debuggable="true"
 26        android:extractNativeLibs="false"
 27        android:fullBackupContent="@xml/backup_rules"

@@ -11,7 +11,7 @@
       "type": "SINGLE",
       "filters": [],
       "properties": [],
-      "versionCode": 20201001,
+      "versionCode": 20201004,
       "versionName": "1.0.2",
       "enabled": true,
       "outputFile": "app-debug.apk"

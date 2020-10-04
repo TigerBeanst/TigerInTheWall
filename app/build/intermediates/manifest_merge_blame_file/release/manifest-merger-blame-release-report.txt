@@ -1,7 +1,7 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.jakting.shareclean"
-4    android:versionCode="20201001"
+4    android:versionCode="20201004"
 5    android:versionName="1.0.2" >
 6
 7    <uses-sdk

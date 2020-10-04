@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jakting.shareclean"
     android:targetSandboxVersion="2"
-    android:versionCode="20201001"
+    android:versionCode="20201004"
     android:versionName="1.0.2" >
 
     <uses-sdk

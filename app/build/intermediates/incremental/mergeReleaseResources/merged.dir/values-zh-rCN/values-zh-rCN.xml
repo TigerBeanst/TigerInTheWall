@@ -157,7 +157,7 @@
     <string name="setting_title">设置</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
     <string name="text_manage_card_detail">清理长按文本时出现的应用</string>
-    <string name="text_manage_card_title">文本操作</string>
+    <string name="text_manage_card_title">文本操作…</string>
     <string name="view_manage_card_detail">清理占用打开方式面板的应用</string>
     <string name="view_manage_card_title">打开方式…</string>
 </resources>

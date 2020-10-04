@@ -10,7 +10,7 @@
       "apkData": {
         "type": "MAIN",
         "splits": [],
-        "versionCode": 20201001,
+        "versionCode": 20201004,
         "versionName": "1.0.2",
         "outputFile": "app-release.apk",
         "fullName": "release",

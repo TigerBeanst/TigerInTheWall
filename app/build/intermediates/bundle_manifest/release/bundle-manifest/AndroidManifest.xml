@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jakting.shareclean"
-    android:versionCode="20200913"
-    android:versionName="1.0.1" >
+    android:versionCode="20201001"
+    android:versionName="1.0.2" >
 
     <uses-sdk
         android:minSdkVersion="26"
@@ -35,7 +35,7 @@
             android:parentActivityName="com.jakting.shareclean.MainActivity" />
         <activity
             android:name="com.jakting.shareclean.MiscActivity"
-            android:label="@string/misc_card_title"
+            android:label="@string/misc_title"
             android:parentActivityName="com.jakting.shareclean.MainActivity" />
         <activity
             android:name="com.jakting.shareclean.AboutActivity"
@@ -48,8 +48,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.jakting.shareclean.AppsManagementActivity"
-            android:label="@string/app_manage_card_title"
+            android:name="com.jakting.shareclean.SendManageActivity"
+            android:label="@string/send_manage_card_title"
+            android:parentActivityName="com.jakting.shareclean.MainActivity" />
+        <activity
+            android:name="com.jakting.shareclean.ViewManageActivity"
+            android:label="@string/view_manage_card_title"
+            android:parentActivityName="com.jakting.shareclean.MainActivity" />
+        <activity
+            android:name="com.jakting.shareclean.TextManageActivity"
+            android:label="@string/text_manage_card_title"
             android:parentActivityName="com.jakting.shareclean.MainActivity" />
     </application>
 

@@ -10,6 +10,10 @@
         <item>简体中文</item>
         <item>English</item>
     </string-array>
+    <plurals name="mtrl_badge_content_description">
+    <item quantity="one">%d 条新通知</item>
+    <item quantity="other">%d 条新通知</item>
+  </plurals>
     <string msgid="5976598919945601918" name="abc_action_bar_home_description">"转到首页"</string>
     <string msgid="8388173803310557296" name="abc_action_bar_up_description">"转到上一层级"</string>
     <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"更多选项"</string>
@@ -38,41 +42,94 @@
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"与<ns1:g id="APPLICATION_NAME">%s</ns1:g>分享"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"收起"</string>
     <string name="about_page_browser">浏览器</string>
-    <string name="about_page_dev_1">氡·分享清理 开发者</string>
+    <string name="about_page_dev">开发者</string>
+    <string name="about_page_dev_1">氡·意图清理 开发者</string>
     <string name="about_page_dev_2">Riru - Core 开发者</string>
     <string name="about_page_dev_3">Riru - IFW Enhance 开发者</string>
-    <string name="about_page_dev_title">开发者</string>
-    <string name="about_page_info">你是否已经厌倦了分享图片时，在冗长的分享列表里翻找APP，只为找到微信、QQ 等几个你常用的应用？\n\n百X网盘、高X地图、菜鸟X裹、X瓣、京X、淘X……\n你们为什么要出现在我的图片分享列表里？\n我如果需要你们，我自己会打开 App 来用啊，为什么要占领我的分享列表呢？\n\n「氡·分享清理」是借助 Magisk 模块 Riru - Core 和 Riru - IFW Enhance 来实现作用的 APP，同时你需要赋予其 Root 权限以进行写入 IFW 规则的操作。</string>
-    <string name="about_page_info_title">介绍</string>
-    <string name="about_page_open_title">开放源代码许可</string>
+    <string name="about_page_info">介绍</string>
+    <string name="about_page_info_desc">你是否已经厌倦了分享图片或打开文件时，在冗长的分享列表里翻找，却只为找到几个你常用的应用？\n\n你们这些应用为什么要出现在我的图片分享面板和打开方式里？\n我如果需要你们，我自己会打开 App 来用啊！\n\n「氡·意图清理」是一款允许您清理分享面板和打开方式面板的应用，它借助 Magisk 模块 Riru - Core 和 Riru - IFW Enhance 来实现作用，当然 root 权限也是必需的。</string>
+    <string name="about_page_open_source">开放源代码许可</string>
     <string name="about_page_open_with">打开方式：</string>
     <string name="about_title">关于</string>
-    <string name="app_manage_card_detail">天天占着分享面板的辣鸡应用给爷死！！！</string>
-    <string name="app_manage_card_title">应用管理</string>
-    <string name="app_manage_dialog_desc">Riru - IFW Enhance 未被正确应用。您所做的任何操作可能都不会生效。</string>
-    <string name="app_manage_dialog_title">提示</string>
-    <string name="app_name">氡·分享清理</string>
-    <string name="appmanage_ifw_success">分享清理已应用</string>
-    <string name="appmanage_start">已清理本应用写入的IFW规则，请再次提交以生效</string>
+    <string name="app_name">氡·意图清理</string>
     <string name="backup_title">备份 &amp; 还原</string>
+    <string name="bottomsheet_action_expand_halfway">展开到一半高度</string>
     <string name="br_backup">备份</string>
+    <string name="br_backup_error">发生错误</string>
     <string name="br_backup_ok">备份已完成</string>
     <string name="br_msg">如若您的设备支持 Google 服务且已登录，Android 系统将会执行自动备份，您也可以进行手动备份。\n\n但无论如何请获悉：随着版本更替，未来版本有可能不会支持旧版本的数据格式。</string>
     <string name="br_restore">还原</string>
-    <string name="br_restore_ok">还原已完成，请手动重启 氡·分享清理</string>
+    <string name="br_restore_ok">还原已完成。</string>
+    <string name="character_counter_content_description">输入了 %1$d 个字符（上限为 %2$d 个）</string>
+    <string name="character_counter_overflowed_content_description">超出字符数限制（共 %1$d 个，上限为 %2$d 个）</string>
+    <string name="clear_text_end_icon_content_description">清除文字</string>
     <string name="dialog_negative">不了不了</string>
     <string name="dialog_positive">明白了</string>
+    <string name="error_icon_content_description">错误</string>
+    <string name="exposed_dropdown_menu_content_description">显示下拉菜单</string>
+    <string name="icon_content_description">对话框图标</string>
+    <string name="manage_dialog_desc">Riru - IFW Enhance 未被正确应用。您所做的任何操作可能都不会生效。</string>
+    <string name="manage_dialog_title">提示</string>
+    <string name="manage_send_success">分享清理已应用</string>
+    <string name="manage_start">已清理本应用写入的 IFW 规则，请再次提交以生效</string>
+    <string name="manage_text_success">文本操作清理已应用</string>
+    <string name="manage_view_success">打开方式清理已应用</string>
+    <string name="material_clock_toggle_content_description">Select AM or PM</string>
+    <string name="material_hour_selection">选择小时</string>
+    <string name="material_hour_suffix">%1$s o\'clock</string>
+    <string name="material_minute_selection">选择分钟</string>
+    <string name="material_minute_suffix">%1$s minutes</string>
+    <string name="material_timepicker_am">上午</string>
+    <string name="material_timepicker_clock_mode_description">切换到时钟模式来输入时间。</string>
+    <string name="material_timepicker_hour">小时</string>
+    <string name="material_timepicker_minute">分钟</string>
+    <string name="material_timepicker_pm">下午</string>
+    <string name="material_timepicker_select_time">选择时间</string>
+    <string name="material_timepicker_text_input_mode_description">切换到文字输入模式来输入时间。</string>
     <string name="menu_clear">全不选</string>
     <string name="menu_select_all">全选</string>
-    <string name="menu_show_system">显示系统应用</string>
-    <string name="misc_card_detail">另外的一些您也许想要的功能</string>
-    <string name="misc_card_title">杂项</string>
     <string name="misc_disable">禁用</string>
     <string name="misc_disable_direct">禁用 Direct Share</string>
-    <string name="misc_disable_direct_msg">禁用未经魔改的分享面板中的 Direct Share。此选项并不一定有效。</string>
-    <string name="misc_disable_direct_msgNo">启用未经魔改的分享面板中的 Direct Share。此选项并不一定有效。</string>
+    <string name="misc_disable_direct_No">此选项无法在 Android 10 及以上的设备上使用。</string>
+    <string name="misc_disable_direct_msg">禁用未经魔改的分享面板中的 Direct Share。此选项无法在 Android 10 及以上的设备上使用。</string>
+    <string name="misc_disable_direct_msgNo">启用未经魔改的分享面板中的 Direct Share。此选项无法在 Android 10 及以上的设备上使用。</string>
     <string name="misc_disable_direct_toastDisable">Direct Share 已禁用</string>
     <string name="misc_disable_direct_toastEnable">Direct Share 已启用</string>
+    <string name="misc_title">杂项</string>
+    <string name="mtrl_badge_numberless_content_description">新通知</string>
+    <string name="mtrl_chip_close_icon_content_description">移除%1$s</string>
+    <string name="mtrl_exceed_max_badge_number_content_description">有 %1$d 条以上的新通知</string>
+    <string name="mtrl_picker_a11y_next_month">转到下个月</string>
+    <string name="mtrl_picker_a11y_prev_month">转到上个月</string>
+    <string name="mtrl_picker_announce_current_selection">当前的选择是：%1$s</string>
+    <string name="mtrl_picker_confirm">@android:string/ok</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">选择一个日期</string>
+    <string name="mtrl_picker_date_header_unselected">选定的日期</string>
+    <string name="mtrl_picker_day_of_week_column_header">表示周几的列：%1$s</string>
+    <string name="mtrl_picker_invalid_format">格式无效。</string>
+    <string name="mtrl_picker_invalid_format_example">示例：%1$s</string>
+    <string name="mtrl_picker_invalid_format_use">使用：%1$s</string>
+    <string name="mtrl_picker_invalid_range">范围无效。</string>
+    <string name="mtrl_picker_navigate_to_year_description">转到 %1$s 年</string>
+    <string name="mtrl_picker_out_of_range">不在允许的范围内：%1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">开始日期 – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – 结束日期</string>
+    <string name="mtrl_picker_range_header_selected">%1$s - %2$s</string>
+    <string name="mtrl_picker_range_header_title">选择日期范围</string>
+    <string name="mtrl_picker_range_header_unselected">开始日期 - 结束日期</string>
+    <string name="mtrl_picker_save">保存</string>
+    <string name="mtrl_picker_text_input_date_hint">日期</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">结束日期</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">开始日期</string>
+    <string name="mtrl_picker_text_input_day_abbr">d</string>
+    <string name="mtrl_picker_text_input_month_abbr">m</string>
+    <string name="mtrl_picker_text_input_year_abbr">y</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">切换到日历输入模式</string>
+    <string name="mtrl_picker_toggle_to_day_selection">点按即可切换到选择某天</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">切换到文本字段输入模式</string>
+    <string name="mtrl_picker_toggle_to_year_selection">点按即可切换到选择某年</string>
+    <string name="password_toggle_content_description">显示密码</string>
     <string name="riru_status_card_cannot">无法获取模块状态</string>
     <string name="riru_status_card_cannot_detail">请给予 Root 权限后重启应用</string>
     <string name="riru_status_card_download">您的设备可能未安装 Riru - IFW Enhance 模块。\n\n点击「下载」，前往下载页下载。</string>
@@ -82,16 +139,25 @@
     <string name="riru_status_card_not">未激活模块</string>
     <string name="riru_status_card_not_detail">Riru - IFW Enhance 未被正确应用</string>
     <string msgid="6264217191555673260" name="search_menu_title">"搜索"</string>
-    <string name="setting_page_1_title">界面</string>
-    <string name="setting_page_2_title">语言</string>
-    <string name="setting_page_3_title">隐私</string>
+    <string name="send_manage_card_detail">清理占用分享面板的应用</string>
+    <string name="send_manage_card_title">分享到…</string>
+    <string name="setting_page_appcenter">使用 AppCenter 分析</string>
     <string name="setting_page_appcenter_summary">分析日志将会被上传</string>
     <string name="setting_page_appcenter_summaryNo">分析日志将不会被上传</string>
-    <string name="setting_page_appcenter_title">使用 AppCenter 分析</string>
-    <string name="setting_page_dark_title">暗色模式</string>
-    <string name="setting_page_helplang_summary">帮忙将 氡·分享清理 翻译成您的语言</string>
-    <string name="setting_page_helplang_title">帮助翻译</string>
-    <string name="setting_page_lang_title">多语言</string>
+    <string name="setting_page_appearance">界面</string>
+    <string name="setting_page_dark_mode">暗色模式</string>
+    <string name="setting_page_function">功能</string>
+    <string name="setting_page_helplang">帮助翻译</string>
+    <string name="setting_page_helplang_summary">帮忙将 氡·意图清理 翻译成您的语言</string>
+    <string name="setting_page_language">语言</string>
+    <string name="setting_page_privacy">隐私</string>
+    <string name="setting_page_showSystemApp">显示系统应用</string>
+    <string name="setting_page_showSystemApp_summary">显示系统应用。禁用系统应用的意图可能会导致未知错误。</string>
+    <string name="setting_page_showSystemApp_summaryNo">不显示系统应用。</string>
     <string name="setting_title">设置</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="text_manage_card_detail">清理长按文本时出现的应用</string>
+    <string name="text_manage_card_title">文本操作</string>
+    <string name="view_manage_card_detail">清理占用打开方式面板的应用</string>
+    <string name="view_manage_card_title">打开方式…</string>
 </resources>

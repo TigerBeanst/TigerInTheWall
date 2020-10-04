@@ -24,12 +24,12 @@
         "source": "D:\\Android\\JavaAndroid\\RnIntentClean\\app\\src\\main\\res\\drawable\\ic_baseline_clear_all_24.xml"
     },
     {
-        "merged": "D:\\Android\\JavaAndroid\\RnIntentClean\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_settings_24.xml.flat",
-        "source": "D:\\Android\\JavaAndroid\\RnIntentClean\\app\\src\\main\\res\\drawable\\ic_baseline_settings_24.xml"
-    },
-    {
         "merged": "D:\\Android\\JavaAndroid\\RnIntentClean\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_done_all_24.xml.flat",
         "source": "D:\\Android\\JavaAndroid\\RnIntentClean\\app\\src\\main\\res\\drawable\\ic_baseline_done_all_24.xml"
+    },
+    {
+        "merged": "D:\\Android\\JavaAndroid\\RnIntentClean\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_settings_24.xml.flat",
+        "source": "D:\\Android\\JavaAndroid\\RnIntentClean\\app\\src\\main\\res\\drawable\\ic_baseline_settings_24.xml"
     },
     {
         "merged": "D:\\Android\\JavaAndroid\\RnIntentClean\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dev_kr328.png.flat",

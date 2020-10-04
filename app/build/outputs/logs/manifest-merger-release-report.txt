@@ -1,14 +1,14 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:2:1-40:12
-MERGED from [com.microsoft.appcenter:appcenter-analytics:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\8d5d32f76dad792d3ee62d19bbf2ea48\jetified-appcenter-analytics-3.2.2\AndroidManifest.xml:6:1-15:12
-MERGED from [com.microsoft.appcenter:appcenter-crashes:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\8246c057d3d5b6132c2e973978b26c3f\jetified-appcenter-crashes-3.2.2\AndroidManifest.xml:6:1-15:12
-MERGED from [androidx.core:core-ktx:1.3.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\8980d788014fcfbd6a5e16fdd30ae692\jetified-core-ktx-1.3.1\AndroidManifest.xml:2:1-9:12
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:2:1-46:12
+MERGED from [com.microsoft.appcenter:appcenter-analytics:3.3.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\8a5fa70d1fd49e455182f6470b048e25\jetified-appcenter-analytics-3.3.0\AndroidManifest.xml:6:1-15:12
+MERGED from [com.microsoft.appcenter:appcenter-crashes:3.3.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\2681761c0676ff4ab097e36427c32dda\jetified-appcenter-crashes-3.3.0\AndroidManifest.xml:6:1-15:12
+MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\80913f19362e1a0d5ec8f7f58d86b550\jetified-core-ktx-1.3.2\AndroidManifest.xml:2:1-9:12
 MERGED from [com.drakeet.about:about:2.4.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\c9ac76630688b5c8e978da1ef12c7eda\jetified-about-2.4.1\AndroidManifest.xml:2:1-11:12
-MERGED from [com.google.android.material:material:1.3.0-alpha02] C:\Users\i\.gradle\caches\transforms-2\files-2.1\d224f9e5f673038e0688823f6a0bc12d\material-1.3.0-alpha02\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.3.0-alpha03] C:\Users\i\.gradle\caches\transforms-2\files-2.1\338f19765f6a344b9628486a8187a170\material-1.3.0-alpha03\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\810bc0023f39274b6f9bc838d32f9df6\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.drakeet.multitype:multitype:4.0.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\69efbc99f85d9ad7b2c9f44b772c62b3\jetified-multitype-4.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [moe.shizuku.preference:preference-simplemenu-android:4.2.0-alpha03] C:\Users\i\.gradle\caches\transforms-2\files-2.1\4176f950843f9090bdd589b0bc895edc\jetified-preference-simplemenu-android-4.2.0-alpha03\AndroidManifest.xml:2:1-11:12
@@ -18,7 +18,7 @@ MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\i\.gradle\caches
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\ae0d43a8cd9e2d0dca0ee7612d373384\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.topjohnwu.libsu:core:3.0.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\731f34999d73ef58d17b37462e7ed6c6\jetified-core-3.0.2\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\353a9ee879e72d31c994ca52780022e0\swiperefreshlayout-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.microsoft.appcenter:appcenter:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\684a29eb8e6745da85d65a442e74af57\jetified-appcenter-3.2.2\AndroidManifest.xml:6:1-18:12
+MERGED from [com.microsoft.appcenter:appcenter:3.3.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\64ded7aa983a363671cdf0f168ad6820\jetified-appcenter-3.3.0\AndroidManifest.xml:6:1-18:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\4e039017508058e03141616af225b4eb\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\9851228a28131c6e079209b1996b47a5\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\2a612bd4c425dcfbfc1a3a304e287881\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -33,7 +33,7 @@ MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\i\.gradle\ca
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\76e2c37ae32353ccc0fe554bfc39f522\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\6f621cac338d61e4657df2851636b5fa\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.1.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\07fffc4e66e9051edb002e23eddf3cce\jetified-activity-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core:1.3.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\3fad7ea4f0b845c6f6667debb95e1494\core-1.3.1\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.core:core:1.3.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\81112976e9a5a57f038e5cfed90af170\core-1.3.2\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\6ba1de9be899b775fb2e622bcf9ee329\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\6118f679eabfffe3c12f082544a87853\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\22f084678c0c8123034752ff82b9a006\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -48,119 +48,135 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\i\.gradle\cac
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\31435e025cdccb9fb8afecf6a35971cd\lifecycle-livedata-core-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\ca6f5dc978f1f081f1b8afbaed8e2aeb\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\541c09a69b824cc7c223abe4277f4942\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:2:1-46:12
 	package
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:3:5-37
-		INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:3:5-37
+		INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:2:1-40:12
-		INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:2:1-46:12
+		INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:2:1-40:12
-		INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:2:1-46:12
+		INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:2:11-69
 queries
-ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:4:5-9:15
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:4:5-9:15
 intent
-ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:5:9-8:18
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:5:9-8:18
 action#android.intent.action.SEND
-ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:6:13-65
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:6:13-65
 	android:name
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:6:21-62
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:6:21-62
 data
-ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:7:13-44
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:7:13-44
 	android:mimeType
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:7:19-41
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:7:19-41
 application
-ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:10:5-38:19
-MERGED from [com.google.android.material:material:1.3.0-alpha02] C:\Users\i\.gradle\caches\transforms-2\files-2.1\d224f9e5f673038e0688823f6a0bc12d\material-1.3.0-alpha02\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.material:material:1.3.0-alpha02] C:\Users\i\.gradle\caches\transforms-2\files-2.1\d224f9e5f673038e0688823f6a0bc12d\material-1.3.0-alpha02\AndroidManifest.xml:22:5-20
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:10:5-44:19
+MERGED from [com.google.android.material:material:1.3.0-alpha03] C:\Users\i\.gradle\caches\transforms-2\files-2.1\338f19765f6a344b9628486a8187a170\material-1.3.0-alpha03\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.3.0-alpha03] C:\Users\i\.gradle\caches\transforms-2\files-2.1\338f19765f6a344b9628486a8187a170\material-1.3.0-alpha03\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\810bc0023f39274b6f9bc838d32f9df6\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\810bc0023f39274b6f9bc838d32f9df6\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
-MERGED from [androidx.core:core:1.3.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\3fad7ea4f0b845c6f6667debb95e1494\core-1.3.1\AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.3.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\3fad7ea4f0b845c6f6667debb95e1494\core-1.3.1\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\81112976e9a5a57f038e5cfed90af170\core-1.3.2\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\81112976e9a5a57f038e5cfed90af170\core-1.3.2\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\6118f679eabfffe3c12f082544a87853\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\6118f679eabfffe3c12f082544a87853\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.3.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\3fad7ea4f0b845c6f6667debb95e1494\core-1.3.1\AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.3.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\81112976e9a5a57f038e5cfed90af170\core-1.3.2\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:16:9-35
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:16:9-35
 	android:label
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:14:9-41
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:14:9-41
 	android:fullBackupContent
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:12:9-54
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:12:9-54
 	android:roundIcon
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:15:9-54
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:15:9-54
 	android:icon
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:13:9-43
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:13:9-43
 	android:allowBackup
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:11:9-35
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:17:9-40
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:17:9-40
 activity#com.jakting.shareclean.SettingsActivity
-ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:18:9-21:57
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:18:9-21:57
 	android:parentActivityName
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:21:13-55
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:21:13-55
 	android:label
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:20:13-50
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:20:13-50
 	android:name
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:19:13-45
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:19:13-45
 activity#com.jakting.shareclean.MiscActivity
-ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:22:9-25:57
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:22:9-25:57
 	android:parentActivityName
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:25:13-55
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:25:13-55
 	android:label
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:24:13-52
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:24:13-47
 	android:name
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:23:13-41
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:23:13-41
 activity#com.jakting.shareclean.AboutActivity
-ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:26:9-28:53
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:26:9-28:53
 	android:theme
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:28:13-50
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:28:13-50
 	android:name
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:27:13-42
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:27:13-42
 activity#com.jakting.shareclean.MainActivity
-ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:29:9-34:20
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:29:9-34:20
 	android:name
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:29:19-47
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:29:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:30:13-33:29
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:30:13-33:29
 action#android.intent.action.MAIN
-ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:31:17-69
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:31:25-66
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:31:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:32:17-77
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:32:17-77
 	android:name
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:32:27-74
-activity#com.jakting.shareclean.AppsManagementActivity
-ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:35:9-37:58
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:32:27-74
+activity#com.jakting.shareclean.SendManageActivity
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:35:9-37:58
 	android:parentActivityName
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:37:13-55
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:37:13-55
 	android:label
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:36:13-58
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:36:13-59
 	android:name
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml:35:19-57
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:35:19-53
+activity#com.jakting.shareclean.ViewManageActivity
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:38:9-40:58
+	android:parentActivityName
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:40:13-55
+	android:label
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:39:13-59
+	android:name
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:38:19-53
+activity#com.jakting.shareclean.TextManageActivity
+ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:41:9-43:58
+	android:parentActivityName
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:43:13-55
+	android:label
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:42:13-59
+	android:name
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml:41:19-53
 uses-sdk
-INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
-INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
-MERGED from [com.microsoft.appcenter:appcenter-analytics:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\8d5d32f76dad792d3ee62d19bbf2ea48\jetified-appcenter-analytics-3.2.2\AndroidManifest.xml:11:5-13:41
-MERGED from [com.microsoft.appcenter:appcenter-analytics:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\8d5d32f76dad792d3ee62d19bbf2ea48\jetified-appcenter-analytics-3.2.2\AndroidManifest.xml:11:5-13:41
-MERGED from [com.microsoft.appcenter:appcenter-crashes:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\8246c057d3d5b6132c2e973978b26c3f\jetified-appcenter-crashes-3.2.2\AndroidManifest.xml:11:5-13:41
-MERGED from [com.microsoft.appcenter:appcenter-crashes:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\8246c057d3d5b6132c2e973978b26c3f\jetified-appcenter-crashes-3.2.2\AndroidManifest.xml:11:5-13:41
-MERGED from [androidx.core:core-ktx:1.3.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\8980d788014fcfbd6a5e16fdd30ae692\jetified-core-ktx-1.3.1\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.core:core-ktx:1.3.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\8980d788014fcfbd6a5e16fdd30ae692\jetified-core-ktx-1.3.1\AndroidManifest.xml:5:5-7:41
+INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
+MERGED from [com.microsoft.appcenter:appcenter-analytics:3.3.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\8a5fa70d1fd49e455182f6470b048e25\jetified-appcenter-analytics-3.3.0\AndroidManifest.xml:11:5-13:41
+MERGED from [com.microsoft.appcenter:appcenter-analytics:3.3.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\8a5fa70d1fd49e455182f6470b048e25\jetified-appcenter-analytics-3.3.0\AndroidManifest.xml:11:5-13:41
+MERGED from [com.microsoft.appcenter:appcenter-crashes:3.3.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\2681761c0676ff4ab097e36427c32dda\jetified-appcenter-crashes-3.3.0\AndroidManifest.xml:11:5-13:41
+MERGED from [com.microsoft.appcenter:appcenter-crashes:3.3.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\2681761c0676ff4ab097e36427c32dda\jetified-appcenter-crashes-3.3.0\AndroidManifest.xml:11:5-13:41
+MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\80913f19362e1a0d5ec8f7f58d86b550\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\80913f19362e1a0d5ec8f7f58d86b550\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
 MERGED from [com.drakeet.about:about:2.4.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\c9ac76630688b5c8e978da1ef12c7eda\jetified-about-2.4.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.drakeet.about:about:2.4.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\c9ac76630688b5c8e978da1ef12c7eda\jetified-about-2.4.1\AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.android.material:material:1.3.0-alpha02] C:\Users\i\.gradle\caches\transforms-2\files-2.1\d224f9e5f673038e0688823f6a0bc12d\material-1.3.0-alpha02\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.material:material:1.3.0-alpha02] C:\Users\i\.gradle\caches\transforms-2\files-2.1\d224f9e5f673038e0688823f6a0bc12d\material-1.3.0-alpha02\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.3.0-alpha03] C:\Users\i\.gradle\caches\transforms-2\files-2.1\338f19765f6a344b9628486a8187a170\material-1.3.0-alpha03\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.3.0-alpha03] C:\Users\i\.gradle\caches\transforms-2\files-2.1\338f19765f6a344b9628486a8187a170\material-1.3.0-alpha03\AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\810bc0023f39274b6f9bc838d32f9df6\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\810bc0023f39274b6f9bc838d32f9df6\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.drakeet.multitype:multitype:4.0.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\69efbc99f85d9ad7b2c9f44b772c62b3\jetified-multitype-4.0.0\AndroidManifest.xml:20:5-44
@@ -179,8 +195,8 @@ MERGED from [com.github.topjohnwu.libsu:core:3.0.2] C:\Users\i\.gradle\caches\tr
 MERGED from [com.github.topjohnwu.libsu:core:3.0.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\731f34999d73ef58d17b37462e7ed6c6\jetified-core-3.0.2\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\353a9ee879e72d31c994ca52780022e0\swiperefreshlayout-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\353a9ee879e72d31c994ca52780022e0\swiperefreshlayout-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.microsoft.appcenter:appcenter:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\684a29eb8e6745da85d65a442e74af57\jetified-appcenter-3.2.2\AndroidManifest.xml:11:5-13:41
-MERGED from [com.microsoft.appcenter:appcenter:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\684a29eb8e6745da85d65a442e74af57\jetified-appcenter-3.2.2\AndroidManifest.xml:11:5-13:41
+MERGED from [com.microsoft.appcenter:appcenter:3.3.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\64ded7aa983a363671cdf0f168ad6820\jetified-appcenter-3.3.0\AndroidManifest.xml:11:5-13:41
+MERGED from [com.microsoft.appcenter:appcenter:3.3.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\64ded7aa983a363671cdf0f168ad6820\jetified-appcenter-3.3.0\AndroidManifest.xml:11:5-13:41
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\4e039017508058e03141616af225b4eb\appcompat-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\4e039017508058e03141616af225b4eb\appcompat-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\9851228a28131c6e079209b1996b47a5\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -209,8 +225,8 @@ MERGED from [androidx.loader:loader:1.0.0] C:\Users\i\.gradle\caches\transforms-
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\6f621cac338d61e4657df2851636b5fa\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.1.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\07fffc4e66e9051edb002e23eddf3cce\jetified-activity-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.1.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\07fffc4e66e9051edb002e23eddf3cce\jetified-activity-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.3.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\3fad7ea4f0b845c6f6667debb95e1494\core-1.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.3.1] C:\Users\i\.gradle\caches\transforms-2\files-2.1\3fad7ea4f0b845c6f6667debb95e1494\core-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\81112976e9a5a57f038e5cfed90af170\core-1.3.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\81112976e9a5a57f038e5cfed90af170\core-1.3.2\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\6ba1de9be899b775fb2e622bcf9ee329\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\6ba1de9be899b775fb2e622bcf9ee329\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\6118f679eabfffe3c12f082544a87853\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -239,21 +255,21 @@ MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\i\.gradle\caches\tr
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\ca6f5dc978f1f081f1b8afbaed8e2aeb\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\541c09a69b824cc7c223abe4277f4942\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\541c09a69b824cc7c223abe4277f4942\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
-INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
-INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Android\JavaAndroid\RnShareClean\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JavaAndroid\RnIntentClean\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from [com.microsoft.appcenter:appcenter:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\684a29eb8e6745da85d65a442e74af57\jetified-appcenter-3.2.2\AndroidManifest.xml:15:5-67
+ADDED from [com.microsoft.appcenter:appcenter:3.3.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\64ded7aa983a363671cdf0f168ad6820\jetified-appcenter-3.3.0\AndroidManifest.xml:15:5-67
 	android:name
-		ADDED from [com.microsoft.appcenter:appcenter:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\684a29eb8e6745da85d65a442e74af57\jetified-appcenter-3.2.2\AndroidManifest.xml:15:22-64
+		ADDED from [com.microsoft.appcenter:appcenter:3.3.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\64ded7aa983a363671cdf0f168ad6820\jetified-appcenter-3.3.0\AndroidManifest.xml:15:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.microsoft.appcenter:appcenter:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\684a29eb8e6745da85d65a442e74af57\jetified-appcenter-3.2.2\AndroidManifest.xml:16:5-79
+ADDED from [com.microsoft.appcenter:appcenter:3.3.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\64ded7aa983a363671cdf0f168ad6820\jetified-appcenter-3.3.0\AndroidManifest.xml:16:5-79
 	android:name
-		ADDED from [com.microsoft.appcenter:appcenter:3.2.2] C:\Users\i\.gradle\caches\transforms-2\files-2.1\684a29eb8e6745da85d65a442e74af57\jetified-appcenter-3.2.2\AndroidManifest.xml:16:22-76
+		ADDED from [com.microsoft.appcenter:appcenter:3.3.0] C:\Users\i\.gradle\caches\transforms-2\files-2.1\64ded7aa983a363671cdf0f168ad6820\jetified-appcenter-3.3.0\AndroidManifest.xml:16:22-76

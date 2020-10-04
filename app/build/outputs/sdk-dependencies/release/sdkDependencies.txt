@@ -45,30 +45,30 @@ library {
   maven_library {
     groupId: "com.microsoft.appcenter"
     artifactId: "appcenter-analytics"
-    version: "3.2.2"
+    version: "3.3.0"
   }
   digests {
-    sha256: "\023\324\211*\365\374\216\307B\244cw\247\264\335\232\0252\243\227\355\351u\314\310\303\026h\312c\331\272"
+    sha256: "\353\205[\271\204\t\016\023\343@N\271\336\343\236\346O\033C\332\a\346\004\365\347C\303\335#*\376L"
   }
 }
 library {
   maven_library {
     groupId: "com.microsoft.appcenter"
     artifactId: "appcenter"
-    version: "3.2.2"
+    version: "3.3.0"
   }
   digests {
-    sha256: "\312\350\361\271T\205\272C\264t\24303k\")y\277I\221\337\246\200\t\271\220\324&{\034\240\354"
+    sha256: "&A\254\017\336\237Lz\210Y\333\375\351zWq@e\3713\032\277<\210(\"\033\321\272-\004\241"
   }
 }
 library {
   maven_library {
     groupId: "com.microsoft.appcenter"
     artifactId: "appcenter-crashes"
-    version: "3.2.2"
+    version: "3.3.0"
   }
   digests {
-    sha256: "\001i\031\313Y\017>wrf\203\223\230\266{X\374\361\003\364jwnD\035}L\212\265a\327\337"
+    sha256: "\211V\320t\vp\311\302\361a\nU\270\a\274\017\326\005aR\311\a\205J\001\253\260\220\215~\377_"
   }
 }
 library {
@@ -85,10 +85,10 @@ library {
   maven_library {
     groupId: "androidx.core"
     artifactId: "core-ktx"
-    version: "1.3.1"
+    version: "1.3.2"
   }
   digests {
-    sha256: "\366\276\341\303\307\316\274\257\006\335\312\360LG|\243w\351\361#\306f\341U\026D\210nE\325\002d"
+    sha256: "x0\226\000\272o\344G<\004Yv\220fI\262[<\232I\261FB\370\250\247\334\331\341\257\347\310"
   }
 }
 library {
@@ -105,10 +105,10 @@ library {
   maven_library {
     groupId: "androidx.core"
     artifactId: "core"
-    version: "1.3.1"
+    version: "1.3.2"
   }
   digests {
-    sha256: "\351.\246Z7\325\211\224=@ZjT\321\276\235\022\242%\224\217&\304\344\036Q\035\325^\201\357\266"
+    sha256: "\224\336\031l\326yP\317\366\357>\032\305\220\025\370\352\257a\204\v\334#\217,\365M\336\370\335\v\351"
   }
 }
 library {
@@ -385,10 +385,10 @@ library {
   maven_library {
     groupId: "com.google.android.material"
     artifactId: "material"
-    version: "1.3.0-alpha02"
+    version: "1.3.0-alpha03"
   }
   digests {
-    sha256: "\266K\257R\024\017\351\217w) \307\223!\001\330\303\2614\030\347\343\357\374\005Q\242\270\361\311\367O"
+    sha256: "%\273\032:D\334\344\240\035\355\313\233\\\030\223\031y\266\376w\320\370\331\332\373w5p\225b=-"
   }
 }
 library {

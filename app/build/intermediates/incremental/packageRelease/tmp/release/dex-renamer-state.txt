@@ -1,4 +1,4 @@
-#Sun Sep 13 18:18:41 CST 2020
-base.0=D\:\\Android\\JavaAndroid\\RnShareClean\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+#Sun Oct 04 11:52:02 CST 2020
+base.0=D\:\\Android\\JavaAndroid\\RnIntentClean\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -21,7 +21,7 @@ See [https://ic.into.icu/download/](https://ic.into.icu/download/)
 # Guide
 See [https://ic.into.icu/guide/](https://ic.into.icu/guide/)
 
-Come and join the translation: https://crwd.in/rnintentclean
+Come and join the translation: [https://crwd.in/rnintentclean](https://crwd.in/rnintentclean)
 
 # Works System
 1. Hydrogen/Oxygen OS with Android 10

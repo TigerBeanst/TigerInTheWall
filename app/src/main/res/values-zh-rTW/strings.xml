@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RnIntentClean</string>
+    <string name="riru_status_card_cannot">無法取得模組狀態</string>
+    <string name="riru_status_card_cannot_detail">請給予Root權限後重啟此應用程式</string>
+    <string name="riru_status_card_exist">模組已啟用</string>
+    <string name="riru_status_card_exist_detail">Riru - IFW Enhance 正常運作中</string>
+    <string name="riru_status_card_not">模組未啟用</string>
+    <string name="riru_status_card_not_detail">無法偵測到Riru - IFW Enhance運作中</string>
+    <string name="riru_status_card_download">您的設備可能未安裝Riru-IFW Enhance模組。\n\n點擊下載來前往下載頁面。</string>
+    <string name="riru_status_card_download_btn">下載</string>
+    <string name="manage_dialog_title">Notice</string>
+    <string name="manage_dialog_desc">Riru - IFW Enhance has not been properly applied. Anything you do may not take effect.</string>
+    <string name="send_manage_card_title">Share Via…</string>
+    <string name="send_manage_card_detail">Clean up apps that occupy the sharesheet</string>
+    <string name="view_manage_card_title">Open With…</string>
+    <string name="view_manage_card_detail">Clean up apps that occupy the open mode sheet</string>
+    <string name="text_manage_card_title">Text Operate…</string>
+    <string name="text_manage_card_detail">Clean up apps when you long press the text</string>
+    <string name="misc_title">Miscellaneous</string>
+    <string name="backup_title">備份 &amp; 還原</string>
+    <string name="setting_title">設定</string>
+    <string name="about_title">關於</string>
+    <string name="setting_page_function">Function</string>
+    <string name="setting_page_showSystemApp">Show System Apps</string>
+    <string name="setting_page_showSystemApp_summary">Show System Apps. Disable system apps\' intent may cause unknown errors.</string>
+    <string name="setting_page_showSystemApp_summaryNo">Don\'t show System Apps.</string>
+    <string name="setting_page_appearance">Appearance</string>
+    <string name="setting_page_dark_mode">Dark Mode</string>
+    <string name="setting_page_language">Languages</string>
+    <string name="setting_page_helplang">Help translation</string>
+    <string name="setting_page_helplang_summary">協助 RnIntentClean 其他語言的翻譯</string>
+    <string name="setting_page_privacy">Privacy</string>
+    <string name="setting_page_appcenter">Use AppCenter Analysis</string>
+    <string name="setting_page_appcenter_summary">分析日誌將會被上傳</string>
+    <string name="setting_page_appcenter_summaryNo">分析日誌將不會被上傳</string>
+    <string name="about_page_info">Introduction</string>
+    <string name="about_page_info_desc">Are you tired of scouring through long lists of apps when sharing pictures or open a file just to find a few apps that you use a lot?\n\nWhy are you app in my sharesheet or open mode sheet??\nIf I needed you, I\'d open the app myself to use it!\n\nRnIntentClean is an App that allow you to clean up your sharesheet and open mode sheet, which works with the Magisk modules \"Riru-Core\" and \"Riru-IFW Enhance\", and root permission.</string>
+    <string name="about_page_dev">Developers</string>
+    <string name="about_page_dev_1">RnIntentClean 開發者</string>
+    <string name="about_page_dev_2">Riru - Core 開發者</string>
+    <string name="about_page_dev_3">Riru - IFW Enhance 開發者</string>
+    <string name="about_page_open_source">Open Source Licenses</string>
+    <string name="manage_start">The IFW rules written by this application have been cleared. Please submit again to take effect.</string>
+    <string name="manage_send_success">Share Clean Applied</string>
+    <string name="manage_view_success">Open Mode Clean Applied</string>
+    <string name="manage_text_success">Text Operation Clean Applied</string>
+    <string name="misc_disable">禁用</string>
+    <string name="misc_disable_direct">禁用Direct Share</string>
+    <string name="misc_disable_direct_msg">Disable Direct Share in the unmodified Android Sharesheet. This is not available on Android 10+ devices.</string>
+    <string name="misc_disable_direct_msgNo">Enable Direct Share in the unmodified Android Sharesheet. This is not available on Android 10+ devices.</string>
+    <string name="misc_disable_direct_No">This is not available on Android 10+ devices.</string>
+    <string name="misc_disable_direct_toastEnable">Direct Share已被啟用</string>
+    <string name="misc_disable_direct_toastDisable">Direct Share已被禁用</string>
+    <string name="br_backup">備份</string>
+    <string name="br_restore">還原</string>
+    <string name="br_msg">如果您的裝置支持Google服務並且已經登錄，則 RnIntentClean 將自動備份，或者您也可以進行手動備份。\n\n但請注意：隨著版本的更改，未來的版本可能會無法支持舊版本的備份。</string>
+    <string name="br_backup_ok">Backup completed.</string>
+    <string name="br_backup_error">An error occurred</string>
+    <string name="br_restore_ok">Restore completed.</string>
+    <string name="dialog_positive">我知道了</string>
+    <string name="dialog_negative">先不要</string>
+    <string name="menu_select_all">全選</string>
+    <string name="menu_clear">反全選</string>
+    <string-array name="entries_dark">
+        <item>Follow system</item>
+        <item>Always on</item>
+        <item>Always off</item>
+    </string-array>
+    <string-array name="entries_lang">
+        <item>Follow system</item>
+        <item translatable="false">简体中文</item>
+        <item translatable="false">English</item>
+    </string-array>
+</resources>

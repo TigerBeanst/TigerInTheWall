@@ -9,7 +9,7 @@ import com.topjohnwu.superuser.Shell
 import kotlinx.android.synthetic.main.activity_apps.*
 
 
-open class TextManageActivity : BaseManageActivity(){
+open class TextManageActivity : BaseManageActivity() {
 
     @SuppressLint("CommitPrefEdits")
     override fun init() {
@@ -27,7 +27,7 @@ open class TextManageActivity : BaseManageActivity(){
         recyclerView!!.adapter = adapterA
         map = (adapterA as AppsAdapter).map
         (map as MutableMap<String, Boolean>).entries.forEach {
-            if (sp.getBoolean(it.key+"/text", false)) {
+            if (sp.getBoolean(it.key + "/text", false)) {
                 (map as MutableMap<String, Boolean>)[it.key] = true
             }
         }
@@ -37,13 +37,11 @@ open class TextManageActivity : BaseManageActivity(){
             var ifw = "<rules>\n"
             (map as MutableMap<String, Boolean>).entries.forEach {
                 //logd(it.key)
-                if (it.value) {
-                    val list = it.key.split('/')
-                    //logd("list: $list")
-                    //logd("${list[0]} // ${list[1]}")
-                    spe.putBoolean("${list[0]}/${list[1]}/text", it.value)
-                    ifw += String.format(ifw_text_content, list[0], list[1])
-                }
+                val list = it.key.split('/')
+                //logd("list: $list")
+                //logd("${list[0]} // ${list[1]}")
+                spe.putBoolean("${list[0]}/${list[1]}/text", it.value)
+                ifw += String.format(ifw_text_content, list[0], list[1])
             }
             ifw += "</rules>"
             spe.apply()
@@ -58,8 +56,10 @@ open class TextManageActivity : BaseManageActivity(){
         }
     }
 
-    override fun clearIFW(){
-        if (Shell.su("rm -f $ifw_file_path_old").exec().isSuccess && Shell.su("rm -f $ifw_text_file_path").exec().isSuccess) {
+    override fun clearIFW() {
+        if (Shell.su("rm -f $ifw_file_path_old")
+                .exec().isSuccess && Shell.su("rm -f $ifw_text_file_path").exec().isSuccess
+        ) {
             mSwipeLayout?.post {
                 mSwipeLayout?.isRefreshing = true
             }

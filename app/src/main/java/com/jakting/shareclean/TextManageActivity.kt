@@ -41,7 +41,9 @@ open class TextManageActivity : BaseManageActivity() {
                 //logd("list: $list")
                 //logd("${list[0]} // ${list[1]}")
                 spe.putBoolean("${list[0]}/${list[1]}/text", it.value)
-                ifw += String.format(ifw_text_content, list[0], list[1])
+                if (it.value) {
+                    ifw += String.format(ifw_text_content, list[0], list[1])
+                }
             }
             ifw += "</rules>"
             spe.apply()

@@ -41,7 +41,9 @@ open class ViewManageActivity : BaseManageActivity() {
                 //logd("list: $list")
                 //logd("${list[0]} // ${list[1]}")
                 spe.putBoolean("${list[0]}/${list[1]}/view", it.value)
-                ifw += String.format(ifw_view_content, list[0], list[1])
+                if (it.value) {
+                    ifw += String.format(ifw_view_content, list[0], list[1])
+                }
             }
             ifw += "</rules>"
             spe.apply()

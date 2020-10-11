@@ -10,8 +10,8 @@ android {
         applicationId "com.jakting.shareclean"
         minSdkVersion 26
         targetSdkVersion 30
-        versionCode 20201012
-        versionName "1.0.3"
+        versionCode 20201013
+        versionName "1.0.3.1"
 
     }
     lintOptions{

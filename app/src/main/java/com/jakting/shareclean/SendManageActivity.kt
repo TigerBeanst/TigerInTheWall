@@ -37,7 +37,9 @@ open class SendManageActivity : BaseManageActivity() {
                 //logd("list: $list")
                 //logd("${list[0]} // ${list[1]}")
                 spe.putBoolean("${list[0]}/${list[1]}/send", it.value)
-                ifw += String.format(ifw_send_content, list[0], list[1])
+                if (it.value) {
+                    ifw += String.format(ifw_send_content, list[0], list[1])
+                }
             }
             ifw += "</rules>"
             spe.apply()

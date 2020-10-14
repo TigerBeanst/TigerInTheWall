@@ -3,6 +3,7 @@ package com.jakting.shareclean.utils
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.os.Handler
 import android.view.Menu
@@ -34,6 +35,7 @@ open class BaseManageActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefres
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         }
         setContentView(R.layout.activity_apps)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
         setSupportActionBar(findViewById(R.id.toolbar))
         sp = this.getSharedPreferences("intent_list", Context.MODE_PRIVATE)
         spe = this.getSharedPreferences("intent_list", Context.MODE_PRIVATE).edit()

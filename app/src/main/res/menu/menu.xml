@@ -6,13 +6,13 @@
         android:icon="@drawable/ic_baseline_done_all_24"
         android:title="@string/menu_select_all"
         app:iconTint="?android:attr/textColorPrimary"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/clear_menu"
         app:iconTint="?android:attr/textColorPrimary"
         android:icon="@drawable/ic_baseline_clear_all_24"
         android:title="@string/menu_clear"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
 
 </menu>

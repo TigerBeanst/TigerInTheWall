@@ -130,7 +130,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             //备份
             if (backupSharedPreferences(resultData.data as Uri)) {
                 toast(getString(R.string.br_backup_ok))
-            }else{
+            } else {
                 toast(getString(R.string.br_backup_error))
             }
         }

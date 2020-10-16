@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jakting.shareclean">
+
     <queries>
         <intent>
             <action android:name="android.intent.action.SEND" />
@@ -18,11 +19,11 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/setting_title"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MiscActivity"
             android:label="@string/misc_title"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AboutActivity"
             android:theme="@style/AppTheme.About" />
@@ -32,13 +33,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SendManageActivity"
+        <activity
+            android:name=".SendManageActivity"
             android:label="@string/send_manage_card_title"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".ViewManageActivity"
+        <activity
+            android:name=".ViewManageActivity"
             android:label="@string/view_manage_card_title"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".TextManageActivity"
+        <activity
+            android:name=".TextManageActivity"
             android:label="@string/text_manage_card_title"
             android:parentActivityName=".MainActivity" />
     </application>

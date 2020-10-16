@@ -61,7 +61,7 @@ open class BaseManageActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefres
         }, 1000)
     }
 
-    open fun clearIFW(){}
+    open fun clearIFW() {}
 
     open fun init() {
         //滑动隐藏 FAB
@@ -75,7 +75,7 @@ open class BaseManageActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefres
                 }
             }
         })
-        isShowSystemApp = spSetting.getBoolean("switch_showSystemApp",false)
+        isShowSystemApp = spSetting.getBoolean("switch_showSystemApp", false)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -27,7 +27,7 @@
         <Preference
             android:key="drop_helplang"
             android:title="@string/setting_page_helplang"
-            android:summary="@string/setting_page_helplang_summary" >
+            android:summary="@string/setting_page_helplang_summary">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://crwd.in/rnintentclean" />

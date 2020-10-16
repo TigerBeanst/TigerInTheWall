@@ -65,7 +65,7 @@ class MiscActivity : AppCompatActivity() {
             logd("onSharedPreferenceChanged $key")
             val sp = activity!!.getSharedPreferences("settings", Context.MODE_PRIVATE)
             when (key) {
-                "switch_disable_direct_share" -> setDirectShare(sp,context)
+                "switch_disable_direct_share" -> setDirectShare(sp, context)
             }
         }
 

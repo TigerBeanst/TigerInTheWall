@@ -150,7 +150,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         .setTitle(R.string.manage_dialog_title)
                         .setMessage(R.string.riru_status_card_download)
                         .setPositiveButton(R.string.riru_status_card_download_btn) { _, _ ->
-                            val uri = Uri.parse("https://sc.into.icu")
+                            val uri = Uri.parse("https://ic.into.icu")
                             val intent = Intent(Intent.ACTION_VIEW, uri)
                             startActivity(intent)
                         }

@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -55,7 +56,7 @@ open class BaseManageActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefres
     }
 
     override fun onRefresh() {
-        Handler().postDelayed({
+        Handler(Looper.getMainLooper()).postDelayed({
             init()
             mSwipeLayout?.isRefreshing = false
         }, 1000)

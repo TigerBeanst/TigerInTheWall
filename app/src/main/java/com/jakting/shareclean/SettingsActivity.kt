@@ -4,10 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.jakting.shareclean.utils.getDarkModeStatus
-import com.jakting.shareclean.utils.logd
 import com.jakting.shareclean.utils.setDark
 import com.jakting.shareclean.utils.setLang
 import moe.shizuku.preference.*
@@ -28,9 +25,9 @@ class SettingsActivity : AppCompatActivity() {
             supportActionBar!!.title = getString(R.string.setting_title)
             //supportActionBar!!.subtitle = "v" + BuildConfig.VERSION_NAME
         }
-        if (!getDarkModeStatus(this)) {
-            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        }
+//        if (!getDarkModeStatus(this)) {
+//            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+//        }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 

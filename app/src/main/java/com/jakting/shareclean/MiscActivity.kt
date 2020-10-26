@@ -25,9 +25,9 @@ class MiscActivity : AppCompatActivity() {
             supportActionBar!!.title = getString(R.string.misc_title)
             //supportActionBar!!.subtitle = "v" + BuildConfig.VERSION_NAME
         }
-        if (!getDarkModeStatus(this)) {
-            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        }
+//        if (!getDarkModeStatus(this)) {
+//            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+//        }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 

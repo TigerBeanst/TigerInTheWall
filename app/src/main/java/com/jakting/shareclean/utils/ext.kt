@@ -126,12 +126,6 @@ fun setAppCenter(sp: SharedPreferences, activity: Activity) {
     }
 }
 
-fun getDarkModeStatus(context: Context): Boolean {
-    val mode: Int =
-        context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
-    return mode == Configuration.UI_MODE_NIGHT_YES
-}
-
 fun setDirectShare(sp: SharedPreferences, context: Context?) {
     if (Build.VERSION.SDK_INT >= 29) {
         context.toast(context?.getString(R.string.misc_disable_direct_No) as String)

@@ -31,11 +31,11 @@ open class BaseManageActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefres
     @SuppressLint("CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (!getDarkModeStatus(this)) {
-            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        }
+//        if (!getDarkModeStatus(this)) {
+//            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+//        }
         setContentView(R.layout.activity_apps)
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         setSupportActionBar(findViewById(R.id.toolbar))
         sp = this.getSharedPreferences("intent_list", Context.MODE_PRIVATE)
         spe = this.getSharedPreferences("intent_list", Context.MODE_PRIVATE).edit()

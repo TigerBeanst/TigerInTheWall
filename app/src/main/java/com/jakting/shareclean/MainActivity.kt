@@ -33,9 +33,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     @SuppressLint("CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (!getDarkModeStatus(this)) {
-            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        }
+//        if (!getDarkModeStatus(this)) {
+//            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+//        }
         setContentView(R.layout.activity_main)
         sp = getSharedPreferences("settings", Context.MODE_PRIVATE)
         spIntent = getSharedPreferences("intent_list", Context.MODE_PRIVATE)

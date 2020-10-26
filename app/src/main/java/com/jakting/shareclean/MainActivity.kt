@@ -9,6 +9,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.alibaba.fastjson.JSON
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jakting.shareclean.utils.*
@@ -19,12 +20,15 @@ import java.io.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    var isWorked = false //标志 - 模块是否被检测到正常工作
-    lateinit var sp: SharedPreferences
-    lateinit var spIntent: SharedPreferences
-    lateinit var speIntent: SharedPreferences.Editor
-    private val WRITE_REQUEST_CODE: Int = 43
-    private val READ_REQUEST_CODE: Int = 42
+    private var isWorked = false //标志 - 模块是否被检测到正常工作
+    private lateinit var sp: SharedPreferences
+    private lateinit var spIntent: SharedPreferences
+    private lateinit var speIntent: SharedPreferences.Editor
+
+    companion object{
+        private const val WRITE_REQUEST_CODE = 43
+        private const val READ_REQUEST_CODE = 42
+    }
 
     @SuppressLint("CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,17 +67,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 Shell.su("cat /proc/$pid/maps | grep libriru_ifw_enhance.so").exec()
             if (result.out.toString() != "[]") {
                 //Riru - IFW Enhance 已生效
-                riru_status_card.setCardBackgroundColor(resources.getColor(R.color.colorPrimary))
+                riru_status_card.setCardBackgroundColor(ContextCompat.getColor(this,R.color.colorPrimary))
                 riru_status_card_title.text = getString(R.string.riru_status_card_exist)
                 riru_status_card_desc.text = getString(R.string.riru_status_card_exist_detail)
                 riru_status_card_icon.setImageResource(R.drawable.ic_baseline_check_circle_24)
-                send_manage_card.setCardBackgroundColor(resources.getColor(R.color.colorGreen1))
-                view_card.setCardBackgroundColor(resources.getColor(R.color.colorGreen2))
-                text_card.setCardBackgroundColor(resources.getColor(R.color.colorGreen3))
+                send_manage_card.setCardBackgroundColor(ContextCompat.getColor(this,R.color.colorGreen1))
+                view_card.setCardBackgroundColor(ContextCompat.getColor(this,R.color.colorGreen2))
+                text_card.setCardBackgroundColor(ContextCompat.getColor(this,R.color.colorGreen3))
                 isWorked = true
             } else {
                 //Riru - IFW Enhance 未生效
-                riru_status_card.setCardBackgroundColor(resources.getColor(R.color.colorRed))
+                riru_status_card.setCardBackgroundColor(ContextCompat.getColor(this,R.color.colorRed))
                 riru_status_card_title.text = getString(R.string.riru_status_card_not)
                 riru_status_card_desc.text = getString(R.string.riru_status_card_not_detail)
                 riru_status_card_icon.setImageResource(R.drawable.ic_round_error_24)
@@ -162,7 +166,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     MaterialAlertDialogBuilder(this)
                         .setTitle(R.string.manage_dialog_title)
                         .setMessage(R.string.manage_dialog_desc)
-                        .setPositiveButton(R.string.dialog_positive) { dialog, which ->
+                        .setPositiveButton(R.string.dialog_positive) { _, _ ->
                             startSendManage()
                         }
                         .show()
@@ -175,7 +179,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     MaterialAlertDialogBuilder(this)
                         .setTitle(R.string.manage_dialog_title)
                         .setMessage(R.string.manage_dialog_desc)
-                        .setPositiveButton(R.string.dialog_positive) { dialog, which ->
+                        .setPositiveButton(R.string.dialog_positive) { _, _ ->
                             startViewManage()
                         }
                         .show()
@@ -188,7 +192,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     MaterialAlertDialogBuilder(this)
                         .setTitle(R.string.manage_dialog_title)
                         .setMessage(R.string.manage_dialog_desc)
-                        .setPositiveButton(R.string.dialog_positive) { dialog, which ->
+                        .setPositiveButton(R.string.dialog_positive) { _, _ ->
                             startTextManage()
                         }
                         .show()
@@ -216,8 +220,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun backupSharedPreferences(uri: Uri): Boolean {
         try {
-            contentResolver.openFileDescriptor(uri, "w")?.use {
-                FileOutputStream(it.fileDescriptor).use {
+            contentResolver.openFileDescriptor(uri, "w")?.use { fileDescriptor ->
+                FileOutputStream(fileDescriptor.fileDescriptor).use {
                     it.write(
                         JSON.toJSONString(spIntent.all).toByteArray()
                     )

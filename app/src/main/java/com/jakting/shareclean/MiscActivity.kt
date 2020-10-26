@@ -62,7 +62,7 @@ class MiscActivity : AppCompatActivity() {
             sharedPreferences: SharedPreferences,
             key: String
         ) {
-            logd("onSharedPreferenceChanged $key")
+            //logd("onSharedPreferenceChanged $key")
             val sp = activity!!.getSharedPreferences("settings", Context.MODE_PRIVATE)
             when (key) {
                 "switch_disable_direct_share" -> setDirectShare(sp, context)
@@ -70,13 +70,13 @@ class MiscActivity : AppCompatActivity() {
         }
 
         override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean {
-            logd(
-                getString(
-                    R.string.on_preference_change_toast_message,
-                    preference.key,
-                    newValue.toString()
-                )
-            )
+//            logd(
+//                getString(
+//                    R.string.on_preference_change_toast_message,
+//                    preference.key,
+//                    newValue.toString()
+//                )
+//            )
             return true
         }
     }

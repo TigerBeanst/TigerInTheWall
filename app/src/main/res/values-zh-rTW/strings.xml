@@ -51,7 +51,7 @@
     <string name="misc_disable_direct_msgNo">在未修改的 Android 共享表中啟用直接共享， 此功能在 Android 10+ 不可用</string>
     <string name="misc_disable_direct_No">此功能在 Android 10+ 不可用</string>
     <string name="misc_disable_direct_toastEnable">直接共享已被啟用</string>
-    <string name="misc_disable_direct_toastDisable">Direct Share已被禁用</string>
+    <string name="misc_disable_direct_toastDisable">直接共享已被禁用</string>
     <string name="br_backup">備份</string>
     <string name="br_restore">還原</string>
     <string name="br_msg">如果您的裝置支持Google服務並且已經登錄，則 RnIntentClean 將自動備份，或者您也可以進行手動備份。\n\n但請注意：隨著版本的更改，未來的版本可能會無法支持舊版本的備份。</string>

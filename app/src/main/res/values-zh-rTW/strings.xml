@@ -46,11 +46,11 @@
     <string name="manage_view_success">開啟方式清理</string>
     <string name="manage_text_success">長按文字動作清理</string>
     <string name="misc_disable">禁用</string>
-    <string name="misc_disable_direct">禁用Direct Share</string>
+    <string name="misc_disable_direct">禁用直接共享</string>
     <string name="misc_disable_direct_msg">在未修改的 Android 共享表中禁用直接共享，此功能在 Android 10+ 並無任何作用。</string>
-    <string name="misc_disable_direct_msgNo">在未修改的 Android 共享表中啟用直接共享，此功能在 Android 10+ 並無任何作用。</string>
-    <string name="misc_disable_direct_No">此功能在 Android 10+ 並無任何作用</string>
-    <string name="misc_disable_direct_toastEnable">Direct Share已被啟用</string>
+    <string name="misc_disable_direct_msgNo">在未修改的 Android 共享表中啟用直接共享， 此功能在 Android 10+ 不可用</string>
+    <string name="misc_disable_direct_No">此功能在 Android 10+ 不可用</string>
+    <string name="misc_disable_direct_toastEnable">直接共享已被啟用</string>
     <string name="misc_disable_direct_toastDisable">Direct Share已被禁用</string>
     <string name="br_backup">備份</string>
     <string name="br_restore">還原</string>

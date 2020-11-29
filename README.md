@@ -16,9 +16,11 @@ Works with the Magisk modules Riru-Core and Riru-IFW Enhance, and root permissio
 # Download
 See [https://ic.into.icu/download/](https://ic.into.icu/download/)
 
-<a href='https://play.google.com/store/apps/details?id=com.jakting.shareclean&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/zh-TW/badges/static/images/badges/en_badge_web_generic.png' height="60px" width="auto"/></a>
+or
 
-[release](https://github.com/hjthjthjt/RnIntentClean/releases/latest)
+[Github Release](https://github.com/hjthjthjt/RnIntentClean/releases/latest)
+
+<a href='https://play.google.com/store/apps/details?id=com.jakting.shareclean&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/zh-TW/badges/static/images/badges/en_badge_web_generic.png' height="60px" width="auto"/></a>
 
 # Guide
 See [https://ic.into.icu/guide/](https://ic.into.icu/guide/)

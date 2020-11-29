@@ -7,6 +7,10 @@
             <action android:name="android.intent.action.SEND" />
             <data android:mimeType="*/*" />
         </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="*" />
+        </intent>
     </queries>
     <application
         android:allowBackup="true"
@@ -19,31 +23,28 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/setting_title"
+            android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MiscActivity"
             android:label="@string/misc_title"
+            android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AboutActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.About" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".SendManageActivity"
-            android:label="@string/send_manage_card_title"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".ViewManageActivity"
-            android:label="@string/view_manage_card_title"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".TextManageActivity"
-            android:label="@string/text_manage_card_title"
+            android:name=".ManageActivity"
+            android:label="@string/manage_card_title"
+            android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity" />
     </application>
 

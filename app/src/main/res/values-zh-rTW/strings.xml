@@ -10,13 +10,9 @@
     <string name="riru_status_card_download">您的硬體可能未安裝 Riru-IFW Enhance 模組。\n\n點擊下載來前往下載頁面。</string>
     <string name="riru_status_card_download_btn">下載</string>
     <string name="manage_dialog_title">注意</string>
-    <string name="manage_dialog_desc">Riru-IFW 增強功能未正常啟用。 您所做的任何事情都可能不會生效。</string>
-    <string name="send_manage_card_title">選擇分享…</string>
-    <string name="send_manage_card_detail">清理佔用共享表的程式</string>
-    <string name="view_manage_card_title">選擇開啟…</string>
-    <string name="view_manage_card_detail">清理佔用開啟方式列表的程式</string>
-    <string name="text_manage_card_title">長按文字動作…</string>
-    <string name="text_manage_card_detail">長按文字動作清理</string>
+    <string name="manage_dialog_desc">Riru - IFW Enhance 未正常啟用。 您所做的任何事情都可能不會生效。</string>
+    <string name="manage_card_title">程式管理</string>
+    <string name="manage_card_detail">清理佔用一切的程式</string>
     <string name="misc_title">其他設定</string>
     <string name="backup_title">備份 &amp; 還原</string>
     <string name="setting_title">設定</string>
@@ -31,20 +27,17 @@
     <string name="setting_page_helplang">貢獻翻譯</string>
     <string name="setting_page_helplang_summary">協助 RnIntentClean 其他語言的翻譯</string>
     <string name="setting_page_privacy">隱私</string>
-    <string name="setting_page_appcenter">使用 AppCenter 分析</string>
-    <string name="setting_page_appcenter_summary">分析日誌將會被上傳</string>
-    <string name="setting_page_appcenter_summaryNo">分析日誌將不會被上傳</string>
+    <string name="setting_page_firebase">使用 Firebase 分析</string>
+    <string name="setting_page_firebase_summary">分析日誌將會被上傳</string>
+    <string name="setting_page_firebase_summaryNo">分析日誌將不會被上傳</string>
     <string name="about_page_info">簡介</string>
-    <string name="about_page_info_desc">您是否在共享圖片或開啟檔案時花了不少時間尋找常用的程式？\n\n為什麼這些奇怪又不常用的程式會顯示在列表內？\n什麼程式該顯示在列表內由我們自己決定！！\n\nRnIntentClean 就是一個解決此問題的小工具，可讓您清理雜亂的列表，該程式必須與「Riru-Core」和「Riru-IFW Enhance」的 Magisk 模組一起使用，當然還是需要 root 權限。</string>
+    <string name="about_page_info_desc">您是否在共享圖片或開啟檔案時花了不少時間尋找常用的程式？\n\n為什麼這些奇怪又不常用的程式會顯示在列表內？ 什麼程式該顯示在列表內由我們自己決定！！\n\nRnIntentClean 就是一個解決此問題的小工具，可讓您清理雜亂的列表，\n\n該程式必須與「Riru-Core」和「Riru-IFW Enhance」的 Magisk 模組一起使用，當然還是需要 root 權限。</string>
     <string name="about_page_dev">開發人員</string>
     <string name="about_page_dev_1">RnIntentClean 開發者</string>
     <string name="about_page_dev_2">Riru - Core 開發者</string>
     <string name="about_page_dev_3">Riru - IFW Enhance 開發者</string>
     <string name="about_page_open_source">開源許可</string>
     <string name="manage_start">此應用程式編寫的 IFW 規則已被清除，請再次提交以生效。</string>
-    <string name="manage_send_success">分享清潔</string>
-    <string name="manage_view_success">開啟方式清理</string>
-    <string name="manage_text_success">長按文字動作清理</string>
     <string name="misc_disable">禁用</string>
     <string name="misc_disable_direct">禁用直接共享</string>
     <string name="misc_disable_direct_msg">在未修改的 Android 共享表中禁用直接共享，此功能在 Android 10+ 並無任何作用。</string>
@@ -59,17 +52,22 @@
     <string name="br_backup_error">發生錯誤</string>
     <string name="br_restore_ok">還原已完成</string>
     <string name="dialog_positive">我知道了</string>
-    <string name="dialog_negative">先不要</string>
     <string name="menu_select_all">全選</string>
     <string name="menu_clear">反全選</string>
-    <string-array name="entries_dark">
-        <item>依據系統設定</item>
-        <item>總是開啟</item>
-        <item>總是關閉</item>
-    </string-array>
-    <string-array name="entries_lang">
-        <item>依據系統設定</item>
-        <item translatable="false">简体中文</item>
-        <item translatable="false">English</item>
-    </string-array>
+
+    <string name="follow_system">依據系統設定</string>
+    <string name="always_on">總是開啟</string>
+    <string name="always_off">總是關閉</string>
+
+    <string name="riru_status_card_exist_dialog_title">模組詳情</string>
+    <string name="fab_submit">提交清理</string>
+    <string name="text_title">長按文字動作</string>
+    <string name="view_title">選擇開啟</string>
+    <string name="send_title">選擇分享</string>
+    <string name="send_multi_title">選擇多個檔案分享</string>
+    <string name="browser_title">瀏覽器</string>
+    <string name="manage_apply_success">清理已完成</string>
+    <string name="error">錯誤</string>
+    <string name="manage_search">搜尋</string>
+    <string name="please_wait">請稍等…</string>
 </resources>

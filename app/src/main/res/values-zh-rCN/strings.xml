@@ -5,13 +5,14 @@
     <string name="riru_status_card_cannot_detail">请给予 Root 权限后重启应用</string>
     <string name="riru_status_card_exist">已激活模块</string>
     <string name="riru_status_card_exist_detail">Riru - IFW Enhance 已被正确应用</string>
+    <string name="riru_status_card_exist_dialog_title">模块详情</string>
     <string name="riru_status_card_not">未激活模块</string>
     <string name="riru_status_card_not_detail">Riru - IFW Enhance 未被正确应用</string>
     <string name="riru_status_card_download">您的设备可能未安装 Riru - IFW Enhance 模块。\n\n点击「下载」，前往下载页下载。</string>
     <string name="riru_status_card_download_btn">下载</string>
 
-    <string name="send_manage_card_title">分享到…</string>
-    <string name="send_manage_card_detail">清理占用分享面板的应用</string>
+    <string name="manage_card_title">应用管理</string>
+    <string name="manage_card_detail">清理占用一切的应用</string>
     <string name="manage_dialog_title">提示</string>
     <string name="manage_dialog_desc">Riru - IFW Enhance 未被正确应用。您所做的任何操作可能都不会生效。</string>
 
@@ -26,12 +27,12 @@
     <string name="setting_page_helplang">帮助翻译</string>
     <string name="setting_page_helplang_summary">帮忙将 氡·意图清理 翻译成您的语言</string>
     <string name="setting_page_privacy">隐私</string>
-    <string name="setting_page_appcenter">使用 AppCenter 分析</string>
-    <string name="setting_page_appcenter_summary">分析日志将会被上传</string>
-    <string name="setting_page_appcenter_summaryNo">分析日志将不会被上传</string>
+    <string name="setting_page_firebase">使用 Firebase 分析</string>
+    <string name="setting_page_firebase_summary">分析日志将会被上传</string>
+    <string name="setting_page_firebase_summaryNo">分析日志将不会被上传</string>
 
     <string name="about_page_info">介绍</string>
-    <string name="about_page_info_desc">你是否已经厌倦了分享图片或打开文件时，在冗长的分享列表里翻找，却只为找到几个你常用的应用？\n\n你们这些应用为什么要出现在我的图片分享面板和打开方式里？\n我如果需要你们，我自己会打开 App 来用啊！\n\n「氡·意图清理」是一款允许您清理分享面板和打开方式面板的应用，它借助 Magisk 模块 Riru - Core 和 Riru - IFW Enhance 来实现作用，当然 root 权限也是必需的。</string>
+    <string name="about_page_info_desc">你是否已经厌倦了分享图片或打开文件时，在冗长的分享列表里翻找，却只为找到几个你常用的应用？\n\n你们这些应用为什么占领我的查看面板啊？ 我如果需要你们，我自己会打开 App 来用啊！\n\n「氡·意图清理」是一款允许您的查看面板的应用，包括分享面板、打开方式面板等！\n\n它借助 Magisk 模块 Riru - Core 和 Riru - IFW Enhance 来实现作用，当然 root 权限也是必需的。</string>
     <string name="about_page_dev">开发者</string>
     <string name="about_page_dev_1">氡·意图清理 开发者</string>
     <string name="about_page_dev_2">Riru - Core 开发者</string>
@@ -39,7 +40,6 @@
     <string name="about_page_open_source">开放源代码许可</string>
 
     <string name="manage_start">已清理本应用写入的 IFW 规则，请再次提交以生效</string>
-    <string name="manage_send_success">分享清理已应用</string>
 
     <string name="misc_disable">禁用</string>
     <string name="misc_disable_direct">禁用 Direct Share</string>
@@ -55,33 +55,30 @@
     <string name="br_restore_ok">还原已完成。</string>
 
     <string name="dialog_positive">明白了</string>
-    <string name="dialog_negative">不了不了</string>
 
     <string name="menu_select_all">全选</string>
     <string name="menu_clear">全不选</string>
 
-    <string-array name="entries_dark">
-        <item>跟随系统</item>
-        <item>总是开启</item>
-        <item>总是关闭</item>
-    </string-array>
 
-    <string-array name="entries_lang">
-        <item>跟随系统</item>
-        <item>简体中文</item>
-        <item>English</item>
-    </string-array>
-    <string name="view_manage_card_title">打开方式…</string>
-    <string name="view_manage_card_detail">清理占用打开方式面板的应用</string>
+    <string name="follow_system">跟随系统</string>
+    <string name="always_on">总是开启</string>
+    <string name="always_off">总是关闭</string>
+
     <string name="setting_page_language">语言</string>
     <string name="misc_disable_direct_No">此选项无法在 Android 10 及以上的设备上使用。</string>
-    <string name="manage_view_success">打开方式清理已应用</string>
-    <string name="text_manage_card_title">文本操作…</string>
-    <string name="text_manage_card_detail">清理长按文本时出现的应用</string>
-    <string name="manage_text_success">文本操作清理已应用</string>
     <string name="setting_page_function">功能</string>
     <string name="setting_page_showSystemApp">显示系统应用</string>
     <string name="setting_page_showSystemApp_summary">显示系统应用。禁用系统应用的意图可能会导致未知错误。</string>
     <string name="setting_page_showSystemApp_summaryNo">不显示系统应用。</string>
     <string name="br_backup_error">发生错误</string>
+    <string name="fab_submit">提交清理</string>
+    <string name="send_title">分享到</string>
+    <string name="send_multi_title">分享多个文件到</string>
+    <string name="view_title">打开方式</string>
+    <string name="text_title">长按文本操作</string>
+    <string name="browser_title">浏览器</string>
+    <string name="manage_apply_success">清理已完成</string>
+    <string name="error">错误</string>
+    <string name="manage_search">搜索</string>
+    <string name="please_wait">请稍等…</string>
 </resources>

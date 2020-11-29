@@ -2,30 +2,26 @@ package com.jakting.shareclean
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.alibaba.fastjson.JSON
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jakting.shareclean.utils.*
-import com.topjohnwu.superuser.Shell
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : BaseActivity(), View.OnClickListener {
 
     private var isWorked = false //标志 - 模块是否被检测到正常工作
-    private lateinit var sp: SharedPreferences
-    private lateinit var spIntent: SharedPreferences
-    private lateinit var speIntent: SharedPreferences.Editor
+    private lateinit var riruRandom: String
 
-    companion object{
+    companion object {
         private const val WRITE_REQUEST_CODE = 43
         private const val READ_REQUEST_CODE = 42
     }
@@ -33,26 +29,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     @SuppressLint("CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        if (!getDarkModeStatus(this)) {
-//            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-//        }
         setContentView(R.layout.activity_main)
-        sp = getSharedPreferences("settings", Context.MODE_PRIVATE)
-        spIntent = getSharedPreferences("intent_list", Context.MODE_PRIVATE)
-        speIntent = getSharedPreferences("intent_list", Context.MODE_PRIVATE).edit()
+        setTitle(R.string.app_name)
         setSupportActionBar(findViewById(R.id.toolbar))
-        init(sp)
+        init()
         setModuleStatusCard()
     }
 
-    private fun init(sp: SharedPreferences) {
-        setAppCenter(sp, this)
-        setDark(sp)
+    private fun init() {
+        setDark(settingSharedPreferences)
         //setLang(sp,this)
         riru_status_card.setOnClickListener(this)
-        send_manage_card.setOnClickListener(this)
-        view_card.setOnClickListener(this)
-        text_card.setOnClickListener(this)
+        manage_card.setOnClickListener(this)
         backup_menu.setOnClickListener(this)
         misc_menu.setOnClickListener(this)
         setting_menu.setOnClickListener(this)
@@ -60,47 +48,62 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun setModuleStatusCard() {
-        val pid = android.os.Process.myPid()
         if (isRoot()) {
             //授予了 Root 权限
-            val result: Shell.Result =
-                Shell.su("cat /proc/$pid/maps | grep libriru_ifw_enhance.so").exec()
-            if (result.out.toString() != "[]") {
-                //Riru - IFW Enhance 已生效
-                riru_status_card.setCardBackgroundColor(ContextCompat.getColor(this,R.color.colorPrimary))
+            riruRandom = getRiruRandom()
+            logd("riruRandom：$riruRandom")
+            if (riruRandom.isNotEmpty()) {
+                //Riru - Core已生效
+                riru_status_card.setCardBackgroundColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.colorPrimary
+                    )
+                )
                 riru_status_card_title.text = getString(R.string.riru_status_card_exist)
-                riru_status_card_desc.text = getString(R.string.riru_status_card_exist_detail)
+                riru_status_card_desc.text =
+                    String.format(getString(R.string.riru_status_card_exist_detail))
                 riru_status_card_icon.setImageResource(R.drawable.ic_baseline_check_circle_24)
-                send_manage_card.setCardBackgroundColor(ContextCompat.getColor(this,R.color.colorGreen1))
-                view_card.setCardBackgroundColor(ContextCompat.getColor(this,R.color.colorGreen2))
-                text_card.setCardBackgroundColor(ContextCompat.getColor(this,R.color.colorGreen3))
+                manage_card.setCardBackgroundColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.colorGreen1
+                    )
+                )
                 isWorked = true
             } else {
                 //Riru - IFW Enhance 未生效
-                riru_status_card.setCardBackgroundColor(ContextCompat.getColor(this,R.color.colorRed))
+                riru_status_card.setCardBackgroundColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.colorRed
+                    )
+                )
                 riru_status_card_title.text = getString(R.string.riru_status_card_not)
                 riru_status_card_desc.text = getString(R.string.riru_status_card_not_detail)
                 riru_status_card_icon.setImageResource(R.drawable.ic_round_error_24)
             }
         }
-//        else {
-//            //未授予 Root 权限 & 未 Root
-//        }
     }
 
-    private fun startSendManage() {
-        val intent = Intent(this, SendManageActivity::class.java)
-        startActivity(intent)
-    }
-
-    private fun startViewManage() {
-        val intent = Intent(this, ViewManageActivity::class.java)
-        startActivity(intent)
-    }
-
-    private fun startTextManage() {
-        val intent = Intent(this, TextManageActivity::class.java)
-        startActivity(intent)
+    private fun showManageDialog() {
+        val manageItems = resources.getStringArray(R.array.intent_list)
+        MaterialAlertDialogBuilder(this)
+            .setTitle(getString(R.string.manage_card_title))
+            .setItems(manageItems) { dialog, which ->
+                val tag = when (which) {
+                    0 -> "send"
+                    1 -> "send_multi"
+                    2 -> "view"
+                    3 -> "text"
+                    4 -> "browser"
+                    else -> ""
+                }
+                val intent = Intent(this, ManageActivity::class.java)
+                intent.putExtra("tag", tag)
+                startActivity(intent)
+            }
+            .show()
     }
 
     private fun clickBackupRestore() {
@@ -130,6 +133,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
         super.onActivityResult(requestCode, resultCode, resultData)
+        toast(getString(R.string.please_wait))
         if (requestCode == WRITE_REQUEST_CODE && resultData != null && resultData.data != null) {
             //备份
             if (backupSharedPreferences(resultData.data as Uri)) {
@@ -159,45 +163,36 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                             startActivity(intent)
                         }
                         .show()
+                } else {
+                    val riruVersion = getRiruVersion(riruRandom)
+                    val riruVersionName = getRiruVersionName(riruRandom)
+                    val ifwVersion = getIFWEnhanceVersion(riruRandom)
+                    val ifwVersionName = getIFWEnhanceVersionName(riruRandom)
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle(R.string.riru_status_card_exist_dialog_title)
+                        .setMessage(
+                            String.format(
+                                getString(R.string.riru_status_card_exist_dialog_msg),
+                                riruVersionName,
+                                riruVersion,
+                                ifwVersionName,
+                                ifwVersion
+                            )
+                        )
+                        .show()
                 }
             }
-            R.id.send_manage_card -> {
+            R.id.manage_card -> {
                 if (!isWorked) {
                     MaterialAlertDialogBuilder(this)
                         .setTitle(R.string.manage_dialog_title)
                         .setMessage(R.string.manage_dialog_desc)
                         .setPositiveButton(R.string.dialog_positive) { _, _ ->
-                            startSendManage()
+                            showManageDialog()
                         }
                         .show()
                 } else {
-                    startSendManage()
-                }
-            }
-            R.id.view_card -> {
-                if (!isWorked) {
-                    MaterialAlertDialogBuilder(this)
-                        .setTitle(R.string.manage_dialog_title)
-                        .setMessage(R.string.manage_dialog_desc)
-                        .setPositiveButton(R.string.dialog_positive) { _, _ ->
-                            startViewManage()
-                        }
-                        .show()
-                } else {
-                    startViewManage()
-                }
-            }
-            R.id.text_card -> {
-                if (!isWorked) {
-                    MaterialAlertDialogBuilder(this)
-                        .setTitle(R.string.manage_dialog_title)
-                        .setMessage(R.string.manage_dialog_desc)
-                        .setPositiveButton(R.string.dialog_positive) { _, _ ->
-                            startTextManage()
-                        }
-                        .show()
-                } else {
-                    startTextManage()
+                    showManageDialog()
                 }
             }
             R.id.backup_menu -> {
@@ -223,7 +218,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             contentResolver.openFileDescriptor(uri, "w")?.use { fileDescriptor ->
                 FileOutputStream(fileDescriptor.fileDescriptor).use {
                     it.write(
-                        JSON.toJSONString(spIntent.all).toByteArray()
+                        JSON.toJSONString(intentListSharedPreferences.all).toByteArray()
                     )
                 }
             }
@@ -249,11 +244,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
         val map = JSON.parseObject(stringBuilder.toString())
-        speIntent.clear()
+        intentListSharedPreferencesEditor.clear()
         map.forEach {
-            speIntent.putBoolean(it.key, it.value as Boolean)
+            intentListSharedPreferencesEditor.putBoolean(it.key, it.value as Boolean)
         }
-        speIntent.apply()
+        intentListSharedPreferencesEditor.apply()
         return true
     }
 }

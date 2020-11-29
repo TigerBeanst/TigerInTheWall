@@ -4,13 +4,12 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.jakting.shareclean.utils.setDark
 import com.jakting.shareclean.utils.setLang
 import moe.shizuku.preference.*
 
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,7 +77,7 @@ class SettingsActivity : AppCompatActivity() {
             val sp = activity!!.getSharedPreferences("settings", Context.MODE_PRIVATE)
             when (key) {
                 "drop_dark" -> setDark(sp)
-                "drop_lang" -> setLang(sp, activity!!)
+                "drop_lang" -> setLang()
             }
         }
 

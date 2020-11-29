@@ -5,71 +5,102 @@ import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.cardview.widget.CardView
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
-import com.alibaba.fastjson.JSONArray
 import com.jakting.shareclean.R
+import kotlin.collections.ArrayList
 
 
-class AppsAdapter(context: Context, jsonA: JSONArray) :
-    RecyclerView.Adapter<AppsAdapter.ViewHolder>() {
-    var context1: Context? = context
-    var json = jsonA
-    var map: MutableMap<String, Boolean> = HashMap()
+class AppsAdapter(val intentDataListOrigin: ArrayList<IntentData>) :
+    RecyclerView.Adapter<AppsAdapter.ViewHolder>(), Filterable {
+    lateinit var parentContext: Context
+    var intentDataList = intentDataListOrigin
 
-    init {
-        initMap()
-    }
+    data class IntentData(
+        var app_name: String,
+        var package_name: String,
+        var activity: String,
+        var activity_name: String,
+        var check: Boolean
+    )
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var cardView: CardView = view.findViewById(R.id.card_view)
-        var imageView: ImageView = view.findViewById(R.id.imageview) as ImageView
-        var textureAppName: TextView = view.findViewById(R.id.Apk_Name)
-        var textureAppPackageName: TextView = view.findViewById(R.id.Apk_Package_Name)
-        var checkBox: CheckBox = view.findViewById((R.id.check_box))
-
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        var appLayout: LinearLayout = view.findViewById(R.id.item_intent_app_layout)
+        var appIcon: ImageView = view.findViewById(R.id.item_intent_app_icon) as ImageView
+        var appLabelName: TextView = view.findViewById(R.id.item_intent_app_label_name)
+        var appActivitiesName: TextView = view.findViewById(R.id.item_intent_app_activities_name)
+        var appCheckbox: CheckBox = view.findViewById((R.id.item_intent_app_checkbox))
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view2: View =
-            LayoutInflater.from(context1).inflate(R.layout.cardview_layout, parent, false)
-        return ViewHolder(view2)
-    }
-
-    private fun initMap() {
-        for (i in 0 until json.size) {
-            val activityJSONObject = json.getJSONObject(i)
-            map["${activityJSONObject["package_name"]}/${activityJSONObject["activity"]}"] = false
-        }
+        parentContext = parent.context
+        val view: View =
+            LayoutInflater.from(parentContext).inflate(R.layout.item_intent, parent, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        val activityJSONObject = json.getJSONObject(position)
-        val packageName = activityJSONObject["package_name"] as String
-        val activityS = activityJSONObject["activity"] as String
-        val appName = activityJSONObject["app_name"] as String
-        val activityName = activityJSONObject["activity_name"] as String
-        val applicationLabelName = "$appName - $activityName"
-        val drawable: Drawable =
-            context1.getAppIconByPackageName(packageName)!!
-        viewHolder.textureAppName.text = applicationLabelName
-        viewHolder.textureAppPackageName.text = activityS
-        viewHolder.imageView.setImageDrawable(drawable)
-        viewHolder.cardView.setOnClickListener {
-            viewHolder.checkBox.isChecked = viewHolder.checkBox.isChecked != true
+        val intentData = intentDataList[position]
+        val appName = intentData.app_name
+        val packageName = intentData.package_name
+        val activity = intentData.activity
+        val activityName = intentData.activity_name
+        val appLabelName = "$appName - $activityName"
+        val appIconDrawable: Drawable =
+            parentContext.getAppIconByPackageName(packageName)!!
+        viewHolder.appLabelName.text = appLabelName
+        viewHolder.appActivitiesName.text = activity
+        viewHolder.appIcon.setImageDrawable(appIconDrawable)
+        viewHolder.appLayout.setOnClickListener {
+            viewHolder.appCheckbox.isChecked = !viewHolder.appCheckbox.isChecked
+            intentDataList[position].check = viewHolder.appCheckbox.isChecked
         }
+        viewHolder.appCheckbox.setOnCheckedChangeListener { _, isCheck ->
+            intentDataList[position].check = isCheck
+        }
+        viewHolder.appCheckbox.isChecked = true && (intentDataList[position].check)
 
-        viewHolder.checkBox.setOnCheckedChangeListener { _, isCheckBox ->
-            map["$packageName/$activityS"] = isCheckBox
-        }
-        viewHolder.checkBox.isChecked = true && (map["$packageName/$activityS"] == true)
 
     }
 
     override fun getItemCount(): Int {
-        return json.size
+        return intentDataList.size
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(charSequence: CharSequence): FilterResults {
+                val charString = charSequence.toString()
+                logd("charString 为 【$charString】，长度为【${charString.length}】")
+                if (charString.isEmpty()) {
+                    logd("现在输入为空")
+                    intentDataList = intentDataListOrigin
+                } else {
+                    logd("现在输入为 $charString")
+                    val intentDataListFiltered: ArrayList<IntentData> = ArrayList()
+                    for (intentData in intentDataListOrigin) {
+                        //这里根据需求，添加匹配规则
+                        if (intentData.app_name.contains(charString,true) ||
+                            intentData.package_name.contains(charString,true) ||
+                            intentData.activity.contains(charString,true) ||
+                            intentData.activity_name.contains(charString,true)
+                        ) {
+                            intentDataListFiltered.add(intentData)
+                        }
+                    }
+                    intentDataList = intentDataListFiltered
+                }
+                val filterResults = FilterResults()
+                filterResults.values = intentDataList
+                return filterResults
+            }
+
+            override fun publishResults(charSequence: CharSequence?, filterResults: FilterResults) {
+                intentDataList = filterResults.values as ArrayList<IntentData>
+                //刷新数据
+                notifyDataSetChanged()
+            }
+        }
     }
 }

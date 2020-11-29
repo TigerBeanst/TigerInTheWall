@@ -10,7 +10,7 @@ import com.jakting.shareclean.utils.*
 import moe.shizuku.preference.*
 
 
-class MiscActivity : AppCompatActivity() {
+class MiscActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

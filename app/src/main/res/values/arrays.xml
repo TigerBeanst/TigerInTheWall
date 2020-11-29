@@ -1,12 +1,11 @@
 <resources>
     <!-- Reply Preference -->
-    <string-array name="reply_entries">
-        <item>Reply</item>
-        <item>Reply to all</item>
+    <string-array name="intent_list">
+        <item>@string/send_title</item>
+        <item>@string/send_multi_title</item>
+        <item>@string/view_title</item>
+        <item>@string/text_title</item>
+        <item>@string/browser_title</item>
     </string-array>
 
-    <string-array name="reply_values">
-        <item>reply</item>
-        <item>reply_all</item>
-    </string-array>
 </resources>

@@ -18,7 +18,6 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/setting_page_language">
         <SimpleMenuPreference
-            android:enabled="false"
             android:key="drop_lang"
             android:entries="@array/entries_lang"
             android:entryValues="@array/entry_values"
@@ -35,11 +34,11 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/setting_page_privacy">
         <SwitchPreference
-            android:key="switch_appcenter"
-            android:title="@string/setting_page_appcenter"
+            android:key="switch_firebase"
+            android:title="@string/setting_page_firebase"
             android:defaultValue="true"
-            android:summaryOn="@string/setting_page_appcenter_summary"
-            android:summaryOff="@string/setting_page_appcenter_summaryNo" />
+            android:summaryOn="@string/setting_page_firebase_summary"
+            android:summaryOff="@string/setting_page_firebase_summaryNo" />
 
     </PreferenceCategory>
 

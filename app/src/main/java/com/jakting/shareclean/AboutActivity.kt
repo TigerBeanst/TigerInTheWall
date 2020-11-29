@@ -82,30 +82,6 @@ class AboutActivity : AbsAboutActivity() {
         )
         items.add(
             License(
-                "App Center SDK",
-                "Microsoft",
-                License.MIT,
-                "https://github.com/microsoft/appcenter-sdk-android"
-            )
-        )
-        items.add(
-            License(
-                "Kotlin stdlib",
-                "JetBrains",
-                License.APACHE_2,
-                "https://github.com/JetBrains/kotlin/"
-            )
-        )
-        items.add(
-            License(
-                "Material Components",
-                "Google",
-                License.APACHE_2,
-                "https://github.com/material-components/material-components-android"
-            )
-        )
-        items.add(
-            License(
                 "fastjson",
                 "Alibaba",
                 License.APACHE_2,
@@ -126,6 +102,22 @@ class AboutActivity : AbsAboutActivity() {
                 "scwang90",
                 License.APACHE_2,
                 "https://github.com/scwang90/SmartRefreshLayout"
+            )
+        )
+        items.add(
+            License(
+                "Localization",
+                "akexorcist",
+                License.APACHE_2,
+                "https://github.com/akexorcist/Localization"
+            )
+        )
+        items.add(
+            License(
+                "Kotlin stdlib",
+                "JetBrains",
+                License.APACHE_2,
+                "https://github.com/JetBrains/kotlin/"
             )
         )
         items.add(
@@ -158,6 +150,14 @@ class AboutActivity : AbsAboutActivity() {
                 "Google",
                 License.APACHE_2,
                 "https://source.android.com/"
+            )
+        )
+        items.add(
+            License(
+                "Material Components",
+                "Google",
+                License.APACHE_2,
+                "https://github.com/material-components/material-components-android"
             )
         )
     }

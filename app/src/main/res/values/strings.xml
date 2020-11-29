@@ -1,10 +1,14 @@
 <resources>
     <string name="app_name">RnIntentClean</string>
+    <string name="error">Error</string>
+    <string name="please_wait">Please wait…</string>
 
     <string name="riru_status_card_cannot">Unable to get module status</string>
     <string name="riru_status_card_cannot_detail">Please restart the application after giving Root permission</string>
     <string name="riru_status_card_exist">Activated module</string>
     <string name="riru_status_card_exist_detail">Riru - IFW Enhance has been properly applied</string>
+    <string name="riru_status_card_exist_dialog_title">Module details</string>
+    <string name="riru_status_card_exist_dialog_msg" translatable="false">Riru - Core: %1$s (%2$s)\nRiru - IFW Enhance: %3$s (%4$s)</string>
     <string name="riru_status_card_not">Inactive module</string>
     <string name="riru_status_card_not_detail">Riru - IFW Enhance has not been properly applied</string>
     <string name="riru_status_card_download">Your device may not have the Riru-IFW Enhance module installed.\n\nClick DOWNLOAD to go to the Download page.</string>
@@ -12,12 +16,15 @@
 
     <string name="manage_dialog_title">Notice</string>
     <string name="manage_dialog_desc">Riru - IFW Enhance has not been properly applied. Anything you do may not take effect.</string>
-    <string name="send_manage_card_title">Share Via…</string>
-    <string name="send_manage_card_detail">Clean up apps that occupy the sharesheet</string>
-    <string name="view_manage_card_title">Open With…</string>
-    <string name="view_manage_card_detail">Clean up apps that occupy the open mode sheet</string>
-    <string name="text_manage_card_title">Text Operate…</string>
-    <string name="text_manage_card_detail">Clean up apps when you long press the text</string>
+    <string name="manage_card_title">Apps Management</string>
+    <string name="manage_card_detail">Clean up apps that occupy everything</string>
+    <string name="manage_apply_success">Clean Finished</string>
+    <string name="manage_search">Search</string>
+    <string name="send_title">Share Via</string>
+    <string name="send_multi_title">Share Multiple Via…</string>
+    <string name="view_title">Open With</string>
+    <string name="text_title">Long Press Text Operate</string>
+    <string name="browser_title">Browser</string>
 
     <string name="misc_title">Miscellaneous</string>
 
@@ -35,12 +42,12 @@
     <string name="setting_page_helplang">Help translation</string>
     <string name="setting_page_helplang_summary">Help to translate RnIntentClean into your language</string>
     <string name="setting_page_privacy">Privacy</string>
-    <string name="setting_page_appcenter">Use AppCenter Analysis</string>
-    <string name="setting_page_appcenter_summary">Analysis logs will be uploaded</string>
-    <string name="setting_page_appcenter_summaryNo">Analysis logs will not be uploaded</string>
+    <string name="setting_page_firebase">Use Firebase Analytics</string>
+    <string name="setting_page_firebase_summary">Analysis logs will be uploaded</string>
+    <string name="setting_page_firebase_summaryNo">Analysis logs will not be uploaded</string>
 
     <string name="about_page_info">Introduction</string>
-    <string name="about_page_info_desc">Are you tired of scouring through long lists of apps when sharing pictures or open a file just to find a few apps that you use a lot?\n\nWhy are you app in my sharesheet or open mode sheet??\nIf I needed you, I\'d open the app myself to use it!\n\nRnIntentClean is an App that allow you to clean up your sharesheet and open mode sheet, which works with the Magisk modules "Riru-Core" and "Riru-IFW Enhance", and root permission.</string>
+    <string name="about_page_info_desc">Are you tired of scouring through long lists of apps when sharing pictures or open a file just to find a few apps that you use a lot?\n\nWhy you app occupy my sheet?? If I needed you, I\'d open the app myself to use it!\n\nRnIntentClean is an App that allow you to clean up your sheets, just like sharesheet, open mode sheet and more!\n\nWorks with the Magisk modules Riru-Core and Riru-IFW Enhance, and root permission.</string>
     <string name="about_page_dev">Developers</string>
     <string name="about_page_dev_1">RnIntentClean Developers</string>
     <string name="about_page_dev_2">Riru - Core Developers</string>
@@ -48,9 +55,6 @@
     <string name="about_page_open_source">Open Source Licenses</string>
 
     <string name="manage_start">The IFW rules written by this application have been cleared. Please submit again to take effect.</string>
-    <string name="manage_send_success">Share Clean Applied</string>
-    <string name="manage_view_success">Open Mode Clean Applied</string>
-    <string name="manage_text_success">Text Operation Clean Applied</string>
 
     <string name="misc_disable">Disable</string>
     <string name="misc_disable_direct">Disable Direct Share</string>
@@ -68,21 +72,26 @@
     <string name="br_restore_ok">Restore completed.</string>
 
     <string name="dialog_positive">Got it</string>
-    <string name="dialog_negative">Don\'t</string>
 
     <string name="menu_select_all">Select all</string>
     <string name="menu_clear">Unselect All</string>
+    <string name="fab_submit">Apply Clean</string>
+
+    <string name="follow_system">Follow system</string>
+    <string name="always_on">Always on</string>
+    <string name="always_off">Always off</string>
 
     <string-array name="entries_dark">
-        <item>Follow system</item>
-        <item>Always on</item>
-        <item>Always off</item>
+        <item translatable="false">@string/follow_system</item>
+        <item translatable="false">@string/always_on</item>
+        <item translatable="false">@string/always_off</item>
     </string-array>
 
     <string-array name="entries_lang">
-        <item>Follow system</item>
-        <item translatable="false">简体中文</item>
+        <item translatable="false">@string/follow_system</item>
         <item translatable="false">English</item>
+        <item translatable="false">简体中文（大陆）</item>
+        <item translatable="false">繁體中文（臺灣）</item>
     </string-array>
 
     <string-array name="entry_values" translatable="false">
@@ -94,5 +103,4 @@
         <item>5</item>
     </string-array>
 
-    <string name="on_preference_change_toast_message" translatable="false">onPreferenceChange: key = %1$s, newValue = %2$s</string>
 </resources>

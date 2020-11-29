@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">RnIntentClean</string>
+    <string name="error">Error</string>
+    <string name="please_wait">Please wait…</string>
     <string name="riru_status_card_cannot">無法取得模組狀態</string>
     <string name="riru_status_card_cannot_detail">請給予 Root 權限後重啟此應用程式</string>
     <string name="riru_status_card_exist">模組已啟用</string>
     <string name="riru_status_card_exist_detail">Riru - IFW Enhance 正常運作中</string>
+    <string name="riru_status_card_exist_dialog_title">Module details</string>
     <string name="riru_status_card_not">模組未啟用</string>
     <string name="riru_status_card_not_detail">無法檢測到 Riru - IFW Enhance 的啟用狀態</string>
     <string name="riru_status_card_download">您的硬體可能未安裝 Riru-IFW Enhance 模組。\n\n點擊下載來前往下載頁面。</string>
     <string name="riru_status_card_download_btn">下載</string>
     <string name="manage_dialog_title">注意</string>
-    <string name="manage_dialog_desc">Riru - IFW Enhance 未正常啟用。 您所做的任何事情都可能不會生效。</string>
-    <string name="manage_card_title">程式管理</string>
-    <string name="manage_card_detail">清理佔用一切的程式</string>
+    <string name="manage_dialog_desc">Riru-IFW 增強功能未正常啟用。 您所做的任何事情都可能不會生效。</string>
+    <string name="manage_card_title">Apps Management</string>
+    <string name="manage_card_detail">Clean up apps that occupy everything</string>
+    <string name="manage_apply_success">Clean Finished</string>
+    <string name="manage_search">Search</string>
+    <string name="send_title">Share Via</string>
+    <string name="send_multi_title">Share Multiple Via…</string>
+    <string name="view_title">Open With</string>
+    <string name="text_title">Long Press Text Operate</string>
+    <string name="browser_title">Browser</string>
     <string name="misc_title">其他設定</string>
     <string name="backup_title">備份 &amp; 還原</string>
     <string name="setting_title">設定</string>
@@ -27,11 +37,11 @@
     <string name="setting_page_helplang">貢獻翻譯</string>
     <string name="setting_page_helplang_summary">協助 RnIntentClean 其他語言的翻譯</string>
     <string name="setting_page_privacy">隱私</string>
-    <string name="setting_page_firebase">使用 Firebase 分析</string>
-    <string name="setting_page_firebase_summary">分析日誌將會被上傳</string>
-    <string name="setting_page_firebase_summaryNo">分析日誌將不會被上傳</string>
+    <string name="setting_page_firebase">Use Firebase Analytics</string>
+    <string name="setting_page_firebase_summary">Analysis logs will be uploaded</string>
+    <string name="setting_page_firebase_summaryNo">Analysis logs will not be uploaded</string>
     <string name="about_page_info">簡介</string>
-    <string name="about_page_info_desc">您是否在共享圖片或開啟檔案時花了不少時間尋找常用的程式？\n\n為什麼這些奇怪又不常用的程式會顯示在列表內？ 什麼程式該顯示在列表內由我們自己決定！！\n\nRnIntentClean 就是一個解決此問題的小工具，可讓您清理雜亂的列表，\n\n該程式必須與「Riru-Core」和「Riru-IFW Enhance」的 Magisk 模組一起使用，當然還是需要 root 權限。</string>
+    <string name="about_page_info_desc">Are you tired of scouring through long lists of apps when sharing pictures or open a file just to find a few apps that you use a lot?\n\nWhy you app occupy my sheet?? If I needed you, I\'d open the app myself to use it!\n\nRnIntentClean is an App that allow you to clean up your sheets, just like sharesheet, open mode sheet and more!\n\nWorks with the Magisk modules Riru-Core and Riru-IFW Enhance, and root permission.</string>
     <string name="about_page_dev">開發人員</string>
     <string name="about_page_dev_1">RnIntentClean 開發者</string>
     <string name="about_page_dev_2">Riru - Core 開發者</string>
@@ -54,20 +64,19 @@
     <string name="dialog_positive">我知道了</string>
     <string name="menu_select_all">全選</string>
     <string name="menu_clear">反全選</string>
-
-    <string name="follow_system">依據系統設定</string>
-    <string name="always_on">總是開啟</string>
-    <string name="always_off">總是關閉</string>
-
-    <string name="riru_status_card_exist_dialog_title">模組詳情</string>
-    <string name="fab_submit">提交清理</string>
-    <string name="text_title">長按文字動作</string>
-    <string name="view_title">選擇開啟</string>
-    <string name="send_title">選擇分享</string>
-    <string name="send_multi_title">選擇多個檔案分享</string>
-    <string name="browser_title">瀏覽器</string>
-    <string name="manage_apply_success">清理已完成</string>
-    <string name="error">錯誤</string>
-    <string name="manage_search">搜尋</string>
-    <string name="please_wait">請稍等…</string>
+    <string name="fab_submit">Apply Clean</string>
+    <string name="follow_system">Follow system</string>
+    <string name="always_on">Always on</string>
+    <string name="always_off">Always off</string>
+    <string-array name="entries_dark">
+        <item translatable="false">@string/follow_system</item>
+        <item translatable="false">@string/always_on</item>
+        <item translatable="false">@string/always_off</item>
+    </string-array>
+    <string-array name="entries_lang">
+        <item translatable="false">@string/follow_system</item>
+        <item translatable="false">English</item>
+        <item translatable="false">简体中文（大陆）</item>
+        <item translatable="false">繁體中文（臺灣）</item>
+    </string-array>
 </resources>

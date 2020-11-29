@@ -3,27 +3,32 @@
 
 Are you tired of scouring through long lists of apps when sharing pictures or open a file just to find a few apps that you use a lot?
 
-Why are you app in my sharesheet or open mode sheet??
-
-If I needed you, I'd open the app myself to use it!
+Why you app occupy my sheet?? If I needed you, I\'d open the app myself to use it!
 
 [![Platform](https://img.shields.io/badge/platform-android-orange.svg)](https://github.com/hjthjthjt/RnIntentClean)
 [![Version](https://img.shields.io/github/v/release/hjthjthjt/RnIntentClean)](https://github.com/hjthjthjt/RnIntentClean/releases)
 [![License](https://img.shields.io/badge/License-Apache%202.0-red)](https://github.com/hjthjthjt/RnIntentClean/blob/master/LICENSE)
 
-RnIntentClean is an App that allow you to clean up your sharesheet and open mode sheet, which works with the Magisk modules "Riru-Core" and "Riru-IFW Enhance", and root permission.
+RnIntentClean is an App that allow you to clean up your sheets, just like sharesheet, open mode sheet and more!
+
+Works with the Magisk modules Riru-Core and Riru-IFW Enhance, and root permission.
 
 # Download
 See [https://ic.into.icu/download/](https://ic.into.icu/download/)
 
 <a href='https://play.google.com/store/apps/details?id=com.jakting.shareclean&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/zh-TW/badges/static/images/badges/en_badge_web_generic.png' height="60px" width="auto"/></a>
 
+[release](https://github.com/hjthjthjt/RnIntentClean/releases/latest)
+
 # Guide
 See [https://ic.into.icu/guide/](https://ic.into.icu/guide/)
 
 Come and join the translation: [https://crwd.in/rnintentclean](https://crwd.in/rnintentclean)
 
-# Works System
+# TO-DO
+[RnIntentClean TO-DO](https://www.notion.so/RnIntentClean-ad54b79559804c34bcd7513ecdc75d78)
+
+# Tested
 1. Hydrogen/Oxygen OS with Android 10
 2. MIUI 12 with Android 10
 

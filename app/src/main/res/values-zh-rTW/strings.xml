@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">RnIntentClean</string>
-    <string name="error">Error</string>
-    <string name="please_wait">Please wait…</string>
+    <string name="error">錯誤</string>
+    <string name="please_wait">請稍待...</string>
     <string name="riru_status_card_cannot">無法取得模組狀態</string>
     <string name="riru_status_card_cannot_detail">請給予 Root 權限後重啟此應用程式</string>
     <string name="riru_status_card_exist">模組已啟用</string>

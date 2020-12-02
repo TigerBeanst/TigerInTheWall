@@ -10,7 +10,7 @@
     <string name="riru_status_card_exist_dialog_title">Module details</string>
     <string name="riru_status_card_not">模組未啟用</string>
     <string name="riru_status_card_not_detail">無法檢測到 Riru - IFW Enhance 的啟用狀態</string>
-    <string name="riru_status_card_download">您的硬體可能未安裝 Riru-IFW Enhance 模組。\n\n點擊下載來前往下載頁面。</string>
+    <string name="riru_status_card_download">您的手機可能未安裝 Riru-IFW Enhance 模組。\n\n點擊下載來前往下載頁面。</string>
     <string name="riru_status_card_download_btn">下載</string>
     <string name="manage_dialog_title">注意</string>
     <string name="manage_dialog_desc">Riru-IFW 增強功能未正常啟用。 您所做的任何事情都可能不會生效。</string>

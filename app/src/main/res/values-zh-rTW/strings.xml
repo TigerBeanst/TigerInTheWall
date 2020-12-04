@@ -68,15 +68,4 @@
     <string name="follow_system">依據系統設定</string>
     <string name="always_on">總是開啟</string>
     <string name="always_off">總是關閉</string>
-    <string-array name="entries_dark">
-        <item translatable="false">@string/follow_system</item>
-        <item translatable="false">@string/always_on</item>
-        <item translatable="false">@string/always_off</item>
-    </string-array>
-    <string-array name="entries_lang">
-        <item translatable="false">@string/follow_system</item>
-        <item translatable="false">English</item>
-        <item translatable="false">简体中文（大陆）</item>
-        <item translatable="false">繁體中文（臺灣）</item>
-    </string-array>
 </resources>

@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">RnIntentClean</string>
+    <string name="error">錯誤</string>
+    <string name="please_wait">請稍等…</string>
     <string name="riru_status_card_cannot">無法取得模組狀態</string>
     <string name="riru_status_card_cannot_detail">請給予 Root 權限後重啟此應用程式</string>
     <string name="riru_status_card_exist">模組已啟用</string>
     <string name="riru_status_card_exist_detail">Riru - IFW Enhance 正常運作中</string>
+    <string name="riru_status_card_exist_dialog_title">模組詳情</string>
     <string name="riru_status_card_not">模組未啟用</string>
     <string name="riru_status_card_not_detail">無法檢測到 Riru - IFW Enhance 的啟用狀態</string>
-    <string name="riru_status_card_download">您的硬體可能未安裝 Riru-IFW Enhance 模組。\n\n點擊下載來前往下載頁面。</string>
+    <string name="riru_status_card_download">您的手機可能未安裝 Riru-IFW Enhance 模組。\n\n點擊下載來前往下載頁面。</string>
     <string name="riru_status_card_download_btn">下載</string>
     <string name="manage_dialog_title">注意</string>
-    <string name="manage_dialog_desc">Riru - IFW Enhance 未正常啟用。 您所做的任何事情都可能不會生效。</string>
+    <string name="manage_dialog_desc">Riru-IFW 增強功能未正常啟用。 您所做的任何事情都可能不會生效。</string>
     <string name="manage_card_title">程式管理</string>
     <string name="manage_card_detail">清理佔用一切的程式</string>
+    <string name="manage_apply_success">清理已完成</string>
+    <string name="manage_search">搜尋</string>
+    <string name="send_title">選擇分享</string>
+    <string name="send_multi_title">選擇多個檔案分享</string>
+    <string name="view_title">選擇開啟</string>
+    <string name="text_title">長按文字動作</string>
+    <string name="browser_title">瀏覽器</string>
     <string name="misc_title">其他設定</string>
     <string name="backup_title">備份 &amp; 還原</string>
     <string name="setting_title">設定</string>
@@ -54,20 +64,8 @@
     <string name="dialog_positive">我知道了</string>
     <string name="menu_select_all">全選</string>
     <string name="menu_clear">反全選</string>
-
+    <string name="fab_submit">提交清理</string>
     <string name="follow_system">依據系統設定</string>
     <string name="always_on">總是開啟</string>
     <string name="always_off">總是關閉</string>
-
-    <string name="riru_status_card_exist_dialog_title">模組詳情</string>
-    <string name="fab_submit">提交清理</string>
-    <string name="text_title">長按文字動作</string>
-    <string name="view_title">選擇開啟</string>
-    <string name="send_title">選擇分享</string>
-    <string name="send_multi_title">選擇多個檔案分享</string>
-    <string name="browser_title">瀏覽器</string>
-    <string name="manage_apply_success">清理已完成</string>
-    <string name="error">錯誤</string>
-    <string name="manage_search">搜尋</string>
-    <string name="please_wait">請稍等…</string>
 </resources>

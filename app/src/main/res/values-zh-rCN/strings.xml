@@ -4,17 +4,17 @@
     <string name="riru_status_card_cannot">无法获取模块状态</string>
     <string name="riru_status_card_cannot_detail">请给予 Root 权限后重启应用</string>
     <string name="riru_status_card_exist">已激活模块</string>
-    <string name="riru_status_card_exist_detail">Riru - IFW Enhance 已被正确应用</string>
+    <string name="riru_status_card_exist_detail">Riru - IFWEnhance 已被正确应用</string>
     <string name="riru_status_card_exist_dialog_title">模块详情</string>
     <string name="riru_status_card_not">未激活模块</string>
-    <string name="riru_status_card_not_detail">Riru - IFW Enhance 未被正确应用</string>
-    <string name="riru_status_card_download">您的设备可能未安装 Riru - IFW Enhance 模块。\n\n点击「下载」，前往下载页下载。</string>
+    <string name="riru_status_card_not_detail">Riru - IFWEnhance 未被正确应用</string>
+    <string name="riru_status_card_download">您的设备可能未安装 Riru - Core 或 Riru - IFWEnhance 模块。  点击「下载」，前往下载页下载。</string>
     <string name="riru_status_card_download_btn">下载</string>
 
     <string name="manage_card_title">应用管理</string>
     <string name="manage_card_detail">清理占用一切的应用</string>
     <string name="manage_dialog_title">提示</string>
-    <string name="manage_dialog_desc">Riru - IFW Enhance 未被正确应用。您所做的任何操作可能都不会生效。</string>
+    <string name="manage_dialog_desc">Riru - IFWEnhance 未被正确应用。您所做的任何操作可能都不会生效。</string>
 
     <string name="misc_title">杂项</string>
 
@@ -32,11 +32,11 @@
     <string name="setting_page_firebase_summaryNo">分析日志将不会被上传</string>
 
     <string name="about_page_info">介绍</string>
-    <string name="about_page_info_desc">你是否已经厌倦了分享图片或打开文件时，在冗长的分享列表里翻找，却只为找到几个你常用的应用？\n\n你们这些应用为什么占领我的查看面板啊？ 我如果需要你们，我自己会打开 App 来用啊！\n\n「氡·意图清理」是一款允许您的查看面板的应用，包括分享面板、打开方式面板等！\n\n它借助 Magisk 模块 Riru - Core 和 Riru - IFW Enhance 来实现作用，当然 root 权限也是必需的。</string>
+    <string name="about_page_info_desc">你是否已经厌倦了分享图片或打开文件时，在冗长的分享列表里翻找，却只为找到几个你常用的应用？\n\n你们这些应用为什么占领我的查看面板啊？ 我如果需要你们，我自己会打开 App 来用啊！\n\n「氡·意图清理」是一款允许您的查看面板的应用，包括分享面板、打开方式面板等！\n\n它借助 Magisk 模块 Riru - Core 和 Riru - IFWEnhance 来实现作用，当然 root 权限也是必需的。</string>
     <string name="about_page_dev">开发者</string>
     <string name="about_page_dev_1">氡·意图清理 开发者</string>
     <string name="about_page_dev_2">Riru - Core 开发者</string>
-    <string name="about_page_dev_3">Riru - IFW Enhance 开发者</string>
+    <string name="about_page_dev_3">Riru - IFWEnhance 开发者</string>
     <string name="about_page_open_source">开放源代码许可</string>
 
     <string name="manage_start">已清理本应用写入的 IFW 规则，请再次提交以生效</string>

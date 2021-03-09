@@ -11,7 +11,7 @@ Why you app occupy my sheet?? If I needed you, I\'d open the app myself to use i
 
 RnIntentClean is an App that allow you to clean up your sheets, just like sharesheet, open mode sheet and more!
 
-Works with the Magisk modules Riru-Core and Riru-IFW Enhance, and root permission.
+Works with the Magisk modules Riru - Core and Riru - IFWEnhance, and root permission.
 
 # Download
 See [https://ic.into.icu/download/](https://ic.into.icu/download/)

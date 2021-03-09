@@ -6,16 +6,16 @@
     <string name="riru_status_card_cannot">Unable to get module status</string>
     <string name="riru_status_card_cannot_detail">Please restart the application after giving Root permission</string>
     <string name="riru_status_card_exist">Activated module</string>
-    <string name="riru_status_card_exist_detail">Riru - IFW Enhance has been properly applied</string>
+    <string name="riru_status_card_exist_detail">Riru - IFWEnhance has been properly applied</string>
     <string name="riru_status_card_exist_dialog_title">Module details</string>
-    <string name="riru_status_card_exist_dialog_msg" translatable="false">Riru - Core: %1$s (%2$s)\nRiru - IFW Enhance: %3$s (%4$s)</string>
+    <string name="riru_status_card_exist_dialog_msg" translatable="false">Riru - Core: %1$s (%2$s)\nRiru - IFWEnhance: %3$s (%4$s)</string>
     <string name="riru_status_card_not">Inactive module</string>
-    <string name="riru_status_card_not_detail">Riru - IFW Enhance has not been properly applied</string>
-    <string name="riru_status_card_download">Your device may not have the Riru-IFW Enhance module installed.\n\nClick DOWNLOAD to go to the Download page.</string>
+    <string name="riru_status_card_not_detail">Modules have not been properly applied</string>
+    <string name="riru_status_card_download">Your device may not have the Riru - Core or Riru - IFWEnhance module installed.\n\nClick follow button to go to the Download pages.</string>
     <string name="riru_status_card_download_btn">DOWNLOAD</string>
 
     <string name="manage_dialog_title">Notice</string>
-    <string name="manage_dialog_desc">Riru - IFW Enhance has not been properly applied. Anything you do may not take effect.</string>
+    <string name="manage_dialog_desc">Riru - IFWEnhance has not been properly applied. Anything you do may not take effect.</string>
     <string name="manage_card_title">Apps Management</string>
     <string name="manage_card_detail">Clean up apps that occupy everything</string>
     <string name="manage_apply_success">Clean Finished</string>
@@ -47,11 +47,11 @@
     <string name="setting_page_firebase_summaryNo">Analysis &amp; Crashlytics logs will not be uploaded</string>
 
     <string name="about_page_info">Introduction</string>
-    <string name="about_page_info_desc">Are you tired of scouring through long lists of apps when sharing pictures or open a file just to find a few apps that you use a lot?\n\nWhy you app occupy my sheet?? If I needed you, I\'d open the app myself to use it!\n\nRnIntentClean is an App that allow you to clean up your sheets, just like sharesheet, open mode sheet and more!\n\nWorks with the Magisk modules Riru-Core and Riru-IFW Enhance, and root permission.</string>
+    <string name="about_page_info_desc">Are you tired of scouring through long lists of apps when sharing pictures or open a file just to find a few apps that you use a lot?\n\nWhy you app occupy my sheet?? If I needed you, I\'d open the app myself to use it!\n\nRnIntentClean is an App that allow you to clean up your sheets, just like sharesheet, open mode sheet and more!\n\nWorks with the Magisk modules Riru - Core and Riru - IFWEnhance, and root permission.</string>
     <string name="about_page_dev">Developers</string>
     <string name="about_page_dev_1">RnIntentClean Developers</string>
     <string name="about_page_dev_2">Riru - Core Developers</string>
-    <string name="about_page_dev_3">Riru - IFW Enhance Developers</string>
+    <string name="about_page_dev_3">Riru - IFWEnhance Developers</string>
     <string name="about_page_open_source">Open Source Licenses</string>
 
     <string name="manage_start">The IFW rules written by this application have been cleared. Please submit again to take effect.</string>

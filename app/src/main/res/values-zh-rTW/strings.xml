@@ -37,9 +37,6 @@
     <string name="setting_page_helplang">貢獻翻譯</string>
     <string name="setting_page_helplang_summary">協助 RnIntentClean 其他語言的翻譯</string>
     <string name="setting_page_privacy">隱私</string>
-    <string name="setting_page_firebase">使用 Firebase 分析</string>
-    <string name="setting_page_firebase_summary">分析日誌將會被上傳</string>
-    <string name="setting_page_firebase_summaryNo">分析日誌將不會被上傳</string>
     <string name="about_page_info">簡介</string>
     <string name="about_page_info_desc">您是否在共享圖片或開啟檔案時花了不少時間尋找常用的程式？\n\n為什麼這些奇怪又不常用的程式會顯示在列表內？ 什麼程式該顯示在列表內由我們自己決定！！\n\nRnIntentClean 就是一個解決此問題的小工具，可讓您清理雜亂的列表，\n\n該程式必須與「Riru-Core」和「Riru-IFW Enhance」的 Magisk 模組一起使用，當然還是需要 root 權限。</string>
     <string name="about_page_dev">開發人員</string>

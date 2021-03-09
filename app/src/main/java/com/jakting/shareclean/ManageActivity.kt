@@ -58,8 +58,7 @@ open class ManageActivity : BaseActivity() {
     private fun clearIFW() {
         if (clearIFW(tag)) {
             apps_swipeLayout.autoRefresh()
-            recycler_view?.sbarin(getString(R.string.manage_start))
-                ?.setAction(getString(R.string.dialog_positive)) {}?.show()
+            recycler_view?.sbar(getString(R.string.manage_start))?.show()
         }
     }
 

@@ -16,6 +16,7 @@ import androidx.core.os.ConfigurationCompat
 import com.akexorcist.localizationactivity.core.LanguageSetting.setLanguage
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.jakting.shareclean.BaseActivity.Companion.appContext
 import com.jakting.shareclean.BaseActivity.Companion.settingSharedPreferences
 import com.jakting.shareclean.R
@@ -194,6 +195,7 @@ fun Context?.getAppIconByPackageName(ApkTempSendActivityName: String): Drawable?
 fun setFirebase() {
     val isUseFirebase = settingSharedPreferences.getBoolean("switch_firebase", true)
     FirebaseAnalytics.getInstance(appContext).setAnalyticsCollectionEnabled(isUseFirebase)
+    FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(isUseFirebase)
 }
 
 fun setDirectShare(sp: SharedPreferences, context: Context?) {

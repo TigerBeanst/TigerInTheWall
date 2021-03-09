@@ -7,7 +7,7 @@
     <string name="riru_status_card_exist_detail">Riru - IFW Enhance 正常運作中</string>
     <string name="riru_status_card_not">模組未啟用</string>
     <string name="riru_status_card_not_detail">無法檢測到 Riru - IFW Enhance 的啟用狀態</string>
-    <string name="riru_status_card_download">您的硬體可能未安裝 Riru-IFW Enhance 模組。\n\n點擊下載來前往下載頁面。</string>
+    <string name="riru_status_card_download">您的手機可能未安裝 Riru-IFW Enhance 模組。\n\n點擊下載來前往下載頁面。</string>
     <string name="riru_status_card_download_btn">下載</string>
     <string name="manage_dialog_title">注意</string>
     <string name="manage_dialog_desc">Riru - IFW Enhance 未正常啟用。 您所做的任何事情都可能不會生效。</string>
@@ -27,7 +27,7 @@
     <string name="setting_page_helplang">貢獻翻譯</string>
     <string name="setting_page_helplang_summary">協助 RnIntentClean 其他語言的翻譯</string>
     <string name="setting_page_privacy">隱私</string>
-    <string name="setting_page_firebase">使用 Firebase 分析</string>
+    <string name="setting_page_firebase">啟用 Firebase 服務</string>
     <string name="setting_page_firebase_summary">分析日誌將會被上傳</string>
     <string name="setting_page_firebase_summaryNo">分析日誌將不會被上傳</string>
     <string name="about_page_info">簡介</string>

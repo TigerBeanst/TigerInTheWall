@@ -27,7 +27,7 @@
     <string name="setting_page_helplang">帮助翻译</string>
     <string name="setting_page_helplang_summary">帮忙将 氡·意图清理 翻译成您的语言</string>
     <string name="setting_page_privacy">隐私</string>
-    <string name="setting_page_firebase">使用 Firebase 分析</string>
+    <string name="setting_page_firebase">启用 Firebase 服务</string>
     <string name="setting_page_firebase_summary">分析日志将会被上传</string>
     <string name="setting_page_firebase_summaryNo">分析日志将不会被上传</string>
 

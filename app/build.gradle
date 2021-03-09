@@ -51,8 +51,11 @@ dependencies {
 
     //noinspection GradleDependency
     implementation 'com.alibaba:fastjson:1.1.72.android'
-    implementation "com.github.topjohnwu.libsu:core:3.0.2"
     implementation 'com.akexorcist:localization:1.2.6'
+
+    def libsuVersion = '3.1.1'
+    implementation "com.github.topjohnwu.libsu:core:${libsuVersion}"
+    implementation "com.github.topjohnwu.libsu:io:${libsuVersion}"
 
     implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'
     implementation 'com.scwang.smart:refresh-header-material:2.0.1'

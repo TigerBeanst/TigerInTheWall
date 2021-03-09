@@ -6,7 +6,6 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.net.Uri
-import java.io.File
 
 class ApkInfo(val context: Context, val tag: String) {
     var intentDataList: ArrayList<AppsAdapter.IntentData> = ArrayList()
@@ -23,7 +22,10 @@ class ApkInfo(val context: Context, val tag: String) {
                 PackageManager.MATCH_ALL
             )
             "view" -> context.packageManager!!.queryIntentActivities(
-                Intent(Intent.ACTION_VIEW).setDataAndType(Uri.fromFile(File("/")), "*/*"),
+                Intent(Intent.ACTION_VIEW).setDataAndType(
+                    Uri.parse("content://com.jakting.shareclean.fileprovider/selfile/nofile"),
+                    "*/*"
+                ),
                 PackageManager.MATCH_ALL
             )
             "text" -> context.packageManager!!.queryIntentActivities(
@@ -31,7 +33,7 @@ class ApkInfo(val context: Context, val tag: String) {
                 PackageManager.MATCH_ALL
             )
             "browser" -> context.packageManager!!.queryIntentActivities(
-                Intent(Intent.ACTION_VIEW,Uri.parse("https://ic.into.icu")),
+                Intent(Intent.ACTION_VIEW, Uri.parse("https://ic.into.icu")),
                 PackageManager.MATCH_ALL
             )
             else -> context.packageManager!!.queryIntentActivities(
@@ -40,14 +42,17 @@ class ApkInfo(val context: Context, val tag: String) {
             )
         }
         for (resolveInfo in resolveInfoList) {
-            if(!isService){
+            if (!isService) {
                 val activityInfo = resolveInfo.activityInfo
                 if (isShowSystemApp || !isSystemPackage(resolveInfo)) {
                     val intentData = AppsAdapter.IntentData(
                         getAppName(activityInfo.packageName),
                         activityInfo.packageName,
                         activityInfo.name,
-                        (resolveInfo.loadLabel(context.packageManager!!) as String).replace("\n", ""),
+                        (resolveInfo.loadLabel(context.packageManager!!) as String).replace(
+                            "\n",
+                            ""
+                        ),
                         false
                     )
                     intentDataList.add(intentData)
@@ -55,14 +60,17 @@ class ApkInfo(val context: Context, val tag: String) {
 //                logd("获取大名称：" + activityInfo.loadLabel(context.packageManager!!))
 //                logd("获取小名称：" + resolveInfo.loadLabel(context.packageManager!!))
                 }
-            }else{
+            } else {
                 val serviceInfo = resolveInfo.serviceInfo
                 if (isShowSystemApp || !isSystemPackage(resolveInfo)) {
                     val intentData = AppsAdapter.IntentData(
                         getAppName(serviceInfo.packageName),
                         serviceInfo.packageName,
                         serviceInfo.name,
-                        (resolveInfo.loadLabel(context.packageManager!!) as String).replace("\n", ""),
+                        (resolveInfo.loadLabel(context.packageManager!!) as String).replace(
+                            "\n",
+                            ""
+                        ),
                         false
                     )
                     intentDataList.add(intentData)
@@ -81,9 +89,9 @@ class ApkInfo(val context: Context, val tag: String) {
     }
 
     private fun isSystemPackage(resolveInfo: ResolveInfo): Boolean {
-        return if(!isService){
+        return if (!isService) {
             resolveInfo.activityInfo.applicationInfo.flags and ApplicationInfo.FLAG_SYSTEM != 0
-        }else{
+        } else {
             resolveInfo.serviceInfo.applicationInfo.flags and ApplicationInfo.FLAG_SYSTEM != 0
         }
     }

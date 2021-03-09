@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.jakting.shareclean.R
-import kotlin.collections.ArrayList
 
 
 class AppsAdapter(val intentDataListOrigin: ArrayList<IntentData>) :

@@ -3,7 +3,6 @@ package com.jakting.shareclean
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.Configuration
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.drakeet.about.*

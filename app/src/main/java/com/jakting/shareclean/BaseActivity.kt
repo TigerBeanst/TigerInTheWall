@@ -7,7 +7,10 @@ import android.content.res.Configuration
 import android.os.Bundle
 import com.akexorcist.localizationactivity.core.LocalizationApplicationDelegate
 import com.akexorcist.localizationactivity.ui.LocalizationActivity
-import com.jakting.shareclean.utils.*
+import com.jakting.shareclean.utils.getSystemLanguage
+import com.jakting.shareclean.utils.logd
+import com.jakting.shareclean.utils.setFirebase
+import com.jakting.shareclean.utils.setLang
 import java.util.*
 
 open class BaseActivity : LocalizationActivity() {

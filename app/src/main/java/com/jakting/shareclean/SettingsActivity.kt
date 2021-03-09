@@ -6,7 +6,9 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener
 import android.os.Bundle
 import com.jakting.shareclean.utils.setDark
 import com.jakting.shareclean.utils.setLang
-import moe.shizuku.preference.*
+import moe.shizuku.preference.ListPreference
+import moe.shizuku.preference.Preference
+import moe.shizuku.preference.PreferenceFragment
 
 
 class SettingsActivity : BaseActivity() {

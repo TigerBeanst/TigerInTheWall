@@ -4,10 +4,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener
 import android.os.Bundle
-import android.view.View
-import androidx.appcompat.app.AppCompatActivity
-import com.jakting.shareclean.utils.*
-import moe.shizuku.preference.*
+import com.jakting.shareclean.utils.setDirectShare
+import moe.shizuku.preference.Preference
+import moe.shizuku.preference.PreferenceFragment
 
 
 class MiscActivity : BaseActivity() {

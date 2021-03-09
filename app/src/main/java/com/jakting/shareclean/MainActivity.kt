@@ -13,9 +13,6 @@ import com.jakting.shareclean.utils.*
 import com.topjohnwu.superuser.io.SuFile
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.*
-import java.util.*
-import kotlin.collections.ArrayList
-
 
 class MainActivity : BaseActivity(), View.OnClickListener {
 

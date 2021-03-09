@@ -71,14 +71,16 @@ class AppsAdapter(val intentDataListOrigin: ArrayList<IntentData>) :
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(charSequence: CharSequence): FilterResults {
+                val filterResults = FilterResults()
+                val intentDataListFiltered: ArrayList<IntentData> = ArrayList()
                 val charString = charSequence.toString()
                 logd("charString 为 【$charString】，长度为【${charString.length}】")
                 if (charString.isEmpty()) {
                     logd("现在输入为空")
-                    intentDataList = intentDataListOrigin
+                    filterResults.count = intentDataListOrigin.size
+                    filterResults.values = intentDataListOrigin
                 } else {
                     logd("现在输入为 $charString")
-                    val intentDataListFiltered: ArrayList<IntentData> = ArrayList()
                     for (intentData in intentDataListOrigin) {
                         //这里根据需求，添加匹配规则
                         if (intentData.app_name.contains(charString,true) ||
@@ -89,10 +91,9 @@ class AppsAdapter(val intentDataListOrigin: ArrayList<IntentData>) :
                             intentDataListFiltered.add(intentData)
                         }
                     }
-                    intentDataList = intentDataListFiltered
+                    filterResults.count = intentDataListFiltered.size
+                    filterResults.values = intentDataListFiltered
                 }
-                val filterResults = FilterResults()
-                filterResults.values = intentDataList
                 return filterResults
             }
 

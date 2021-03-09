@@ -7,7 +7,7 @@
     <string name="riru_status_card_exist_detail">Riru - IFWEnhance 已被正确应用</string>
     <string name="riru_status_card_exist_dialog_title">模块详情</string>
     <string name="riru_status_card_not">未激活模块</string>
-    <string name="riru_status_card_not_detail">Riru - IFWEnhance 未被正确应用</string>
+    <string name="riru_status_card_not_detail">模块未被正确应用</string>
     <string name="riru_status_card_download">您的设备可能未安装 Riru - Core 或 Riru - IFWEnhance 模块。  点击「下载」，前往下载页下载。</string>
     <string name="riru_status_card_download_btn">下载</string>
 

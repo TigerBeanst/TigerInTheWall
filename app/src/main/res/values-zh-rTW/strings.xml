@@ -6,7 +6,7 @@
     <string name="riru_status_card_exist">模組已啟用</string>
     <string name="riru_status_card_exist_detail">Riru - IFWEnhance 正常運作中</string>
     <string name="riru_status_card_not">模組未啟用</string>
-    <string name="riru_status_card_not_detail">無法檢測到 Riru - IFWEnhance 的啟用狀態</string>
+    <string name="riru_status_card_not_detail">無法檢測到模組的啟用狀態</string>
     <string name="riru_status_card_download">您的手機可能未安裝 Riru - Core 或 Riru - IFWEnhance 模組。\n\n點擊下載來前往下載頁面。</string>
     <string name="riru_status_card_download_btn">下載</string>
     <string name="manage_dialog_title">注意</string>

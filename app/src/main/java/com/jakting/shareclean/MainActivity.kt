@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import com.alibaba.fastjson.JSON
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jakting.shareclean.utils.*
+import com.topjohnwu.superuser.io.SuFile
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.*
 import java.util.*
@@ -52,8 +53,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             //授予了 Root 权限
             riruRandom = getRiruRandom()
             logd("riruRandom：$riruRandom")
-            if (riruRandom.isNotEmpty()) {
-                //Riru - Core已生效
+            if (riruRandom.isNotEmpty()
+                && SuFile.open("/dev/riru_$riruRandom/modules/ifw_enhance").exists()
+            ) {
+                // Riru - Core 已生效 + Riru - IFWEnhance 已生效
                 riru_status_card.setCardBackgroundColor(
                     ContextCompat.getColor(
                         this,
@@ -72,7 +75,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 )
                 isWorked = true
             } else {
-                //Riru - IFW Enhance 未生效
                 riru_status_card.setCardBackgroundColor(
                     ContextCompat.getColor(
                         this,

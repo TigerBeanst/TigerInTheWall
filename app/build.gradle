@@ -12,7 +12,7 @@ android {
         applicationId "com.jakting.shareclean"
         minSdkVersion 26
         targetSdkVersion 30
-        versionCode 202103100
+        versionCode 202103101
         versionName "1.0.5"
 
     }

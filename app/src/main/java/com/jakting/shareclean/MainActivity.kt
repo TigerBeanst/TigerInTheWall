@@ -51,7 +51,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             riruRandom = getRiruRandom()
             logd("riruRandom：$riruRandom")
             if (riruRandom.isNotEmpty()
-                && SuFile.open("/dev/riru_$riruRandom/modules/ifw_enhance").exists()
+                && (SuFile.open("/dev/riru_$riruRandom/modules/ifw_enhance").exists()
+                            || SuFile.open("/dev/riru_$riruRandom/modules/riru_ifw_enhance@ifw_enhance").exists() )
             ) {
                 // Riru - Core 已生效 + Riru - IFWEnhance 已生效
                 riru_status_card.setCardBackgroundColor(

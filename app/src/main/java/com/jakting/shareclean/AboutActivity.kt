@@ -32,7 +32,7 @@ class AboutActivity : AbsAboutActivity() {
         items.add(Category(getString(R.string.about_page_dev)))
         items.add(
             Contributor(
-                R.drawable.dev_tiger_beanst,
+                R.drawable.dev_tigerbeanst,
                 "TigerBeanst",
                 getString(R.string.about_page_dev_1),
                 "https://jakting.com"

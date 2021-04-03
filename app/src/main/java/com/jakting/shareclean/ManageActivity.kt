@@ -81,6 +81,7 @@ open class ManageActivity : BaseActivity() {
                 intentDataList[intentDataIndex].check = true
             }
         }
+        intentDataList.sortWith(compareBy({ it.check }, { "${it.app_name} - ${it.activity_name}" }))
         (adapter as AppsAdapter).notifyDataSetChanged()
         apps_swipeLayout.finishRefresh()
     }

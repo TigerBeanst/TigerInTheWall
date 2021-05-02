@@ -6,6 +6,7 @@
     <string name="riru_status_card_cannot">無法取得模組狀態</string>
     <string name="riru_status_card_cannot_detail">請給予 Root 權限後重啟此應用程式</string>
     <string name="riru_status_card_exist">模組已啟用</string>
+    <string name="riru_status_card_exist_detail">Riru - IFWEnhance 正常運作中</string>
     <string name="riru_status_card_exist_dialog_title">模組詳情</string>
     <string name="riru_status_card_not">模組未啟用</string>
     <string name="riru_status_card_download_btn">下載</string>

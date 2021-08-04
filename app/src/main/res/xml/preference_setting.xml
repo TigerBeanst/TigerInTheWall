@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory app:title="@string/setting_page_function">
+        <SwitchPreference
+            app:defaultValue="false"
+            app:key="switch_showSystemApp"
+            app:summaryOff="@string/setting_page_showSystemApp_summaryNo"
+            app:summaryOn="@string/setting_page_showSystemApp_summary"
+            app:title="@string/setting_page_showSystemApp" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/setting_page_appearance">
+        <ListPreference
+            app:defaultValue="0"
+            app:entries="@array/entries_dark"
+            app:entryValues="@array/entry_values"
+            app:key="drop_dark"
+            app:summary="%s"
+            app:title="@string/setting_page_dark_mode" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/setting_page_language">
+        <ListPreference
+            app:defaultValue="0"
+            app:entries="@array/entries_lang"
+            app:entryValues="@array/entry_values"
+            app:key="drop_lang"
+            app:summary="%s"
+            app:title="@string/setting_page_language" />
+        <Preference
+            app:key="drop_helplang"
+            app:summary="@string/setting_page_helplang_summary"
+            app:title="@string/setting_page_helplang">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://crwd.in/rnintentclean" />
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/setting_page_privacy">
+        <SwitchPreference
+            app:defaultValue="true"
+            app:key="switch_firebase"
+            app:summaryOff="@string/setting_page_firebase_summaryNo"
+            app:summaryOn="@string/setting_page_firebase_summary"
+            app:title="@string/setting_page_firebase" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

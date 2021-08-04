@@ -27,7 +27,7 @@ open class BaseActivity : LocalizationActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         appContext = this
-        settingSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE)
+        settingSharedPreferences = getSharedPreferences("com.jakting.shareclean_preferences", Context.MODE_PRIVATE)
         intentListSharedPreferences = getSharedPreferences("intent_list", Context.MODE_PRIVATE)
         intentListSharedPreferencesEditor = intentListSharedPreferences.edit()
         setLang()

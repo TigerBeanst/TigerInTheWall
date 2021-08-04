@@ -199,11 +199,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 clickBackupRestore()
             }
             R.id.misc_menu -> {
-                val intent = Intent(this, MiscActivity::class.java)
+                val intent = Intent(this, PreferenceActivity::class.java)
+                intent.putExtra("preference","misc")
                 startActivity(intent)
             }
             R.id.setting_menu -> {
-                val intent = Intent(this, SettingsActivity::class.java)
+                val intent = Intent(this, PreferenceActivity::class.java)
+                intent.putExtra("preference","setting")
                 startActivity(intent)
             }
             R.id.about_menu -> {

@@ -39,13 +39,8 @@
         </provider>
 
         <activity
-            android:name=".SettingsActivity"
+            android:name=".PreferenceActivity"
             android:label="@string/setting_title"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".MiscActivity"
-            android:label="@string/misc_title"
             android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity" />
         <activity

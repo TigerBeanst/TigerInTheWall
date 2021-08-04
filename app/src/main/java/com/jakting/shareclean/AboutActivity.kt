@@ -73,14 +73,6 @@ class AboutActivity : AbsAboutActivity() {
         )
         items.add(
             License(
-                "MaterialPreference",
-                "RikkaW",
-                License.APACHE_2,
-                "https://github.com/RikkaW/MaterialPreference"
-            )
-        )
-        items.add(
-            License(
                 "fastjson",
                 "Alibaba",
                 License.APACHE_2,
@@ -146,6 +138,14 @@ class AboutActivity : AbsAboutActivity() {
         items.add(
             License(
                 "AndroidX CardView",
+                "Google",
+                License.APACHE_2,
+                "https://source.android.com/"
+            )
+        )
+        items.add(
+            License(
+                "AndroidX Preference",
                 "Google",
                 License.APACHE_2,
                 "https://source.android.com/"

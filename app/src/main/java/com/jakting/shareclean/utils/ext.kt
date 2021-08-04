@@ -21,6 +21,7 @@ import com.jakting.shareclean.BaseActivity.Companion.appContext
 import com.jakting.shareclean.BaseActivity.Companion.settingSharedPreferences
 import com.jakting.shareclean.R
 import com.topjohnwu.superuser.Shell
+import com.topjohnwu.superuser.io.SuFile
 import java.util.*
 
 
@@ -171,14 +172,24 @@ fun getRiruVersionName(riruRandom: String): String {
         .out.toString().getPureCat()
 }
 
+fun getIFWEnhancePath(riruRandom: String): String {
+    lateinit var ifwEnhancePath: String
+    if (SuFile.open("/dev/riru_$riruRandom/modules/ifw_enhance").exists()) {
+        ifwEnhancePath = "/dev/riru_$riruRandom/modules/ifw_enhance"
+    } else if (SuFile.open("/dev/riru_$riruRandom/modules/riru_ifw_enhance@ifw_enhance").exists()) {
+        ifwEnhancePath = "/dev/riru_$riruRandom/modules/riru_ifw_enhance@ifw_enhance"
+    }
+    return ifwEnhancePath
+}
+
 fun getIFWEnhanceVersion(riruRandom: String): String {
-    return Shell.su("cat /dev/riru_$riruRandom/modules/ifw_enhance/version").exec()
-        .out.toString().getPureCat()
+    return Shell.su("cat " + getIFWEnhancePath(riruRandom) + "/version").exec().out.toString()
+        .getPureCat()
 }
 
 fun getIFWEnhanceVersionName(riruRandom: String): String {
-    return Shell.su("cat /dev/riru_$riruRandom/modules/ifw_enhance/version_name").exec()
-        .out.toString().getPureCat()
+    return Shell.su("cat " + getIFWEnhancePath(riruRandom) + "/version_name").exec().out.toString()
+        .getPureCat()
 }
 
 fun Context?.getAppIconByPackageName(ApkTempSendActivityName: String): Drawable? {

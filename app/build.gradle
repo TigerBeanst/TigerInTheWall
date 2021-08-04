@@ -33,7 +33,6 @@ android {
 }
 repositories {
     maven { url 'https://jitpack.io' }
-    maven { url "https://dl.bintray.com/rikkaw/MaterialPreference" }
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -42,18 +41,18 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.core:core-ktx:1.6.0'
 
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
     implementation "androidx.cardview:cardview:1.0.0"
-    implementation 'com.google.android.material:material:1.4.0-alpha01'
+    implementation 'com.google.android.material:material:1.5.0-alpha01'
 
     //noinspection GradleDependency
     implementation 'com.alibaba:fastjson:1.1.72.android'
     implementation 'com.akexorcist:localization:1.2.6'
 
-    def libsuVersion = '3.1.1'
+    def libsuVersion = '3.1.2'
     implementation "com.github.topjohnwu.libsu:core:${libsuVersion}"
     implementation "com.github.topjohnwu.libsu:io:${libsuVersion}"
 
@@ -62,7 +61,4 @@ dependencies {
 
     implementation 'com.drakeet.about:about:2.4.1'
     implementation 'com.drakeet.multitype:multitype:4.2.0'
-
-    implementation 'moe.shizuku.preference:preference-android:4.2.0-alpha03'
-    implementation 'moe.shizuku.preference:preference-simplemenu-android:4.2.0-alpha03'
 }

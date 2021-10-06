@@ -75,7 +75,8 @@ fun isService(tag: String): Boolean {
 fun isBrowser(tag: String): String {
     return if (tag == "browser") {
         "      <cat name=\"android.intent.category.BROWSABLE\" />\n" +
-                "      <scheme name=\"http\" />\n"
+                "      <scheme name=\"http\" />\n" +
+                "      <scheme name=\"https\" />\n"
     } else
         "      <type name=\"*/*\" />\n"
 }

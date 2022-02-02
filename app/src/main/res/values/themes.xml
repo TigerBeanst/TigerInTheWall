@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.RnIntentClean" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <!-- Status bar color. -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+<!--        <item name="android:statusBarColor">@color/colorBackground</item>-->
+        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.RnIntentClean.NoActionBar">
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="TigerBeanstTheme.IconOnlyButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_gravity">center_vertical|end</item>
+        <item name="android:layout_width">@dimen/mtrl_min_touch_target_size</item>
+        <item name="android:layout_height">@dimen/mtrl_min_touch_target_size</item>
+        <item name="android:background">?attr/actionBarItemBackground</item>
+    </style>
+
+</resources>

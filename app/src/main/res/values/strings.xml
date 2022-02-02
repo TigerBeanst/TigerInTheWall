@@ -3,10 +3,12 @@
     <string name="error">Error</string>
     <string name="please_wait">Please wait…</string>
 
-    <string name="riru_status_card_cannot">Unable to get module status</string>
-    <string name="riru_status_card_cannot_detail">Please restart the application after giving Root permission</string>
-    <string name="riru_status_card_exist">Activated module</string>
-    <string name="riru_status_card_exist_detail">Riru - IFWEnhance has been properly applied</string>
+    <string name="status_card_unknown">Unknown status</string>
+    <string name="status_card_unknown_detail">Click here for details</string>
+    <string name="status_card_exist">Activated</string>
+    <string name="status_card_exist_detail">Injection If: %s</string>
+
+
     <string name="riru_status_card_exist_dialog_title">Module details</string>
     <string name="riru_status_card_exist_dialog_msg" translatable="false">Riru - Core: %1$s (%2$s)\nRiru - IFWEnhance: %3$s (%4$s)</string>
     <string name="riru_status_card_not">Inactive module</string>
@@ -16,8 +18,12 @@
 
     <string name="manage_dialog_title">Notice</string>
     <string name="manage_dialog_desc">Riru - IFWEnhance has not been properly applied. Anything you do may not take effect.</string>
-    <string name="manage_card_title">Apps Management</string>
-    <string name="manage_card_detail">Clean up apps that occupy everything</string>
+    <string name="manage_app_card_title">Apps Manager</string>
+    <string name="manage_app_card_detail">%d Cleaned App</string>
+    <string name="manage_category_card_title">Intent Manager</string>
+    <string name="manage_category_card_detail">%d Cleaned Intent</string>
+
+
     <string name="manage_apply_success">Clean Finished</string>
     <string name="manage_search">Search</string>
     <string name="send_title">Share Via</string>
@@ -77,22 +83,6 @@
     <string name="menu_clear">Unselect All</string>
     <string name="fab_submit">Apply Clean</string>
 
-    <string name="follow_system">Follow system</string>
-    <string name="always_on">Always on</string>
-    <string name="always_off">Always off</string>
-
-    <string-array name="entries_dark">
-        <item translatable="false">@string/follow_system</item>
-        <item translatable="false">@string/always_on</item>
-        <item translatable="false">@string/always_off</item>
-    </string-array>
-
-    <string-array name="entries_lang">
-        <item translatable="false">@string/follow_system</item>
-        <item translatable="false">English</item>
-        <item translatable="false">简体中文（大陆）</item>
-        <item translatable="false">繁體中文（臺灣）</item>
-    </string-array>
 
     <string-array name="entry_values" translatable="false">
         <item>0</item>

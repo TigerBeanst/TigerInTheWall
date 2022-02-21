@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingVertical="?dialogPreferredPadding"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <include
@@ -17,4 +18,8 @@
     <include
         android:id="@+id/card_3_manage_category"
         layout="@layout/card_3_manage_category" />
+
+    <include
+        android:id="@+id/card_4_list"
+        layout="@layout/card_4_list" />
 </LinearLayout>

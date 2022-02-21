@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ViewStyle">
+        <attr name="colorPrimary" format="color" />
+        <attr name="colorOnPrimary" format="color" />
+        <attr name="colorPrimaryContainer" format="color" />
+        <attr name="colorOnPrimaryContainer" format="color" />
+        <attr name="colorSecondary" format="color" />
+        <attr name="colorOnSecondary" format="color" />
+        <attr name="colorSecondaryContainer" format="color" />
+        <attr name="colorOnSecondaryContainer" format="color" />
+        <attr name="colorTertiary" format="color" />
+        <attr name="colorOnTertiary" format="color" />
+        <attr name="colorTertiaryContainer" format="color" />
+        <attr name="colorOnTertiaryContainer" format="color" />
+        <attr name="labelColor" format="color" />
+        <attr name="textSize" format="dimension" />
+
+    </declare-styleable>
+</resources>

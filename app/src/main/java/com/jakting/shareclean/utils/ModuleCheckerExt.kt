@@ -1,18 +1,18 @@
 package com.jakting.shareclean.utils
 
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import com.jakting.shareclean.utils.MyApplication.Companion.appContext
 import java.io.File
 
-fun moduleApplyAvailable(context: Context): Boolean {
+fun moduleApplyAvailable(): Boolean {
     //检查模块是否已经生效，无论是 Riru 版还是 Zygisk 版
     val selfIfwFile = File(ifw_app_self_path)
     if (!selfIfwFile.exists()) {
         if (runShell("touch $ifw_app_self_path").isSuccess)
             runShell("echo '$ifw_app_self' > $ifw_app_self_path")
     }
-    val resolveInfoList = context.packageManager!!.queryIntentActivities(
+    val resolveInfoList = appContext.packageManager!!.queryIntentActivities(
         Intent(Intent.ACTION_PROCESS_TEXT).setType("*/*"),
         PackageManager.MATCH_ALL
     )

@@ -30,19 +30,17 @@ class MainActivity : BaseActivity() {
 
         checkStatus()
 
-        binding.headerMain.settingButton.setOnClickListener { view ->
-            Toast.makeText(this, "wao", Toast.LENGTH_SHORT).show()
-        }
+//        binding.headerMain.settingButton.setOnClickListener { view ->
+//            Toast.makeText(this, "wao", Toast.LENGTH_SHORT).show()
+//        }
         binding.contentMain.card1Module.cardStatus.setOnClickListener { view ->
             Toast.makeText(this, "wao", Toast.LENGTH_SHORT).show()
         }
         binding.contentMain.card2ManageApp.cardManager.setOnClickListener { view ->
-            val viewww = binding.contentMain.card2ManageApp.cardManager
-//            val viewww = binding.contentMain.card2Manage.cardManager
-            val intent = Intent(this, MainTWOActivity::class.java)
+            val intent = Intent(this, IntentManagerActivity::class.java)
             val options = ActivityOptions.makeSceneTransitionAnimation(
                 this,
-                viewww,
+                view,
                 "rn_manager_container"
             )
             startActivity(intent, options.toBundle())
@@ -50,7 +48,7 @@ class MainActivity : BaseActivity() {
         binding.contentMain.card3ManageCategory.cardManager.setOnClickListener { view ->
             val viewww = binding.contentMain.card3ManageCategory.cardManager
 //            val viewww = binding.contentMain.card2Manage.cardManager
-            val intent = Intent(this, MainTWOActivity::class.java)
+            val intent = Intent(this, IntentManagerActivity::class.java)
             val options = ActivityOptions.makeSceneTransitionAnimation(
                 this,
                 viewww,
@@ -63,19 +61,16 @@ class MainActivity : BaseActivity() {
     private fun checkStatus() {
         if (Shell.rootAccess()) {
             //判断 IFW Enchance 是否生效，无论是 Riru 版还是 Zygisk 版
-            if (moduleApplyAvailable(this)) {
+            if (moduleApplyAvailable()) {
                 // 尝试请求 Riru 目录，如果 Riru 可用，则说明 IFW Enchance 是 Riru 版本
                 binding.contentMain.card1Module.cardStatusTitle.text =
                     getString(R.string.status_card_exist)
-                binding.contentMain.card1Module.cardStatusDesc.text = String.format(
-                    getString(R.string.status_card_exist_detail),
-                    moduleIsRiru()
-                )
+                binding.contentMain.card1Module.cardStatusInjectWhich.text = moduleIsRiru()
                 binding.contentMain.card1Module.cardStatusIcon.setImageResource(R.drawable.ic_twotone_check_circle_24)
                 binding.contentMain.card1Module.cardStatus.backgroundTintList =
-                    ColorStateList.valueOf(getColor(R.color.colorModule))
-                binding.contentMain.card1Module.cardStatusDarker.setBackgroundResource(R.color.colorModuleDarker)
-
+                    ColorStateList.valueOf(themeColor(R.attr.colorPrimary))
+//                binding.contentMain.card1Module.cardStatusDarker.backgroundTintList =
+//                    ColorStateList.valueOf(themeColor(R.attr.colorPrimaryContainer))
             } else {
                 longtoast("没有应用")
             }

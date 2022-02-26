@@ -10,6 +10,10 @@
     <color name="colorGrey">#757575</color>
     <color name="colorBackground">#f4f8fb</color>
 
+    <color name="colorMiscListTitle">#292D32</color>
+
+
+
     <color name="colorModule">#4a635e</color>
     <color name="colorModuleDarker">#09372E</color>
     <color name="colorModuleNotInstalled">#bc0513</color>
@@ -18,6 +22,12 @@
     <color name="colorModuleUnKnownDarker">#515151</color>
     <color name="colorManage">#00695c</color>
     <color name="colorManageDarker">#004d40</color>
+
+
+
+
+
+
 
     <color name="md_theme_light_primary">#006B5D</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>

@@ -15,7 +15,8 @@
     <LinearLayout
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/shape_12dp_corners"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_12dp_corners_primary_15"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -37,5 +38,9 @@
 
     </LinearLayout>
 
+
+    <include
+        android:id="@+id/card_4_list"
+        layout="@layout/card_4_list" />
 
 </LinearLayout>

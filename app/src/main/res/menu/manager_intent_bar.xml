@@ -6,14 +6,14 @@
         android:id="@+id/edit"
         android:title="AAA"
         android:contentDescription="aaa"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/favorite"
         android:icon="@drawable/ic_twotone_check_circle_24"
         android:title="AAA"
         android:contentDescription="AAAA"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/more"

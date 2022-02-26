@@ -17,8 +17,12 @@
     <string name="manage_category_card_detail">Classified by Intent</string>
 
 
+    <string name="misc_list_title">Other</string>
     <string name="misc_quick_clean_title">Quick Clean</string>
-
+    <string name="misc_backup_title">Backup &amp; Restore</string>
+    <string name="misc_setting_title">Settings</string>
+    <string name="misc_about_title">About</string>
+    <string name="misc_title">Miscellaneous</string>
 
 <!--    <string name="riru_status_card_exist_dialog_title">Module details</string>-->
 <!--    <string name="riru_status_card_exist_dialog_msg" translatable="false">Riru - Core: %1$s (%2$s)\nRiru - IFWEnhance: %3$s (%4$s)</string>-->
@@ -38,11 +42,6 @@
     <string name="text_title">Long Press Text Operate</string>
     <string name="browser_title">Browser</string>
 
-    <string name="misc_title">Miscellaneous</string>
-
-    <string name="backup_title">Backup &amp; Restore</string>
-    <string name="setting_title">Settings</string>
-    <string name="about_title">About</string>
 
     <string name="setting_page_function">Function</string>
     <string name="setting_page_showSystemApp">Show System Apps</string>

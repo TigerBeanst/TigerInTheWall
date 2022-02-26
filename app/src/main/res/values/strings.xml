@@ -6,6 +6,7 @@
     <string name="status_card_unknown">Unknown status</string>
     <string name="status_card_unknown_detail">Click here for details</string>
     <string name="status_card_exist">Activated</string>
+    <string name="status_card_exist_module">Installed Module Version: %s(%s)</string>
     <string name="status_card_exist_inject">Injection Interface:</string>
 
 <!--    <string name="manage_dialog_title">Notice</string>-->

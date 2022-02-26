@@ -24,12 +24,24 @@ fun moduleApplyAvailable(): Boolean {
     return true
 }
 
-fun moduleIsRiru(): String {
-    return if (runShell("cat /dev/riru_*/modules/riru_ifw_enhance@ifw_enhance/version").isSuccess) {
-        "Riru"
-    } else {
-        "Zygisk"
+fun moduleInfo(): Array<String> {
+    val shellResult = runShell("cat /dev/riru_*/modules/riru_ifw_enhance@ifw_enhance/version")
+    return if (shellResult.isSuccess) { // 是 Riru 版
+        arrayOf("Riru", moduleVersion("Riru")[0]!!,moduleVersion("Riru")[1]!!)
+    } else { // 是 Zygisk 版
+        arrayOf("Zygisk", moduleVersion("Zygisk")[0]!!,moduleVersion("Zygisk")[1]!!)
     }
+}
+
+fun moduleVersion(injectIf: String): Array<String?> {
+    val shellResult = when(injectIf) {
+        "Riru" -> runShell("cat /data/adb/modules/riru_ifw_enhance/module.prop").getPureCat()
+        "Zygisk" -> runShell("cat /data/adb/modules/zygisk_ifw_enhance/module.prop").getPureCat()
+        else -> ""
+    }
+    logd(shellResult)
+    val version = Regex(".*?version=(.*?),.*?versionCode=(.*?),").find(shellResult)?.groupValues
+    return arrayOf(version?.get(1), version?.get(2))
 }
 
 //

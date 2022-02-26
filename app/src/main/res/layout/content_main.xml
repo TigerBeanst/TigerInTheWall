@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -11,15 +12,30 @@
         android:id="@+id/card_1_module"
         layout="@layout/card_1_module" />
 
-    <include
-        android:id="@+id/card_2_manage_app"
-        layout="@layout/card_2_manage_app" />
+    <LinearLayout
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_12dp_corners"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <include
-        android:id="@+id/card_3_manage_category"
-        layout="@layout/card_3_manage_category" />
+        <include
+            android:id="@+id/card_2_manage_app"
+            layout="@layout/card_2_manage_app" />
 
-    <include
-        android:id="@+id/card_4_list"
-        layout="@layout/card_4_list" />
+        <ImageView
+            android:layout_width="1dp"
+            android:alpha="0.2"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/colorAccent"
+            android:layout_height="match_parent"/>
+
+        <include
+            android:id="@+id/card_3_manage_category"
+            layout="@layout/card_3_manage_category" />
+
+    </LinearLayout>
+
+
 </LinearLayout>

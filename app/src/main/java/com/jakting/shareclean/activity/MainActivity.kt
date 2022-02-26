@@ -62,10 +62,17 @@ class MainActivity : BaseActivity() {
         if (Shell.rootAccess()) {
             //判断 IFW Enchance 是否生效，无论是 Riru 版还是 Zygisk 版
             if (moduleApplyAvailable()) {
-                // 尝试请求 Riru 目录，如果 Riru 可用，则说明 IFW Enchance 是 Riru 版本
                 binding.contentMain.card1Module.cardStatusTitle.text =
                     getString(R.string.status_card_exist)
-                binding.contentMain.card1Module.cardStatusInjectWhich.text = moduleIsRiru()
+                val injectIf = moduleInfo()
+                // 尝试请求 Riru 目录，如果 Riru 可用，则说明 IFW Enchance 是 Riru 版本
+                binding.contentMain.card1Module.cardStatusDesc.text =
+                    String.format(
+                        getString(R.string.status_card_exist_module),
+                        injectIf[1],
+                        injectIf[2]
+                    )
+                binding.contentMain.card1Module.cardStatusInjectWhich.text = injectIf[0]
                 binding.contentMain.card1Module.cardStatusIcon.setImageResource(R.drawable.ic_twotone_check_circle_24)
                 binding.contentMain.card1Module.cardStatus.backgroundTintList =
                     ColorStateList.valueOf(themeColor(R.attr.colorPrimary))

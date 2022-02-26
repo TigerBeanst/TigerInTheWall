@@ -11,25 +11,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/colorModuleUnKnown"
         app:cardCornerRadius="10dp">
 
-        <LinearLayout
-            android:id="@+id/card_status_top_layout"
-            android:orientation="vertical"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_status_all_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="20dp">
+            android:orientation="vertical">
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_status_top_layout"
+                android:layout_width="match_parent"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/card_status_divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -43,15 +48,17 @@
                         android:id="@+id/card_status_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:alpha="0.9"
                         android:text="@string/status_card_unknown"
                         android:textAppearance="?textAppearanceTitleMedium"
                         android:textColor="?attr/colorOnPrimary"
-                        android:textSize="16sp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/card_status_desc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:alpha="0.8"
                         android:text="@string/status_card_unknown_detail"
                         android:textAppearance="?textAppearanceBodyMedium"
                         android:textColor="?attr/colorOnPrimary" />
@@ -61,6 +68,7 @@
                     android:id="@+id/card_status_icon"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    android:alpha="0.8"
                     android:src="@drawable/ic_twotone_help_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -73,20 +81,21 @@
                 android:id="@+id/card_status_divider"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/colorAccent"
+                android:alpha="0.1"
+                android:background="@color/colorFont"
+                app:layout_constraintBottom_toTopOf="@id/card_status_module_layout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_status_title_layout" />
+                app:layout_constraintTop_toBottomOf="@+id/card_status_top_layout" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/card_status_module_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="32dp"
-                android:paddingTop="12dp"
+                android:paddingTop="16dp"
                 android:paddingEnd="32dp"
-                android:paddingBottom="12dp"
+                android:paddingBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -96,6 +105,7 @@
                     android:id="@+id/imageView"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
+                    android:alpha="0.8"
                     android:src="@drawable/ic_twotone_account_tree_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -106,10 +116,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
+                    android:alpha="0.8"
                     android:text="@string/status_card_exist_inject"
                     android:textAppearance="?textAppearanceTitleMedium"
                     android:textColor="?attr/colorOnPrimary"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -119,16 +130,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
+                    android:alpha="0.8"
                     android:text="Zygisk"
                     android:textAppearance="?textAppearanceBodyMedium"
                     android:textColor="?attr/colorOnPrimary"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/card_status_inject"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </LinearLayout>

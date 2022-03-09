@@ -7,8 +7,8 @@ import android.os.Bundle
 import android.widget.Toast
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback
 import com.jakting.shareclean.BaseActivity
-import com.jakting.shareclean.R
 import com.jakting.shareclean.databinding.ActivityMainBinding
+import com.jakting.shareclean.R
 import com.jakting.shareclean.utils.*
 import com.topjohnwu.superuser.Shell
 
@@ -29,12 +29,23 @@ class MainActivity : BaseActivity() {
     private fun initView() {
 
         checkStatus()
-
-//        binding.headerMain.settingButton.setOnClickListener { view ->
-//            Toast.makeText(this, "wao", Toast.LENGTH_SHORT).show()
-//        }
         binding.contentMain.card1Module.cardStatus.setOnClickListener { view ->
-            Toast.makeText(this, "wao", Toast.LENGTH_SHORT).show()
+            mdDialog(
+               getString(R.string.status_card_dialog_title),
+                getString(R.string.status_card_dialog_content),
+                "",
+                { dialog, which ->
+                    toast("左边")
+                },
+                "",
+                { dialog, which ->
+                    toast("取消")
+                },
+                getString(R.string.ok),
+                { dialog, which ->
+                    toast("确定")
+                }
+            )
         }
         binding.contentMain.card2ManageApp.cardManager.setOnClickListener { view ->
             val intent = Intent(this, IntentManagerActivity::class.java)

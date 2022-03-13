@@ -1,8 +1,10 @@
 package com.jakting.shareclean.utils
 
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.util.TypedValue
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
@@ -10,6 +12,17 @@ import androidx.core.content.ContextCompat
 import com.jakting.shareclean.R
 import com.jakting.shareclean.utils.MyApplication.Companion.appContext
 
+
+fun Context.openLink(url: String) {
+    val uri = Uri.parse(url)
+    val intent = Intent(Intent.ACTION_VIEW, uri)
+    startActivity(intent)
+}
+
+fun Context.getPxFromDp(padding_in_dp: Int): Int {
+    val scale: Float = resources.displayMetrics.density
+    return (padding_in_dp * scale + 0.5f).toInt()
+}
 
 @ColorInt
 fun Context.themeColor(@AttrRes attrRes: Int): Int = TypedValue()

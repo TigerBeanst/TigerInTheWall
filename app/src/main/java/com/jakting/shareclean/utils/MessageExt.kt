@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
+
 fun logd(message: String) =
     Log.d("TigerBeanst", message)
 
@@ -27,18 +28,19 @@ fun View.sbarin(message: CharSequence) =
 
 fun Context.mdDialog(
     title: String,
-    context: String,
+    content: String,
     otherTitle: String = "",
-    onOther: (Any, Any) -> Unit,
+    onOther: (Any, Any) -> Unit = { _, _ -> },
     cancelTitle: String = "",
-    onCancel: (Any, Any) -> Unit,
+    onCancel: (Any, Any) -> Unit = { _, _ -> },
     rightTitle: String = "",
-    onRight: (Any, Any) -> Unit
+    onRight: (Any, Any) -> Unit = { _, _ -> }
 ) {
+//    val dialogBuilder = MaterialAlertDialogBuilder(this)
     val dialogBuilder = MaterialAlertDialogBuilder(this)
     if (title.isNotEmpty())
         dialogBuilder.setTitle(title)
-    dialogBuilder.setMessage(context)
+    dialogBuilder.setMessage(content)
     if (otherTitle.isNotEmpty()) {
         dialogBuilder.setNeutralButton(otherTitle) { dialog, which ->
             onOther(dialog, which)

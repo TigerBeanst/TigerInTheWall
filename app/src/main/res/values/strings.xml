@@ -5,13 +5,16 @@
     <string name="cancel">Cancel</string>
     <string name="please_wait">Please wait…</string>
 
-    <string name="status_card_unknown">Unknown status</string>
+    <string name="status_card_unknown">Unknown status🤔</string>
     <string name="status_card_unknown_detail">Click here for details</string>
     <string name="status_card_exist">Activated</string>
     <string name="status_card_exist_module">Installed Module Version: %s(%s)</string>
     <string name="status_card_exist_inject">Injection Interface:</string>
+    <string name="status_card_exist_unknown">🤐</string>
     <string name="status_card_dialog_title">Unknown status</string>
     <string name="status_card_dialog_content">Unable to check module \"IFW Enhance\" status, due to lack of permission.\n\nRnIntentClean needs higher system permission to check module and do cleaning.\n\nMake sure you have root permission or Shizuku(Root) or Sui.</string>
+    <string name="status_card_dialog_more">More</string>
+    <string name="status_card_dialog_more_url">https://ic.into.icu/download/</string>
 
 <!--    <string name="manage_dialog_title">Notice</string>-->
 <!--    <string name="manage_dialog_desc">Riru - IFWEnhance has not been properly applied. Anything you do may not take effect.</string>-->

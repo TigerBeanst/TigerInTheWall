@@ -33,18 +33,11 @@ class MainActivity : BaseActivity() {
             mdDialog(
                getString(R.string.status_card_dialog_title),
                 getString(R.string.status_card_dialog_content),
-                "",
-                { dialog, which ->
-                    toast("左边")
+                rightTitle = getString(R.string.ok),
+                otherTitle = getString(R.string.status_card_dialog_more),
+                onOther = {_,_->
+                    openLink(getString(R.string.status_card_dialog_more_url))
                 },
-                "",
-                { dialog, which ->
-                    toast("取消")
-                },
-                getString(R.string.ok),
-                { dialog, which ->
-                    toast("确定")
-                }
             )
         }
         binding.contentMain.card2ManageApp.cardManager.setOnClickListener { view ->

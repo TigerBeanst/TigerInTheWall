@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback
 import com.jakting.shareclean.BaseActivity
 import com.jakting.shareclean.databinding.ActivityMainBinding
@@ -29,17 +30,6 @@ class MainActivity : BaseActivity() {
     private fun initView() {
 
         checkStatus()
-        binding.contentMain.card1Module.cardStatus.setOnClickListener { view ->
-            mdDialog(
-               getString(R.string.status_card_dialog_title),
-                getString(R.string.status_card_dialog_content),
-                rightTitle = getString(R.string.ok),
-                otherTitle = getString(R.string.status_card_dialog_more),
-                onOther = {_,_->
-                    openLink(getString(R.string.status_card_dialog_more_url))
-                },
-            )
-        }
         binding.contentMain.card2ManageApp.cardManager.setOnClickListener { view ->
             val intent = Intent(this, IntentManagerActivity::class.java)
             val options = ActivityOptions.makeSceneTransitionAnimation(
@@ -64,8 +54,9 @@ class MainActivity : BaseActivity() {
 
     private fun checkStatus() {
         if (Shell.rootAccess()) {
-            //判断 IFW Enchance 是否生效，无论是 Riru 版还是 Zygisk 版
+            // 已经授予 root
             if (moduleApplyAvailable()) {
+                // 如果模块已生效
                 binding.contentMain.card1Module.cardStatusTitle.text =
                     getString(R.string.status_card_exist)
                 val injectIf = moduleInfo()
@@ -79,14 +70,38 @@ class MainActivity : BaseActivity() {
                 binding.contentMain.card1Module.cardStatusInjectWhich.text = injectIf[0]
                 binding.contentMain.card1Module.cardStatusIcon.setImageResource(R.drawable.ic_twotone_check_circle_24)
                 binding.contentMain.card1Module.cardStatus.backgroundTintList =
-                    ColorStateList.valueOf(themeColor(R.attr.colorPrimary))
-//                binding.contentMain.card1Module.cardStatusDarker.backgroundTintList =
-//                    ColorStateList.valueOf(themeColor(R.attr.colorPrimaryContainer))
+                    backgroundColor(R.color.colorPrimary)
+                var clickCount = 0
+                binding.contentMain.card1Module.cardStatus.setOnClickListener { view ->
+                    clickCount++
+                    when (clickCount) {
+                        1 -> toast("🤥🤥🤥🤥🤥")
+                        2 -> toast("🤕🤕🤕🤕🤕")
+                        3 -> toast("🤡🤡🤡🤡🤡")
+                        4 -> {
+                            toast(getString(R.string.status_card_click))
+                            clickCount = 0
+                        }
+                    }
+                }
             } else {
                 longtoast("没有应用")
             }
 
 
+        } else {
+            //没有授予 root 的时候，点击卡片会弹窗
+            binding.contentMain.card1Module.cardStatus.setOnClickListener { view ->
+                mdDialog(
+                    getString(R.string.status_card_dialog_title),
+                    getString(R.string.status_card_dialog_content),
+                    rightTitle = getString(R.string.ok),
+                    otherTitle = getString(R.string.status_card_dialog_more),
+                    onOther = { _, _ ->
+                        openLink(getString(R.string.status_card_dialog_more_url))
+                    },
+                )
+            }
         }
     }
 }

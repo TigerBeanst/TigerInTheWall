@@ -3,11 +3,13 @@ package com.jakting.shareclean.utils
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.util.TypedValue
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import com.jakting.shareclean.R
 import com.jakting.shareclean.utils.MyApplication.Companion.appContext
@@ -24,10 +26,8 @@ fun Context.getPxFromDp(padding_in_dp: Int): Int {
     return (padding_in_dp * scale + 0.5f).toInt()
 }
 
-@ColorInt
-fun Context.themeColor(@AttrRes attrRes: Int): Int = TypedValue()
-    .apply { theme.resolveAttribute (attrRes, this, true) }
-    .data
+fun Context.backgroundColor(@ColorRes colorRes: Int): ColorStateList =
+    ColorStateList.valueOf(ContextCompat.getColor(this, colorRes))
 
 fun getManageTypeTitle(tag: String): String {
     return when (tag) {

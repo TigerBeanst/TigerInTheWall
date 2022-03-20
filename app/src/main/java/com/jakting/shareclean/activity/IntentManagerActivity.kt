@@ -30,7 +30,7 @@ class IntentManagerActivity : BaseActivity() {
             addTarget(R.id.activity_layout)
             setAllContainerColors(MaterialColors.getColor(binding.root, R.attr.colorSurface))
             pathMotion = MaterialArcMotion()
-            duration = 500L
+            duration = 400L
         }
         window.sharedElementReturnTransition = MaterialContainerTransform().apply {
             addTarget(R.id.activity_layout)

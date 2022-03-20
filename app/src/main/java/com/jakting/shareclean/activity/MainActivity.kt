@@ -75,10 +75,17 @@ class MainActivity : BaseActivity() {
                 binding.contentMain.card1Module.cardStatus.setOnClickListener { view ->
                     clickCount++
                     when (clickCount) {
-                        1 -> toast("🤥🤥🤥🤥🤥")
-                        2 -> toast("🤕🤕🤕🤕🤕")
-                        3 -> toast("🤡🤡🤡🤡🤡")
-                        4 -> {
+                        5 -> {
+                            binding.contentMain.card1Module.cardStatusInjectWhich.text = injectIf[0]+"🤥"
+                        }
+                        10 -> {
+                            binding.contentMain.card1Module.cardStatusInjectWhich.text = injectIf[0]+"🤕"
+                        }
+                        15 -> {
+                            binding.contentMain.card1Module.cardStatusInjectWhich.text = injectIf[0]+"🤡"
+                        }
+                        20 -> {
+                            binding.contentMain.card1Module.cardStatusInjectWhich.text = injectIf[0]+"👻"
                             toast(getString(R.string.status_card_click))
                             clickCount = 0
                         }

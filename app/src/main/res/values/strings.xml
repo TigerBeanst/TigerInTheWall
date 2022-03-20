@@ -4,6 +4,7 @@
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="please_wait">Please wait…</string>
+    <string name="coming_soon">Coming Soon…</string>
 
     <string name="status_card_click">There is nothing. Surprise!💩</string>
     <string name="status_card_unknown">Unknown status🤔</string>
@@ -19,8 +20,8 @@
 
 <!--    <string name="manage_dialog_title">Notice</string>-->
 <!--    <string name="manage_dialog_desc">Riru - IFWEnhance has not been properly applied. Anything you do may not take effect.</string>-->
-    <string name="manage_app_card_title">Apps Manager</string>
-    <string name="manage_app_card_detail">Classified by App</string>
+    <string name="manage_app_card_title">Clean Manager</string>
+    <string name="manage_app_card_detail">Cleaning sh*t</string>
     <string name="manage_category_card_title">Intent Manager</string>
     <string name="manage_category_card_detail">Classified by Intent</string>
 

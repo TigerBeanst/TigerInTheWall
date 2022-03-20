@@ -32,7 +32,7 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.RnIntentClean.NoActionBar">
+            android:theme="@style/TigerBeanstTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,8 +42,7 @@
         <activity
             android:name=".activity.IntentManagerActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.RnIntentClean.NoActionBar"></activity>
+            android:theme="@style/TigerBeanstTheme.NoActionBar" />
     </application>
 
 </manifest>

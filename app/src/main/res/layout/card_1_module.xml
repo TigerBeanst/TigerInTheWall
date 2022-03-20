@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -72,7 +71,8 @@
                     android:src="@drawable/ic_twotone_help_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/status_card_unknown_detail" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -109,7 +109,8 @@
                     android:src="@drawable/ic_twotone_account_tree_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/status_card_exist_inject" />
 
                 <TextView
                     android:id="@+id/card_status_inject"

@@ -1,6 +1,5 @@
 package com.jakting.shareclean.activity
 
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.Window
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator

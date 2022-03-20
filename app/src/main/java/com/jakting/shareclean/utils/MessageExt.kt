@@ -1,11 +1,16 @@
 package com.jakting.shareclean.utils
 
+import android.app.Activity
 import android.content.Context
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.airbnb.lottie.LottieAnimationView
 import com.google.android.material.snackbar.Snackbar
+import com.jakting.shareclean.R
+import com.jakting.shareclean.utils.MyApplication.Companion.appContext
+import dev.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
+import dev.shreyaspatil.MaterialDialog.model.TextAlignment
 
 
 fun logd(message: String) =
@@ -29,37 +34,26 @@ fun View.sbarin(message: CharSequence) =
 fun Context.mdDialog(
     title: String,
     content: String,
-    otherTitle: String = "",
-    onOther: (Any, Any) -> Unit = { _, _ -> },
-    cancelTitle: String = "",
-    onCancel: (Any, Any) -> Unit = { _, _ -> },
-    rightTitle: String = "",
-    onRight: (Any, Any) -> Unit = { _, _ -> }
-) {
-//    val dialogBuilder = MaterialAlertDialogBuilder(this)
-    val dialogBuilder = MaterialAlertDialogBuilder(this)
-    if (title.isNotEmpty())
-        dialogBuilder.setTitle(title)
-    dialogBuilder.setMessage(content)
-    if (otherTitle.isNotEmpty()) {
-        dialogBuilder.setNeutralButton(otherTitle) { dialog, which ->
-            onOther(dialog, which)
-        }
-    }
-    if (otherTitle.isNotEmpty()) {
-        dialogBuilder.setNeutralButton(otherTitle) { dialog, which ->
-            onOther(dialog, which)
-        }
-    }
-    if (cancelTitle.isNotEmpty()) {
-        dialogBuilder.setNegativeButton(cancelTitle) { dialog, which ->
-            onCancel(dialog, which)
-        }
-    }
-    if (rightTitle.isNotEmpty()) {
-        dialogBuilder.setPositiveButton(rightTitle) { dialog, which ->
-            onRight(dialog, which)
-        }
-    }
-    dialogBuilder.show()
+    animation: String,
+    cancelAble: Boolean = true
+): BottomSheetMaterialDialog.Builder {
+    return BottomSheetMaterialDialog.Builder(this as Activity)
+        .setTitle(title, TextAlignment.START)
+        .setMessage(content, TextAlignment.START)
+        .setCancelable(cancelAble)
+        .setAnimation(
+            getResId(
+                animation + if (isDarkMode()) "_dark" else "_light",
+                R.raw::class.java
+            )
+        ) as BottomSheetMaterialDialog.Builder
+}
+
+fun (BottomSheetMaterialDialog.Builder).show(lottiePx:Int) {
+    val mDialog = this.build()
+    val animationView: LottieAnimationView = mDialog.animationView
+    val layoutParams = animationView.layoutParams
+    layoutParams.height = appContext.getPxFromDp(lottiePx)
+    animationView.layoutParams = layoutParams
+    mDialog.show()
 }

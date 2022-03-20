@@ -10,6 +10,7 @@ import com.jakting.shareclean.R
 import com.jakting.shareclean.databinding.ActivityMainBinding
 import com.jakting.shareclean.utils.*
 import com.topjohnwu.superuser.Shell
+import dev.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
 
 
 class MainActivity : BaseActivity() {
@@ -101,15 +102,20 @@ class MainActivity : BaseActivity() {
         } else {
             //没有授予 root 的时候，点击卡片会弹窗
             binding.contentMain.card1Module.cardStatus.setOnClickListener { view ->
-                mdDialog(
+                (mdDialog(
                     getString(R.string.status_card_dialog_title),
                     getString(R.string.status_card_dialog_content),
-                    rightTitle = getString(R.string.ok),
-                    otherTitle = getString(R.string.status_card_dialog_more),
-                    onOther = { _, _ ->
-                        openLink(getString(R.string.status_card_dialog_more_url))
-                    },
-                )
+                    "dialog_unknown"
+                ).setPositiveButton(
+                    getString(R.string.ok), R.drawable.ic_twotone_check_24
+                ) { dialog, _ ->
+                    dialog.dismiss()
+                }.setNegativeButton(
+                    getString(R.string.status_card_dialog_more),
+                    R.drawable.ic_twotone_open_in_browser_24
+                ) { _, _ ->
+                    openLink(getString(R.string.status_card_dialog_more_url))
+                } as BottomSheetMaterialDialog.Builder).show(290)
             }
         }
     }

@@ -33,7 +33,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:title="@string/manage_app_card_title"
                 app:menu="@menu/manager_intent_bar"
-                app:navigationIcon="@drawable/ic_twotone_check_circle_24" />
+                app:navigationIcon="@drawable/ic_twotone_close_24" />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 

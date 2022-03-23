@@ -2,11 +2,14 @@ package com.jakting.shareclean.utils
 
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.content.res.Configuration
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
+import com.jakting.shareclean.R
 import java.lang.reflect.Field
 
 
@@ -59,16 +62,15 @@ fun Context.getDpFromPx(px: Int): Int {
 //}
 //
 //
-//fun Context?.getAppIconByPackageName(ApkTempSendActivityName: String): Drawable? {
-//    val drawable: Drawable?
-//    drawable = try {
-//        this?.packageManager?.getApplicationIcon(ApkTempSendActivityName)
-//    } catch (e: PackageManager.NameNotFoundException) {
-//        e.printStackTrace()
-//        this?.packageManager?.let { ContextCompat.getDrawable(this, R.mipmap.ic_launcher) }
-//    }
-//    return drawable
-//}
+fun Context.getAppIconByPackageName(ApkTempSendActivityName: String): Drawable? {
+    val drawable: Drawable? = try {
+        this.packageManager?.getApplicationIcon(ApkTempSendActivityName)
+    } catch (e: PackageManager.NameNotFoundException) {
+        e.printStackTrace()
+        this.packageManager?.let { ContextCompat.getDrawable(this, R.mipmap.ic_launcher) }
+    }
+    return drawable
+}
 
 //fun setFirebase() {
 //    val isUseFirebase = settingSharedPreferences.getBoolean("switch_firebase", true)

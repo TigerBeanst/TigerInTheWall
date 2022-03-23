@@ -34,7 +34,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/manage_app_card_title"
+                    android:text="@string/manager_clean_title"
                     android:textAppearance="?textAppearanceTitleMedium"
                     android:textColor="@color/colorAccent"
                     android:textSize="16sp" />
@@ -45,7 +45,7 @@
                     android:layout_marginTop="4dp"
                     android:textSize="12sp"
                     android:alpha="0.8"
-                    android:text="@string/manage_app_card_detail"
+                    android:text="@string/manager_clean_detail"
                     android:textAppearance="?textAppearanceBodyMedium"
                     android:textColor="@color/colorAccent" />
             </LinearLayout>
@@ -55,7 +55,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="10dp"
-                android:contentDescription="@string/manage_app_card_title"
+                android:contentDescription="@string/manager_clean_title"
                 android:src="@drawable/ic_twotone_settings_applications_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

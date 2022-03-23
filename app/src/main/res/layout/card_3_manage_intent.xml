@@ -36,7 +36,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/manage_category_card_title"
+                    android:text="@string/manager_intent_title"
                     android:textAppearance="?textAppearanceTitleMedium"
                     android:textColor="@color/colorAccent"
                     android:textSize="16sp" />
@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:alpha="0.8"
-                    android:text="@string/manage_category_card_detail"
+                    android:text="@string/manager_intent_detail"
                     android:textAppearance="?textAppearanceBodyMedium"
                     android:textColor="@color/colorAccent"
                     android:textSize="12sp" />
@@ -58,7 +58,7 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="10dp"
-                android:contentDescription="@string/manage_category_card_title"
+                android:contentDescription="@string/manager_intent_title"
                 android:src="@drawable/ic_twotone_yard_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

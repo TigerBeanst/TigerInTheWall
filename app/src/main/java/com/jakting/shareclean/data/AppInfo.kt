@@ -6,7 +6,8 @@ import android.content.pm.ResolveInfo
 import android.net.Uri
 import com.jakting.shareclean.utils.MyApplication.Companion.appContext
 import com.jakting.shareclean.utils.getAppName
-import com.jakting.shareclean.utils.logd
+import java.text.Collator
+import java.util.*
 
 class AppInfo(tagList: IntentType) {
     private var tagList: IntentType
@@ -106,14 +107,24 @@ class AppInfo(tagList: IntentType) {
                             )
                         }
                     )
-                    if(oneApp.packageName=="notion.id"){
-                        logd("测试")
-                    }
                     oneApp.setHasType(key)
                     finalList.add(oneApp)
                 }
             }
         }
+
+        class SortName :Comparator<App> {
+            val localCompare = Collator.getInstance(Locale.getDefault())
+            override fun compare(o1: App?, o2: App?): Int {
+                if (localCompare.compare(o1!!.appName, o2!!.appName) > 0){
+                    return 1
+                }else if (localCompare.compare(o1.appName, o2.appName)<0){
+                    return -1
+                }
+                return 0
+            }
+        }
+        Collections.sort(finalList, SortName())
         return finalList
     }
 

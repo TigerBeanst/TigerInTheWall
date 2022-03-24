@@ -6,9 +6,8 @@ import android.widget.ImageView
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import com.drake.brv.utils.BRV
 import com.drake.brv.utils.linear
+import com.drake.brv.utils.models
 import com.drake.brv.utils.setup
-import com.google.android.material.color.MaterialColors
-import com.google.android.material.transition.platform.MaterialArcMotion
 import com.google.android.material.transition.platform.MaterialContainerTransform
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback
 import com.jakting.shareclean.BR
@@ -19,6 +18,15 @@ import com.jakting.shareclean.data.AppInfo
 import com.jakting.shareclean.data.IntentType
 import com.jakting.shareclean.databinding.ActivityCleanManagerBinding
 import com.jakting.shareclean.utils.getAppIconByPackageName
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
+var chipShare = true
+var chipView = true
+var chipText = true
+var chipBrowser = true
 
 class IntentManagerActivity : BaseActivity() {
 
@@ -41,35 +49,68 @@ class IntentManagerActivity : BaseActivity() {
         }
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
 
-    private fun initData() {
         BRV.modelId = BR.app
-//        val intent = AppIntent("send", "aaa")
-//        val app = App(
-//            appName = "测试dsadsadsadasffdsfsa啊啊啊啊啊啥啥啥",
-//            packageName = "com.tencent.mm",
-//            intentList = listOf(intent)
-//        )
-//        val dataaa = ArrayList<App>()
-//        dataaa.add(app)
-//        dataaa.add(app)
-//        dataaa.add(app)
-//        dataaa.add(app)
-        val appList = AppInfo(
-            IntentType(
-                share = true,
-                view = true,
-                text = true,
-                browser = true
-            )
-        ).getAppList()
+        var dataList = ArrayList<App>()
         binding.managerCleanRecyclerView.linear().setup {
             addType<App>(R.layout.item_manager_clean)
             onBind {
                 val appIcon = findView<ImageView>(R.id.app_icon)
                 appIcon.setImageDrawable(getAppIconByPackageName(getModel<App>().packageName))
             }
-        }.models = appList
+        }.models = dataList
+
+        binding.managerCleanPageRefreshLayout.apply {
+            setEnableRefresh(true)
+            setPrimaryColorsId(R.color.colorAccent, R.color.colorPrimary)
+            onRefresh {
+//                setChipEnabled(false)
+                GlobalScope.launch(Dispatchers.Main) {
+                    dataList = initData() as ArrayList<App>
+                    withContext(Dispatchers.Main) {
+                        binding.managerCleanRecyclerView.models = dataList
+                        binding.managerCleanPageRefreshLayout.finishRefresh()
+//                        setChipEnabled(true)
+                    }
+                }
+            }.autoRefresh()
+        }
+
+        binding.managerCleanChipShare.setOnCheckedChangeListener { _, isChecked ->
+            chipShare = isChecked
+            binding.managerCleanPageRefreshLayout.autoRefresh()
+        }
+        binding.managerCleanChipView.setOnCheckedChangeListener { _, isChecked ->
+            chipView = isChecked
+            binding.managerCleanPageRefreshLayout.autoRefresh()
+        }
+        binding.managerCleanChipText.setOnCheckedChangeListener { _, isChecked ->
+            chipText = isChecked
+            binding.managerCleanPageRefreshLayout.autoRefresh()
+        }
+        binding.managerCleanChipBrowser.setOnCheckedChangeListener { _, isChecked ->
+            chipBrowser = isChecked
+            binding.managerCleanPageRefreshLayout.autoRefresh()
+        }
+
+
+    }
+
+    private fun initData(): List<App> {
+        return AppInfo(
+            IntentType(
+                share = chipShare,
+                view = chipView,
+                text = chipText,
+                browser = chipBrowser
+            )
+        ).getAppList()
+    }
+
+    private fun setChipEnabled(isEnabled: Boolean) {
+        binding.managerCleanChipShare.isEnabled = isEnabled
+        binding.managerCleanChipView.isEnabled = isEnabled
+        binding.managerCleanChipText.isEnabled = isEnabled
+        binding.managerCleanChipBrowser.isEnabled = isEnabled
     }
 }

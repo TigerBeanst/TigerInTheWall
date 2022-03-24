@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_layout"
@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toTopOf="@id/manager_clean_chip_scroll_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -38,69 +39,89 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <HorizontalScrollView
-        android:id="@+id/manager_clean_chip_scroll_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
-
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/manager_clean_chip_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            app:singleLine="true">
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/manager_clean_chip_share"
-                style="@style/Widget.Material3.Chip.Filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/manager_clean_type_send"
-                app:checkedIcon="@drawable/ic_twotone_share_24"
-                app:chipBackgroundColor="@color/bg_chip_state_list" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/manager_clean_chip_view"
-                style="@style/Widget.Material3.Chip.Filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/manager_clean_type_view"
-                app:checkedIcon="@drawable/ic_twotone_file_open_24"
-                app:chipBackgroundColor="@color/bg_chip_state_list" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/manager_clean_chip_text"
-                style="@style/Widget.Material3.Chip.Filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/manager_clean_type_text"
-                app:checkedIcon="@drawable/ic_twotone_text_fields_24"
-                app:chipBackgroundColor="@color/bg_chip_state_list" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/manager_clean_chip_browser"
-                style="@style/Widget.Material3.Chip.Filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/manager_clean_type_browser"
-                app:checkedIcon="@drawable/ic_twotone_public_24"
-                app:chipBackgroundColor="@color/bg_chip_state_list" />
-        </com.google.android.material.chip.ChipGroup>
-    </HorizontalScrollView>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/manager_clean_recycler_view"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manager_clean_chip_scroll_view" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:id="@+id/manager_clean_chip_scroll_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                app:layout_constraintBottom_toTopOf="@id/manager_clean_page_refresh_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/manager_clean_chip_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    app:singleLine="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/manager_clean_chip_share"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/manager_clean_type_send"
+                        app:checkedIcon="@drawable/ic_twotone_share_24"
+                        app:chipBackgroundColor="@color/bg_chip_state_list" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/manager_clean_chip_view"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/manager_clean_type_view"
+                        app:checkedIcon="@drawable/ic_twotone_file_open_24"
+                        app:chipBackgroundColor="@color/bg_chip_state_list" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/manager_clean_chip_text"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/manager_clean_type_text"
+                        app:checkedIcon="@drawable/ic_twotone_text_fields_24"
+                        app:chipBackgroundColor="@color/bg_chip_state_list" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/manager_clean_chip_browser"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/manager_clean_type_browser"
+                        app:checkedIcon="@drawable/ic_twotone_public_24"
+                        app:chipBackgroundColor="@color/bg_chip_state_list" />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <com.drake.brv.PageRefreshLayout
+                android:id="@+id/manager_clean_page_refresh_layout"
+                app:srlDragRate="4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/manager_clean_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.drake.brv.PageRefreshLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

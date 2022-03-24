@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
+import com.scwang.smart.refresh.header.MaterialHeader
+import com.scwang.smart.refresh.layout.SmartRefreshLayout
 
 class MyApplication : Application() {
     @SuppressLint("CommitPrefEdits")
@@ -12,6 +14,7 @@ class MyApplication : Application() {
         appContext = applicationContext
         settingSharedPreferences = getSharedPreferences("settings", MODE_PRIVATE)
         settingSharedPreferencesEditor = getSharedPreferences("settings", MODE_PRIVATE).edit()
+        SmartRefreshLayout.setDefaultRefreshHeaderCreator { _, _ -> MaterialHeader(this) }
     }
 
     companion object {

@@ -74,6 +74,7 @@
                         android:id="@+id/app_icon_share"
                         android:layout_width="16dp"
                         android:layout_height="16dp"
+                        android:layout_marginStart="5dp"
                         android:src="@drawable/ic_twotone_share_24"
                         android:visibility="@{(app.hasType.share==true) ? View.VISIBLE : View.GONE}" />
 

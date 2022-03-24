@@ -27,23 +27,15 @@ class IntentManagerActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         window.requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS)
         binding = ActivityCleanManagerBinding.inflate(layoutInflater)
-        initView()
-        initData()
         setContentView(binding.root)
         super.onCreate(savedInstanceState)
+        initView()
     }
 
     private fun initView() {
         setEnterSharedElementCallback(MaterialContainerTransformSharedElementCallback())
-        window.sharedElementEnterTransition = MaterialContainerTransform().apply {
-            addTarget(R.id.activity_layout)
-            setAllContainerColors(MaterialColors.getColor(binding.root, R.attr.colorSurface))
-            pathMotion = MaterialArcMotion()
-            duration = 400L
-        }
         window.sharedElementReturnTransition = MaterialContainerTransform().apply {
             addTarget(R.id.activity_layout)
-            duration = 250L
             interpolator = FastOutSlowInInterpolator()
             fadeMode = MaterialContainerTransform.FADE_MODE_IN
         }

@@ -1,15 +1,14 @@
 package com.jakting.shareclean.activity
 
 import android.os.Bundle
-import android.view.Window
+import android.view.View
 import android.widget.ImageView
-import androidx.interpolator.view.animation.FastOutSlowInInterpolator
+import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
 import com.drake.brv.utils.BRV
 import com.drake.brv.utils.linear
 import com.drake.brv.utils.models
 import com.drake.brv.utils.setup
-import com.google.android.material.transition.platform.MaterialContainerTransform
-import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback
 import com.jakting.shareclean.BR
 import com.jakting.shareclean.BaseActivity
 import com.jakting.shareclean.R
@@ -17,16 +16,13 @@ import com.jakting.shareclean.data.App
 import com.jakting.shareclean.data.AppInfo
 import com.jakting.shareclean.data.IntentType
 import com.jakting.shareclean.databinding.ActivityCleanManagerBinding
+import com.jakting.shareclean.utils.MyApplication.Companion.chipBrowser
+import com.jakting.shareclean.utils.MyApplication.Companion.chipShare
+import com.jakting.shareclean.utils.MyApplication.Companion.chipText
+import com.jakting.shareclean.utils.MyApplication.Companion.chipView
 import com.jakting.shareclean.utils.getAppIconByPackageName
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
-var chipShare = true
-var chipView = true
-var chipText = true
-var chipBrowser = true
 
 class IntentManagerActivity : BaseActivity() {
 
@@ -34,9 +30,14 @@ class IntentManagerActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityCleanManagerBinding.inflate(layoutInflater)
-        setContentView(binding.root)
         super.onCreate(savedInstanceState)
+        setContentView(binding.root)
         initView()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        setChip(chipShare, chipView, chipText, chipBrowser)
     }
 
     private fun initView() {
@@ -44,66 +45,83 @@ class IntentManagerActivity : BaseActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         BRV.modelId = BR.app
-        var dataList = ArrayList<App>()
         binding.managerCleanRecyclerView.linear().setup {
             addType<App>(R.layout.item_manager_clean)
             onBind {
                 val appIcon = findView<ImageView>(R.id.app_icon)
-                appIcon.setImageDrawable(getAppIconByPackageName(getModel<App>().packageName))
-            }
-        }.models = dataList
-
-        binding.managerCleanPageRefreshLayout.apply {
-            setEnableRefresh(true)
-            setPrimaryColorsId(R.color.colorAccent, R.color.colorPrimary)
-            onRefresh {
-//                setChipEnabled(false)
-                GlobalScope.launch(Dispatchers.Main) {
-                    dataList = initData() as ArrayList<App>
-                    withContext(Dispatchers.Main) {
-                        binding.managerCleanRecyclerView.models = dataList
-                        binding.managerCleanPageRefreshLayout.finishRefresh()
-//                        setChipEnabled(true)
-                    }
+                lifecycleScope.launch {
+                    appIcon.setImageDrawable(
+                        getAppIconByPackageName(
+                            this@IntentManagerActivity,
+                            getModel<App>().packageName
+                        )
+                    )
                 }
-            }.autoRefresh()
+                findView<ImageView>(R.id.app_icon_system).visibility =
+                    when (getModel<App>().isSystem) {
+                        true -> View.VISIBLE
+                        else -> View.GONE
+                    }
+                findView<TextView>(R.id.app_intent_count_share).text =
+                    getModel<App>().intentList.filter { it.type == "share" || it.type == "share_multi" }.size.toString()
+                findView<TextView>(R.id.app_intent_count_view).text =
+                    getModel<App>().intentList.filter { it.type == "view" }.size.toString()
+                findView<TextView>(R.id.app_intent_count_text).text =
+                    getModel<App>().intentList.filter { it.type == "text" }.size.toString()
+                findView<TextView>(R.id.app_intent_count_browser).text =
+                    getModel<App>().intentList.filter { it.type == "browser_https" || it.type == "browser_http" }.size.toString()
+            }
         }
+
+        binding.managerCleanStateLayout.onRefresh {
+            lifecycleScope.launch {
+                setChip(false)
+                val data = AppInfo(
+                    IntentType(
+                        share = chipShare,
+                        view = chipView,
+                        text = chipText,
+                        browser = chipBrowser
+                    )
+                ).getAppList()
+                binding.managerCleanRecyclerView.models = data
+                setChip(true)
+                binding.managerCleanStateLayout.showContent()
+            }
+        }.showLoading()
+
 
         binding.managerCleanChipShare.setOnCheckedChangeListener { _, isChecked ->
             chipShare = isChecked
-            binding.managerCleanPageRefreshLayout.autoRefresh()
+            binding.managerCleanStateLayout.showLoading()
         }
         binding.managerCleanChipView.setOnCheckedChangeListener { _, isChecked ->
             chipView = isChecked
-            binding.managerCleanPageRefreshLayout.autoRefresh()
+            binding.managerCleanStateLayout.showLoading()
         }
         binding.managerCleanChipText.setOnCheckedChangeListener { _, isChecked ->
             chipText = isChecked
-            binding.managerCleanPageRefreshLayout.autoRefresh()
+            binding.managerCleanStateLayout.showLoading()
         }
         binding.managerCleanChipBrowser.setOnCheckedChangeListener { _, isChecked ->
             chipBrowser = isChecked
-            binding.managerCleanPageRefreshLayout.autoRefresh()
+            binding.managerCleanStateLayout.showLoading()
         }
 
 
     }
 
-    private fun initData(): List<App> {
-        return AppInfo(
-            IntentType(
-                share = chipShare,
-                view = chipView,
-                text = chipText,
-                browser = chipBrowser
-            )
-        ).getAppList()
-    }
-
-    private fun setChipEnabled(isEnabled: Boolean) {
-        binding.managerCleanChipShare.isEnabled = isEnabled
-        binding.managerCleanChipView.isEnabled = isEnabled
-        binding.managerCleanChipText.isEnabled = isEnabled
-        binding.managerCleanChipBrowser.isEnabled = isEnabled
+    private fun setChip(vararg args: Boolean) {
+        if (args.size == 1) { // 禁用/启用
+            binding.managerCleanChipShare.isEnabled = args[0]
+            binding.managerCleanChipView.isEnabled = args[0]
+            binding.managerCleanChipText.isEnabled = args[0]
+            binding.managerCleanChipBrowser.isEnabled = args[0]
+        } else { // 设置图标状态
+            binding.managerCleanChipShare.isChecked = args[0]
+            binding.managerCleanChipView.isChecked = args[1]
+            binding.managerCleanChipText.isChecked = args[2]
+            binding.managerCleanChipBrowser.isChecked = args[3]
+        }
     }
 }

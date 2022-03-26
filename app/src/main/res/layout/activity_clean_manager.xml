@@ -114,9 +114,9 @@
                 </com.google.android.material.chip.ChipGroup>
             </HorizontalScrollView>
 
-            <com.drake.brv.PageRefreshLayout
-                android:id="@+id/manager_clean_page_refresh_layout"
-                app:srlDragRate="4"
+            <com.drake.statelayout.StateLayout
+                android:id="@+id/manager_clean_state_layout"
+                app:loading_layout="@layout/layout_loading"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -124,7 +124,7 @@
                     android:id="@+id/manager_clean_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
-            </com.drake.brv.PageRefreshLayout>
+            </com.drake.statelayout.StateLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

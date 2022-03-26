@@ -52,6 +52,7 @@
         <activity
             android:name=".activity.IntentManagerActivity"
             android:exported="true"
+            android:parentActivityName=".activity.MainActivity"
             android:theme="@style/TigerBeanstTheme.NoActionBar" />
     </application>
 

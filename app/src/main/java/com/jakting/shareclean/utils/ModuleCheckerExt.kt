@@ -44,17 +44,3 @@ fun moduleVersion(injectIf: String): Array<String?> {
     return arrayOf(version?.get(1), version?.get(2))
 }
 
-//
-//fun getIFWEnhanceVersionIfRiru(): String {
-//    return runShell("cat /dev/riru_*/modules/riru_ifw_enhance@ifw_enhance/version").getPureCat()
-//}
-//
-//fun getIFWEnhanceVersionNameIfRiru(): String {
-//    return runShell("cat /dev/riru_*/modules/riru_ifw_enhance@ifw_enhance/version_name").getPureCat()
-//}
-//
-//fun String.moduleResultAvailableIfRiru(): Boolean {
-//    // 如果是 false 的话，Riru 版未安装，意味着是 Zygisk 版
-//    return !this.contains("No such file or directory")
-//}
-

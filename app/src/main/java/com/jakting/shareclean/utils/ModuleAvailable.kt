@@ -1,4 +1,4 @@
-package com.jakting.shareclean.activity
+package com.jakting.shareclean.utils
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

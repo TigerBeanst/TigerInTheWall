@@ -23,7 +23,7 @@ const val ifw_app_self =
             "      <cat name=\"android.intent.category.DEFAULT\" />\n" +
             "      <type name=\"*/*\" />\n" +
             "    </intent-filter>\n" +
-            "    <component equals=\"com.jakting.shareclean/com.jakting.shareclean.activity.ModuleAvailable\" />\n" +
+            "    <component equals=\"com.jakting.shareclean/com.jakting.shareclean.utils.ModuleAvailable\" />\n" +
             "    <or>\n" +
             "      <sender type=\"system\" />\n" +
             "      <not>\n" +

@@ -30,7 +30,7 @@
         </provider>
 
         <activity
-            android:name=".activity.ModuleAvailable"
+            android:name=".utils.ModuleAvailable"
             android:enabled="false"
             android:exported="false">
             <intent-filter>

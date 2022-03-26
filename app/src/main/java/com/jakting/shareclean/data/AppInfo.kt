@@ -1,11 +1,14 @@
 package com.jakting.shareclean.data
 
 import android.content.Intent
+import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.net.Uri
 import com.jakting.shareclean.utils.MyApplication.Companion.appContext
 import com.jakting.shareclean.utils.getAppName
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import java.text.Collator
 import java.util.*
 
@@ -16,7 +19,7 @@ class AppInfo(tagList: IntentType) {
         this.tagList = tagList
     }
 
-    fun getAppList(): List<App> {
+    suspend fun getAppList(): List<App> = withContext(Dispatchers.IO) {
         val resolveInfoListHashMap: HashMap<String, List<ResolveInfo>> = HashMap()
 
         if (tagList.share) {
@@ -105,7 +108,8 @@ class AppInfo(tagList: IntentType) {
                                     key
                                 )
                             )
-                        }
+                        },
+                        isSystem = (resolveInfo.activityInfo.applicationInfo.flags and ApplicationInfo.FLAG_SYSTEM != 0)
                     )
                     oneApp.setHasType(key)
                     finalList.add(oneApp)
@@ -113,19 +117,19 @@ class AppInfo(tagList: IntentType) {
             }
         }
 
-        class SortName :Comparator<App> {
+        class SortName : Comparator<App> {
             val localCompare = Collator.getInstance(Locale.getDefault())
             override fun compare(o1: App?, o2: App?): Int {
-                if (localCompare.compare(o1!!.appName, o2!!.appName) > 0){
+                if (localCompare.compare(o1!!.appName, o2!!.appName) > 0) {
                     return 1
-                }else if (localCompare.compare(o1.appName, o2.appName)<0){
+                } else if (localCompare.compare(o1.appName, o2.appName) < 0) {
                     return -1
                 }
                 return 0
             }
         }
         Collections.sort(finalList, SortName())
-        return finalList
+        finalList
     }
 
     private fun App.setHasType(key: String) {

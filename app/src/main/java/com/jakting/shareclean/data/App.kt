@@ -18,5 +18,6 @@ data class App(
     val appName: String,
     val packageName: String,
     val intentList: ArrayList<AppIntent>,
+    val isSystem: Boolean = false,
     val hasType: IntentType = IntentType(share = false, view = false, text = false, browser = false)
 )

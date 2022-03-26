@@ -1,10 +1,8 @@
 package com.jakting.shareclean.activity
 
 import android.annotation.SuppressLint
-import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback
 import com.jakting.shareclean.BaseActivity
 import com.jakting.shareclean.R
 import com.jakting.shareclean.databinding.ActivityMainBinding

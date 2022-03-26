@@ -33,7 +33,6 @@ class IntentManagerActivity : BaseActivity() {
     private lateinit var binding: ActivityCleanManagerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        window.requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS)
         binding = ActivityCleanManagerBinding.inflate(layoutInflater)
         setContentView(binding.root)
         super.onCreate(savedInstanceState)
@@ -41,12 +40,6 @@ class IntentManagerActivity : BaseActivity() {
     }
 
     private fun initView() {
-        setEnterSharedElementCallback(MaterialContainerTransformSharedElementCallback())
-        window.sharedElementReturnTransition = MaterialContainerTransform().apply {
-            addTarget(R.id.activity_layout)
-            interpolator = FastOutSlowInInterpolator()
-            fadeMode = MaterialContainerTransform.FADE_MODE_IN
-        }
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 

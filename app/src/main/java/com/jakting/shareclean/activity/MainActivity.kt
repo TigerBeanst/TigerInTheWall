@@ -19,8 +19,6 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setExitSharedElementCallback(MaterialContainerTransformSharedElementCallback())
-        window.sharedElementsUseOverlay = false
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         initView()
@@ -30,23 +28,10 @@ class MainActivity : BaseActivity() {
 
         checkStatus()
         binding.contentMain.card2ManageClean.cardManager.setOnClickListener { view ->
-            val intent = Intent(this, IntentManagerActivity::class.java)
-            val options = ActivityOptions.makeSceneTransitionAnimation(
-                this,
-                view,
-                "rn_manager_container"
-            )
-            startActivity(intent, options.toBundle())
+            startActivity(Intent(this, IntentManagerActivity::class.java))
         }
         binding.contentMain.card3ManageIntent.cardManager.setOnClickListener {
-            val viewww = binding.contentMain.card3ManageIntent.cardManager
-            val intent = Intent(this, IntentManagerActivity::class.java)
-            val options = ActivityOptions.makeSceneTransitionAnimation(
-                this,
-                viewww,
-                "rn_manager_container"
-            )
-            startActivity(intent, options.toBundle())
+            startActivity(Intent(this, IntentManagerActivity::class.java))
         }
     }
 

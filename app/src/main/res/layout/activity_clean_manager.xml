@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    android:transitionName="rn_manager_container"
     tools:context=".activity.IntentManagerActivity">
 
     <com.google.android.material.appbar.AppBarLayout

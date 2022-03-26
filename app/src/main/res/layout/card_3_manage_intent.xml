@@ -12,7 +12,6 @@
         android:layout_height="100dp"
         android:layout_gravity="end|center_vertical"
         android:backgroundTint="@android:color/transparent"
-        android:transitionName="rn_manager_container"
         app:cardCornerRadius="12dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout

@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.RecyclerView
 import com.drake.brv.utils.BRV
 import com.drake.brv.utils.linear
 import com.drake.brv.utils.models
@@ -14,7 +15,6 @@ import com.jakting.shareclean.BaseActivity
 import com.jakting.shareclean.R
 import com.jakting.shareclean.data.App
 import com.jakting.shareclean.data.AppInfo
-import com.jakting.shareclean.data.IntentType
 import com.jakting.shareclean.databinding.ActivityCleanManagerBinding
 import com.jakting.shareclean.utils.MyApplication.Companion.chipBrowser
 import com.jakting.shareclean.utils.MyApplication.Companion.chipShare
@@ -57,33 +57,37 @@ class CleanManagerActivity : BaseActivity() {
                         )
                     )
                 }
+                val shareSize =
+                    getModel<App>().intentList.filter { it.type == "share" || it.type == "share_multi" }.size
+                val viewSize = getModel<App>().intentList.filter { it.type == "view" }.size
+                val textSize = getModel<App>().intentList.filter { it.type == "text" }.size
+                val browserSize =
+                    getModel<App>().intentList.filter { it.type == "browser_https" || it.type == "browser_http" }.size
+
+                if (!((shareSize > 0 && chipShare) ||
+                            (viewSize > 0 && chipView) ||
+                            (textSize > 0 && chipText) ||
+                            (browserSize > 0 && chipBrowser))
+                ) {
+                    itemView.layoutParams = RecyclerView.LayoutParams(0, 0)
+                }
+
                 findView<ImageView>(R.id.app_icon_system).visibility =
                     when (getModel<App>().isSystem) {
                         true -> View.VISIBLE
                         else -> View.GONE
                     }
-                findView<TextView>(R.id.app_intent_count_share).text =
-                    getModel<App>().intentList.filter { it.type == "share" || it.type == "share_multi" }.size.toString()
-                findView<TextView>(R.id.app_intent_count_view).text =
-                    getModel<App>().intentList.filter { it.type == "view" }.size.toString()
-                findView<TextView>(R.id.app_intent_count_text).text =
-                    getModel<App>().intentList.filter { it.type == "text" }.size.toString()
-                findView<TextView>(R.id.app_intent_count_browser).text =
-                    getModel<App>().intentList.filter { it.type == "browser_https" || it.type == "browser_http" }.size.toString()
+                findView<TextView>(R.id.app_intent_count_share).text = shareSize.toString()
+                findView<TextView>(R.id.app_intent_count_view).text = viewSize.toString()
+                findView<TextView>(R.id.app_intent_count_text).text = textSize.toString()
+                findView<TextView>(R.id.app_intent_count_browser).text = browserSize.toString()
             }
         }
 
         binding.managerCleanStateLayout.onRefresh {
             lifecycleScope.launch {
                 setChip(false)
-                val data = AppInfo(
-                    IntentType(
-                        share = chipShare,
-                        view = chipView,
-                        text = chipText,
-                        browser = chipBrowser
-                    )
-                ).getAppList()
+                val data = AppInfo().getAppList()
                 binding.managerCleanRecyclerView.models = data
                 setChip(true)
                 binding.managerCleanStateLayout.showContent()

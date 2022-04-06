@@ -19,8 +19,8 @@
     <string name="status_card_dialog_more">More</string>
     <string name="status_card_dialog_more_url">https://ic.into.icu/download/</string>
 
-<!--    <string name="manage_dialog_title">Notice</string>-->
-<!--    <string name="manage_dialog_desc">Riru - IFWEnhance has not been properly applied. Anything you do may not take effect.</string>-->
+    <!--    <string name="manage_dialog_title">Notice</string>-->
+    <!--    <string name="manage_dialog_desc">Riru - IFWEnhance has not been properly applied. Anything you do may not take effect.</string>-->
     <string name="manager_clean_title">Clean Manager</string>
     <string name="manager_clean_detail">Cleaning sh*t</string>
     <string name="manager_intent_title">Intent Manager</string>
@@ -32,6 +32,9 @@
     <string name="manager_clean_type_text">Press Text</string>
     <string name="manager_clean_type_browser">Browser</string>
 
+    <string name="manager_clean_detail_title">App Detail</string>
+    <string name="manager_clean_detail_version">Version: v%s(%s)</string>
+
 
     <string name="misc_list_title">Other</string>
     <string name="misc_quick_clean_title">Quick Clean</string>
@@ -40,14 +43,12 @@
     <string name="misc_about_title">About</string>
     <string name="misc_title">Miscellaneous</string>
 
-<!--    <string name="riru_status_card_exist_dialog_title">Module details</string>-->
-<!--    <string name="riru_status_card_exist_dialog_msg" translatable="false">Riru - Core: %1$s (%2$s)\nRiru - IFWEnhance: %3$s (%4$s)</string>-->
-<!--    <string name="riru_status_card_not">Inactive module</string>-->
-<!--    <string name="riru_status_card_not_detail">Modules have not been properly applied</string>-->
-<!--    <string name="riru_status_card_download">Your device may not have the Riru - Core or Riru - IFWEnhance module installed.\n\nClick follow button to go to the Download pages.</string>-->
-<!--    <string name="riru_status_card_download_btn">DOWNLOAD</string>-->
-
-
+    <!--    <string name="riru_status_card_exist_dialog_title">Module details</string>-->
+    <!--    <string name="riru_status_card_exist_dialog_msg" translatable="false">Riru - Core: %1$s (%2$s)\nRiru - IFWEnhance: %3$s (%4$s)</string>-->
+    <!--    <string name="riru_status_card_not">Inactive module</string>-->
+    <!--    <string name="riru_status_card_not_detail">Modules have not been properly applied</string>-->
+    <!--    <string name="riru_status_card_download">Your device may not have the Riru - Core or Riru - IFWEnhance module installed.\n\nClick follow button to go to the Download pages.</string>-->
+    <!--    <string name="riru_status_card_download_btn">DOWNLOAD</string>-->
 
 
     <string name="manage_apply_success">Clean Finished</string>

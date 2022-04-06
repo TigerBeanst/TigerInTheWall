@@ -2,28 +2,32 @@ package com.jakting.shareclean.utils
 
 import android.content.Context
 import android.content.pm.ApplicationInfo
+import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.graphics.drawable.Drawable
 import androidx.core.content.ContextCompat
 import com.jakting.shareclean.R
+import com.jakting.shareclean.data.AppDetail
 import com.jakting.shareclean.utils.MyApplication.Companion.appContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-fun getAppName(packageName: String): String {
+fun getAppDetail(packageName: String): AppDetail {
     //根据包名寻找应用名
-    var appNameGot = ""
-    val applicationInfo: ApplicationInfo
+    val appDetail = AppDetail()
+    val packageInfo: PackageInfo
     val packageManager: PackageManager = appContext.packageManager
     try {
-        applicationInfo = packageManager.getApplicationInfo(packageName, 0)
-        appNameGot = packageManager.getApplicationLabel(applicationInfo) as String
+        packageInfo = packageManager.getPackageInfo(packageName, 0)
+        appDetail.appName = packageInfo.applicationInfo.loadLabel(packageManager).toString()
+        appDetail.packageName = packageName
+        appDetail.versionName = packageInfo.versionName
+        appDetail.versionCode = packageInfo.versionCode.toString()
     } catch (e: PackageManager.NameNotFoundException) {
         e.printStackTrace()
     }
-    //logd("名字 $Name")
-    return appNameGot
+    return appDetail
 }
 
 suspend fun getAppIconByPackageName(context: Context, ApkTempSendActivityName: String): Drawable =

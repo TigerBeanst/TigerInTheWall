@@ -6,7 +6,7 @@ import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.net.Uri
 import com.jakting.shareclean.utils.MyApplication.Companion.appContext
-import com.jakting.shareclean.utils.getAppName
+import com.jakting.shareclean.utils.getAppDetail
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.text.Collator
@@ -79,7 +79,7 @@ class AppInfo() {
                     appOr.get().setHasType(key)
                 } else {
                     val oneApp = App(
-                        getAppName(resolveInfo.activityInfo.packageName),
+                        getAppDetail(resolveInfo.activityInfo.packageName).appName,
                         resolveInfo.activityInfo.packageName,
                         ArrayList<AppIntent>().apply {
                             add(

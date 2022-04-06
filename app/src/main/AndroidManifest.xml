@@ -22,9 +22,6 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
-        <activity
-            android:name=".DetailsActivity"
-            android:exported="false" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -42,9 +39,7 @@
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.PROCESS_TEXT" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
@@ -62,6 +57,11 @@
             android:name=".activity.CleanManagerActivity"
             android:exported="true"
             android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/TigerBeanstTheme.NoActionBar" />
+        <activity
+            android:name=".activity.DetailsActivity"
+            android:exported="true"
+            android:parentActivityName=".activity.CleanManagerActivity"
             android:theme="@style/TigerBeanstTheme.NoActionBar" />
     </application>
 

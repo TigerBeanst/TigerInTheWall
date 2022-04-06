@@ -1,5 +1,6 @@
 package com.jakting.shareclean.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -81,6 +82,11 @@ class CleanManagerActivity : BaseActivity() {
                 findView<TextView>(R.id.app_intent_count_view).text = viewSize.toString()
                 findView<TextView>(R.id.app_intent_count_text).text = textSize.toString()
                 findView<TextView>(R.id.app_intent_count_browser).text = browserSize.toString()
+            }
+            onClick(R.id.app_layout){
+                val intent = Intent(this@CleanManagerActivity, DetailsActivity::class.java)
+                intent.putExtra("app", getModel<App>())
+                startActivity(intent)
             }
         }
 

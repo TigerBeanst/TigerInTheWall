@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.Toast
 import com.airbnb.lottie.LottieAnimationView
 import com.google.android.material.snackbar.Snackbar
-import com.jakting.shareclean.R
 import com.jakting.shareclean.utils.MyApplication.Companion.appContext
 import dev.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
 import dev.shreyaspatil.MaterialDialog.model.TextAlignment
@@ -41,15 +40,10 @@ fun Context.mdDialog(
         .setTitle(title, TextAlignment.START)
         .setMessage(content, TextAlignment.START)
         .setCancelable(cancelAble)
-        .setAnimation(
-            getResId(
-                animation + if (isDarkMode()) "_dark" else "_light",
-                R.raw::class.java
-            )
-        ) as BottomSheetMaterialDialog.Builder
+        .setAnimation(animation + if (isDarkMode()) "_dark" else "_light" + ".json") as BottomSheetMaterialDialog.Builder
 }
 
-fun (BottomSheetMaterialDialog.Builder).show(lottiePx:Int) {
+fun (BottomSheetMaterialDialog.Builder).show(lottiePx: Int) {
     val mDialog = this.build()
     val animationView: LottieAnimationView = mDialog.animationView
     val layoutParams = animationView.layoutParams

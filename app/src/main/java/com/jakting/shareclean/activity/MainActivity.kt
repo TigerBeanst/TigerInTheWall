@@ -26,10 +26,10 @@ class MainActivity : BaseActivity() {
 
         checkStatus()
         binding.contentMain.card2ManageClean.cardManager.setOnClickListener { view ->
-            startActivity(Intent(this, IntentManagerActivity::class.java))
+            startActivity(Intent(this, CleanManagerActivity::class.java))
         }
         binding.contentMain.card3ManageIntent.cardManager.setOnClickListener {
-            startActivity(Intent(this, IntentManagerActivity::class.java))
+            startActivity(Intent(this, CleanManagerActivity::class.java))
         }
     }
 

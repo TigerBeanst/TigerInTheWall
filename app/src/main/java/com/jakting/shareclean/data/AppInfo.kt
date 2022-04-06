@@ -12,63 +12,48 @@ import kotlinx.coroutines.withContext
 import java.text.Collator
 import java.util.*
 
-class AppInfo(tagList: IntentType) {
-    private var tagList: IntentType
-
-    init {
-        this.tagList = tagList
-    }
+class AppInfo() {
 
     suspend fun getAppList(): List<App> = withContext(Dispatchers.IO) {
         val resolveInfoListHashMap: HashMap<String, List<ResolveInfo>> = HashMap()
 
-        if (tagList.share) {
-            resolveInfoListHashMap["share"] = (
-                    appContext.packageManager!!.queryIntentActivities(
-                        Intent(Intent.ACTION_SEND).setType("*/*"),
-                        PackageManager.MATCH_ALL
-                    ))
-            resolveInfoListHashMap["share_multi"] = (
-                    appContext.packageManager!!.queryIntentActivities(
-                        Intent(Intent.ACTION_SEND_MULTIPLE).setType("*/*"),
-                        PackageManager.MATCH_ALL
-                    ))
-        }
 
-        if (tagList.view) {
-            resolveInfoListHashMap["view"] = (
-                    appContext.packageManager!!.queryIntentActivities(
-                        Intent(Intent.ACTION_VIEW).setDataAndType(
-                            Uri.parse("content://com.jakting.shareclean.fileprovider/selfile/nofile"),
-                            "*/*"
-                        ),
-                        PackageManager.MATCH_ALL
-                    ))
-        }
-
-        if (tagList.text) {
-            resolveInfoListHashMap["text"] = (
-                    appContext.packageManager!!.queryIntentActivities(
-                        Intent(Intent.ACTION_PROCESS_TEXT).setType("*/*"),
-                        PackageManager.MATCH_ALL
-                    )
-                    )
-        }
-
-        if (tagList.browser) {
-            resolveInfoListHashMap["browser_https"] = (
-                    appContext.packageManager!!.queryIntentActivities(
-                        Intent(Intent.ACTION_VIEW, Uri.parse("https://ic.into.icu")),
-                        PackageManager.MATCH_ALL
-                    )
-                    )
-            resolveInfoListHashMap["browser_http"] = (
-                    appContext.packageManager!!.queryIntentActivities(
-                        Intent(Intent.ACTION_VIEW, Uri.parse("http://ic.into.icu")),
-                        PackageManager.MATCH_ALL
-                    )
-                    )
-        }
+        resolveInfoListHashMap["share"] = (
+                appContext.packageManager!!.queryIntentActivities(
+                    Intent(Intent.ACTION_SEND).setType("*/*"),
+                    PackageManager.MATCH_ALL
+                ))
+        resolveInfoListHashMap["share_multi"] = (
+                appContext.packageManager!!.queryIntentActivities(
+                    Intent(Intent.ACTION_SEND_MULTIPLE).setType("*/*"),
+                    PackageManager.MATCH_ALL
+                ))
+        resolveInfoListHashMap["view"] = (
+                appContext.packageManager!!.queryIntentActivities(
+                    Intent(Intent.ACTION_VIEW).setDataAndType(
+                        Uri.parse("content://com.jakting.shareclean.fileprovider/selfile/nofile"),
+                        "*/*"
+                    ),
+                    PackageManager.MATCH_ALL
+                ))
+        resolveInfoListHashMap["text"] = (
+                appContext.packageManager!!.queryIntentActivities(
+                    Intent(Intent.ACTION_PROCESS_TEXT).setType("*/*"),
+                    PackageManager.MATCH_ALL
+                )
+                )
+        resolveInfoListHashMap["browser_https"] = (
+                appContext.packageManager!!.queryIntentActivities(
+                    Intent(Intent.ACTION_VIEW, Uri.parse("https://ic.into.icu")),
+                    PackageManager.MATCH_ALL
+                )
+                )
+        resolveInfoListHashMap["browser_http"] = (
+                appContext.packageManager!!.queryIntentActivities(
+                    Intent(Intent.ACTION_VIEW, Uri.parse("http://ic.into.icu")),
+                    PackageManager.MATCH_ALL
+                )
+                )
 
         val finalList: ArrayList<App> = ArrayList()
         resolveInfoListHashMap.forEach { (key, value) ->

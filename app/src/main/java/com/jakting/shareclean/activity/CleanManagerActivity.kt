@@ -24,7 +24,7 @@ import com.jakting.shareclean.utils.getAppIconByPackageName
 import kotlinx.coroutines.launch
 
 
-class IntentManagerActivity : BaseActivity() {
+class CleanManagerActivity : BaseActivity() {
 
     private lateinit var binding: ActivityCleanManagerBinding
 
@@ -52,7 +52,7 @@ class IntentManagerActivity : BaseActivity() {
                 lifecycleScope.launch {
                     appIcon.setImageDrawable(
                         getAppIconByPackageName(
-                            this@IntentManagerActivity,
+                            this@CleanManagerActivity,
                             getModel<App>().packageName
                         )
                     )

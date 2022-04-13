@@ -1,13 +1,16 @@
 package com.jakting.shareclean.data
 
+import android.graphics.drawable.Drawable
+import androidx.databinding.BaseObservable
 import java.io.Serializable
 
 data class AppIntent(
-    val action: String,
+    val packageName: String,
     val component: String,
     val componentName: String,
+    var checked: Boolean = false,
     val type: String
-) : Serializable
+) : Serializable, BaseObservable()
 
 data class IntentType(
     var share: Boolean,
@@ -29,4 +32,9 @@ data class AppDetail(
     var packageName: String = "",
     var versionCode: String = "",
     var versionName: String = "",
+)
+
+data class IntentIcon(
+    val packageNameAndComponent: String,
+    val icon: Drawable
 )

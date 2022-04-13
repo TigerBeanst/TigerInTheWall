@@ -14,7 +14,9 @@
 
     <color name="colorModuleUnKnown">#5E6E6B</color>
 
-    <color name="colorSystemAppWarnning">#5A2727</color>
+    <color name="colorSystemAppWarningIcon">#5A2727</color>
+    <color name="colorSystemAppWarningBackground">#85F1D7D6</color>
 
+    <color name="colorGroupTitleBackground">#A9B5BE</color>
 
 </resources>

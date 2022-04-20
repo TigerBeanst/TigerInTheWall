@@ -84,11 +84,11 @@ fun isBrowser(tag: String): String {
 fun getIFWPath(tag: String): String {
     return when (tag) {
         "direct_share" -> ifw_direct_share_file_path
-        "send" -> ifw_send_file_path
-        "send_multi" -> ifw_send_multi_file_path
-        "view" -> ifw_view_file_path
-        "text" -> ifw_text_file_path
-        "browser" -> ifw_browser_file_path
+        "1_send" -> ifw_send_file_path
+        "2_send_multi" -> ifw_send_multi_file_path
+        "3_view" -> ifw_view_file_path
+        "4_text" -> ifw_text_file_path
+        "5_browser" -> ifw_browser_file_path
         else -> ""
     }
 }
@@ -96,10 +96,10 @@ fun getIFWPath(tag: String): String {
 fun getIFWAction(tag: String): String {
     return when (tag) {
         "direct_share" -> "android.service.chooser.ChooserTargetService"
-        "send" -> Intent.ACTION_SEND
-        "send_multi" -> Intent.ACTION_SEND_MULTIPLE
-        "view", "browser" -> Intent.ACTION_VIEW
-        "text" -> Intent.ACTION_PROCESS_TEXT
+        "1_send" -> Intent.ACTION_SEND
+        "2_send_multi" -> Intent.ACTION_SEND_MULTIPLE
+        "3_view", "browser" -> Intent.ACTION_VIEW
+        "4_text" -> Intent.ACTION_PROCESS_TEXT
         else -> ""
     }
 }
@@ -108,8 +108,8 @@ fun clearIFW(tag: String): Boolean {
     return when (tag) {
         "send" -> Shell.su("rm -f $ifw_send_file_path").exec().isSuccess
         "send_multi" -> Shell.su("rm -f $ifw_send_multi_file_path").exec().isSuccess
-        "view" -> Shell.su("rm -f $ifw_view_file_path").exec().isSuccess
-        "text" -> Shell.su("rm -f $ifw_text_file_path").exec().isSuccess
+        "3_view" -> Shell.su("rm -f $ifw_view_file_path").exec().isSuccess
+        "4_text" -> Shell.su("rm -f $ifw_text_file_path").exec().isSuccess
         "browser" -> Shell.su("rm -f $ifw_browser_file_path").exec().isSuccess
         else -> false
     }

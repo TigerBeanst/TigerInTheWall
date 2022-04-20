@@ -19,17 +19,17 @@ class AppInfo() {
         val resolveInfoListHashMap: HashMap<String, List<ResolveInfo>> = HashMap()
 
 
-        resolveInfoListHashMap["share"] = (
+        resolveInfoListHashMap["1_share"] = (
                 appContext.packageManager!!.queryIntentActivities(
                     Intent(Intent.ACTION_SEND).setType("*/*"),
                     PackageManager.MATCH_ALL
                 ))
-        resolveInfoListHashMap["share_multi"] = (
+        resolveInfoListHashMap["2_share_multi"] = (
                 appContext.packageManager!!.queryIntentActivities(
                     Intent(Intent.ACTION_SEND_MULTIPLE).setType("*/*"),
                     PackageManager.MATCH_ALL
                 ))
-        resolveInfoListHashMap["view"] = (
+        resolveInfoListHashMap["3_view"] = (
                 appContext.packageManager!!.queryIntentActivities(
                     Intent(Intent.ACTION_VIEW).setDataAndType(
                         Uri.parse("content://com.jakting.shareclean.fileprovider/selfile/nofile"),
@@ -37,19 +37,19 @@ class AppInfo() {
                     ),
                     PackageManager.MATCH_ALL
                 ))
-        resolveInfoListHashMap["text"] = (
+        resolveInfoListHashMap["4_text"] = (
                 appContext.packageManager!!.queryIntentActivities(
                     Intent(Intent.ACTION_PROCESS_TEXT).setType("*/*"),
                     PackageManager.MATCH_ALL
                 )
                 )
-        resolveInfoListHashMap["browser_https"] = (
+        resolveInfoListHashMap["6_browser_https"] = (
                 appContext.packageManager!!.queryIntentActivities(
                     Intent(Intent.ACTION_VIEW, Uri.parse("https://ic.into.icu")),
                     PackageManager.MATCH_ALL
                 )
                 )
-        resolveInfoListHashMap["browser_http"] = (
+        resolveInfoListHashMap["5_browser_http"] = (
                 appContext.packageManager!!.queryIntentActivities(
                     Intent(Intent.ACTION_VIEW, Uri.parse("http://ic.into.icu")),
                     PackageManager.MATCH_ALL
@@ -124,16 +124,16 @@ class AppInfo() {
 
     private fun App.setHasType(key: String) {
         when (key) {
-            "share", "share_multi" -> {
+            "1_share", "2_share_multi" -> {
                 hasType.share = true
             }
-            "view" -> {
+            "3_view" -> {
                 hasType.view = true
             }
-            "text" -> {
+            "4_text" -> {
                 hasType.text = true
             }
-            "browser_https", "browser_http" -> {
+            "6_browser_https", "5_browser_http" -> {
                 hasType.browser = true
             }
         }

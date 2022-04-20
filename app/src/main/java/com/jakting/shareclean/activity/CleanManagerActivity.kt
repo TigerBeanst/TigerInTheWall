@@ -59,11 +59,11 @@ class CleanManagerActivity : BaseActivity() {
                     )
                 }
                 val shareSize =
-                    getModel<App>().intentList.filter { it.type == "share" || it.type == "share_multi" }.size
-                val viewSize = getModel<App>().intentList.filter { it.type == "view" }.size
-                val textSize = getModel<App>().intentList.filter { it.type == "text" }.size
+                    getModel<App>().intentList.filter { it.type == "1_share" || it.type == "2_share_multi" }.size
+                val viewSize = getModel<App>().intentList.filter { it.type == "3_view" }.size
+                val textSize = getModel<App>().intentList.filter { it.type == "4_text" }.size
                 val browserSize =
-                    getModel<App>().intentList.filter { it.type == "browser_https" || it.type == "browser_http" }.size
+                    getModel<App>().intentList.filter { it.type == "6_browser_https" || it.type == "5_browser_http" }.size
 
                 if (!((shareSize > 0 && chipShare) ||
                             (viewSize > 0 && chipView) ||
@@ -86,6 +86,10 @@ class CleanManagerActivity : BaseActivity() {
             onClick(R.id.app_layout){
                 val intent = Intent(this@CleanManagerActivity, DetailsActivity::class.java)
                 intent.putExtra("app", getModel<App>())
+                intent.putExtra("shareSize", itemView.findViewById<TextView>(R.id.app_intent_count_share).text.toString().toInt())
+                intent.putExtra("viewSize", itemView.findViewById<TextView>(R.id.app_intent_count_view).text.toString().toInt())
+                intent.putExtra("textSize", itemView.findViewById<TextView>(R.id.app_intent_count_text).text.toString().toInt())
+                intent.putExtra("browserSize", itemView.findViewById<TextView>(R.id.app_intent_count_browser).text.toString().toInt())
                 startActivity(intent)
             }
         }

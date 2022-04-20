@@ -3,7 +3,7 @@
     <string name="error">Error</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
-    <string name="placeholder">Placeholder</string>
+    <string name="placeholder" translatable="false">Placeholder</string>
     <string name="please_wait">Please wait…</string>
     <string name="coming_soon">Coming Soon…</string>
 
@@ -13,7 +13,7 @@
     <string name="status_card_exist">Activated🥳</string>
     <string name="status_card_exist_module">Installed Module Version: %s(%s)</string>
     <string name="status_card_exist_inject">Injection Interface:</string>
-    <string name="status_card_exist_unknown">🤐</string>
+    <string name="status_card_exist_unknown" translatable="false">🤐</string>
     <string name="status_card_dialog_title">Unknown status</string>
     <string name="status_card_dialog_content">Unable to check module \"IFW Enhance\" status, due to lack of permission.\n\nRnIntentClean needs higher system permission to check module and do cleaning.\n\nMake sure you have root permission or Shizuku(Root) or Sui.</string>
     <string name="status_card_dialog_more">More</string>
@@ -36,7 +36,6 @@
     <string name="manager_clean_detail_version">Version: v%s(%s)</string>
     <string name="manager_clean_system_warning_title">WARNING</string>
     <string name="manager_clean_system_warning_detail">This is a system application. Cleaning it MAY cause serious consequences, please think carefully.</string>
-
 
     <string name="misc_list_title">Other</string>
     <string name="misc_quick_clean_title">Quick Clean</string>

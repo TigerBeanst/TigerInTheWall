@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">氡·意图清理</string>
+    <string name="error">错误</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="please_wait">请稍后…</string>
+    <string name="coming_soon">敬请期待…</string>
+    <string name="status_card_click">啥都没有。芜湖！💩</string>
+    <string name="status_card_unknown">状态未知🤔</string>
+    <string name="status_card_unknown_detail">点此获取细节</string>
+    <string name="status_card_exist">已激活🥳</string>
+    <string name="status_card_exist_module">已安装模块版本：%s(%s)</string>
+    <string name="status_card_exist_inject">注入接口：</string>
+    <string name="status_card_dialog_title">状态未知</string>
+    <string name="status_card_dialog_content">由于缺少权限，无法获取「IFW Enhance」模块状态。\n\n氡·意图清理需要较高的系统权限以检查模块状态与清理意图。\n\n请确保您拥有 Root 权限、经由 Root 授权启动的 Shizuku 或 Sui。</string>
+    <string name="status_card_dialog_more">更多</string>
+    <string name="status_card_dialog_more_url">https://ic.into.icu/zh-CN/download/</string>
+    <string name="manager_clean_title">清理管理</string>
+    <string name="manager_clean_detail">鲨了他们</string>
+    <string name="manager_intent_title">意图管理</string>
+    <string name="manager_intent_detail">按意图分类</string>
+    <string name="manager_clean_type_send">分享</string>
+    <string name="manager_clean_type_send_multi">分享多份</string>
+    <string name="manager_clean_type_view">打开方式</string>
+    <string name="manager_clean_type_text">长按文本</string>
+    <string name="manager_clean_type_browser">浏览器</string>
+    <string name="manager_clean_detail_title">应用详情</string>
+    <string name="manager_clean_detail_version">版本：v%s(%s)</string>
+    <string name="manager_clean_system_warning_title">警告</string>
+    <string name="manager_clean_system_warning_detail">这是一个系统应用。清理它很有可能会引起严重后果，请慎重考虑。</string>
+    <string name="misc_list_title">其它</string>
+    <string name="misc_quick_clean_title">快速清理</string>
+    <string name="misc_backup_title">备份 &amp; 还原</string>
+    <string name="misc_setting_title">设置</string>
+    <string name="misc_about_title">关于</string>
+    <string name="misc_title">杂项</string>
+    <string name="manage_apply_success">清理完成</string>
+    <string name="manage_search">搜索</string>
+    <string name="setting_page_function">功能</string>
+    <string name="setting_page_showSystemApp">显示系统应用</string>
+</resources>

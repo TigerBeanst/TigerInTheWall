@@ -51,8 +51,8 @@ fun Context.getDpFromPx(px: Int): Int {
 //    return when (tag) {
 //        "send" -> appContext.getString(R.string.send_title)
 //        "send_multi" -> appContext.getString(R.string.send_multi_title)
-//        "view" -> appContext.getString(R.string.view_title)
-//        "text" -> appContext.getString(R.string.text_title)
+//        "3_view" -> appContext.getString(R.string.view_title)
+//        "4_text" -> appContext.getString(R.string.text_title)
 //        "browser" -> appContext.getString(R.string.browser_title)
 //        else -> appContext.getString(R.string.app_name)
 //    }

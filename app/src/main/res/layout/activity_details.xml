@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
             android:background="@color/colorBackground"
-            app:contentScrim="?attr/colorPrimary"
+            app:contentScrim="@color/colorBackgroundLittleDarker"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <com.google.android.material.appbar.MaterialToolbar
@@ -183,6 +183,7 @@
                 android:id="@+id/rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:paddingBottom="24dp"
                 app:layoutManager="com.drake.brv.layoutmanager.HoverLinearLayoutManager" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

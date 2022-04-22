@@ -6,6 +6,7 @@ import android.text.style.UnderlineSpan
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.drake.brv.utils.BRV
@@ -79,6 +80,15 @@ class DetailsActivity : BaseActivity() {
                         getModel<AppIntent>().packageName + "/" + getModel<AppIntent>().component
                     appIcon.setImageDrawable(intentIconMap[keyIcon])
                 }
+                val appComponentBrowserScheme =
+                    findView<TextView>(R.id.app_component_browser_scheme)
+                appComponentBrowserScheme.text = when (getModel<AppIntent>().type) {
+                    "1_share" -> "分享到"
+                    "2_share_multi" -> "分享多个文件到"
+                    "5_browser_http" -> "HTTP"
+                    "6_browser_https" -> "HTTPS"
+                    else -> ""
+                } + " "
                 val appComponent = findView<TextView>(R.id.app_component)
                 val appComponentSplit = getModel<AppIntent>().component.split(".")
                 val appComponentContent = SpannableString(getModel<AppIntent>().component)
@@ -91,31 +101,42 @@ class DetailsActivity : BaseActivity() {
                 appComponent.text = appComponentContent
                 val cardView = findView<MaterialCardView>(R.id.app_card)
                 cardView.isChecked = getModel<AppIntent>().checked
-                val typeLayout = findView<Chip>(R.id.type_layout)
-                when (modelPosition) {
-                    firstShare -> {
-                        typeLayout.visibility = View.VISIBLE
-                        typeLayout.chipIcon =
-                            ContextCompat.getDrawable(this@DetailsActivity, R.drawable.ic_twotone_share_24)
-                        typeLayout.text = getString(R.string.manager_clean_type_send)
-                    }
-                    firstView -> {
-                        typeLayout.visibility = View.VISIBLE
-                        typeLayout.chipIcon =
-                            ContextCompat.getDrawable(this@DetailsActivity, R.drawable.ic_twotone_file_open_24)
-                        typeLayout.text = getString(R.string.manager_clean_type_view)
-                    }
-                    firstText -> {
-                        typeLayout.visibility = View.VISIBLE
-                        typeLayout.chipIcon =
-                            ContextCompat.getDrawable(this@DetailsActivity, R.drawable.ic_twotone_text_fields_24)
-                        typeLayout.text = getString(R.string.manager_clean_type_text)
-                    }
-                    firstBrowser -> {
-                        typeLayout.visibility = View.VISIBLE
-                        typeLayout.chipIcon =
-                            ContextCompat.getDrawable(this@DetailsActivity, R.drawable.ic_twotone_public_24)
-                        typeLayout.text = getString(R.string.manager_clean_type_browser)
+                val typeLayout = findView<ConstraintLayout>(R.id.type_layout)
+                val typeDetail = findView<Chip>(R.id.type_detail)
+                typeDetail.apply {
+                    when (modelPosition) {
+                        firstShare -> {
+                            typeLayout.visibility = View.VISIBLE
+                            text = getString(R.string.manager_clean_type_send)
+                            chipIcon = ContextCompat.getDrawable(
+                                this@DetailsActivity,
+                                R.drawable.ic_twotone_share_24
+                            )
+                        }
+                        firstView -> {
+                            typeLayout.visibility = View.VISIBLE
+                            text = getString(R.string.manager_clean_type_view)
+                            chipIcon = ContextCompat.getDrawable(
+                                this@DetailsActivity,
+                                R.drawable.ic_twotone_file_open_24
+                            )
+                        }
+                        firstText-> {
+                            typeLayout.visibility = View.VISIBLE
+                            text = getString(R.string.manager_clean_type_text)
+                            chipIcon = ContextCompat.getDrawable(
+                                this@DetailsActivity,
+                                R.drawable.ic_twotone_text_fields_24
+                            )
+                        }
+                        firstBrowser -> {
+                            typeLayout.visibility = View.VISIBLE
+                            text = getString(R.string.manager_clean_type_browser)
+                            chipIcon = ContextCompat.getDrawable(
+                                this@DetailsActivity,
+                                R.drawable.ic_twotone_public_24
+                            )
+                        }
                     }
                 }
             }

@@ -42,7 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     android:alpha="0.8"
                     android:text="@string/manager_clean_detail"
                     android:textAppearance="?textAppearanceBodyMedium"

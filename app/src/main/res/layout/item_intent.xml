@@ -15,20 +15,55 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.google.android.material.chip.Chip
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/type_layout"
-            android:visibility="gone"
-            app:chipBackgroundColor="@color/colorBackgroundLittleDarker"
-            style="@style/Widget.Material3.Chip.Assist"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="20dp"
-            app:chipIcon="@drawable/ic_twotone_share_24"
-            app:chipStrokeColor="@android:color/transparent"
-            app:ensureMinTouchTargetSize="true"
-            tools:text="@string/manager_clean_type_send" />
+            android:visibility="gone">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/type_detail"
+                style="@style/Widget.Material3.Chip.Assist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipBackgroundColor="@color/colorBackgroundLittleDarker"
+                app:chipIcon="@drawable/ic_twotone_share_24"
+                app:chipStrokeColor="@android:color/transparent"
+                app:ensureMinTouchTargetSize="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/manager_clean_type_send" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/filledButton"
+                style="@style/Widget.Material3.Button.TextButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="高级"
+                android:textColor="@color/colorBlackTitle"
+                app:icon="@drawable/ic_twotone_data_object_24"
+                app:iconTint="@color/colorBlackTitle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/type_select"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/type_select"
+                style="@style/Widget.Material3.Button.TextButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选中全部"
+                android:textColor="@color/colorBlackTitle"
+                app:icon="@drawable/ic_twotone_select_all_24"
+                app:iconTint="@color/colorBlackTitle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/app_card"
@@ -78,7 +113,6 @@
                             android:id="@+id/app_component_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="0dp"
                             android:layout_marginEnd="5dp"
                             android:ellipsize="middle"
                             android:singleLine="true"
@@ -86,11 +120,26 @@
                             android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                             app:layout_constrainedWidth="true"
                             app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/app_component_browser_scheme"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintHorizontal_chainStyle="packed"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             tools:text="@string/app_name" />
+
+                        <TextView
+                            android:id="@+id/app_component_browser_scheme"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorGrey"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/app_component_name"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="HTTP" />
+
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -99,6 +148,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+                        android:textSize="14sp"
                         tools:text="@string/app_name" />
                 </LinearLayout>
             </LinearLayout>

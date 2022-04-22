@@ -106,11 +106,11 @@ fun getIFWAction(tag: String): String {
 
 fun clearIFW(tag: String): Boolean {
     return when (tag) {
-        "send" -> Shell.su("rm -f $ifw_send_file_path").exec().isSuccess
-        "send_multi" -> Shell.su("rm -f $ifw_send_multi_file_path").exec().isSuccess
+        "1_send" -> Shell.su("rm -f $ifw_send_file_path").exec().isSuccess
+        "2_send_multi" -> Shell.su("rm -f $ifw_send_multi_file_path").exec().isSuccess
         "3_view" -> Shell.su("rm -f $ifw_view_file_path").exec().isSuccess
         "4_text" -> Shell.su("rm -f $ifw_text_file_path").exec().isSuccess
-        "browser" -> Shell.su("rm -f $ifw_browser_file_path").exec().isSuccess
+        "5_browser" -> Shell.su("rm -f $ifw_browser_file_path").exec().isSuccess
         else -> false
     }
 }

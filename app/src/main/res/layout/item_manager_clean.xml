@@ -145,6 +145,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="middle"
                 android:singleLine="true"
+                android:textSize="14sp"
                 android:text="@{String.valueOf(app.packageName)}"
                 android:textAppearance="@style/TextAppearance.Material3.LabelMedium" />
         </LinearLayout>

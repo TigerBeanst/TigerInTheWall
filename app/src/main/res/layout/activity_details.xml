@@ -86,6 +86,7 @@
                         android:singleLine="true"
                         android:text="@string/app_name"
                         android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        android:textSize="18sp"
                         app:layout_constrainedWidth="true"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintHorizontal_chainStyle="packed" />
@@ -97,14 +98,14 @@
                         android:ellipsize="middle"
                         android:singleLine="true"
                         android:text="@string/app_name"
-                        android:textAppearance="@style/TextAppearance.Material3.LabelMedium" />
+                        android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+                        android:textSize="14sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:orientation="horizontal"
-                        android:paddingTop="2dp"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center"
                         android:paddingBottom="2dp">
 
                         <ImageView
@@ -116,12 +117,12 @@
                             android:id="@+id/app_version_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
                             android:ellipsize="middle"
                             android:includeFontPadding="false"
                             android:singleLine="true"
                             android:text="@string/app_name"
-                            android:textAppearance="@style/TextAppearance.Material3.LabelMedium" />
+                            android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+                            android:textSize="14sp" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -133,6 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginBottom="12dp"
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true">
@@ -178,6 +180,31 @@
 
 
             </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/filledButton"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="选中全部"
+                    app:backgroundTint="@color/colorPrimaryTwenty"
+                    app:icon="@drawable/ic_twotone_select_all_24" />
+
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:id="@+id/filledButton2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:text="选中全部"-->
+<!--                    app:backgroundTint="@color/colorPrimarySixty"-->
+<!--                    app:icon="@drawable/ic_twotone_select_all_24" />-->
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv"

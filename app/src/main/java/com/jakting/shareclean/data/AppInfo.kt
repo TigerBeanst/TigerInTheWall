@@ -43,15 +43,15 @@ class AppInfo() {
                     PackageManager.MATCH_ALL
                 )
                 )
-        resolveInfoListHashMap["6_browser_https"] = (
-                appContext.packageManager!!.queryIntentActivities(
-                    Intent(Intent.ACTION_VIEW, Uri.parse("https://ic.into.icu")),
-                    PackageManager.MATCH_ALL
-                )
-                )
         resolveInfoListHashMap["5_browser_http"] = (
                 appContext.packageManager!!.queryIntentActivities(
                     Intent(Intent.ACTION_VIEW, Uri.parse("http://ic.into.icu")),
+                    PackageManager.MATCH_ALL
+                )
+                )
+        resolveInfoListHashMap["6_browser_https"] = (
+                appContext.packageManager!!.queryIntentActivities(
+                    Intent(Intent.ACTION_VIEW, Uri.parse("https://ic.into.icu")),
                     PackageManager.MATCH_ALL
                 )
                 )

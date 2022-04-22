@@ -48,7 +48,7 @@
                     android:text="@string/manager_intent_detail"
                     android:textAppearance="?textAppearanceBodyMedium"
                     android:textColor="@color/colorAccent"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
 
             </LinearLayout>
 

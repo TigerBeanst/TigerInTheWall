@@ -3,6 +3,7 @@ package com.jakting.shareclean.activity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import androidx.core.view.isVisible
 import com.jakting.shareclean.BaseActivity
 import com.jakting.shareclean.R
 import com.jakting.shareclean.databinding.ActivityMainBinding
@@ -31,6 +32,11 @@ class MainActivity : BaseActivity() {
         binding.contentMain.card3ManageIntent.cardManager.setOnClickListener {
             startActivity(Intent(this, CleanManagerActivity::class.java))
         }
+//        if(binding.coordinatorLayout.isTotallyVisible()){
+//            toast("好活")
+//        }else{
+//            toast("不好活")
+//        }
     }
 
     @SuppressLint("SetTextI18n")

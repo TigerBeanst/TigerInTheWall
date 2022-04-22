@@ -26,7 +26,7 @@
     <string name="manager_clean_type_text">长按文本</string>
     <string name="manager_clean_type_browser">浏览器</string>
     <string name="manager_clean_detail_title">应用详情</string>
-    <string name="manager_clean_detail_version">版本：v%s(%s)</string>
+    <string name="manager_clean_detail_version">版本 v%s(%s)</string>
     <string name="manager_clean_system_warning_title">警告</string>
     <string name="manager_clean_system_warning_detail">这是一个系统应用。清理它很有可能会引起严重后果，请慎重考虑。</string>
     <string name="misc_list_title">其它</string>

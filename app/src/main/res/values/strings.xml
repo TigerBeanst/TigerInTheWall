@@ -33,7 +33,7 @@
     <string name="manager_clean_type_browser">Browser</string>
 
     <string name="manager_clean_detail_title">App Detail</string>
-    <string name="manager_clean_detail_version">Version: v%s(%s)</string>
+    <string name="manager_clean_detail_version">Version v%s(%s)</string>
     <string name="manager_clean_system_warning_title">WARNING</string>
     <string name="manager_clean_system_warning_detail">This is a system application. Cleaning it MAY cause serious consequences, please think carefully.</string>
 

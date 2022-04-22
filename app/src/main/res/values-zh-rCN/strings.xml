@@ -1,84 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">氡·意图清理</string>
-
-    <string name="riru_status_card_cannot">无法获取模块状态</string>
-    <string name="riru_status_card_cannot_detail">请给予 Root 权限后重启应用</string>
-    <string name="riru_status_card_exist">已激活模块</string>
-    <string name="riru_status_card_exist_detail">Riru - IFWEnhance 已被正确应用</string>
-    <string name="riru_status_card_exist_dialog_title">模块详情</string>
-    <string name="riru_status_card_not">未激活模块</string>
-    <string name="riru_status_card_not_detail">模块未被正确应用</string>
-    <string name="riru_status_card_download">您的设备可能未安装 Riru - Core 或 Riru - IFWEnhance 模块。  点击「下载」，前往下载页下载。</string>
-    <string name="riru_status_card_download_btn">下载</string>
-
-    <string name="manage_card_title">应用管理</string>
-    <string name="manage_card_detail">清理占用一切的应用</string>
-    <string name="manage_dialog_title">提示</string>
-    <string name="manage_dialog_desc">Riru - IFWEnhance 未被正确应用。您所做的任何操作可能都不会生效。</string>
-
+    <string name="error">错误</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="please_wait">请稍后…</string>
+    <string name="coming_soon">敬请期待…</string>
+    <string name="status_card_click">啥都没有。芜湖！💩</string>
+    <string name="status_card_unknown">状态未知🤔</string>
+    <string name="status_card_unknown_detail">点此获取细节</string>
+    <string name="status_card_exist">已激活🥳</string>
+    <string name="status_card_exist_module">已安装模块版本：%s(%s)</string>
+    <string name="status_card_exist_inject">注入接口：</string>
+    <string name="status_card_dialog_title">状态未知</string>
+    <string name="status_card_dialog_content">由于缺少权限，无法获取「IFW Enhance」模块状态。\n\n氡·意图清理需要较高的系统权限以检查模块状态与清理意图。\n\n请确保您拥有 Root 权限、经由 Root 授权启动的 Shizuku 或 Sui。</string>
+    <string name="status_card_dialog_more">更多</string>
+    <string name="status_card_dialog_more_url">https://ic.into.icu/zh-CN/download/</string>
+    <string name="manager_clean_title">清理管理</string>
+    <string name="manager_clean_detail">鲨了他们</string>
+    <string name="manager_intent_title">意图管理</string>
+    <string name="manager_intent_detail">按意图分类</string>
+    <string name="manager_clean_type_send">分享</string>
+    <string name="manager_clean_type_send_multi">分享多份</string>
+    <string name="manager_clean_type_view">打开方式</string>
+    <string name="manager_clean_type_text">长按文本</string>
+    <string name="manager_clean_type_browser">浏览器</string>
+    <string name="manager_clean_detail_title">应用详情</string>
+    <string name="manager_clean_detail_version">版本 v%s(%s)</string>
+    <string name="manager_clean_system_warning_title">警告</string>
+    <string name="manager_clean_system_warning_detail">这是一个系统应用。清理它很有可能会引起严重后果，请慎重考虑。</string>
+    <string name="misc_list_title">其它</string>
+    <string name="misc_quick_clean_title">快速清理</string>
+    <string name="misc_backup_title">备份 &amp; 还原</string>
+    <string name="misc_setting_title">设置</string>
+    <string name="misc_about_title">关于</string>
     <string name="misc_title">杂项</string>
-
-    <string name="setting_title">设置</string>
-    <string name="backup_title">备份 &amp; 还原</string>
-    <string name="about_title">关于</string>
-
-    <string name="setting_page_appearance">界面</string>
-    <string name="setting_page_dark_mode">暗色模式</string>
-    <string name="setting_page_helplang">帮助翻译</string>
-    <string name="setting_page_helplang_summary">帮忙将 氡·意图清理 翻译成您的语言</string>
-    <string name="setting_page_privacy">隐私</string>
-    <string name="setting_page_firebase">启用 Firebase 服务</string>
-    <string name="setting_page_firebase_summary">分析日志将会被上传</string>
-    <string name="setting_page_firebase_summaryNo">分析日志将不会被上传</string>
-
-    <string name="about_page_info">介绍</string>
-    <string name="about_page_info_desc">你是否已经厌倦了分享图片或打开文件时，在冗长的分享列表里翻找，却只为找到几个你常用的应用？\n\n你们这些应用为什么占领我的查看面板啊？ 我如果需要你们，我自己会打开 App 来用啊！\n\n「氡·意图清理」是一款允许您的查看面板的应用，包括分享面板、打开方式面板等！\n\n它借助 Magisk 模块 Riru - Core 和 Riru - IFWEnhance 来实现作用，当然 root 权限也是必需的。</string>
-    <string name="about_page_dev">开发者</string>
-    <string name="about_page_dev_1">氡·意图清理 开发者</string>
-    <string name="about_page_dev_2">Riru - Core 开发者</string>
-    <string name="about_page_dev_3">Riru - IFWEnhance 开发者</string>
-    <string name="about_page_open_source">开放源代码许可</string>
-
-    <string name="manage_start">已清理本应用写入的 IFW 规则，请再次提交以生效</string>
-
-    <string name="misc_disable">禁用</string>
-    <string name="misc_disable_direct">禁用 Direct Share</string>
-    <string name="misc_disable_direct_msg">禁用未经魔改的分享面板中的 Direct Share。此选项无法在 Android 10 及以上的设备上使用。</string>
-    <string name="misc_disable_direct_msgNo">启用未经魔改的分享面板中的 Direct Share。此选项无法在 Android 10 及以上的设备上使用。</string>
-    <string name="misc_disable_direct_toastEnable">Direct Share 已启用</string>
-    <string name="misc_disable_direct_toastDisable">Direct Share 已禁用</string>
-
-    <string name="br_backup">备份</string>
-    <string name="br_restore">还原</string>
-    <string name="br_msg">如若您的设备支持 Google 服务且已登录，Android 系统将会执行自动备份，您也可以进行手动备份。\n\n但无论如何请获悉：随着版本更替，未来版本有可能不会支持旧版本的数据格式。</string>
-    <string name="br_backup_ok">备份已完成</string>
-    <string name="br_restore_ok">还原已完成。</string>
-
-    <string name="dialog_positive">明白了</string>
-
-    <string name="menu_select_all">全选</string>
-    <string name="menu_clear">全不选</string>
-
-
-    <string name="follow_system">跟随系统</string>
-    <string name="always_on">总是开启</string>
-    <string name="always_off">总是关闭</string>
-
-    <string name="setting_page_language">语言</string>
-    <string name="misc_disable_direct_No">此选项无法在 Android 10 及以上的设备上使用。</string>
+    <string name="manage_apply_success">清理完成</string>
+    <string name="manage_search">搜索</string>
     <string name="setting_page_function">功能</string>
     <string name="setting_page_showSystemApp">显示系统应用</string>
-    <string name="setting_page_showSystemApp_summary">显示系统应用。禁用系统应用的意图可能会导致未知错误。</string>
-    <string name="setting_page_showSystemApp_summaryNo">不显示系统应用。</string>
-    <string name="br_backup_error">发生错误</string>
-    <string name="fab_submit">提交清理</string>
-    <string name="send_title">分享到</string>
-    <string name="send_multi_title">分享多个文件到</string>
-    <string name="view_title">打开方式</string>
-    <string name="text_title">长按文本操作</string>
-    <string name="browser_title">浏览器</string>
-    <string name="manage_apply_success">清理已完成</string>
-    <string name="error">错误</string>
-    <string name="manage_search">搜索</string>
-    <string name="please_wait">请稍等…</string>
 </resources>

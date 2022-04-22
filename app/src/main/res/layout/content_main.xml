@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingVertical="?dialogPreferredPadding"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <include
+        android:id="@+id/card_1_module"
+        layout="@layout/card_1_module" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_12dp_corners_primary_15">
+
+        <include
+            android:id="@+id/card_2_manage_clean"
+            layout="@layout/card_2_manage_clean" />
+
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:alpha="0.2"
+            android:background="@color/colorAccent"
+            android:contentDescription="@string/placeholder" />
+
+        <include
+            android:id="@+id/card_3_manage_intent"
+            layout="@layout/card_3_manage_intent" />
+
+    </LinearLayout>
+
+
+    <include
+        android:id="@+id/card_4_list"
+        layout="@layout/card_4_list" />
+
+</LinearLayout>

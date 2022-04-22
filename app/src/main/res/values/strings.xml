@@ -1,36 +1,60 @@
 <resources>
     <string name="app_name">RnIntentClean</string>
     <string name="error">Error</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="placeholder" translatable="false">Placeholder</string>
     <string name="please_wait">Please wait…</string>
+    <string name="coming_soon">Coming Soon…</string>
 
-    <string name="riru_status_card_cannot">Unable to get module status</string>
-    <string name="riru_status_card_cannot_detail">Please restart the application after giving Root permission</string>
-    <string name="riru_status_card_exist">Activated module</string>
-    <string name="riru_status_card_exist_detail">Riru - IFWEnhance has been properly applied</string>
-    <string name="riru_status_card_exist_dialog_title">Module details</string>
-    <string name="riru_status_card_exist_dialog_msg" translatable="false">Riru - Core: %1$s (%2$s)\nRiru - IFWEnhance: %3$s (%4$s)</string>
-    <string name="riru_status_card_not">Inactive module</string>
-    <string name="riru_status_card_not_detail">Modules have not been properly applied</string>
-    <string name="riru_status_card_download">Your device may not have the Riru - Core or Riru - IFWEnhance module installed.\n\nClick follow button to go to the Download pages.</string>
-    <string name="riru_status_card_download_btn">DOWNLOAD</string>
+    <string name="status_card_click">There is nothing. Surprise!💩</string>
+    <string name="status_card_unknown">Unknown status🤔</string>
+    <string name="status_card_unknown_detail">Click here for details</string>
+    <string name="status_card_exist">Activated🥳</string>
+    <string name="status_card_exist_module">Installed Module Version: %s(%s)</string>
+    <string name="status_card_exist_inject">Injection Interface:</string>
+    <string name="status_card_exist_unknown" translatable="false">🤐</string>
+    <string name="status_card_dialog_title">Unknown status</string>
+    <string name="status_card_dialog_content">Unable to check module \"IFW Enhance\" status, due to lack of permission.\n\nRnIntentClean needs higher system permission to check module and do cleaning.\n\nMake sure you have root permission or Shizuku(Root) or Sui.</string>
+    <string name="status_card_dialog_more">More</string>
+    <string name="status_card_dialog_more_url">https://ic.into.icu/download/</string>
 
-    <string name="manage_dialog_title">Notice</string>
-    <string name="manage_dialog_desc">Riru - IFWEnhance has not been properly applied. Anything you do may not take effect.</string>
-    <string name="manage_card_title">Apps Management</string>
-    <string name="manage_card_detail">Clean up apps that occupy everything</string>
-    <string name="manage_apply_success">Clean Finished</string>
-    <string name="manage_search">Search</string>
-    <string name="send_title">Share Via</string>
-    <string name="send_multi_title">Share Multiple Via…</string>
-    <string name="view_title">Open With</string>
-    <string name="text_title">Long Press Text Operate</string>
-    <string name="browser_title">Browser</string>
+    <!--    <string name="manage_dialog_title">Notice</string>-->
+    <!--    <string name="manage_dialog_desc">Riru - IFWEnhance has not been properly applied. Anything you do may not take effect.</string>-->
+    <string name="manager_clean_title">Clean Manager</string>
+    <string name="manager_clean_detail">Cleaning sh*t</string>
+    <string name="manager_intent_title">Intent Manager</string>
+    <string name="manager_intent_detail">Classified by Intent</string>
 
+    <string name="manager_clean_type_send">Share</string>
+    <string name="manager_clean_type_send_multi">Share Multi</string>
+    <string name="manager_clean_type_view">Open With</string>
+    <string name="manager_clean_type_text">Press Text</string>
+    <string name="manager_clean_type_browser">Browser</string>
+
+    <string name="manager_clean_detail_title">App Detail</string>
+    <string name="manager_clean_detail_version">Version v%s(%s)</string>
+    <string name="manager_clean_system_warning_title">WARNING</string>
+    <string name="manager_clean_system_warning_detail">This is a system application. Cleaning it MAY cause serious consequences, please think carefully.</string>
+
+    <string name="misc_list_title">Other</string>
+    <string name="misc_quick_clean_title">Quick Clean</string>
+    <string name="misc_backup_title">Backup &amp; Restore</string>
+    <string name="misc_setting_title">Settings</string>
+    <string name="misc_about_title">About</string>
     <string name="misc_title">Miscellaneous</string>
 
-    <string name="backup_title">Backup &amp; Restore</string>
-    <string name="setting_title">Settings</string>
-    <string name="about_title">About</string>
+    <!--    <string name="riru_status_card_exist_dialog_title">Module details</string>-->
+    <!--    <string name="riru_status_card_exist_dialog_msg" translatable="false">Riru - Core: %1$s (%2$s)\nRiru - IFWEnhance: %3$s (%4$s)</string>-->
+    <!--    <string name="riru_status_card_not">Inactive module</string>-->
+    <!--    <string name="riru_status_card_not_detail">Modules have not been properly applied</string>-->
+    <!--    <string name="riru_status_card_download">Your device may not have the Riru - Core or Riru - IFWEnhance module installed.\n\nClick follow button to go to the Download pages.</string>-->
+    <!--    <string name="riru_status_card_download_btn">DOWNLOAD</string>-->
+
+
+    <string name="manage_apply_success">Clean Finished</string>
+    <string name="manage_search">Search</string>
+
 
     <string name="setting_page_function">Function</string>
     <string name="setting_page_showSystemApp">Show System Apps</string>
@@ -77,22 +101,6 @@
     <string name="menu_clear">Unselect All</string>
     <string name="fab_submit">Apply Clean</string>
 
-    <string name="follow_system">Follow system</string>
-    <string name="always_on">Always on</string>
-    <string name="always_off">Always off</string>
-
-    <string-array name="entries_dark">
-        <item translatable="false">@string/follow_system</item>
-        <item translatable="false">@string/always_on</item>
-        <item translatable="false">@string/always_off</item>
-    </string-array>
-
-    <string-array name="entries_lang">
-        <item translatable="false">@string/follow_system</item>
-        <item translatable="false">English</item>
-        <item translatable="false">简体中文（大陆）</item>
-        <item translatable="false">繁體中文（臺灣）</item>
-    </string-array>
 
     <string-array name="entry_values" translatable="false">
         <item>0</item>

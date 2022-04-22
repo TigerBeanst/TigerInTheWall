@@ -20,8 +20,8 @@
     <string name="manager_clean_detail">鲨了他们</string>
     <string name="manager_intent_title">意图管理</string>
     <string name="manager_intent_detail">按意图分类</string>
-    <string name="manager_clean_type_send">分享</string>
-    <string name="manager_clean_type_send_multi">分享多份</string>
+    <string name="manager_clean_type_send">分享到</string>
+    <string name="manager_clean_type_send_multi">分享多份到</string>
     <string name="manager_clean_type_view">打开方式</string>
     <string name="manager_clean_type_text">长按文本</string>
     <string name="manager_clean_type_browser">浏览器</string>

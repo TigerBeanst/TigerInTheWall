@@ -31,6 +31,8 @@
     <string name="manager_clean_type_view">Open With</string>
     <string name="manager_clean_type_text">Press Text</string>
     <string name="manager_clean_type_browser">Browser</string>
+    <string name="manager_clean_type_browser_http" translatable="false">HTTP</string>
+    <string name="manager_clean_type_browser_https" translatable="false">HTTPS</string>
 
     <string name="manager_clean_detail_title">App Detail</string>
     <string name="manager_clean_detail_version">Version v%s(%s)</string>

@@ -1,5 +1,6 @@
 package com.jakting.shareclean.activity
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
@@ -52,6 +53,7 @@ class DetailsActivity : BaseActivity() {
         initView()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initView() {
         binding.appName.text = app.appName
         binding.appPackageName.text = app.packageName
@@ -83,10 +85,10 @@ class DetailsActivity : BaseActivity() {
                 val appComponentBrowserScheme =
                     findView<TextView>(R.id.app_component_browser_scheme)
                 appComponentBrowserScheme.text = when (getModel<AppIntent>().type) {
-                    "1_share" -> "分享到"
-                    "2_share_multi" -> "分享多个文件到"
-                    "5_browser_http" -> "HTTP"
-                    "6_browser_https" -> "HTTPS"
+                    "1_share" -> getString(R.string.manager_clean_type_send)
+                    "2_share_multi" -> getString(R.string.manager_clean_type_send_multi)
+                    "5_browser_http" -> getString(R.string.manager_clean_type_browser_http)
+                    "6_browser_https" -> getString(R.string.manager_clean_type_browser_https)
                     else -> ""
                 } + " "
                 val appComponent = findView<TextView>(R.id.app_component)

@@ -39,4 +39,7 @@
     <string name="manage_search">搜索</string>
     <string name="setting_page_function">功能</string>
     <string name="setting_page_showSystemApp">显示系统应用</string>
+    <string name="manager_clean_detail_select_all">选择全部</string>
+    <string name="manager_clean_detail_select_none">取消全选</string>
+    <string name="manager_clean_detail_clean">清理</string>
 </resources>

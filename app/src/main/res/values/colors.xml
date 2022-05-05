@@ -17,11 +17,15 @@
     <color name="colorSystemAppWarningBackground">#85F1D7D6</color>
 
     <color name="colorGroupTitleBackground">#A9B5BE</color>
+    <color name="colorGroupTitleBackgroundT">#80A9B5BE</color>
 
-
+    <color name="colorPrimaryFive">#0D00796B</color>
+    <color name="colorPrimaryTen">#1A00796B</color>
     <color name="colorPrimaryFifteen">#2600796b</color>
     <color name="colorPrimaryTwenty">#3300796B</color>
     <color name="colorPrimaryThirty">#4D00796B</color>
+    <color name="colorPrimaryForty">#6600796B</color>
+    <color name="colorPrimaryFifty">#8000796B</color>
     <color name="colorPrimarySixty">#9900796B</color>
     <color name="colorPrimaryEighty">#CC00796b</color>
 

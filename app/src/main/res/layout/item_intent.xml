@@ -11,6 +11,7 @@
     </data>
 
     <LinearLayout
+        android:id="@+id/card_out_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -74,6 +75,8 @@
             android:layout_marginEnd="20dp"
             android:background="@color/colorBackground"
             android:checkable="true"
+            app:cardBackgroundColor="@color/colorPrimaryFive"
+            app:checkedIconTint="@color/colorPrimarySixty"
             android:clickable="true"
             android:focusable="true">
 
@@ -82,7 +85,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?android:attr/selectableItemBackground"
-                android:clickable="true"
                 android:paddingStart="12dp"
                 android:paddingTop="12dp"
                 android:paddingEnd="12dp"

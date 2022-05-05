@@ -188,22 +188,14 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/filledButton"
+                    android:id="@+id/button_select"
                     style="@style/Widget.Material3.Button.TonalButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="选中全部"
+                    android:text="@string/manager_clean_detail_select_all"
                     app:backgroundTint="@color/colorPrimaryTwenty"
                     app:icon="@drawable/ic_twotone_select_all_24" />
 
-                <!--                <com.google.android.material.button.MaterialButton-->
-                <!--                    android:id="@+id/filledButton2"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_marginStart="10dp"-->
-                <!--                    android:text="选中全部"-->
-                <!--                    app:backgroundTint="@color/colorPrimarySixty"-->
-                <!--                    app:icon="@drawable/ic_twotone_select_all_24" />-->
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView

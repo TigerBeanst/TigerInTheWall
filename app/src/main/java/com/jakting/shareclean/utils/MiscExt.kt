@@ -8,7 +8,6 @@ import android.content.res.Resources
 import android.graphics.Rect
 import android.net.Uri
 import android.view.View
-import android.widget.ScrollView
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import java.lang.reflect.Field

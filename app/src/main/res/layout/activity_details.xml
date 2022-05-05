@@ -196,22 +196,39 @@
                     app:backgroundTint="@color/colorPrimaryTwenty"
                     app:icon="@drawable/ic_twotone_select_all_24" />
 
-<!--                <com.google.android.material.button.MaterialButton-->
-<!--                    android:id="@+id/filledButton2"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="10dp"-->
-<!--                    android:text="选中全部"-->
-<!--                    app:backgroundTint="@color/colorPrimarySixty"-->
-<!--                    app:icon="@drawable/ic_twotone_select_all_24" />-->
+                <!--                <com.google.android.material.button.MaterialButton-->
+                <!--                    android:id="@+id/filledButton2"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginStart="10dp"-->
+                <!--                    android:text="选中全部"-->
+                <!--                    app:backgroundTint="@color/colorPrimarySixty"-->
+                <!--                    app:icon="@drawable/ic_twotone_select_all_24" />-->
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="24dp"
+                android:paddingBottom="56dp"
                 app:layoutManager="com.drake.brv.layoutmanager.HoverLinearLayoutManager" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/clean_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/manager_clean_detail_clean"
+        android:text="@string/manager_clean_detail_clean"
+        android:textColor="@color/colorFont"
+        app:iconPadding="0dp"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        app:backgroundTint="@color/colorAccent"
+        app:icon="@drawable/ic_twotone_cleaning_services_24"
+        app:iconTint="@color/colorFont" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

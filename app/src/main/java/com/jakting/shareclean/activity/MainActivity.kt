@@ -3,7 +3,6 @@ package com.jakting.shareclean.activity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import androidx.core.view.isVisible
 import com.jakting.shareclean.BaseActivity
 import com.jakting.shareclean.R
 import com.jakting.shareclean.databinding.ActivityMainBinding

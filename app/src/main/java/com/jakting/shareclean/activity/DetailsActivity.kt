@@ -5,11 +5,14 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.updateLayoutParams
 import androidx.lifecycle.lifecycleScope
 import com.drake.brv.utils.BRV
 import com.drake.brv.utils.bindingAdapter
@@ -161,7 +164,7 @@ class DetailsActivity : BaseActivity() {
             when (selectAllOrNone) {
                 true -> { // 全选
                     binding.buttonSelect.text = getString(R.string.manager_clean_detail_select_none)
-                    binding.buttonSelect.icon =  ContextCompat.getDrawable(
+                    binding.buttonSelect.icon = ContextCompat.getDrawable(
                         this@DetailsActivity,
                         R.drawable.ic_twotone_deselect_24
                     )
@@ -169,13 +172,21 @@ class DetailsActivity : BaseActivity() {
                 }
                 false -> { //全不选
                     binding.buttonSelect.text = getString(R.string.manager_clean_detail_select_all)
-                    binding.buttonSelect.icon =  ContextCompat.getDrawable(
+                    binding.buttonSelect.icon = ContextCompat.getDrawable(
                         this@DetailsActivity,
                         R.drawable.ic_twotone_select_all_24
                     )
                     selectAllOrNone = true
                 }
             }
+        }
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.cleanButton) { v, insets ->
+            v.updateLayoutParams {
+                (this as ViewGroup.MarginLayoutParams).bottomMargin =
+                    16 + insets.systemWindowInsets.bottom
+            }
+            insets
         }
     }
 

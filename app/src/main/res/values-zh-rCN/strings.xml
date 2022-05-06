@@ -42,4 +42,5 @@
     <string name="manager_clean_detail_select_all">选择全部</string>
     <string name="manager_clean_detail_select_none">取消全选</string>
     <string name="manager_clean_detail_clean">清理</string>
+    <string name="manager_clean_detail_advanced">高级</string>
 </resources>

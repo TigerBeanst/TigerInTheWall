@@ -40,24 +40,25 @@
                 tools:text="@string/manager_clean_type_send" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/filledButton"
+                android:id="@+id/button_advanced"
                 style="@style/Widget.Material3.Button.TextButton.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="高级"
+                android:text="@string/manager_clean_detail_advanced"
                 android:textColor="@color/colorBlackTitle"
                 app:icon="@drawable/ic_twotone_data_object_24"
                 app:iconTint="@color/colorBlackTitle"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/type_select"
+                app:layout_constraintEnd_toStartOf="@+id/button_type_select"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/type_select"
+                android:id="@+id/button_type_select"
                 style="@style/Widget.Material3.Button.TextButton.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="选中全部"
+
+                android:text="@string/manager_clean_detail_select_all"
                 android:textColor="@color/colorBlackTitle"
                 app:icon="@drawable/ic_twotone_select_all_24"
                 app:iconTint="@color/colorBlackTitle"
@@ -71,8 +72,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="20dp"
+            style="?attr/materialCardViewFilledStyle"
             android:background="@color/colorBackground"
             android:checkable="true"
             app:cardBackgroundColor="@color/colorPrimaryFive"

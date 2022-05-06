@@ -42,6 +42,7 @@
     <string name="manager_clean_detail_clean">Clean</string>
     <string name="manager_clean_detail_select_all">Select All</string>
     <string name="manager_clean_detail_select_none">Deselect all</string>
+    <string name="manager_clean_detail_advanced">Advanced</string>
 
     <string name="misc_list_title">Other</string>
     <string name="misc_quick_clean_title">Quick Clean</string>

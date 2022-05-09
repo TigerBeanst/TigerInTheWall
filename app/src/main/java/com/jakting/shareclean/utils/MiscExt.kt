@@ -7,7 +7,10 @@ import android.content.res.Configuration
 import android.content.res.Resources
 import android.graphics.Rect
 import android.net.Uri
+import android.util.TypedValue
 import android.view.View
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import java.lang.reflect.Field
@@ -21,6 +24,17 @@ fun Context.openLink(url: String) {
 
 fun Context.backgroundColor(@ColorRes colorRes: Int): ColorStateList =
     ColorStateList.valueOf(ContextCompat.getColor(this, colorRes))
+
+
+@ColorInt
+fun Context.getColorFromAttr(
+    @AttrRes attrColor: Int,
+    typedValue: TypedValue = TypedValue(),
+    resolveRefs: Boolean = true
+): Int {
+    theme.resolveAttribute(attrColor, typedValue, resolveRefs)
+    return typedValue.data
+}
 
 fun getResId(resName: String, c: Class<*>): Int {
     return try {

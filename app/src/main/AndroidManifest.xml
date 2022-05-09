@@ -46,7 +46,7 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="true"
-            android:theme="@style/TigerBeanstTheme.NoActionBar">
+            android:theme="@style/TigerBeanstTheme.TigerColor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -57,12 +57,12 @@
             android:name=".activity.CleanManagerActivity"
             android:exported="true"
             android:parentActivityName=".activity.MainActivity"
-            android:theme="@style/TigerBeanstTheme.NoActionBar" />
+            android:theme="@style/TigerBeanstTheme.TigerColor" />
         <activity
             android:name=".activity.DetailsActivity"
             android:exported="true"
             android:parentActivityName=".activity.CleanManagerActivity"
-            android:theme="@style/TigerBeanstTheme.NoActionBar" />
+            android:theme="@style/TigerBeanstTheme.TigerColor" />
     </application>
 
 </manifest>

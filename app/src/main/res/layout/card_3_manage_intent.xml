@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/manager_intent_title"
                     android:textAppearance="?textAppearanceTitleMedium"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="?attr/colorOnSecondary"
                     android:textSize="16sp" />
 
                 <TextView
@@ -47,7 +47,7 @@
                     android:alpha="0.8"
                     android:text="@string/manager_intent_detail"
                     android:textAppearance="?textAppearanceBodyMedium"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="?attr/colorOnSecondary"
                     android:textSize="14sp" />
 
             </LinearLayout>

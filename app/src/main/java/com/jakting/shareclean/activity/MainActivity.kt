@@ -2,13 +2,17 @@ package com.jakting.shareclean.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.os.Bundle
+import androidx.lifecycle.lifecycleScope
 import com.jakting.shareclean.BaseActivity
+import com.jakting.shareclean.BuildConfig
 import com.jakting.shareclean.R
 import com.jakting.shareclean.databinding.ActivityMainBinding
 import com.jakting.shareclean.utils.*
 import com.topjohnwu.superuser.Shell
 import dev.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
+import kotlinx.coroutines.launch
 
 
 class MainActivity : BaseActivity() {
@@ -23,6 +27,14 @@ class MainActivity : BaseActivity() {
     }
 
     private fun initView() {
+        lifecycleScope.launch {
+            binding.appSelfIcon.setImageDrawable(
+                getAppIconByPackageName(
+                    this@MainActivity,
+                    BuildConfig.APPLICATION_ID
+                )
+            )
+        }
 
         checkStatus()
         binding.contentMain.card2ManageClean.cardManager.setOnClickListener { view ->
@@ -56,8 +68,10 @@ class MainActivity : BaseActivity() {
                     )
                 binding.contentMain.card1Module.cardStatusInjectWhich.text = injectIf[0]
                 binding.contentMain.card1Module.cardStatusIcon.setImageResource(R.drawable.ic_twotone_check_circle_24)
+//                binding.contentMain.card1Module.cardStatus.backgroundTintList =
+//                    backgroundColor(this)
                 binding.contentMain.card1Module.cardStatus.backgroundTintList =
-                    backgroundColor(R.color.colorPrimary)
+                    ColorStateList.valueOf(getColorFromAttr(R.attr.colorPrimary))
                 var clickCount = 0
                 binding.contentMain.card1Module.cardStatus.setOnClickListener {
                     clickCount++

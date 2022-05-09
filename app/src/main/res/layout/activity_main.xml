@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
     android:id="@+id/coordinatorLayout"
     android:fitsSystemWindows="true"
     tools:context=".activity.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/header_main"
-        android:background="@color/colorBackground"
+        android:background="?android:attr/colorBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -33,9 +32,9 @@
                 app:title="@string/app_name">
 
                 <ImageView
+                    android:id="@+id/app_self_icon"
                     android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_launcher_round" />
+                    android:layout_height="40dp"/>
             </com.google.android.material.appbar.MaterialToolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>

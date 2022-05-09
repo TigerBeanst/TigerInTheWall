@@ -12,7 +12,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/colorModuleUnKnown"
+        android:backgroundTint="?attr/colorOutline"
         app:cardCornerRadius="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -82,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:alpha="0.1"
-                android:background="@color/colorFont"
+                android:background="?attr/colorOnPrimary"
                 app:layout_constraintBottom_toTopOf="@id/card_status_module_layout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

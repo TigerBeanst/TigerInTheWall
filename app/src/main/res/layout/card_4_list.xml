@@ -25,9 +25,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:gravity="center"
+            android:textColor="?attr/colorOnBackground"
             android:text="@string/misc_list_title"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/colorBlackTitle"
             app:drawableStartCompat="@drawable/shape_12dp_corners_primary_100" />
     </LinearLayout>
 
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="4dp"
-        android:backgroundTint="?android:attr/colorBackground"
+        android:backgroundTint="?attr/colorSurface"
         app:cardCornerRadius="12dp">
 
         <LinearLayout
@@ -47,7 +47,6 @@
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-
                 android:clickable="true"
                 android:paddingTop="16dp"
                 android:paddingBottom="16dp"

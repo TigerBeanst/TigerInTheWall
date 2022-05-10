@@ -5,7 +5,6 @@
     android:id="@+id/activity_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
     tools:context=".activity.CleanManagerActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -13,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
+        android:background="?android:attr/colorBackground"
         app:layout_constraintBottom_toTopOf="@id/manager_clean_chip_scroll_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,8 +23,9 @@
             style="?attr/collapsingToolbarLayoutLargeStyle"
             android:layout_width="match_parent"
             android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
-            android:background="@color/colorBackground"
-            app:contentScrim="@color/colorBackgroundLittleDarker"
+            app:contentScrim="?attr/colorSecondary"
+            app:collapsedTitleTextColor="?attr/colorOnBackground"
+            app:expandedTitleTextColor="?attr/colorOnBackground"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <com.google.android.material.appbar.MaterialToolbar

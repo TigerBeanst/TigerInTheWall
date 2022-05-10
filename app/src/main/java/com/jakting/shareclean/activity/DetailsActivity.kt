@@ -7,7 +7,6 @@ import android.text.style.UnderlineSpan
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
@@ -28,6 +27,7 @@ import com.jakting.shareclean.databinding.ActivityDetailsBinding
 import com.jakting.shareclean.utils.MyApplication.Companion.intentIconMap
 import com.jakting.shareclean.utils.getAppDetail
 import com.jakting.shareclean.utils.getAppIconByPackageName
+import com.jakting.shareclean.utils.getColorFromAttr
 import kotlinx.coroutines.launch
 
 
@@ -88,9 +88,9 @@ class DetailsActivity : BaseActivity() {
                         getModel<AppIntent>().packageName + "/" + getModel<AppIntent>().component
                     appIcon.setImageDrawable(intentIconMap[keyIcon])
                 }
-                val appComponentBrowserScheme =
-                    findView<TextView>(R.id.app_component_browser_scheme)
-                appComponentBrowserScheme.text = when (getModel<AppIntent>().type) {
+                val appComponentScheme =
+                    findView<TextView>(R.id.app_component_scheme)
+                appComponentScheme.text = when (getModel<AppIntent>().type) {
                     "1_share" -> getString(R.string.manager_clean_type_send)
                     "2_share_multi" -> getString(R.string.manager_clean_type_send_multi)
                     "5_browser_http" -> getString(R.string.manager_clean_type_browser_http)
@@ -108,13 +108,25 @@ class DetailsActivity : BaseActivity() {
                 )
                 appComponent.text = appComponentContent
                 val cardView = findView<MaterialCardView>(R.id.app_card)
-                val appLayout = findView<LinearLayout>(R.id.app_layout)
+                val appComponentName = findView<TextView>(R.id.app_component_name)
                 cardView.isChecked = getModel<AppIntent>().checked
-                appLayout.setOnClickListener {
+                cardView.setOnCheckedChangeListener { _, isChecked ->
+                    if(isChecked){
+                        cardView.setCardBackgroundColor(getColorFromAttr(R.attr.colorTertiary))
+                        appComponentName.setTextColor(getColorFromAttr(R.attr.colorOnTertiary))
+                        appComponentScheme.setTextColor(getColorFromAttr(R.attr.colorOnTertiary))
+                        appComponent.setTextColor(getColorFromAttr(R.attr.colorOnTertiary))
+                    }else{
+                        cardView.setCardBackgroundColor(getColorFromAttr(R.attr.colorTertiaryContainer))
+                        appComponentName.setTextColor(getColorFromAttr(R.attr.colorOnTertiaryContainer))
+                        appComponentScheme.setTextColor(getColorFromAttr(R.attr.colorOnTertiaryContainer))
+                        appComponent.setTextColor(getColorFromAttr(R.attr.colorOnTertiaryContainer))
+                    }
+                }
+                cardView.setOnClickListener {
                     getModel<AppIntent>().checked = !getModel<AppIntent>().checked
                     cardView.isChecked = getModel<AppIntent>().checked
                 }
-//                cardView.isChecked = getModel<AppIntent>().checked
                 val typeLayout = findView<ConstraintLayout>(R.id.type_layout)
                 val typeDetail = findView<Chip>(R.id.type_detail)
                 typeDetail.apply {

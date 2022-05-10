@@ -53,6 +53,7 @@
                     android:singleLine="true"
                     android:text="@{String.valueOf(app.appName)}"
                     android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                    android:textColor="?attr/colorOnBackground"
                     app:layout_constrainedWidth="true"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/app_type_container"
@@ -91,6 +92,7 @@
                         style="@style/TextAppearance.Material3.BodySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="?attr/colorOnPrimaryContainer"
                         android:visibility="@{(app.hasType.share==true) ? View.VISIBLE : View.GONE}" />
 
                     <ImageView
@@ -106,6 +108,7 @@
                         style="@style/TextAppearance.Material3.BodySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="?attr/colorOnPrimaryContainer"
                         android:visibility="@{(app.hasType.view==true) ? View.VISIBLE : View.GONE}" />
 
                     <ImageView
@@ -115,11 +118,13 @@
                         android:layout_marginStart="5dp"
                         android:src="@drawable/ic_twotone_text_fields_24"
                         android:visibility="@{(app.hasType.text==true) ? View.VISIBLE : View.GONE}" />
+
                     <TextView
                         android:id="@+id/app_intent_count_text"
                         style="@style/TextAppearance.Material3.BodySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="?attr/colorOnPrimaryContainer"
                         android:visibility="@{(app.hasType.text==true) ? View.VISIBLE : View.GONE}" />
 
                     <ImageView
@@ -129,11 +134,13 @@
                         android:layout_marginStart="5dp"
                         android:src="@drawable/ic_twotone_public_24"
                         android:visibility="@{(app.hasType.browser==true) ? View.VISIBLE : View.GONE}" />
+
                     <TextView
                         android:id="@+id/app_intent_count_browser"
                         style="@style/TextAppearance.Material3.BodySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="?attr/colorOnPrimaryContainer"
                         android:visibility="@{(app.hasType.browser==true) ? View.VISIBLE : View.GONE}" />
                 </LinearLayout>
 
@@ -145,9 +152,11 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="middle"
                 android:singleLine="true"
-                android:textSize="14sp"
+                android:alpha="0.8"
                 android:text="@{String.valueOf(app.packageName)}"
-                android:textAppearance="@style/TextAppearance.Material3.LabelMedium" />
+                android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+                android:textColor="?attr/colorOnBackground"
+                android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>
 </layout>

@@ -69,24 +69,24 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/app_card"
+            style="?attr/materialCardViewFilledStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="20dp"
-            style="?attr/materialCardViewFilledStyle"
-            android:background="@color/colorBackground"
             android:checkable="true"
-            app:cardBackgroundColor="@color/colorPrimaryFive"
-            app:checkedIconTint="@color/colorPrimarySixty"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            app:cardBackgroundColor="?android:attr/colorBackground"
+            app:checkedIconTint="?attr/colorOnTertiary">
 
             <LinearLayout
                 android:id="@+id/app_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/colorTertiaryContainer"
                 android:paddingStart="12dp"
                 android:paddingTop="12dp"
                 android:paddingEnd="12dp"
@@ -122,9 +122,10 @@
                             android:singleLine="true"
                             android:text="@{String.valueOf(app.componentName)}"
                             android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                            android:textColor="?attr/colorOnTertiaryContainer"
                             app:layout_constrainedWidth="true"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@id/app_component_browser_scheme"
+                            app:layout_constraintEnd_toStartOf="@id/app_component_scheme"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintHorizontal_chainStyle="packed"
                             app:layout_constraintStart_toStartOf="parent"
@@ -132,10 +133,11 @@
                             tools:text="@string/app_name" />
 
                         <TextView
-                            android:id="@+id/app_component_browser_scheme"
+                            android:id="@+id/app_component_scheme"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/colorGrey"
+                            android:alpha="0.6"
+                            android:textColor="?attr/colorOnTertiaryContainer"
                             android:textSize="14sp"
                             android:textStyle="italic"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -151,7 +153,9 @@
                         android:id="@+id/app_component"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:alpha="0.7"
                         android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+                        android:textColor="?attr/colorOnTertiaryContainer"
                         android:textSize="14sp"
                         tools:text="@string/app_name" />
                 </LinearLayout>

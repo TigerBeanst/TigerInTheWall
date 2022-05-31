@@ -16,6 +16,7 @@ import androidx.lifecycle.lifecycleScope
 import com.drake.brv.utils.BRV
 import com.drake.brv.utils.bindingAdapter
 import com.drake.brv.utils.setup
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.chip.Chip
 import com.jakting.shareclean.BR
@@ -24,10 +25,9 @@ import com.jakting.shareclean.R
 import com.jakting.shareclean.data.App
 import com.jakting.shareclean.data.AppIntent
 import com.jakting.shareclean.databinding.ActivityDetailsBinding
+import com.jakting.shareclean.utils.*
 import com.jakting.shareclean.utils.MyApplication.Companion.intentIconMap
-import com.jakting.shareclean.utils.getAppDetail
-import com.jakting.shareclean.utils.getAppIconByPackageName
-import com.jakting.shareclean.utils.getColorFromAttr
+import com.jakting.shareclean.utils.MyApplication.Companion.kv
 import kotlinx.coroutines.launch
 
 
@@ -41,9 +41,10 @@ class DetailsActivity : BaseActivity() {
     private var firstBrowser = -1
     private var shareSize = 0
     private var viewSize = 0
-    private var textSize = 0
+    private var textTSize = 0
     private var browserSize = 0
     private var selectAllOrNone = true
+    private val selectAllOrNoneType: MutableList<Boolean> = mutableListOf(true, true, true, true)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,7 +54,7 @@ class DetailsActivity : BaseActivity() {
         app = intent.extras?.get("app") as App
         shareSize = intent.extras?.get("shareSize") as Int
         viewSize = intent.extras?.get("viewSize") as Int
-        textSize = intent.extras?.get("textSize") as Int
+        textTSize = intent.extras?.get("textSize") as Int
         browserSize = intent.extras?.get("browserSize") as Int
         initData()
         initView()
@@ -82,12 +83,14 @@ class DetailsActivity : BaseActivity() {
         binding.rv.setup {
             addType<AppIntent>(R.layout.item_intent)
             onBind {
+                //加载应用图标
                 val appIcon = findView<ImageView>(R.id.app_component_icon)
                 lifecycleScope.launch {
                     val keyIcon =
                         getModel<AppIntent>().packageName + "/" + getModel<AppIntent>().component
                     appIcon.setImageDrawable(intentIconMap[keyIcon])
                 }
+                //显示应用分类
                 val appComponentScheme =
                     findView<TextView>(R.id.app_component_scheme)
                 appComponentScheme.text = when (getModel<AppIntent>().type) {
@@ -107,16 +110,23 @@ class DetailsActivity : BaseActivity() {
                     0
                 )
                 appComponent.text = appComponentContent
+                //选中时状态变更
                 val cardView = findView<MaterialCardView>(R.id.app_card)
                 val appComponentName = findView<TextView>(R.id.app_component_name)
                 cardView.isChecked = getModel<AppIntent>().checked
+                if (getModel<AppIntent>().checked) {
+                    cardView.setCardBackgroundColor(getColorFromAttr(R.attr.colorTertiary))
+                    appComponentName.setTextColor(getColorFromAttr(R.attr.colorOnTertiary))
+                    appComponentScheme.setTextColor(getColorFromAttr(R.attr.colorOnTertiary))
+                    appComponent.setTextColor(getColorFromAttr(R.attr.colorOnTertiary))
+                }
                 cardView.setOnCheckedChangeListener { _, isChecked ->
-                    if(isChecked){
+                    if (isChecked) {
                         cardView.setCardBackgroundColor(getColorFromAttr(R.attr.colorTertiary))
                         appComponentName.setTextColor(getColorFromAttr(R.attr.colorOnTertiary))
                         appComponentScheme.setTextColor(getColorFromAttr(R.attr.colorOnTertiary))
                         appComponent.setTextColor(getColorFromAttr(R.attr.colorOnTertiary))
-                    }else{
+                    } else {
                         cardView.setCardBackgroundColor(getColorFromAttr(R.attr.colorTertiaryContainer))
                         appComponentName.setTextColor(getColorFromAttr(R.attr.colorOnTertiaryContainer))
                         appComponentScheme.setTextColor(getColorFromAttr(R.attr.colorOnTertiaryContainer))
@@ -131,6 +141,7 @@ class DetailsActivity : BaseActivity() {
                 val typeDetail = findView<Chip>(R.id.type_detail)
                 typeDetail.apply {
                     when (modelPosition) {
+                        //第一个 X 分类的应用，显示类型
                         firstShare -> {
                             typeLayout.visibility = View.VISIBLE
                             text = getString(R.string.manager_clean_type_send)
@@ -165,32 +176,19 @@ class DetailsActivity : BaseActivity() {
                         }
                     }
                 }
+                val typeSelectAll = findView<MaterialButton>(R.id.button_type_select)
+                val typeAdvanced = findView<MaterialButton>(R.id.button_advanced)
+                typeAdvanced.setOnClickListener { toast(getString(R.string.coming_soon)) }
+                typeSelectAll.setOnClickListener { typeSelectAll.clickSelectAllType(modelPosition) }
             }
         }.models = app.intentList
 
         binding.buttonSelect.setOnClickListener {
             for (intentIndex in app.intentList.indices) {
                 app.intentList[intentIndex].checked = selectAllOrNone
-                binding.rv.bindingAdapter.notifyItemChanged(intentIndex)
             }
-            when (selectAllOrNone) {
-                true -> { // 全选
-                    binding.buttonSelect.text = getString(R.string.manager_clean_detail_select_none)
-                    binding.buttonSelect.icon = ContextCompat.getDrawable(
-                        this@DetailsActivity,
-                        R.drawable.ic_twotone_deselect_24
-                    )
-                    selectAllOrNone = false
-                }
-                false -> { //全不选
-                    binding.buttonSelect.text = getString(R.string.manager_clean_detail_select_all)
-                    binding.buttonSelect.icon = ContextCompat.getDrawable(
-                        this@DetailsActivity,
-                        R.drawable.ic_twotone_select_all_24
-                    )
-                    selectAllOrNone = true
-                }
-            }
+            changeSelectAllOrNone()
+            binding.rv.bindingAdapter.notifyDataSetChanged()
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.cleanButton) { v, insets ->
@@ -200,12 +198,103 @@ class DetailsActivity : BaseActivity() {
             }
             insets
         }
+
+        binding.cleanButton.setOnClickListener {
+            toast("按了")
+            for (intentIndex in app.intentList.indices) {
+                val keyName =
+                    app.intentList[intentIndex].packageName + "/" + app.intentList[intentIndex].component+"/"+app.intentList[intentIndex].type
+                kv.encode(keyName, app.intentList[intentIndex].checked)
+                logd(keyName + " " + app.intentList[intentIndex].checked)
+            }
+        }
     }
+
+    private fun changeSelectAllOrNone() {
+        when (selectAllOrNone) {
+            true -> { // 全选
+                binding.buttonSelect.text = getString(R.string.manager_clean_detail_select_none)
+                binding.buttonSelect.icon = ContextCompat.getDrawable(
+                    this@DetailsActivity,
+                    R.drawable.ic_twotone_deselect_24
+                )
+                selectAllOrNone = false
+            }
+            false -> { //全不选
+                binding.buttonSelect.text = getString(R.string.manager_clean_detail_select_all)
+                binding.buttonSelect.icon = ContextCompat.getDrawable(
+                    this@DetailsActivity,
+                    R.drawable.ic_twotone_select_all_24
+                )
+                selectAllOrNone = true
+            }
+        }
+    }
+
+    fun MaterialButton.setState(selectAllOrNoneTypeBoolean: Boolean) {
+        if (selectAllOrNoneTypeBoolean) {
+            text = getString(R.string.manager_clean_detail_select_none)
+            icon = ContextCompat.getDrawable(
+                this@DetailsActivity,
+                R.drawable.ic_twotone_deselect_24
+            )
+        } else {
+            text = getString(R.string.manager_clean_detail_select_all)
+            icon = ContextCompat.getDrawable(
+                this@DetailsActivity,
+                R.drawable.ic_twotone_select_all_24
+            )
+        }
+    }
+
+    private fun MaterialButton.clickSelectAllType(modelPosition: Int) {
+        when (modelPosition) {
+            firstShare -> {
+                for (i in firstShare until (firstShare + shareSize)) {
+                    app.intentList[i].checked = selectAllOrNoneType[0]
+                }
+                this.setState(selectAllOrNoneType[0])
+                selectAllOrNoneType[0] = !selectAllOrNoneType[0]
+
+            }
+            firstView -> {
+                for (i in firstView until (firstView + viewSize)) {
+                    app.intentList[i].checked = selectAllOrNoneType[1]
+                }
+                this.setState(selectAllOrNoneType[1])
+                selectAllOrNoneType[1] = !selectAllOrNoneType[1]
+            }
+            firstText -> {
+                for (i in firstText until (firstText + textTSize)) {
+                    app.intentList[i].checked = selectAllOrNoneType[2]
+                }
+                this.setState(selectAllOrNoneType[2])
+                selectAllOrNoneType[2] = !selectAllOrNoneType[2]
+            }
+            firstBrowser -> {
+                for (i in firstBrowser until (firstBrowser + browserSize)) {
+                    app.intentList[i].checked = selectAllOrNoneType[3]
+                }
+                this.setState(selectAllOrNoneType[3])
+                selectAllOrNoneType[3] = !selectAllOrNoneType[3]
+            }
+        }
+        binding.rv.bindingAdapter.notifyDataSetChanged()
+    }
+
 
     private fun initData() {
         app.intentList.sortBy { it.type.first() }
+        var countSelect = 0
         for (intentIndex in app.intentList.indices) {
+            val keyName =
+                app.intentList[intentIndex].packageName + "/" + app.intentList[intentIndex].component+"/"+app.intentList[intentIndex].type
+            app.intentList[intentIndex].checked = kv.decodeBool(keyName)
+            if(app.intentList[intentIndex].checked){
+                countSelect++
+            }
             val tempType = app.intentList[intentIndex].type
+            logd("初$keyName ${app.intentList[intentIndex].checked}")
             if (firstShare == -1 && (tempType == "1_share" || tempType == "2_share_multi")) {
                 firstShare = intentIndex
             }
@@ -218,6 +307,10 @@ class DetailsActivity : BaseActivity() {
             if (firstBrowser == -1 && (tempType == "5_browser_http" || tempType == "6_browser_https")) {
                 firstBrowser = intentIndex
             }
+        }
+        if(countSelect == app.intentList.size){
+            changeSelectAllOrNone()
+            selectAllOrNone = false
         }
     }
 

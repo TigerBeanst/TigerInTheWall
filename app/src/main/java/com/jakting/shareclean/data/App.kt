@@ -38,3 +38,4 @@ data class IntentIcon(
     val packageNameAndComponent: String,
     val icon: Drawable
 )
+

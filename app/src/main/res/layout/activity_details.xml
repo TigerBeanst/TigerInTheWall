@@ -230,7 +230,7 @@
         app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        app:backgroundTint="@color/colorAccent"
+        app:backgroundTint="?attr/colorPrimary"
         app:icon="@drawable/ic_twotone_cleaning_services_24"
         app:iconTint="@color/colorFont" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

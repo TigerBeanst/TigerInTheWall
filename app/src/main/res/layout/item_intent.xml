@@ -57,7 +57,6 @@
                 style="@style/Widget.Material3.Button.TextButton.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:text="@string/manager_clean_detail_select_all"
                 android:textColor="@color/colorBlackTitle"
                 app:icon="@drawable/ic_twotone_select_all_24"

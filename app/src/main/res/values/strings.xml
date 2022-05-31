@@ -5,7 +5,7 @@
     <string name="cancel">Cancel</string>
     <string name="placeholder" translatable="false">Placeholder</string>
     <string name="please_wait">Please wait…</string>
-    <string name="coming_soon">Coming Soon…</string>
+    <string name="coming_soon">Coming Soon…?</string>
 
     <string name="status_card_click">There is nothing. Surprise!💩</string>
     <string name="status_card_unknown">Unknown status🤔</string>
@@ -43,6 +43,7 @@
     <string name="manager_clean_detail_select_all">Select All</string>
     <string name="manager_clean_detail_select_none">Deselect all</string>
     <string name="manager_clean_detail_advanced">Advanced</string>
+
 
     <string name="misc_list_title">Other</string>
     <string name="misc_quick_clean_title">Quick Clean</string>

@@ -19,6 +19,7 @@
         android:name=".utils.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:theme="@style/TigerBeanstTheme.TigerColor"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
@@ -45,19 +46,16 @@
         </activity>
         <activity
             android:name=".activity.MainActivity"
-            android:exported="true"
-            android:theme="@style/TigerBeanstTheme.TigerColor">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".activity.CleanManagerActivity"
             android:exported="true"
-            android:parentActivityName=".activity.MainActivity"
-            android:theme="@style/TigerBeanstTheme.TigerColor" />
+            android:parentActivityName=".activity.MainActivity" />
         <activity
             android:name=".activity.DetailsActivity"
             android:exported="true"

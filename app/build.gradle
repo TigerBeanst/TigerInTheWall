@@ -47,7 +47,7 @@ dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
@@ -55,12 +55,13 @@ dependencies {
 
     implementation 'me.zhanghai.android.appiconloader:appiconloader:1.3.1'
 
-    implementation 'com.google.android.material:material:1.6.0-beta01'
+    implementation 'com.google.android.material:material:1.7.0-alpha02'
 
-//    implementation 'com.github.liangjingkanji:Serialize:1.2.3'
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.6'
     implementation 'com.github.liangjingkanji:BRV:1.3.50'
     implementation 'com.github.liangjingkanji:Net:3.1.2'
+
+    implementation 'com.tencent:mmkv:1.2.13'
 
     implementation 'com.github.topjohnwu.libsu:core:3.2.1'
     implementation 'com.github.topjohnwu.libsu:io:3.2.1'

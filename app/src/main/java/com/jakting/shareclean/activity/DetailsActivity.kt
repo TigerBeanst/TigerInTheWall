@@ -96,8 +96,9 @@ class DetailsActivity : BaseActivity() {
                 appComponentScheme.text = when (getModel<AppIntent>().type) {
                     "1_share" -> getString(R.string.manager_clean_type_send)
                     "2_share_multi" -> getString(R.string.manager_clean_type_send_multi)
-                    "5_browser_http" -> getString(R.string.manager_clean_type_browser_http)
-                    "6_browser_https" -> getString(R.string.manager_clean_type_browser_https)
+                    "3_view" -> getString(R.string.manager_clean_type_view)
+                    "4_text" -> getString(R.string.manager_clean_type_text)
+                    "5_browser" -> getString(R.string.manager_clean_type_browser_http)
                     else -> ""
                 } + " "
                 val appComponent = findView<TextView>(R.id.app_component)
@@ -200,13 +201,13 @@ class DetailsActivity : BaseActivity() {
         }
 
         binding.cleanButton.setOnClickListener {
-            toast("按了")
             for (intentIndex in app.intentList.indices) {
                 val keyName =
-                    app.intentList[intentIndex].packageName + "/" + app.intentList[intentIndex].component+"/"+app.intentList[intentIndex].type
+                    app.intentList[intentIndex].type + "/" + app.intentList[intentIndex].packageName + "/" + app.intentList[intentIndex].component
                 kv.encode(keyName, app.intentList[intentIndex].checked)
                 logd(keyName + " " + app.intentList[intentIndex].checked)
             }
+            if (deleteIfwFiles("all") && writeIfwFiles()) toast(getString(R.string.manage_apply_success))
         }
     }
 
@@ -288,9 +289,9 @@ class DetailsActivity : BaseActivity() {
         var countSelect = 0
         for (intentIndex in app.intentList.indices) {
             val keyName =
-                app.intentList[intentIndex].packageName + "/" + app.intentList[intentIndex].component+"/"+app.intentList[intentIndex].type
+                app.intentList[intentIndex].type + "/" + app.intentList[intentIndex].packageName + "/" + app.intentList[intentIndex].component
             app.intentList[intentIndex].checked = kv.decodeBool(keyName)
-            if(app.intentList[intentIndex].checked){
+            if (app.intentList[intentIndex].checked) {
                 countSelect++
             }
             val tempType = app.intentList[intentIndex].type
@@ -304,11 +305,11 @@ class DetailsActivity : BaseActivity() {
             if (firstText == -1 && tempType == "4_text") {
                 firstText = intentIndex
             }
-            if (firstBrowser == -1 && (tempType == "5_browser_http" || tempType == "6_browser_https")) {
+            if (firstBrowser == -1 && tempType == "5_browser") {
                 firstBrowser = intentIndex
             }
         }
-        if(countSelect == app.intentList.size){
+        if (countSelect == app.intentList.size) {
             changeSelectAllOrNone()
             selectAllOrNone = false
         }

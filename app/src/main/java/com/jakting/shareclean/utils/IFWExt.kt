@@ -1,21 +1,19 @@
 package com.jakting.shareclean.utils
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
-import android.os.Build
-import com.jakting.shareclean.R
-import com.topjohnwu.superuser.Shell
+import com.jakting.shareclean.utils.MyApplication.Companion.appContext
+import com.jakting.shareclean.utils.MyApplication.Companion.kv
+import java.io.File
 
-const val ifw_app_self_path = "/data/system/ifw/RnIntentClean_self.xml"
-const val ifw_send_file_path = "/data/system/ifw/RnIntentClean_send.xml"
-const val ifw_send_multi_file_path = "/data/system/ifw/RnIntentClean_send_multi.xml"
-const val ifw_view_file_path = "/data/system/ifw/RnIntentClean_view.xml"
-const val ifw_text_file_path = "/data/system/ifw/RnIntentClean_text.xml"
-const val ifw_browser_file_path = "/data/system/ifw/RnIntentClean_browser.xml"
-const val ifw_direct_share_file_path = "/data/system/ifw/RnIntentClean_direct_share.xml"
+const val ifw_app_self_path = "/data/system/ifw/TigerInTheWall_self.xml"
+const val ifw_send_file_path = "/data/system/ifw/TigerInTheWall_Intent_send.xml"
+const val ifw_send_multi_file_path = "/data/system/ifw/TigerInTheWall_Intent_send_multi.xml"
+const val ifw_view_file_path = "/data/system/ifw/TigerInTheWall_Intent_view.xml"
+const val ifw_text_file_path = "/data/system/ifw/TigerInTheWall_Intent_text.xml"
+const val ifw_browser_file_path = "/data/system/ifw/TigerInTheWall_Intent_browser.xml"
+val intentTypeList = arrayListOf("1_share", "2_share_multi", "3_view", "4_text", "5_browser")
 
-const val ifw_app_self =
+var ifw_app_self =
     "<rules>\n" +
             "   <activity block=\"true\" log=\"true\">\n" +
             "    <intent-filter>\n" +
@@ -23,7 +21,7 @@ const val ifw_app_self =
             "      <cat name=\"android.intent.category.DEFAULT\" />\n" +
             "      <type name=\"*/*\" />\n" +
             "    </intent-filter>\n" +
-            "    <component equals=\"com.jakting.shareclean/com.jakting.shareclean.utils.ModuleAvailable\" />\n" +
+            "    <component equals=\"${appContext.packageName}/com.jakting.shareclean.utils.ModuleAvailable\" />\n" +
             "    <or>\n" +
             "      <sender type=\"system\" />\n" +
             "      <not>\n" +
@@ -33,43 +31,21 @@ const val ifw_app_self =
             "  </activity>\n" +
             "</rules>\n"
 
-const val ifw_direct_share =
-    "<rules>\n" +
-            "  <service block=\"true\" log=\"true\">\n" +
-            "    <intent-filter>\n" +
-            "      <action name=\"android.service.chooser.ChooserTargetService\" />\n" +
-            "    </intent-filter>\n" +
-            "  </service>\n" +
-            "</rules>\n"
-
 fun getIFWContent(tag: String, intentString: String): String {
-    return if (isService(tag)) getIFWServiceContent(intentString) else {
-        "   <activity block=\"true\" log=\"true\">\n" +
-                "    <intent-filter>\n" +
-                "      <action name=\"${getIFWAction(tag)}\" />\n" +
-                "      <cat name=\"android.intent.category.DEFAULT\" />\n" +
-                isBrowser(tag) +
-                "    </intent-filter>\n" +
-                "    <component equals=\"$intentString\" />\n" +
-                "    <or>\n" +
-                "      <sender type=\"system\" />\n" +
-                "      <not>\n" +
-                "        <sender type=\"userId\" />\n" +
-                "      </not>\n" +
-                "    </or>\n" +
-                "  </activity>\n"
-    }
-}
-
-fun getIFWServiceContent(intentString: String): String {
-    return "  <service block=\"true\" log=\"true\">\n" +
+    return "   <activity block=\"true\" log=\"true\">\n" +
+            "    <intent-filter>\n" +
+            "      <action name=\"${getIFWAction(tag)}\" />\n" +
+            "      <cat name=\"android.intent.category.DEFAULT\" />\n" +
+            isBrowser(tag) +
+            "    </intent-filter>\n" +
             "    <component equals=\"$intentString\" />\n" +
-            "  </service>\n"
-}
-
-fun isService(tag: String): Boolean {
-//    return (tag == "custom_tabs")
-    return false
+            "    <or>\n" +
+            "      <sender type=\"system\" />\n" +
+            "      <not>\n" +
+            "        <sender type=\"userId\" />\n" +
+            "      </not>\n" +
+            "    </or>\n" +
+            "  </activity>\n"
 }
 
 fun isBrowser(tag: String): String {
@@ -83,9 +59,8 @@ fun isBrowser(tag: String): String {
 
 fun getIFWPath(tag: String): String {
     return when (tag) {
-        "direct_share" -> ifw_direct_share_file_path
-        "1_send" -> ifw_send_file_path
-        "2_send_multi" -> ifw_send_multi_file_path
+        "1_share" -> ifw_send_file_path
+        "2_share_multi" -> ifw_send_multi_file_path
         "3_view" -> ifw_view_file_path
         "4_text" -> ifw_text_file_path
         "5_browser" -> ifw_browser_file_path
@@ -95,44 +70,61 @@ fun getIFWPath(tag: String): String {
 
 fun getIFWAction(tag: String): String {
     return when (tag) {
-        "direct_share" -> "android.service.chooser.ChooserTargetService"
-        "1_send" -> Intent.ACTION_SEND
-        "2_send_multi" -> Intent.ACTION_SEND_MULTIPLE
-        "3_view", "browser" -> Intent.ACTION_VIEW
+        "1_share" -> Intent.ACTION_SEND
+        "2_share_multi" -> Intent.ACTION_SEND_MULTIPLE
+        "3_view", "5_browser" -> Intent.ACTION_VIEW
         "4_text" -> Intent.ACTION_PROCESS_TEXT
         else -> ""
     }
 }
 
-fun clearIFW(tag: String): Boolean {
-    return when (tag) {
-        "1_send" -> Shell.su("rm -f $ifw_send_file_path").exec().isSuccess
-        "2_send_multi" -> Shell.su("rm -f $ifw_send_multi_file_path").exec().isSuccess
-        "3_view" -> Shell.su("rm -f $ifw_view_file_path").exec().isSuccess
-        "4_text" -> Shell.su("rm -f $ifw_text_file_path").exec().isSuccess
-        "5_browser" -> Shell.su("rm -f $ifw_browser_file_path").exec().isSuccess
-        else -> false
+fun generateIfwFileContent(intentContentList: MutableList<String>):String {
+    var ifwContent = "<rules>\n"
+    intentContentList.forEach {
+        ifwContent += it
     }
+    ifwContent += "</rules>"
+    return ifwContent
 }
 
-fun setDirectShare(sp: SharedPreferences, context: Context?) {
-    if (Build.VERSION.SDK_INT >= 29) {
-        context.toast(context?.getString(R.string.misc_disable_direct_No) as String)
-    } else {
-        when (sp.getBoolean("switch_disable_direct_share", false)) {
-            false -> { //启用
-                if (Shell.su("rm -f ${getIFWPath("direct_share")}").exec().isSuccess) {
-                    context.toast(context?.getString(R.string.misc_disable_direct_toastEnable) as String)
-                }
-            }
-            true -> { //禁用
-                if (Shell.su("touch ${getIFWPath("direct_share")}").exec().isSuccess &&
-                    Shell.su("echo '$ifw_direct_share' > ${getIFWPath("direct_share")}")
-                        .exec().isSuccess
-                ) {
-                    context.toast(context?.getString(R.string.misc_disable_direct_toastDisable) as String)
+fun writeIfwFiles(): Boolean {
+    val intentTypeMap = HashMap<String, MutableList<String>>()
+    intentTypeMap["1_share"] = mutableListOf()
+    intentTypeMap["2_share_multi"] = mutableListOf()
+    intentTypeMap["3_view"] = mutableListOf()
+    intentTypeMap["4_text"] = mutableListOf()
+    intentTypeMap["5_browser"] = mutableListOf()
+    kv.allKeys()?.forEach { itKey ->
+        if(kv.decodeBool(itKey)){
+            intentTypeList.forEach { itType ->
+                if (itKey.startsWith(itType)) {
+                    intentTypeMap[itType]?.add(getIFWContent(itType, itKey.replace("$itType/", "")))
                 }
             }
         }
+    }
+    var result = true
+    intentTypeList.forEach { itType ->
+        if (runShell("touch ${getIFWPath(itType)}").isSuccess &&
+            runShell("echo '${generateIfwFileContent(intentTypeMap[itType]!!)}' > ${getIFWPath(itType)}").isSuccess
+        ) {
+            logd("写入${getIFWPath(itType)}成功")
+        } else {
+            result = false
+        }
+    }
+    return result
+}
+
+
+fun deleteIfwFiles(type: String): Boolean {
+    val sendFile = File(getIFWPath("1_share"))
+    if(sendFile.exists()){
+        logd("z")
+    }
+    return if (type == "all") {
+        runShell( "find /data/system/ifw/ -name \"TigerInTheWall_Intent*.xml\" -exec rm -rf {} \\; ").isSuccess
+    } else {
+        runShell("rm -f ${getIFWPath(ifw_send_file_path)}").isSuccess
     }
 }

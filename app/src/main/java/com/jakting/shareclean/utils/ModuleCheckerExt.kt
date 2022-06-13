@@ -3,6 +3,7 @@ package com.jakting.shareclean.utils
 import android.content.Intent
 import android.content.pm.PackageManager
 import com.jakting.shareclean.utils.MyApplication.Companion.appContext
+import com.topjohnwu.superuser.Shell
 import java.io.File
 
 fun moduleApplyAvailable(): Boolean {
@@ -17,7 +18,7 @@ fun moduleApplyAvailable(): Boolean {
         PackageManager.MATCH_ALL
     )
     for (resolveInfo in resolveInfoList) {
-        if (resolveInfo.activityInfo.packageName == "com.jakting.shareclean") {
+        if (resolveInfo.activityInfo.packageName == appContext.packageName) {
             return false
         }
     }
@@ -25,21 +26,22 @@ fun moduleApplyAvailable(): Boolean {
 }
 
 fun moduleInfo(): Array<String> {
-    val shellResult = runShell("cat /dev/riru_*/modules/riru_ifw_enhance@ifw_enhance/version")
-    return if (shellResult.isSuccess) { // 是 Riru 版
-        arrayOf("Riru", moduleVersion("Riru")[0]!!,moduleVersion("Riru")[1]!!)
-    } else { // 是 Zygisk 版
-        arrayOf("Zygisk", moduleVersion("Zygisk")[0]!!,moduleVersion("Zygisk")[1]!!)
+    // 检查 Riru 版
+    val riruShell = runShell("cat /data/adb/modules/riru_ifw_enhance_tiw/module.prop")
+    if(riruShell.isSuccess){
+        return arrayOf("Riru", moduleVersion(riruShell)[0]!!, moduleVersion(riruShell)[1]!!)
     }
+    val zygiskShell = runShell("cat /data/adb/modules/zygisk_ifw_enhance_tiw/module.prop")
+    if(zygiskShell.isSuccess){
+        return arrayOf("Zygisk", moduleVersion(zygiskShell)[0]!!, moduleVersion(zygiskShell)[1]!!)
+    }
+    return arrayOf("", "", "")
 }
 
-fun moduleVersion(injectIf: String): Array<String?> {
-    val shellResult = when(injectIf) {
-        "Riru" -> runShell("cat /data/adb/modules/riru_ifw_enhance/module.prop").getPureCat()
-        "Zygisk" -> runShell("cat /data/adb/modules/zygisk_ifw_enhance/module.prop").getPureCat()
-        else -> ""
-    }
+fun moduleVersion(sr: Shell.Result): Array<String?> {
+    val shellResult = sr.getPureCat()
     logd(shellResult)
+    if (shellResult.isEmpty()) return arrayOf("", "")
     val version = Regex(".*?version=(.*?),.*?versionCode=(.*?),").find(shellResult)?.groupValues
     return arrayOf(version?.get(1), version?.get(2))
 }

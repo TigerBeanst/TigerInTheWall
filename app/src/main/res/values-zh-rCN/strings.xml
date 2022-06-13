@@ -8,6 +8,7 @@
     <string name="coming_soon">即将来到…？</string>
     <string name="status_card_click">啥都没有。芜湖！💩</string>
     <string name="status_card_unknown">状态未知🤔</string>
+    <string name="status_card_no_module">模块未安装💩</string>
     <string name="status_card_unknown_detail">点此获取细节</string>
     <string name="status_card_exist">已激活🥳</string>
     <string name="status_card_exist_module">已安装模块版本：%s(%s)</string>
@@ -43,4 +44,7 @@
     <string name="manager_clean_detail_select_none">取消全选</string>
     <string name="manager_clean_detail_clean">清理</string>
     <string name="manager_clean_detail_advanced">高级</string>
+    <string name="status_card_dialog_no_module_title">模块未安装</string>
+    <string name="status_card_dialog_no_module_content">墙中虎无法找到模块「IFW Enhance」。这通常意味着您所做的所有操作都不会生效。\n\n请确保您已正确安装模块。</string>
+
 </resources>

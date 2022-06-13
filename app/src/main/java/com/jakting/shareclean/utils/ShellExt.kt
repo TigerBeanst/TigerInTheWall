@@ -4,7 +4,7 @@ import com.topjohnwu.superuser.Shell
 
 
 fun runShell(cmd: String): Shell.Result {
-    return Shell.su(cmd).exec()
+    return Shell.cmd(cmd).exec()
 }
 
 fun Shell.Result.getPureCat(): String {

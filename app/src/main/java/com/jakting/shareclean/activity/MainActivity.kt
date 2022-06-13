@@ -10,6 +10,7 @@ import com.jakting.shareclean.BuildConfig
 import com.jakting.shareclean.R
 import com.jakting.shareclean.databinding.ActivityMainBinding
 import com.jakting.shareclean.utils.*
+import com.jakting.shareclean.utils.MyApplication.Companion.shell
 import com.topjohnwu.superuser.Shell
 import dev.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
 import kotlinx.coroutines.launch
@@ -52,7 +53,7 @@ class MainActivity : BaseActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun checkStatus() {
-        if (Shell.rootAccess()) {
+        if (shell.isRoot) {
             // 已经授予 root
             if (moduleApplyAvailable()) {
                 // 如果模块已生效
@@ -60,44 +61,63 @@ class MainActivity : BaseActivity() {
                     getString(R.string.status_card_exist)
                 val injectIf = moduleInfo()
                 // 尝试请求 Riru 目录，如果 Riru 可用，则说明 IFW Enchance 是 Riru 版本
-                binding.contentMain.card1Module.cardStatusDesc.text =
-                    String.format(
-                        getString(R.string.status_card_exist_module),
-                        injectIf[1],
-                        injectIf[2]
-                    )
-                binding.contentMain.card1Module.cardStatusInjectWhich.text = injectIf[0]
-                binding.contentMain.card1Module.cardStatusIcon.setImageResource(R.drawable.ic_twotone_check_circle_24)
+                if (injectIf[0].isNotEmpty()) {
+                    binding.contentMain.card1Module.cardStatusDesc.text =
+                        String.format(
+                            getString(R.string.status_card_exist_module),
+                            injectIf[1],
+                            injectIf[2]
+                        )
+                    binding.contentMain.card1Module.cardStatusInjectWhich.text = injectIf[0]
+                    binding.contentMain.card1Module.cardStatusIcon.setImageResource(R.drawable.ic_twotone_check_circle_24)
 //                binding.contentMain.card1Module.cardStatus.backgroundTintList =
 //                    backgroundColor(this)
-                binding.contentMain.card1Module.cardStatus.backgroundTintList =
-                    ColorStateList.valueOf(getColorFromAttr(R.attr.colorPrimary))
-                var clickCount = 0
-                binding.contentMain.card1Module.cardStatus.setOnClickListener {
-                    clickCount++
-                    when (clickCount) {
-                        5 -> {
-                            binding.contentMain.card1Module.cardStatusInjectWhich.text =
-                                injectIf[0] + "🤥"
-                        }
-                        10 -> {
-                            binding.contentMain.card1Module.cardStatusInjectWhich.text =
-                                injectIf[0] + "🤕"
-                        }
-                        15 -> {
-                            binding.contentMain.card1Module.cardStatusInjectWhich.text =
-                                injectIf[0] + "🤡"
-                        }
-                        20 -> {
-                            binding.contentMain.card1Module.cardStatusInjectWhich.text =
-                                injectIf[0] + "👻"
-                            toast(getString(R.string.status_card_click))
-                            clickCount = 0
+                    binding.contentMain.card1Module.cardStatus.backgroundTintList =
+                        ColorStateList.valueOf(getColorFromAttr(R.attr.colorPrimary))
+                    var clickCount = 0
+                    binding.contentMain.card1Module.cardStatus.setOnClickListener {
+                        clickCount++
+                        when (clickCount) {
+                            5 -> {
+                                binding.contentMain.card1Module.cardStatusInjectWhich.text =
+                                    injectIf[0] + "🤥"
+                            }
+                            10 -> {
+                                binding.contentMain.card1Module.cardStatusInjectWhich.text =
+                                    injectIf[0] + "🤕"
+                            }
+                            15 -> {
+                                binding.contentMain.card1Module.cardStatusInjectWhich.text =
+                                    injectIf[0] + "🤡"
+                            }
+                            20 -> {
+                                binding.contentMain.card1Module.cardStatusInjectWhich.text =
+                                    injectIf[0] + "👻"
+                                toast(getString(R.string.status_card_click))
+                                clickCount = 0
+                            }
                         }
                     }
                 }
             } else {
-                longtoast("没有应用")
+                binding.contentMain.card1Module.cardStatusTitle.text =
+                    getString(R.string.status_card_no_module)
+                binding.contentMain.card1Module.cardStatus.setOnClickListener { view ->
+                    (mdDialog(
+                        getString(R.string.status_card_dialog_no_module_title),
+                        getString(R.string.status_card_dialog_no_module_content),
+                        "dialog_unknown"
+                    ).setPositiveButton(
+                        getString(R.string.ok), R.drawable.ic_twotone_check_24
+                    ) { dialog, _ ->
+                        dialog.dismiss()
+                    }.setNegativeButton(
+                        getString(R.string.status_card_dialog_more),
+                        R.drawable.ic_twotone_open_in_browser_24
+                    ) { _, _ ->
+                        openLink(getString(R.string.status_card_dialog_more_url))
+                    } as BottomSheetMaterialDialog.Builder).show(290)
+                }
             }
 
 

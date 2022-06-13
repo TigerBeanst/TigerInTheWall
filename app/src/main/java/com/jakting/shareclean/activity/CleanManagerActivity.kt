@@ -21,13 +21,16 @@ import com.jakting.shareclean.utils.MyApplication.Companion.chipBrowser
 import com.jakting.shareclean.utils.MyApplication.Companion.chipShare
 import com.jakting.shareclean.utils.MyApplication.Companion.chipText
 import com.jakting.shareclean.utils.MyApplication.Companion.chipView
+import com.jakting.shareclean.utils.deleteIfwFiles
 import com.jakting.shareclean.utils.getAppIconByPackageName
+import com.jakting.shareclean.utils.writeIfwFiles
 import kotlinx.coroutines.launch
 
 
 class CleanManagerActivity : BaseActivity() {
 
     private lateinit var binding: ActivityCleanManagerBinding
+    lateinit var data: List<App>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityCleanManagerBinding.inflate(layoutInflater)
@@ -62,8 +65,7 @@ class CleanManagerActivity : BaseActivity() {
                     getModel<App>().intentList.filter { it.type == "1_share" || it.type == "2_share_multi" }.size
                 val viewSize = getModel<App>().intentList.filter { it.type == "3_view" }.size
                 val textSize = getModel<App>().intentList.filter { it.type == "4_text" }.size
-                val browserSize =
-                    getModel<App>().intentList.filter { it.type == "6_browser_https" || it.type == "5_browser_http" }.size
+                val browserSize = getModel<App>().intentList.filter { it.type == "5_browser" }.size
 
                 if (!((shareSize > 0 && chipShare) ||
                             (viewSize > 0 && chipView) ||
@@ -83,24 +85,42 @@ class CleanManagerActivity : BaseActivity() {
                 findView<TextView>(R.id.app_intent_count_text).text = textSize.toString()
                 findView<TextView>(R.id.app_intent_count_browser).text = browserSize.toString()
             }
-            onClick(R.id.app_layout){
+            onClick(R.id.app_layout) {
                 val intent = Intent(this@CleanManagerActivity, DetailsActivity::class.java)
                 intent.putExtra("app", getModel<App>())
-                intent.putExtra("shareSize", itemView.findViewById<TextView>(R.id.app_intent_count_share).text.toString().toInt())
-                intent.putExtra("viewSize", itemView.findViewById<TextView>(R.id.app_intent_count_view).text.toString().toInt())
-                intent.putExtra("textSize", itemView.findViewById<TextView>(R.id.app_intent_count_text).text.toString().toInt())
-                intent.putExtra("browserSize", itemView.findViewById<TextView>(R.id.app_intent_count_browser).text.toString().toInt())
+                intent.putExtra(
+                    "shareSize",
+                    itemView.findViewById<TextView>(R.id.app_intent_count_share).text.toString()
+                        .toInt()
+                )
+                intent.putExtra(
+                    "viewSize",
+                    itemView.findViewById<TextView>(R.id.app_intent_count_view).text.toString()
+                        .toInt()
+                )
+                intent.putExtra(
+                    "textSize",
+                    itemView.findViewById<TextView>(R.id.app_intent_count_text).text.toString()
+                        .toInt()
+                )
+                intent.putExtra(
+                    "browserSize",
+                    itemView.findViewById<TextView>(R.id.app_intent_count_browser).text.toString()
+                        .toInt()
+                )
                 startActivity(intent)
             }
         }
 
         binding.managerCleanStateLayout.onRefresh {
             lifecycleScope.launch {
+                deleteIfwFiles("all")
                 setChip(false)
-                val data = AppInfo().getAppList()
+                data = AppInfo().getAppList()
                 binding.managerCleanRecyclerView.models = data
                 setChip(true)
                 binding.managerCleanStateLayout.showContent()
+                writeIfwFiles()
             }
         }.showLoading()
 

@@ -16,9 +16,9 @@
     <string name="status_card_exist_inject">Injection Interface:</string>
     <string name="status_card_exist_unknown" translatable="false">🤐</string>
     <string name="status_card_dialog_title">Unknown status</string>
-    <string name="status_card_dialog_content">Unable to check module \"IFW Enhance\" status, due to lack of permission.\n\nTigerInTheWall needs higher system permission to check module and do cleaning.\n\nMake sure you have root permission or Shizuku(Root) or Sui.</string>
+    <string name="status_card_dialog_content">Unable to check module \"IFW Enhance TIW\" status, due to lack of permission.\n\nTigerInTheWall needs higher system permission to check module and do cleaning.\n\nMake sure you have root permission or Shizuku(Root) or Sui.</string>
     <string name="status_card_dialog_no_module_title">Module not installed</string>
-    <string name="status_card_dialog_no_module_content">TigerInTheWall cannot find module \"IFW Enhance\". Usually, nothing you do will work.\n\nMake sure you have install module correctly.</string>
+    <string name="status_card_dialog_no_module_content">TigerInTheWall cannot find module \"IFW Enhance TIW\".\n\nUsually, nothing you do will work. Make sure you have install module correctly.\n\nFrom the new version, TigerInTheWall needs to use the modified module \"IFW Enhance TIW\" (not \"IFW Enhance\")</string>
     <string name="status_card_dialog_more">More</string>
     <string name="status_card_dialog_more_url">https://ic.into.icu/download/</string>
 

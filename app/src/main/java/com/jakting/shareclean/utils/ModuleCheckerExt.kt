@@ -14,7 +14,7 @@ fun moduleApplyAvailable(): Boolean {
             runShell("echo '$ifw_app_self' > $ifw_app_self_path")
     }
     val resolveInfoList = appContext.packageManager!!.queryIntentActivities(
-        Intent(Intent.ACTION_PROCESS_TEXT).setType("*/*"),
+        Intent(Intent.ACTION_PROCESS_TEXT).setType("text/tigerbeanst"),
         PackageManager.MATCH_ALL
     )
     for (resolveInfo in resolveInfoList) {

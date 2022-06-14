@@ -14,7 +14,7 @@
     <string name="status_card_exist_module">已安装模块版本：%s(%s)</string>
     <string name="status_card_exist_inject">注入接口：</string>
     <string name="status_card_dialog_title">状态未知</string>
-    <string name="status_card_dialog_content">由于缺少权限，无法获取「IFW Enhance」模块状态。\n\n「墙中虎」需要较高的系统权限以检查模块状态与清理意图。\n\n请确保您拥有 Root 权限、经由 Root 授权启动的 Shizuku 或 Sui。</string>
+    <string name="status_card_dialog_content">由于缺少权限，无法获取「IFW Enhance TIW」模块状态。\n\n「墙中虎」需要较高的系统权限以检查模块状态与清理意图。\n\n请确保您拥有 Root 权限、经由 Root 授权启动的 Shizuku 或 Sui。</string>
     <string name="status_card_dialog_more">更多</string>
     <string name="status_card_dialog_more_url">https://ic.into.icu/zh-CN/download/</string>
     <string name="manager_clean_title">清理管理</string>
@@ -45,6 +45,6 @@
     <string name="manager_clean_detail_clean">清理</string>
     <string name="manager_clean_detail_advanced">高级</string>
     <string name="status_card_dialog_no_module_title">模块未安装</string>
-    <string name="status_card_dialog_no_module_content">墙中虎无法找到模块「IFW Enhance」。这通常意味着您所做的所有操作都不会生效。\n\n请确保您已正确安装模块。</string>
+    <string name="status_card_dialog_no_module_content">墙中虎无法找到模块「IFW Enhance TIW」。\n\n这通常意味着您所做的所有操作都不会生效，请确保您已正确安装模块。\n\n自新版本开始，墙中虎需要使用经过修改后的「IFW Enhance TIW」（而不是「IFW Enhance」）</string>
 
 </resources>

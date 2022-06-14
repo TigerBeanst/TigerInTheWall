@@ -19,7 +19,7 @@ var ifw_app_self =
             "    <intent-filter>\n" +
             "      <action name=\"android.intent.action.PROCESS_TEXT\" />\n" +
             "      <cat name=\"android.intent.category.DEFAULT\" />\n" +
-            "      <type name=\"*/*\" />\n" +
+            "      <type name=\"text/tigerbeanst\" />\n" +
             "    </intent-filter>\n" +
             "    <component equals=\"${appContext.packageName}/com.jakting.shareclean.utils.ModuleAvailable\" />\n" +
             "    <or>\n" +

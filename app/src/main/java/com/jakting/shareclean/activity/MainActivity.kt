@@ -11,7 +11,6 @@ import com.jakting.shareclean.R
 import com.jakting.shareclean.databinding.ActivityMainBinding
 import com.jakting.shareclean.utils.*
 import com.jakting.shareclean.utils.MyApplication.Companion.shell
-import com.topjohnwu.superuser.Shell
 import dev.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
 import kotlinx.coroutines.launch
 

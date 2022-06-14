@@ -5,14 +5,14 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 33
     buildFeatures.dataBinding = true
     defaultConfig {
         applicationId "com.jakting.shareclean"
         minSdk 26
-        targetSdk 31
-        versionCode 202202261
-        versionName "1.1.0"
+        targetSdk 33
+        versionCode 202206150
+        versionName "2.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

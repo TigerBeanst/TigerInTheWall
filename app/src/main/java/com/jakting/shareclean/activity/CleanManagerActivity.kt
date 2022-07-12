@@ -114,7 +114,7 @@ class CleanManagerActivity : BaseActivity() {
 
         binding.managerCleanStateLayout.onRefresh {
             lifecycleScope.launch {
-                deleteIfwFiles("all")
+//                deleteIfwFiles("all")
                 setChip(false)
                 data = AppInfo().getAppList()
                 binding.managerCleanRecyclerView.models = data

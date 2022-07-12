@@ -7,14 +7,8 @@ import com.topjohnwu.superuser.Shell
 import java.io.File
 
 fun moduleApplyAvailable(): Boolean {
-    //检查模块是否已经生效，无论是 Riru 版还是 Zygisk 版
-    val selfIfwFile = File(ifw_app_self_path)
-    if (!selfIfwFile.exists()) {
-        if (runShell("touch $ifw_app_self_path").isSuccess)
-            runShell("echo '$ifw_app_self' > $ifw_app_self_path")
-    }
     val resolveInfoList = appContext.packageManager!!.queryIntentActivities(
-        Intent(Intent.ACTION_PROCESS_TEXT).setType("text/tigerbeanst"),
+        Intent(Intent.ACTION_PROCESS_TEXT).setType("image/*"),
         PackageManager.MATCH_ALL
     )
     for (resolveInfo in resolveInfoList) {

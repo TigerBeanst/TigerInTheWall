@@ -5,32 +5,12 @@ import com.jakting.shareclean.utils.MyApplication.Companion.appContext
 import com.jakting.shareclean.utils.MyApplication.Companion.kv
 import java.io.File
 
-const val ifw_app_self_path = "/data/system/ifw/TigerInTheWall_self.xml"
 const val ifw_send_file_path = "/data/system/ifw/TigerInTheWall_Intent_send.xml"
 const val ifw_send_multi_file_path = "/data/system/ifw/TigerInTheWall_Intent_send_multi.xml"
 const val ifw_view_file_path = "/data/system/ifw/TigerInTheWall_Intent_view.xml"
 const val ifw_text_file_path = "/data/system/ifw/TigerInTheWall_Intent_text.xml"
 const val ifw_browser_file_path = "/data/system/ifw/TigerInTheWall_Intent_browser.xml"
 val intentTypeList = arrayListOf("1_share", "2_share_multi", "3_view", "4_text", "5_browser")
-
-var ifw_app_self =
-    "<rules>\n" +
-            "   <activity block=\"true\" log=\"true\">\n" +
-            "    <intent-filter>\n" +
-            "      <action name=\"android.intent.action.PROCESS_TEXT\" />\n" +
-            "      <cat name=\"android.intent.category.DEFAULT\" />\n" +
-            "      <type name=\"text/tigerbeanst\" />\n" +
-            "    </intent-filter>\n" +
-            "    <component equals=\"${appContext.packageName}/com.jakting.shareclean.utils.ModuleAvailable\" />\n" +
-            "    <or>\n" +
-            "      <sender type=\"system\" />\n" +
-            "      <not>\n" +
-            "        <sender type=\"userId\" />\n" +
-            "      </not>\n" +
-            "    </or>\n" +
-            "  </activity>\n" +
-            "</rules>\n"
-
 fun getIFWContent(tag: String, intentString: String): String {
     return "   <activity block=\"true\" log=\"true\">\n" +
             "    <intent-filter>\n" +
@@ -118,10 +98,6 @@ fun writeIfwFiles(): Boolean {
 
 
 fun deleteIfwFiles(type: String): Boolean {
-    val sendFile = File(getIFWPath("1_share"))
-    if(sendFile.exists()){
-        logd("z")
-    }
     return if (type == "all") {
         runShell( "find /data/system/ifw/ -name \"TigerInTheWall_Intent*.xml\" -exec rm -rf {} \\; ").isSuccess
     } else {

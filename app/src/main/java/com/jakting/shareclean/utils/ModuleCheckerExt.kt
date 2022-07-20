@@ -8,7 +8,7 @@ import java.io.File
 
 fun moduleApplyAvailable(): Boolean {
     val resolveInfoList = appContext.packageManager!!.queryIntentActivities(
-        Intent(Intent.ACTION_PROCESS_TEXT).setType("image/*"),
+        Intent(Intent.ACTION_PROCESS_TEXT).setType("text/tigerinthewall"),
         PackageManager.MATCH_ALL
     )
     for (resolveInfo in resolveInfoList) {

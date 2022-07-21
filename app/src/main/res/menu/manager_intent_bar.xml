@@ -2,23 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/edit"
-        android:title="AAA"
-        android:contentDescription="aaa"
-        app:showAsAction="never" />
-
-    <item
-        android:id="@+id/favorite"
-        android:icon="@drawable/ic_twotone_check_circle_24"
-        android:title="AAA"
-        android:contentDescription="AAAA"
-        app:showAsAction="never" />
-
-    <item
-        android:id="@+id/more"
-        android:title="AA"
-        android:contentDescription="AA"
-        app:showAsAction="never" />
+    <item android:id="@+id/menu_search"
+        android:title="搜索"
+        android:icon="@drawable/ic_twotone_search_24"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
 
 </menu>

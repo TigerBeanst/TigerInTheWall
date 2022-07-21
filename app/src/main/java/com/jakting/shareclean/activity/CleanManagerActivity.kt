@@ -2,9 +2,12 @@ package com.jakting.shareclean.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
+import android.view.View.OnAttachStateChangeListener
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.drake.brv.utils.BRV
@@ -21,7 +24,6 @@ import com.jakting.shareclean.utils.MyApplication.Companion.chipBrowser
 import com.jakting.shareclean.utils.MyApplication.Companion.chipShare
 import com.jakting.shareclean.utils.MyApplication.Companion.chipText
 import com.jakting.shareclean.utils.MyApplication.Companion.chipView
-import com.jakting.shareclean.utils.deleteIfwFiles
 import com.jakting.shareclean.utils.getAppIconByPackageName
 import com.jakting.shareclean.utils.writeIfwFiles
 import kotlinx.coroutines.launch
@@ -30,6 +32,8 @@ import kotlinx.coroutines.launch
 class CleanManagerActivity : BaseActivity() {
 
     private lateinit var binding: ActivityCleanManagerBinding
+    private lateinit var searchView: SearchView
+    private lateinit var searchListener: SearchView.OnQueryTextListener
     lateinit var data: List<App>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +41,30 @@ class CleanManagerActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         initView()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.manager_intent_bar, menu)
+        return true
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        val searchView = menu.findItem(R.id.menu_search).actionView as SearchView
+        searchView.setOnQueryTextListener(searchListener)
+        searchView.addOnAttachStateChangeListener(object : OnAttachStateChangeListener {
+            override fun onViewAttachedToWindow(arg0: View) {
+                binding.appBarLayout.setExpanded(false, true)
+            }
+
+            override fun onViewDetachedFromWindow(v: View) {
+                binding.appBarLayout.setExpanded(false, true)
+            }
+        })
+        searchView.findViewById<View>(androidx.appcompat.R.id.search_edit_frame).layoutDirection =
+            View.LAYOUT_DIRECTION_INHERIT
+        searchView.findViewById<View>(androidx.appcompat.R.id.search_plate).background = null
+        searchView.findViewById<View>(androidx.appcompat.R.id.search_mag_icon).visibility = View.GONE
+        return super.onPrepareOptionsMenu(menu)
     }
 
     override fun onStart() {
@@ -47,6 +75,19 @@ class CleanManagerActivity : BaseActivity() {
     private fun initView() {
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        searchListener = object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                binding.managerCleanRecyclerView.models =
+                    data.filter { it.appName.contains(query) || it.packageName.contains(query) }
+                return false
+            }
+
+            override fun onQueryTextChange(query: String): Boolean {
+                binding.managerCleanRecyclerView.models =
+                    data.filter { it.appName.contains(query) || it.packageName.contains(query) }
+                return false
+            }
+        }
 
         BRV.modelId = BR.app
         binding.managerCleanRecyclerView.linear().setup {

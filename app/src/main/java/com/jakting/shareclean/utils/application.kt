@@ -27,8 +27,8 @@ class application : Application() {
         kv = MMKV.defaultMMKV()!!
         shell = Shell.getShell()
         appContext = applicationContext
-        settingSharedPreferences = getSharedPreferences("settings", MODE_PRIVATE)
-        settingSharedPreferencesEditor = getSharedPreferences("settings", MODE_PRIVATE).edit()
+        settingSharedPreferences = getSharedPreferences(appContext.packageName+"_preferences", MODE_PRIVATE)
+        settingSharedPreferencesEditor = getSharedPreferences(appContext.packageName+"_preferences", MODE_PRIVATE).edit()
         intentIconMap = HashMap()
     }
 

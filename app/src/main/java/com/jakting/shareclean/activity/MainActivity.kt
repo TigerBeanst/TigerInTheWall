@@ -43,6 +43,9 @@ class MainActivity : BaseActivity() {
         binding.contentMain.card3ManageIntent.cardManager.setOnClickListener {
             startActivity(Intent(this, CleanManagerActivity::class.java))
         }
+        binding.contentMain.card4List.cardThreeLayout.setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+        }
 //        if(binding.coordinatorLayout.isTotallyVisible()){
 //            toast("好活")
 //        }else{

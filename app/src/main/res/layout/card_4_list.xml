@@ -32,7 +32,7 @@
     </LinearLayout>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_one"
+        android:id="@+id/card_other"
         style="?attr/materialCardViewFilledStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -114,6 +114,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_three_layout"
                 android:paddingTop="16dp"
                 android:paddingBottom="16dp"
                 android:layout_width="match_parent"

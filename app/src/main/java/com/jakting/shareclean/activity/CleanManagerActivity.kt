@@ -24,8 +24,8 @@ import com.jakting.shareclean.utils.application.Companion.chipBrowser
 import com.jakting.shareclean.utils.application.Companion.chipShare
 import com.jakting.shareclean.utils.application.Companion.chipText
 import com.jakting.shareclean.utils.application.Companion.chipView
+import com.jakting.shareclean.utils.application.Companion.settingSharedPreferences
 import com.jakting.shareclean.utils.getAppIconByPackageName
-import com.jakting.shareclean.utils.writeIfwFiles
 import kotlinx.coroutines.launch
 
 
@@ -155,13 +155,11 @@ class CleanManagerActivity : BaseActivity() {
 
         binding.managerCleanStateLayout.onRefresh {
             lifecycleScope.launch {
-//                deleteIfwFiles("all")
                 setChip(false)
-                data = AppInfo().getAppList()
+                data = AppInfo().getAppList().filter { it.isSystem == settingSharedPreferences.getBoolean("pref_system_app",false) }
                 binding.managerCleanRecyclerView.models = data
                 setChip(true)
                 binding.managerCleanStateLayout.showContent()
-                writeIfwFiles()
             }
         }.showLoading()
 

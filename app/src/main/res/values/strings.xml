@@ -22,10 +22,8 @@
     <string name="status_card_dialog_more">More</string>
     <string name="status_card_dialog_more_url">https://ic.into.icu/download/</string>
 
-    <!--    <string name="manage_dialog_title">Notice</string>-->
-    <!--    <string name="manage_dialog_desc">Riru - IFWEnhance has not been properly applied. Anything you do may not take effect.</string>-->
-    <string name="manager_clean_title">Clean Manager</string>
-    <string name="manager_clean_detail">Cleaning sh*t</string>
+    <string name="manager_clean_title">App Cleaner</string>
+    <string name="manager_clean_detail">Clean sh*t</string>
     <string name="manager_intent_title">Intent Manager</string>
     <string name="manager_intent_detail">Classified by Intent</string>
 
@@ -66,19 +64,25 @@
     <string name="manage_search">Search</string>
 
 
-    <string name="setting_page_function">Function</string>
-    <string name="setting_page_showSystemApp">Show System Apps</string>
-    <string name="setting_page_showSystemApp_summary">Show System Apps. Disable system apps\' intent may cause unknown errors.</string>
-    <string name="setting_page_showSystemApp_summaryNo">Don\'t show System Apps.</string>
-    <string name="setting_page_appearance">Appearance</string>
-    <string name="setting_page_dark_mode">Dark Mode</string>
-    <string name="setting_page_language">Languages</string>
-    <string name="setting_page_helplang">Help translation</string>
-    <string name="setting_page_helplang_summary">Help to translate TigerInTheWall into your language</string>
-    <string name="setting_page_privacy">Privacy</string>
-    <string name="setting_page_firebase">Enable Firebase Service</string>
-    <string name="setting_page_firebase_summary">Analysis &amp; Crashlytics logs will be uploaded</string>
-    <string name="setting_page_firebase_summaryNo">Analysis &amp; Crashlytics logs will not be uploaded</string>
+    <string name="setting_function">Function</string>
+    <string name="setting_blacklist">Blacklist Mode</string>
+    <string name="setting_blacklist_summary">Now in Blacklist mode. Selected activity will be cleaned and never show up in the intent list.</string>
+    <string name="setting_blacklist_summary_no">Now in Whitelist mode. Only selected activity will be kept and show up in the intent list.</string>
+    <string name="setting_system_app">Show System Apps</string>
+    <string name="setting_system_app_summary">Show System Apps. Disable system apps intent may cause unknown errors.</string>
+    <string name="setting_system_app_summary_no">Don\'t show System Apps. But the clean you applied before won\'t go away.</string>
+    <string name="setting_disable_direct">Disable "Direct Share"</string>
+    <string name="setting_disable_direct_summary">Disable "Direct Share" of unmodified Sharesheet. Cannot disable "Direct Share" on Android 10+ devices.</string>
+    <string name="setting_disable_direct_summary_no">Enable "Direct Share" of unmodified Sharesheet. Cannot disable "Direct Share" on Android 10+ devices.</string>
+<!--    <string name="setting_page_appearance">Appearance</string>-->
+<!--    <string name="setting_page_dark_mode">Dark Mode</string>-->
+<!--    <string name="setting_page_language">Languages</string>-->
+<!--    <string name="setting_page_helplang">Help translation</string>-->
+<!--    <string name="setting_page_helplang_summary">Help to translate TigerInTheWall into your language</string>-->
+<!--    <string name="setting_page_privacy">Privacy</string>-->
+<!--    <string name="setting_page_firebase">Enable Firebase Service</string>-->
+<!--    <string name="setting_page_firebase_summary">Analysis &amp; Crashlytics logs will be uploaded</string>-->
+<!--    <string name="setting_page_firebase_summaryNo">Analysis &amp; Crashlytics logs will not be uploaded</string>-->
 
     <string name="about_page_info">Introduction</string>
     <string name="about_page_info_desc">Are you tired of scouring through long lists of apps when sharing pictures or open a file just to find a few apps that you use a lot?\n\nWhy you app occupy my sheet?? If I needed you, I\'d open the app myself to use it!\n\nTigerInTheWall is an App that allow you to clean up your sheets, just like sharesheet, open mode sheet and more!\n\nWorks with the Magisk modules Riru - Core and Riru - IFWEnhance, and root permission.</string>
@@ -120,5 +124,21 @@
         <item>4</item>
         <item>5</item>
     </string-array>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
 </resources>

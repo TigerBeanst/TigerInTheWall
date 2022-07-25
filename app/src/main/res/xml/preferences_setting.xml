@@ -1,0 +1,43 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/setting_function">
+
+        <rikka.material.preference.MaterialSwitchPreference
+            app:key="pref_blacklist"
+            app:defaultValue="true"
+            app:summaryOff="@string/setting_blacklist_summary_no"
+            app:summaryOn="@string/setting_blacklist_summary"
+            app:title="@string/setting_blacklist" />
+
+        <rikka.material.preference.MaterialSwitchPreference
+            app:key="pref_system_app"
+            app:defaultValue="true"
+            app:summaryOff="@string/setting_system_app_summary_no"
+            app:summaryOn="@string/setting_system_app_summary"
+            app:title="@string/setting_system_app" />
+
+        <rikka.material.preference.MaterialSwitchPreference
+            app:key="pref_direct_share"
+            app:defaultValue="false"
+            app:summaryOff="@string/setting_disable_direct_summary_no"
+            app:summaryOn="@string/setting_disable_direct_summary"
+            app:title="@string/setting_disable_direct" />
+
+    </PreferenceCategory>
+
+<!--    <PreferenceCategory app:title="@string/sync_header">-->
+
+<!--        <rikka.material.preference.MaterialSwitchPreference-->
+<!--            app:key="sync"-->
+<!--            app:title="@string/sync_title" />-->
+
+<!--        <rikka.material.preference.MaterialSwitchPreference-->
+<!--            app:dependency="sync"-->
+<!--            app:key="attachment"-->
+<!--            app:summaryOff="@string/attachment_summary_off"-->
+<!--            app:summaryOn="@string/attachment_summary_on"-->
+<!--            app:title="@string/attachment_title" />-->
+
+<!--    </PreferenceCategory>-->
+
+</PreferenceScreen>

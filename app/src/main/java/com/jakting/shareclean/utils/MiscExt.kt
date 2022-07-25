@@ -2,6 +2,7 @@ package com.jakting.shareclean.utils
 
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ApplicationInfo
 import android.content.res.ColorStateList
 import android.content.res.Configuration
 import android.content.res.Resources
@@ -74,11 +75,14 @@ fun View.isTotallyVisible(): Boolean {
     return isGlobalVisible && Rect.intersects(actualPosition, screen)
 }
 
-//fun setFirebase() {
-//    val isUseFirebase = settingSharedPreferences.getBoolean("switch_firebase", true)
-//    FirebaseAnalytics.getInstance(appContext).setAnalyticsCollectionEnabled(isUseFirebase)
-//    FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(isUseFirebase)
-//}
+fun Context?.isDebug(): Boolean {
+    return try {
+        val info = this!!.applicationInfo
+        info.flags and ApplicationInfo.FLAG_DEBUGGABLE != 0
+    } catch (e: java.lang.Exception) {
+        false
+    }
+}
 
 
 

@@ -38,13 +38,20 @@
     <string name="misc_title">杂项</string>
     <string name="manage_apply_success">清理完成</string>
     <string name="manage_search">搜索</string>
-    <string name="setting_page_function">功能</string>
-    <string name="setting_page_showSystemApp">显示系统应用</string>
+    <string name="setting_function">功能</string>
+    <string name="setting_system_app">显示系统应用</string>
     <string name="manager_clean_detail_select_all">选择全部</string>
     <string name="manager_clean_detail_select_none">取消全选</string>
     <string name="manager_clean_detail_clean">清理</string>
     <string name="manager_clean_detail_advanced">高级</string>
     <string name="status_card_dialog_no_module_title">模块未安装</string>
     <string name="status_card_dialog_no_module_content">墙中虎无法找到模块「IFW Enhance TIW」。\n\n这通常意味着您所做的所有操作都不会生效，请确保您已正确安装模块。\n\n自新版本开始，墙中虎需要使用经过修改后的「IFW Enhance TIW」（而不是「IFW Enhance」）</string>
-
+    <string name="setting_blacklist">黑名单模式</string>
+    <string name="setting_blacklist_summary">当前为黑名单模式，被选中的活动将会被清除，且永不出现在意图列表里。</string>
+    <string name="setting_blacklist_summary_no">当前为白名单模式，仅有选中的活动会保留在意图列表里。</string>
+    <string name="setting_system_app_summary">显示系统应用，禁用系统应用意图可能会带来未知错误。</string>
+    <string name="setting_system_app_summary_no">不显示系统应用，但您此前对系统应用进行的清理不会消失。</string>
+    <string name="setting_disable_direct">禁用「直接分享」</string>
+    <string name="setting_disable_direct_summary">禁用未遭修改的分享面板中的「直接分享」。无法禁用 Android 10+ 设备上的直接分享。</string>
+    <string name="setting_disable_direct_summary_no">启用未遭修改的分享面板中的「直接分享」。无法禁用 Android 10+ 设备上的直接分享。</string>
 </resources>

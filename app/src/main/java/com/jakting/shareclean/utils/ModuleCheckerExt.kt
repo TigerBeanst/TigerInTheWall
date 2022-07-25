@@ -1,5 +1,6 @@
 package com.jakting.shareclean.utils
 
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import com.jakting.shareclean.utils.application.Companion.appContext
@@ -18,7 +19,7 @@ fun moduleApplyAvailable(): Boolean {
     return true
 }
 
-fun moduleInfo(): Array<String> {
+fun Context?.moduleInfo(): Array<String> {
     // 检查 Riru 版
     val riruShell = runShell("cat /data/adb/modules/riru_ifw_enhance_tiw/module.prop")
     if(riruShell.isSuccess){
@@ -31,7 +32,7 @@ fun moduleInfo(): Array<String> {
     return arrayOf("", "", "")
 }
 
-fun moduleVersion(sr: Shell.Result): Array<String?> {
+fun Context?.moduleVersion(sr: Shell.Result): Array<String?> {
     val shellResult = sr.getPureCat()
     logd(shellResult)
     if (shellResult.isEmpty()) return arrayOf("", "")

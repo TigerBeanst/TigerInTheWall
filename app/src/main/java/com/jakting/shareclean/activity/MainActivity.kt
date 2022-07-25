@@ -10,7 +10,7 @@ import com.jakting.shareclean.BuildConfig
 import com.jakting.shareclean.R
 import com.jakting.shareclean.databinding.ActivityMainBinding
 import com.jakting.shareclean.utils.*
-import com.jakting.shareclean.utils.MyApplication.Companion.shell
+import com.jakting.shareclean.utils.application.Companion.shell
 import dev.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
 import kotlinx.coroutines.launch
 

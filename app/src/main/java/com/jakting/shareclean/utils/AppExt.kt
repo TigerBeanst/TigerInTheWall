@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable
 import androidx.core.content.ContextCompat
 import com.jakting.shareclean.R
 import com.jakting.shareclean.data.AppDetail
-import com.jakting.shareclean.utils.MyApplication.Companion.appContext
+import com.jakting.shareclean.utils.application.Companion.appContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

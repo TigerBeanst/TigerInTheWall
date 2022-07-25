@@ -16,7 +16,7 @@
     </queries>
 
     <application
-        android:name=".utils.MyApplication"
+        android:name=".utils.application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -62,6 +62,10 @@
             android:exported="true"
             android:parentActivityName=".activity.CleanManagerActivity"
             android:theme="@style/TigerBeanstTheme.TigerColor" />
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:exported="true"
+            android:parentActivityName=".activity.MainActivity" />
     </application>
 
 </manifest>

@@ -1,9 +1,7 @@
 package com.jakting.shareclean.utils
 
 import android.content.Intent
-import com.jakting.shareclean.utils.MyApplication.Companion.appContext
-import com.jakting.shareclean.utils.MyApplication.Companion.kv
-import java.io.File
+import com.jakting.shareclean.utils.application.Companion.kv
 
 const val ifw_send_file_path = "/data/system/ifw/TigerInTheWall_Intent_send.xml"
 const val ifw_send_multi_file_path = "/data/system/ifw/TigerInTheWall_Intent_send_multi.xml"

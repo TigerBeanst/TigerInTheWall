@@ -2,9 +2,8 @@ package com.jakting.shareclean.utils
 
 import android.content.Intent
 import android.content.pm.PackageManager
-import com.jakting.shareclean.utils.MyApplication.Companion.appContext
+import com.jakting.shareclean.utils.application.Companion.appContext
 import com.topjohnwu.superuser.Shell
-import java.io.File
 
 fun moduleApplyAvailable(): Boolean {
     val resolveInfoList = appContext.packageManager!!.queryIntentActivities(

@@ -20,10 +20,10 @@ import com.jakting.shareclean.R
 import com.jakting.shareclean.data.App
 import com.jakting.shareclean.data.AppInfo
 import com.jakting.shareclean.databinding.ActivityCleanManagerBinding
-import com.jakting.shareclean.utils.MyApplication.Companion.chipBrowser
-import com.jakting.shareclean.utils.MyApplication.Companion.chipShare
-import com.jakting.shareclean.utils.MyApplication.Companion.chipText
-import com.jakting.shareclean.utils.MyApplication.Companion.chipView
+import com.jakting.shareclean.utils.application.Companion.chipBrowser
+import com.jakting.shareclean.utils.application.Companion.chipShare
+import com.jakting.shareclean.utils.application.Companion.chipText
+import com.jakting.shareclean.utils.application.Companion.chipView
 import com.jakting.shareclean.utils.getAppIconByPackageName
 import com.jakting.shareclean.utils.writeIfwFiles
 import kotlinx.coroutines.launch

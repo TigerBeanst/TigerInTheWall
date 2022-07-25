@@ -10,7 +10,7 @@ import com.tencent.mmkv.MMKV
 import com.topjohnwu.superuser.Shell
 
 
-class MyApplication : Application() {
+class application : Application() {
 
     init {
         Shell.enableVerboseLogging = BuildConfig.DEBUG

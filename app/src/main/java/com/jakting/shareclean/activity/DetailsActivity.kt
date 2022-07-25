@@ -26,8 +26,8 @@ import com.jakting.shareclean.data.App
 import com.jakting.shareclean.data.AppIntent
 import com.jakting.shareclean.databinding.ActivityDetailsBinding
 import com.jakting.shareclean.utils.*
-import com.jakting.shareclean.utils.MyApplication.Companion.intentIconMap
-import com.jakting.shareclean.utils.MyApplication.Companion.kv
+import com.jakting.shareclean.utils.application.Companion.intentIconMap
+import com.jakting.shareclean.utils.application.Companion.kv
 import kotlinx.coroutines.launch
 
 

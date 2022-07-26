@@ -14,7 +14,7 @@
     <string name="status_card_exist_module">已安装模块版本：%s(%s)</string>
     <string name="status_card_exist_inject">注入接口：</string>
     <string name="status_card_dialog_title">状态未知</string>
-    <string name="status_card_dialog_content">由于缺少权限，无法获取「IFW Enhance TIW」模块状态。\n\n「墙中虎」需要较高的系统权限以检查模块状态与清理意图。\n\n请确保您拥有 Root 权限、经由 Root 授权启动的 Shizuku 或 Sui。</string>
+    <string name="status_card_dialog_content">由于缺少权限，无法获取「IFW Enhance TIW」模块状态。\n\n「墙中虎」需要较高的系统权限以检查模块状态与清理意图。\n\n请确保您拥有 MagiskSU 之类的完整 Root 权限。诸如 MIUI 之类的系统自带的 Root 可能不完整。</string>
     <string name="status_card_dialog_more">更多</string>
     <string name="status_card_dialog_more_url">https://ic.into.icu/zh-CN/download/</string>
     <string name="manager_clean_title">清理管理</string>

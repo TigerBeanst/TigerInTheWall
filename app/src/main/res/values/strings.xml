@@ -16,7 +16,7 @@
     <string name="status_card_exist_inject">Injection Interface:</string>
     <string name="status_card_exist_unknown" translatable="false">🤐</string>
     <string name="status_card_dialog_title">Unknown status</string>
-    <string name="status_card_dialog_content">Unable to check module \"IFW Enhance TIW\" status, due to lack of permission.\n\nTigerInTheWall needs higher system permission to check module and do cleaning.\n\nMake sure you have root permission or Shizuku(Root) or Sui.</string>
+    <string name="status_card_dialog_content">Unable to check module \"IFW Enhance TIW\" status, due to lack of permission.\n\nTigerInTheWall needs higher system permission to check module and do cleaning.\n\nMake sure you have full root permission, such as MagiskSU. Systems such as MIUI may have an incomplete built-in Root.</string>
     <string name="status_card_dialog_no_module_title">Module not installed</string>
     <string name="status_card_dialog_no_module_content">TigerInTheWall cannot find module \"IFW Enhance TIW\".\n\nUsually, nothing you do will work. Make sure you have install module correctly.\n\nFrom the new version, TigerInTheWall needs to use the modified module \"IFW Enhance TIW\" (not \"IFW Enhance\")</string>
     <string name="status_card_dialog_more">More</string>
@@ -51,13 +51,6 @@
     <string name="misc_setting_title">Settings</string>
     <string name="misc_about_title">About</string>
     <string name="misc_title">Miscellaneous</string>
-
-    <!--    <string name="riru_status_card_exist_dialog_title">Module details</string>-->
-    <!--    <string name="riru_status_card_exist_dialog_msg" translatable="false">Riru - Core: %1$s (%2$s)\nRiru - IFWEnhance: %3$s (%4$s)</string>-->
-    <!--    <string name="riru_status_card_not">Inactive module</string>-->
-    <!--    <string name="riru_status_card_not_detail">Modules have not been properly applied</string>-->
-    <!--    <string name="riru_status_card_download">Your device may not have the Riru - Core or Riru - IFWEnhance module installed.\n\nClick follow button to go to the Download pages.</string>-->
-    <!--    <string name="riru_status_card_download_btn">DOWNLOAD</string>-->
 
 
     <string name="manage_apply_success">Clean Finished</string>

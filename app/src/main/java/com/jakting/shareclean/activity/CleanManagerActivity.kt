@@ -156,7 +156,11 @@ class CleanManagerActivity : BaseActivity() {
         binding.managerCleanStateLayout.onRefresh {
             lifecycleScope.launch {
                 setChip(false)
-                data = AppInfo().getAppList().filter { it.isSystem == settingSharedPreferences.getBoolean("pref_system_app",true) }
+                data = if(settingSharedPreferences.getBoolean("pref_system_app",true)){
+                    AppInfo().getAppList()
+                }else{
+                    AppInfo().getAppList().filter { !it.isSystem }
+                }
                 binding.managerCleanRecyclerView.models = data
                 setChip(true)
                 binding.managerCleanStateLayout.showContent()

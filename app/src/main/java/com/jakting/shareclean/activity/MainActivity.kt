@@ -5,13 +5,13 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jakting.shareclean.BaseActivity
 import com.jakting.shareclean.BuildConfig
 import com.jakting.shareclean.R
 import com.jakting.shareclean.databinding.ActivityMainBinding
 import com.jakting.shareclean.utils.*
 import com.jakting.shareclean.utils.application.Companion.shell
-import dev.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
 import kotlinx.coroutines.launch
 
 
@@ -105,20 +105,16 @@ class MainActivity : BaseActivity() {
                 binding.contentMain.card1Module.cardStatusTitle.text =
                     getString(R.string.status_card_no_module)
                 binding.contentMain.card1Module.cardStatus.setOnClickListener { view ->
-                    (mdDialog(
-                        getString(R.string.status_card_dialog_no_module_title),
-                        getString(R.string.status_card_dialog_no_module_content),
-                        "dialog_unknown"
-                    ).setPositiveButton(
-                        getString(R.string.ok), R.drawable.ic_twotone_check_24
-                    ) { dialog, _ ->
-                        dialog.dismiss()
-                    }.setNegativeButton(
-                        getString(R.string.status_card_dialog_more),
-                        R.drawable.ic_twotone_open_in_browser_24
-                    ) { _, _ ->
-                        openLink(getString(R.string.status_card_dialog_more_url))
-                    } as BottomSheetMaterialDialog.Builder).show(290)
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle(getString(R.string.status_card_dialog_no_module_title))
+                        .setMessage(getString(R.string.status_card_dialog_no_module_content))
+                        .setPositiveButton(getString(R.string.ok)) { dialog, _ ->
+                            dialog.dismiss()
+                        }
+                        .setNegativeButton(getString(R.string.status_card_dialog_more)) { dialog, _ ->
+                            openLink(getString(R.string.status_card_dialog_more_url))
+                        }
+                        .show()
                 }
             }
 
@@ -126,20 +122,16 @@ class MainActivity : BaseActivity() {
         } else {
             //没有授予 root 的时候，点击卡片会弹窗
             binding.contentMain.card1Module.cardStatus.setOnClickListener { view ->
-                (mdDialog(
-                    getString(R.string.status_card_dialog_title),
-                    getString(R.string.status_card_dialog_content),
-                    "dialog_unknown"
-                ).setPositiveButton(
-                    getString(R.string.ok), R.drawable.ic_twotone_check_24
-                ) { dialog, _ ->
-                    dialog.dismiss()
-                }.setNegativeButton(
-                    getString(R.string.status_card_dialog_more),
-                    R.drawable.ic_twotone_open_in_browser_24
-                ) { _, _ ->
-                    openLink(getString(R.string.status_card_dialog_more_url))
-                } as BottomSheetMaterialDialog.Builder).show(290)
+                MaterialAlertDialogBuilder(this)
+                    .setTitle(getString(R.string.status_card_dialog_title))
+                    .setMessage(getString(R.string.status_card_dialog_content))
+                    .setPositiveButton(getString(R.string.ok)) { dialog, _ ->
+                        dialog.dismiss()
+                    }
+                    .setNegativeButton(getString(R.string.status_card_dialog_more)) { dialog, _ ->
+                        openLink(getString(R.string.status_card_dialog_more_url))
+                    }
+                    .show()
             }
         }
     }

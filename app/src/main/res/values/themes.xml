@@ -11,12 +11,6 @@
         <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="material_dialog_background">@color/colorBackground</item>
-        <item name="material_dialog_title_text_color">#000000</item>
-        <item name="material_dialog_message_text_color">#5F5F5F</item>
-        <item name="material_dialog_positive_button_color">@color/colorAccent</item>
-        <item name="material_dialog_positive_button_text_color">#FFFFFF</item>
-        <item name="material_dialog_negative_button_text_color">@color/colorAccent</item>
 
         <item name="colorPrimary">@color/md_theme_light_primary</item>
         <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
@@ -55,11 +49,5 @@
         <item name="android:layout_height" tools:ignore="PrivateResource">@dimen/mtrl_min_touch_target_size</item>
         <item name="android:background">?attr/actionBarItemBackground</item>
     </style>
-
-    <!-- 恢复 MaterialDialog（第三方库）的字体 -->
-    <style name="MaterialDialog">
-        <item name="android:fontFamily">sans-serif</item>
-    </style>
-
 
 </resources>

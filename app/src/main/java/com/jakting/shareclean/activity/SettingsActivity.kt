@@ -1,14 +1,15 @@
 package com.jakting.shareclean.activity
 
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jakting.shareclean.R
-import com.jakting.shareclean.utils.ifw_direct_share
-import com.jakting.shareclean.utils.ifw_direct_share_file_path
-import com.jakting.shareclean.utils.logd
-import com.jakting.shareclean.utils.runShell
+import com.jakting.shareclean.utils.*
+import com.jakting.shareclean.utils.application.Companion.kv
 import rikka.material.preference.MaterialSwitchPreference
 
 class SettingsActivity : AppCompatActivity() {
@@ -33,6 +34,7 @@ class SettingsActivity : AppCompatActivity() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.preferences_setting, rootKey)
 
+            // 直接分享
             val directShareSwitch = findPreference<MaterialSwitchPreference>("pref_direct_share")
             if (directShareSwitch != null) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -59,6 +61,35 @@ class SettingsActivity : AppCompatActivity() {
 
 
                 }
+            }
+
+            findPreference<Preference>("pref_reset_ifw")?.setOnPreferenceClickListener {
+                MaterialAlertDialogBuilder(activity as Context)
+                    .setTitle(R.string.setting_reset_secondary_confirmation)
+                    .setMessage(R.string.setting_reset_secondary_confirmation_summary)
+                    .setPositiveButton(R.string.ok) { _, _ ->
+                        if (deleteIfwFiles("all")) {
+                            activity.toast(R.string.setting_reset_success, true)
+                        } else {
+                            activity.toast(R.string.setting_reset_error, true)
+                        }
+                    }
+                    .setNegativeButton(R.string.cancel) { _, _ -> }
+                    .show()
+                true
+            }
+
+            findPreference<Preference>("pref_reset_configuration")?.setOnPreferenceClickListener {
+                MaterialAlertDialogBuilder(activity as Context)
+                    .setTitle(R.string.setting_reset_secondary_confirmation)
+                    .setMessage(R.string.setting_reset_secondary_confirmation_summary)
+                    .setPositiveButton(R.string.ok) { _, _ ->
+                        kv.clearAll()
+                        activity.toast(R.string.setting_reset_success, true)
+                    }
+                    .setNegativeButton(R.string.cancel) { _, _ -> }
+                    .show()
+                true
             }
         }
     }

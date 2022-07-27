@@ -33,6 +33,7 @@
     <string name="manager_clean_type_text">Press Text</string>
     <string name="manager_clean_type_browser">Browser</string>
     <string name="manager_clean_type_browser_http" translatable="false">HTTP/HTTPS</string>
+    <string name="manager_search">Search</string>
 
     <string name="manager_clean_detail_title">App Detail</string>
     <string name="manager_clean_detail_version">Version v%s(%s)</string>
@@ -43,18 +44,22 @@
     <string name="manager_clean_detail_select_all">Select All</string>
     <string name="manager_clean_detail_select_none">Deselect all</string>
     <string name="manager_clean_detail_advanced">Advanced</string>
+    <string name="manage_apply_success">Clean Finished</string>
 
 
     <string name="misc_list_title">Other</string>
     <string name="misc_quick_clean_title">Quick Clean</string>
-    <string name="misc_backup_title">Backup &amp; Restore</string>
+    <string name="misc_backup_and_restore_title">Backup &amp; Restore</string>
     <string name="misc_setting_title">Settings</string>
     <string name="misc_about_title">About</string>
     <string name="misc_title">Miscellaneous</string>
 
-
-    <string name="manage_apply_success">Clean Finished</string>
-    <string name="manage_search">Search</string>
+    <string name="misc_backup_and_restore_backup">Backup</string>
+    <string name="misc_backup_and_restore_restore">Restore</string>
+    <string name="misc_backup_and_restore_msg">Since v2.0.0, RnIntentClean has been renamed TigerInTheWall.\n\nTigerInTheWall is compatible with RnIntentClean backup files, but not the other way around.</string>
+    <string name="misc_backup_and_restore_backup_ok">Backup completed</string>
+    <string name="misc_backup_and_restore_error">An error occurred when backup</string>
+    <string name="misc_backup_and_restore_restore_ok">Restore completed</string>
 
 
     <string name="setting_function">Function</string>
@@ -67,15 +72,16 @@
     <string name="setting_disable_direct">Disable "Direct Share"</string>
     <string name="setting_disable_direct_summary">Disable "Direct Share" of unmodified Sharesheet. Cannot disable "Direct Share" on Android 10+ devices.</string>
     <string name="setting_disable_direct_summary_no">Enable "Direct Share" of unmodified Sharesheet. Cannot disable "Direct Share" on Android 10+ devices.</string>
-<!--    <string name="setting_page_appearance">Appearance</string>-->
-<!--    <string name="setting_page_dark_mode">Dark Mode</string>-->
-<!--    <string name="setting_page_language">Languages</string>-->
-<!--    <string name="setting_page_helplang">Help translation</string>-->
-<!--    <string name="setting_page_helplang_summary">Help to translate TigerInTheWall into your language</string>-->
-<!--    <string name="setting_page_privacy">Privacy</string>-->
-<!--    <string name="setting_page_firebase">Enable Firebase Service</string>-->
-<!--    <string name="setting_page_firebase_summary">Analysis &amp; Crashlytics logs will be uploaded</string>-->
-<!--    <string name="setting_page_firebase_summaryNo">Analysis &amp; Crashlytics logs will not be uploaded</string>-->
+
+    <string name="setting_troubleshooting">Troubleshooting</string>
+    <string name="setting_reset_success">Reset success</string>
+    <string name="setting_reset_error">Reset failed</string>
+    <string name="setting_reset_ifw">Reset IFW files</string>
+    <string name="setting_reset_ifw_summary">This will delete all TigerInTheWall created IFW files(others won\'t be affected). It won\'t clear your configuration.</string>
+    <string name="setting_reset_configuration">Reset configuration</string>
+    <string name="setting_reset_configuration_summary">This will clear TigerInTheWall\'s configuration, make sure you have a good backup.</string>
+    <string name="setting_reset_secondary_confirmation">Secondary confirmation</string>
+    <string name="setting_reset_secondary_confirmation_summary">This action is irrevocable. Only do this if there is a problem with TigerInTheWall</string>
 
     <string name="about_page_info">Introduction</string>
     <string name="about_page_info_desc">Are you tired of scouring through long lists of apps when sharing pictures or open a file just to find a few apps that you use a lot?\n\nWhy you app occupy my sheet?? If I needed you, I\'d open the app myself to use it!\n\nTigerInTheWall is an App that allow you to clean up your sheets, just like sharesheet, open mode sheet and more!\n\nWorks with the Magisk modules Riru - Core and Riru - IFWEnhance, and root permission.</string>
@@ -94,13 +100,6 @@
     <string name="misc_disable_direct_No">This is not available on Android 10+ devices.</string>
     <string name="misc_disable_direct_toastEnable">Direct Share has been enabled</string>
     <string name="misc_disable_direct_toastDisable">Direct Share has been disabled</string>
-
-    <string name="br_backup">Backup</string>
-    <string name="br_restore">Restore</string>
-    <string name="br_msg">If your device supports Google services and already logged in, Android will do an automatic backup, or you can do a manual backup. \n\n Please be aware, however: as versions change, future versions may not support older versions of the data format.</string>
-    <string name="br_backup_ok">Backup completed.</string>
-    <string name="br_backup_error">An error occurred</string>
-    <string name="br_restore_ok">Restore completed.</string>
 
     <string name="dialog_positive">Got it</string>
 

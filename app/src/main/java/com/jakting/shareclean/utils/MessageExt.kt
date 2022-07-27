@@ -8,10 +8,18 @@ import com.google.android.material.snackbar.Snackbar
 
 
 fun Context?.logd(message: String) =
-    if(isDebug()) {Log.d("TigerBeanst", message)} else {}
+    if (isDebug()) {
+        Log.d("TigerBeanst", message)
+    } else {
+    }
 
-fun Context?.toast(message: CharSequence) =
-    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+fun Context?.toast(message: Any, isStringResId: Boolean = false) =
+    if (isStringResId) {
+        Toast.makeText(this, this!!.getString(message as Int), Toast.LENGTH_SHORT).show()
+    } else {
+        Toast.makeText(this, message.toString(), Toast.LENGTH_SHORT).show()
+    }
+
 
 fun Context?.longtoast(message: CharSequence) =
     Toast.makeText(this, message, Toast.LENGTH_LONG).show()

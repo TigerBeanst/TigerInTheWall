@@ -25,19 +25,18 @@
 
     </PreferenceCategory>
 
-<!--    <PreferenceCategory app:title="@string/sync_header">-->
+    <PreferenceCategory app:title="@string/setting_troubleshooting">
 
-<!--        <rikka.material.preference.MaterialSwitchPreference-->
-<!--            app:key="sync"-->
-<!--            app:title="@string/sync_title" />-->
+        <Preference
+            app:key="pref_reset_ifw"
+            app:summary="@string/setting_reset_ifw_summary"
+            app:title="@string/setting_reset_ifw" />
 
-<!--        <rikka.material.preference.MaterialSwitchPreference-->
-<!--            app:dependency="sync"-->
-<!--            app:key="attachment"-->
-<!--            app:summaryOff="@string/attachment_summary_off"-->
-<!--            app:summaryOn="@string/attachment_summary_on"-->
-<!--            app:title="@string/attachment_title" />-->
+        <Preference
+            app:key="pref_reset_configuration"
+            app:summary="@string/setting_reset_configuration_summary"
+            app:title="@string/setting_reset_configuration" />
 
-<!--    </PreferenceCategory>-->
+    </PreferenceCategory>
 
 </PreferenceScreen>

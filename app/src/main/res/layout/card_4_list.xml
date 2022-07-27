@@ -81,11 +81,11 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_two_layout"
                 android:paddingTop="16dp"
                 android:paddingBottom="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
 
                 <TextView
                     android:id="@+id/card_two_title"
@@ -93,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:alpha="0.8"
-                    android:text="@string/misc_backup_title"
+                    android:text="@string/misc_backup_and_restore_title"
                     android:textColor="?attr/colorOnBackground"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -109,7 +109,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:contentDescription="@string/misc_backup_title" />
+                    android:contentDescription="@string/misc_backup_and_restore_title" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

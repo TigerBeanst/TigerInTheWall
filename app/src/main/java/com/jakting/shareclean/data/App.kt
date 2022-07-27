@@ -1,6 +1,5 @@
 package com.jakting.shareclean.data
 
-import android.graphics.drawable.Drawable
 import androidx.databinding.BaseObservable
 import java.io.Serializable
 
@@ -34,8 +33,5 @@ data class AppDetail(
     var versionName: String = "",
 )
 
-data class IntentIcon(
-    val packageNameAndComponent: String,
-    val icon: Drawable
-)
+data class BackupMMKV(val mmkvKey: String, val mmkvValue: Boolean)
 

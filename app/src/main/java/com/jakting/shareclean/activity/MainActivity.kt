@@ -1,8 +1,10 @@
 package com.jakting.shareclean.activity
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.content.res.ColorStateList
+import android.net.Uri
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -18,7 +20,8 @@ import kotlinx.coroutines.launch
 class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
+    private val WRITE_REQUEST_CODE = 43
+    private val READ_REQUEST_CODE = 42
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -43,14 +46,52 @@ class MainActivity : BaseActivity() {
         binding.contentMain.card3ManageIntent.cardManager.setOnClickListener {
             startActivity(Intent(this, CleanManagerActivity::class.java))
         }
+        binding.contentMain.card4List.cardTwoLayout.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.misc_backup_and_restore_title)
+                .setMessage(R.string.misc_backup_and_restore_msg)
+                .setPositiveButton(R.string.misc_backup_and_restore_backup) { _, _ ->
+                    val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                        addCategory(Intent.CATEGORY_OPENABLE)
+                        type = "application/json"
+                        val time = System.currentTimeMillis() //用于 备份&恢复 的时间戳
+                        putExtra(Intent.EXTRA_TITLE, "TigerInTheWall_backup_$time.json")
+                    }
+                    startActivityForResult(intent, WRITE_REQUEST_CODE)
+                }
+                .setNegativeButton(R.string.misc_backup_and_restore_restore) { _, _ ->
+                    val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                        addCategory(Intent.CATEGORY_OPENABLE)
+                        type = "application/json"
+                    }
+                    startActivityForResult(intent, READ_REQUEST_CODE)
+                }
+                .show()
+        }
         binding.contentMain.card4List.cardThreeLayout.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
-//        if(binding.coordinatorLayout.isTotallyVisible()){
-//            toast("好活")
-//        }else{
-//            toast("不好活")
-//        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
+        super.onActivityResult(requestCode, resultCode, resultData)
+        toast(getString(R.string.please_wait))
+        if (requestCode == WRITE_REQUEST_CODE && resultData != null && resultData.data != null) {
+            //备份
+            if (backupMMKV(resultData.data as Uri)) {
+                toast(getString(R.string.misc_backup_and_restore_backup_ok))
+            } else {
+                toast(getString(R.string.misc_backup_and_restore_error))
+            }
+        }
+        if (requestCode == READ_REQUEST_CODE && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
+            //还原
+            if (restoreMMKV(resultData.data as Uri)) {
+                toast(getString(R.string.misc_backup_and_restore_restore_ok))
+            } else {
+                toast(getString(R.string.misc_backup_and_restore_error))
+            }
+        }
     }
 
     @SuppressLint("SetTextI18n")

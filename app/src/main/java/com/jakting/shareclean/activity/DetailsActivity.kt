@@ -28,7 +28,6 @@ import com.jakting.shareclean.databinding.ActivityDetailsBinding
 import com.jakting.shareclean.utils.*
 import com.jakting.shareclean.utils.application.Companion.intentIconMap
 import com.jakting.shareclean.utils.application.Companion.kv
-import com.jakting.shareclean.utils.application.Companion.settingSharedPreferences
 import kotlinx.coroutines.launch
 
 
@@ -115,9 +114,7 @@ class DetailsActivity : BaseActivity() {
                 //选中时状态变更
                 val cardView = findView<MaterialCardView>(R.id.app_card)
                 val appComponentName = findView<TextView>(R.id.app_component_name)
-                cardView.isChecked =
-                    (getModel<AppIntent>().checked
-                            == settingSharedPreferences.getBoolean("pref_blacklist", true))
+                cardView.isChecked = getModel<AppIntent>().checked
                 if (getModel<AppIntent>().checked) {
                     cardView.setCardBackgroundColor(getColorFromAttr(R.attr.colorTertiary))
                     appComponentName.setTextColor(getColorFromAttr(R.attr.colorOnTertiary))
@@ -207,11 +204,7 @@ class DetailsActivity : BaseActivity() {
             for (intentIndex in app.intentList.indices) {
                 val keyName =
                     "${app.intentList[intentIndex].type}/${app.intentList[intentIndex].packageName}/${app.intentList[intentIndex].component}"
-                kv.encode(
-                    keyName,
-                    (app.intentList[intentIndex].checked
-                            == settingSharedPreferences.getBoolean("pref_blacklist", true))
-                )
+                kv.encode(keyName, app.intentList[intentIndex].checked)
                 logd(keyName + " " + app.intentList[intentIndex].checked)
             }
             if (deleteIfwFiles("all") && writeIfwFiles()) toast(getString(R.string.manage_apply_success))

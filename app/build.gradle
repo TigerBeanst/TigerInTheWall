@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlinx-serialization'
 }
 
 android {
@@ -52,10 +53,9 @@ dependencies {
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0-RC'
 
     implementation 'me.zhanghai.android.appiconloader:appiconloader:1.4.0'
-
-    implementation 'com.alibaba.fastjson2:fastjson2-kotlin:2.0.10.android'
 
     implementation 'com.google.android.material:material:1.7.0-alpha03'
 

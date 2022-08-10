@@ -33,5 +33,15 @@ data class AppDetail(
     var versionName: String = "",
 )
 
-data class BackupMMKV(val mmkvKey: String, val mmkvValue: Boolean)
+@kotlinx.serialization.Serializable
+data class ComponentItem(
+    val component: String,
+    val status: Boolean
+)
+
+@kotlinx.serialization.Serializable
+data class BackupEntity(
+    val settings: Map<String, String>,
+    val components: MutableList<ComponentItem>
+)
 

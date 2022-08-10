@@ -14,9 +14,13 @@ import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
-import com.alibaba.fastjson2.*
-import com.jakting.shareclean.data.BackupMMKV
+import com.jakting.shareclean.data.BackupEntity
+import com.jakting.shareclean.data.ComponentItem
 import com.jakting.shareclean.utils.application.Companion.kv
+import com.jakting.shareclean.utils.application.Companion.settingSharedPreferences
+import com.jakting.shareclean.utils.application.Companion.settingSharedPreferencesEditor
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.*
 import java.io.BufferedReader
 import java.io.FileOutputStream
 import java.io.InputStreamReader
@@ -90,15 +94,21 @@ fun Context?.isDebug(): Boolean {
     }
 }
 
-fun Context.backupMMKV(uri: Uri): Boolean {
-    val mmkvList = mutableListOf<BackupMMKV>()
+fun Context.backupTIW(uri: Uri): Boolean {
+    val settingsAll = settingSharedPreferences.all
+    val mapForBackup = mutableMapOf<String, String>()
+    settingsAll.forEach { (k, v) ->
+        mapForBackup[k] = v.toString()
+    }
+    val mmkvList = mutableListOf<ComponentItem>()
     kv.allKeys()?.forEach { key ->
-        mmkvList.add(BackupMMKV(key, kv.getBoolean(key, false)))
+        mmkvList.add(ComponentItem(key, kv.getBoolean(key, false)))
     }
     try {
         this.contentResolver.openFileDescriptor(uri, "w")?.use { fileDescriptor ->
             FileOutputStream(fileDescriptor.fileDescriptor).use {
-                it.write(mmkvList.toJSONString().toByteArray())
+                val backup = BackupEntity(mapForBackup, mmkvList)
+                it.write(Json.encodeToString(backup).toByteArray())
             }
         }
         return true
@@ -108,7 +118,7 @@ fun Context.backupMMKV(uri: Uri): Boolean {
     return false
 }
 
-fun Context.restoreMMKV(uri: Uri): Boolean {
+fun Context.restoreTIW(uri: Uri): Boolean {
     val stringBuilder = StringBuilder()
     try {
         this.contentResolver.openInputStream(uri)?.use { inputStream ->
@@ -124,25 +134,33 @@ fun Context.restoreMMKV(uri: Uri): Boolean {
         e.printStackTrace()
         return false
     }
-    if(stringBuilder.toString().isJSONArray()){ //v2.x
-        val mmkv = stringBuilder.toString().parseArray()
-        mmkv.forEach {
-            val backupMMKV = it as JSONObject
-            kv.encode(backupMMKV.getString("mmkvKey"), backupMMKV.getBooleanValue("mmkvValue"))
-        }
-    }else{ //v1.x
-        val mmkv = stringBuilder.toString().parseObject()
-        mmkv.forEach {
-            val component = it.key.substringBeforeLast("/")
-            val newType = when(it.key.substringAfterLast("/")){
-                "send"->"1_share"
-                "send_multi"->"2_share_multi"
-                "view"->"3_view"
-                "text"->"4_text"
-                "browser"->"5_browser"
-                else-> "5_browser"
+    val jsonElement = Json.parseToJsonElement(stringBuilder.toString())
+    if (jsonElement.jsonObject.containsKey("settings")) { //v2.x
+        jsonElement.jsonObject["settings"]!!.jsonObject.entries.forEach {
+            if (it.value.toString() == "true" || it.value.toString() == "false") {
+                settingSharedPreferencesEditor.putBoolean(it.key, it.value.toString().toBoolean())
+            } else {
+                settingSharedPreferencesEditor.putString(it.key, it.value.toString())
             }
-            kv.encode("$newType/$component", it.value as Boolean)
+        }
+        jsonElement.jsonObject["components"]!!.jsonArray.forEach {
+            kv.encode(
+                (it.jsonObject["component"] as JsonPrimitive).contentOrNull,
+                it.jsonObject["status"].toString().toBoolean()
+            )
+        }
+    } else { //v1.x
+        jsonElement.jsonObject.entries.forEach {
+            val component = it.key.substringBeforeLast("/")
+            val newType = when (it.key.substringAfterLast("/")) {
+                "send" -> "1_share"
+                "send_multi" -> "2_share_multi"
+                "view" -> "3_view"
+                "text" -> "4_text"
+                "browser" -> "5_browser"
+                else -> "5_browser"
+            }
+            kv.encode("$newType/$component", it.value.toString().toBoolean())
         }
     }
     return true

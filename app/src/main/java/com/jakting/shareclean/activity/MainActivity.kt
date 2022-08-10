@@ -46,7 +46,9 @@ class MainActivity : BaseActivity() {
         binding.contentMain.card3ManageIntent.cardManager.setOnClickListener {
             startActivity(Intent(this, CleanManagerActivity::class.java))
         }
-        binding.contentMain.card4List.cardTwoLayout.setOnClickListener {
+
+        binding.contentMain.card4List.cardList1.setOnClickListener {}
+        binding.contentMain.card4List.cardList2.setOnClickListener {
             MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.misc_backup_and_restore_title)
                 .setMessage(R.string.misc_backup_and_restore_msg)
@@ -62,15 +64,16 @@ class MainActivity : BaseActivity() {
                 .setNegativeButton(R.string.misc_backup_and_restore_restore) { _, _ ->
                     val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
                         addCategory(Intent.CATEGORY_OPENABLE)
-                        type = "application/json"
+                        type = "*/*"
                     }
                     startActivityForResult(intent, READ_REQUEST_CODE)
                 }
                 .show()
         }
-        binding.contentMain.card4List.cardThreeLayout.setOnClickListener {
+        binding.contentMain.card4List.cardList3.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
+        binding.contentMain.card4List.cardList4.setOnClickListener {}
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
@@ -78,7 +81,7 @@ class MainActivity : BaseActivity() {
         toast(getString(R.string.please_wait))
         if (requestCode == WRITE_REQUEST_CODE && resultData != null && resultData.data != null) {
             //备份
-            if (backupMMKV(resultData.data as Uri)) {
+            if (backupTIW(resultData.data as Uri)) {
                 toast(getString(R.string.misc_backup_and_restore_backup_ok))
             } else {
                 toast(getString(R.string.misc_backup_and_restore_error))
@@ -86,7 +89,7 @@ class MainActivity : BaseActivity() {
         }
         if (requestCode == READ_REQUEST_CODE && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
             //还原
-            if (restoreMMKV(resultData.data as Uri)) {
+            if (restoreTIW(resultData.data as Uri)) {
                 toast(getString(R.string.misc_backup_and_restore_restore_ok))
             } else {
                 toast(getString(R.string.misc_backup_and_restore_error))

@@ -90,6 +90,9 @@ class MainActivity : BaseActivity() {
         if (requestCode == READ_REQUEST_CODE && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
             //还原
             if (restoreTIW(resultData.data as Uri)) {
+                if (deleteIfwFiles("all") && writeIfwFiles()) {
+                    toast(getString(R.string.misc_backup_and_restore_restore_ok))
+                }
                 toast(getString(R.string.misc_backup_and_restore_restore_ok))
             } else {
                 toast(getString(R.string.misc_backup_and_restore_error))

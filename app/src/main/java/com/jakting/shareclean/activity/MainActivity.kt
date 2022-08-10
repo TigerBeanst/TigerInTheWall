@@ -93,7 +93,6 @@ class MainActivity : BaseActivity() {
                 if (deleteIfwFiles("all") && writeIfwFiles()) {
                     toast(getString(R.string.misc_backup_and_restore_restore_ok))
                 }
-                toast(getString(R.string.misc_backup_and_restore_restore_ok))
             } else {
                 toast(getString(R.string.misc_backup_and_restore_error))
             }

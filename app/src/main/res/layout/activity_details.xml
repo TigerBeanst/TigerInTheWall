@@ -24,7 +24,8 @@
             android:layout_width="match_parent"
             app:expandedTitleTextColor="?attr/colorOnBackground"
             android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
-            app:contentScrim="@color/colorBackgroundLittleDarker"
+            app:contentScrim="?attr/colorSecondary"
+            app:collapsedTitleTextColor="?attr/colorOnBackground"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <com.google.android.material.appbar.MaterialToolbar
@@ -225,12 +226,12 @@
         android:layout_margin="16dp"
         android:contentDescription="@string/manager_clean_detail_clean"
         android:text="@string/manager_clean_detail_clean"
-        android:textColor="@color/colorFont"
+        android:textColor="?attr/colorOnPrimary"
         app:iconPadding="0dp"
         app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         app:backgroundTint="?attr/colorPrimary"
         app:icon="@drawable/ic_twotone_cleaning_services_24"
-        app:iconTint="@color/colorFont" />
+        app:iconTint="?attr/colorOnPrimary" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

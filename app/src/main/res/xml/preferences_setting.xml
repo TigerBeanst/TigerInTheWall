@@ -3,25 +3,43 @@
     <PreferenceCategory app:title="@string/setting_function">
 
         <rikka.material.preference.MaterialSwitchPreference
-            app:key="pref_blacklist"
             app:defaultValue="true"
+            app:key="pref_blacklist"
             app:summaryOff="@string/setting_blacklist_summary_no"
             app:summaryOn="@string/setting_blacklist_summary"
             app:title="@string/setting_blacklist" />
 
         <rikka.material.preference.MaterialSwitchPreference
-            app:key="pref_system_app"
             app:defaultValue="true"
+            app:key="pref_system_app"
             app:summaryOff="@string/setting_system_app_summary_no"
             app:summaryOn="@string/setting_system_app_summary"
             app:title="@string/setting_system_app" />
 
         <rikka.material.preference.MaterialSwitchPreference
-            app:key="pref_direct_share"
             app:defaultValue="false"
+            app:key="pref_direct_share"
             app:summaryOff="@string/setting_disable_direct_summary_no"
             app:summaryOn="@string/setting_disable_direct_summary"
             app:title="@string/setting_disable_direct" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/setting_network">
+
+        <rikka.preference.SimpleMenuPreference
+            app:defaultValue="0"
+            app:entries="@array/mirrors_list"
+            app:entryValues="@array/mirrors_list_values"
+            app:key="pref_mirrors"
+            app:summary="@string/setting_rules_mirror_summary"
+            app:title="@string/setting_rules_mirror" />
+        <EditTextPreference
+            app:key="pref_mirrors_custom"
+            app:isPreferenceVisible="false"
+            app:summary=""
+            app:title="@string/setting_rules_mirror_custom_repo" />
+
 
     </PreferenceCategory>
 

@@ -24,8 +24,11 @@
 
     <string name="manager_clean_title">App Cleaner</string>
     <string name="manager_clean_detail">Clean sh*t</string>
-    <string name="manager_intent_title">Intent Manager</string>
-    <string name="manager_intent_detail">Classified by Intent</string>
+    <string name="manager_quick_clean_title">Quick Clean</string>
+    <string name="manager_quick_clean_detail">Cloud Clean Rules</string>
+    <string name="manager_quick_clean_update_at">Update At %s</string>
+    <string name="manager_quick_clean_upload_at">Upload At %s</string>
+    <string name="net_url_error">Failed to request rule list. If you use a custom repository, check whether the url is correct</string>
 
     <string name="manager_clean_type_send">Share</string>
     <string name="manager_clean_type_send_multi">Share Multi</string>
@@ -48,7 +51,6 @@
 
 
     <string name="misc_list_title">Other</string>
-    <string name="misc_quick_clean_title">Quick Clean</string>
     <string name="misc_backup_and_restore_title">Backup &amp; Restore</string>
     <string name="misc_setting_title">Settings</string>
     <string name="misc_about_title">About</string>
@@ -56,7 +58,7 @@
 
     <string name="misc_backup_and_restore_backup">Backup</string>
     <string name="misc_backup_and_restore_restore">Restore</string>
-    <string name="misc_backup_and_restore_msg">Since v2.0.0, RnIntentClean has been renamed TigerInTheWall.\n\nTigerInTheWall is compatible with RnIntentClean backup files, but not the other way around.</string>
+    <string name="misc_backup_and_restore_msg">Create a backup profile for the TigerInTheWall, including intent cleanup entries and settings. \n The restore function is compatible with the "RnIntentClean" files.</string>
     <string name="misc_backup_and_restore_backup_ok">Backup completed</string>
     <string name="misc_backup_and_restore_error">An error occurred when backup</string>
     <string name="misc_backup_and_restore_restore_ok">Restore completed</string>
@@ -72,6 +74,12 @@
     <string name="setting_disable_direct">Disable "Direct Share"</string>
     <string name="setting_disable_direct_summary">Disable "Direct Share" of unmodified Sharesheet. Cannot disable "Direct Share" on Android 10+ devices.</string>
     <string name="setting_disable_direct_summary_no">Enable "Direct Share" of unmodified Sharesheet. Cannot disable "Direct Share" on Android 10+ devices.</string>
+
+    <string name="setting_network">Network</string>
+    <string name="setting_rules_mirror">Rules Mirrors</string>
+    <string name="setting_rules_mirror_summary">If your connection to Github is not good, you can try switching mirrors. Current use: %s</string>
+    <string name="setting_rules_mirror_custom">Custom</string>
+    <string name="setting_rules_mirror_custom_repo">Custom Rule Repository</string>
 
     <string name="setting_troubleshooting">Troubleshooting</string>
     <string name="setting_reset_success">Reset success</string>

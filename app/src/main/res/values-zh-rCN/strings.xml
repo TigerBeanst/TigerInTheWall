@@ -19,8 +19,11 @@
     <string name="status_card_dialog_more_url">https://ic.into.icu/zh-CN/download/</string>
     <string name="manager_clean_title">清理管理</string>
     <string name="manager_clean_detail">鲨了他们</string>
-    <string name="manager_intent_title">意图拦截</string>
-    <string name="manager_intent_detail">按意图分类</string>
+    <string name="manager_quick_clean_title">快速清理</string>
+    <string name="manager_quick_clean_detail">云端规则</string>
+    <string name="net_url_error">规则请求失败，请检查自定义规则地址是否正确</string>
+    <string name="manager_quick_clean_update_at">更新于 %s</string>
+    <string name="manager_quick_clean_upload_at">上传于 %s</string>
     <string name="manager_clean_type_send">分享到</string>
     <string name="manager_clean_type_send_multi">分享多份到</string>
     <string name="manager_clean_type_view">打开方式</string>
@@ -31,7 +34,6 @@
     <string name="manager_clean_system_warning_title">警告</string>
     <string name="manager_clean_system_warning_detail">这是一个系统应用。清理它很有可能会引起严重后果，请慎重考虑。</string>
     <string name="misc_list_title">其它</string>
-    <string name="misc_quick_clean_title">快速清理</string>
     <string name="misc_backup_and_restore_title">备份 &amp; 还原</string>
     <string name="misc_setting_title">设置</string>
     <string name="misc_about_title">关于</string>
@@ -54,9 +56,14 @@
     <string name="setting_disable_direct">禁用「直接分享」</string>
     <string name="setting_disable_direct_summary">禁用未遭修改的分享面板中的「直接分享」。无法禁用 Android 10+ 设备上的直接分享。</string>
     <string name="setting_disable_direct_summary_no">启用未遭修改的分享面板中的「直接分享」。无法禁用 Android 10+ 设备上的直接分享。</string>
+    <string name="setting_network">网络</string>
+    <string name="setting_rules_mirror">规则镜像</string>
+    <string name="setting_rules_mirror_summary">如果您连接 Github 的速率不佳，您可以尝试切换规则镜像。当前使用：%s</string>
+    <string name="setting_rules_mirror_custom">自定义</string>
+    <string name="setting_rules_mirror_custom_repo">自定义规则仓库</string>
     <string name="misc_backup_and_restore_backup">备份</string>
     <string name="misc_backup_and_restore_restore">还原</string>
-    <string name="misc_backup_and_restore_msg">自 v2.0.0 版本起，「氡·意图清理」更名为「墙中虎」，且兼容「氡·意图清理」v1.x 版本的备份文件，但不可反之。</string>
+    <string name="misc_backup_and_restore_msg">为「墙中虎」创建一个备份配置文件，包括意图清理条目与设置。\n还原功能兼容「氡·意图清理」配置文件。</string>
     <string name="misc_backup_and_restore_backup_ok">备份完成</string>
     <string name="misc_backup_and_restore_error">备份时出现错误</string>
     <string name="misc_backup_and_restore_restore_ok">还原完成</string>

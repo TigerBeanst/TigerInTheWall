@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlinx-serialization'
+    id 'com.diffplug.spotless'
 }
 
 android {
@@ -47,7 +48,7 @@ kapt {
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.appcompat:appcompat:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.preference:preference-ktx:1.2.0'
 
@@ -57,9 +58,11 @@ dependencies {
 
     implementation 'me.zhanghai.android.appiconloader:appiconloader:1.4.0'
 
-    implementation 'com.google.android.material:material:1.7.0-alpha03'
+    implementation 'com.google.android.material:material:1.7.0-beta01'
 
     implementation 'com.github.liangjingkanji:BRV:1.3.50'
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+    implementation 'com.github.liangjingkanji:Net:3.5.0'
 
     implementation 'com.tencent:mmkv:1.2.13'
 
@@ -75,4 +78,20 @@ dependencies {
 configurations.all {
     exclude group: 'dev.rikka.rikkax.appcompat', module: 'appcompat'
     exclude group: 'androidx.lifecycle', module: 'lifecycle-viewmodel-ktx'
+}
+
+spotless { // if you are using build.gradle.kts, instead of 'spotless {' use:
+    // configure<com.diffplug.gradle.spotless.SpotlessExtension> {
+    kotlin {
+        // by default the target is every '.kt' and '.kts` file in the java sourcesets
+        ktfmt('0.30').dropboxStyle()    // has its own section below
+        ktlint()   // has its own section below
+        diktat()   // has its own section below
+        prettier() // has its own section below
+        licenseHeader '/* (C)$YEAR */' // or licenseHeaderFile
+    }
+    kotlinGradle {
+        target '*.gradle.kts' // default target for kotlinGradle
+        ktlint() // or ktfmt() or prettier()
+    }
 }

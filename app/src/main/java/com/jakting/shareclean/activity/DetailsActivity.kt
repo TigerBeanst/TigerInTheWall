@@ -13,13 +13,11 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.updateLayoutParams
 import androidx.lifecycle.lifecycleScope
-import com.drake.brv.utils.BRV
 import com.drake.brv.utils.bindingAdapter
 import com.drake.brv.utils.setup
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.chip.Chip
-import com.jakting.shareclean.BR
 import com.jakting.shareclean.BaseActivity
 import com.jakting.shareclean.R
 import com.jakting.shareclean.data.App
@@ -79,7 +77,7 @@ class DetailsActivity : BaseActivity() {
             )
         }
         binding.cardSystemAppWarning.visibility = if (app.isSystem) View.VISIBLE else View.GONE
-        BRV.modelId = BR.app
+
         binding.rv.setup {
             addType<AppIntent>(R.layout.item_intent)
             onBind {
@@ -114,6 +112,7 @@ class DetailsActivity : BaseActivity() {
                 //选中时状态变更
                 val cardView = findView<MaterialCardView>(R.id.app_card)
                 val appComponentName = findView<TextView>(R.id.app_component_name)
+                appComponentName.text = getModel<AppIntent>().componentName
                 cardView.isChecked = getModel<AppIntent>().checked
                 if (getModel<AppIntent>().checked) {
                     cardView.setCardBackgroundColor(getColorFromAttr(R.attr.colorTertiary))

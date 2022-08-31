@@ -44,6 +44,21 @@ suspend fun getAppIconByPackageName(context: Context, ApkTempSendActivityName: S
     }
 
 
-private fun isSystemPackage(resolveInfo: ResolveInfo): Boolean {
+fun isSystemPackage(resolveInfo: ResolveInfo): Boolean {
     return resolveInfo.activityInfo.applicationInfo.flags and ApplicationInfo.FLAG_SYSTEM != 0
+}
+
+fun String?.isInstall():Boolean{
+    return try {
+        if(this==null){
+            false
+        }else{
+            var pkgInfo: PackageInfo = appContext.packageManager.getPackageInfo(this.trim(),
+                PackageManager.GET_ACTIVITIES)
+            true
+        }
+    } catch (e: PackageManager.NameNotFoundException) {
+        e.printStackTrace()
+        false
+    }
 }

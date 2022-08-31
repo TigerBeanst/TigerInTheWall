@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:attr/colorBackground"
-    tools:context=".activity.SettingsActivity">
+    tools:context=".activity.QuickCleanActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -12,17 +13,19 @@
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         android:background="?android:attr/colorBackground"
-        app:layout_constraintBottom_toTopOf="@id/manager_clean_chip_scroll_view"
+        app:layout_constraintBottom_toTopOf="@id/manager_quick_clean_state_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
+
             style="?attr/collapsingToolbarLayoutLargeStyle"
             android:layout_width="match_parent"
-            app:expandedTitleTextColor="?attr/colorOnBackground"
             android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
             app:contentScrim="?attr/colorSecondary"
+            app:collapsedTitleTextColor="?attr/colorOnBackground"
+            app:expandedTitleTextColor="?attr/colorOnBackground"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <com.google.android.material.appbar.MaterialToolbar
@@ -31,8 +34,9 @@
                 android:layout_height="?attr/actionBarSize"
                 android:elevation="0dp"
                 app:layout_collapseMode="pin"
+                app:menu="@menu/manager_intent_bar"
                 app:navigationIcon="@drawable/ic_twotone_arrow_back_24"
-                app:title="@string/misc_setting_title" />
+                app:title="@string/manager_quick_clean_title" />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -43,9 +47,22 @@
         android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <FrameLayout
-            android:id="@+id/settings"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.drake.statelayout.StateLayout
+                android:id="@+id/manager_quick_clean_state_layout"
+                app:loading_layout="@layout/layout_loading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/manager_quick_clean_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.drake.statelayout.StateLayout>
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -58,6 +58,10 @@
             android:exported="true"
             android:parentActivityName=".activity.MainActivity" />
         <activity
+            android:name=".activity.QuickCleanActivity"
+            android:exported="true"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
             android:name=".activity.DetailsActivity"
             android:exported="true"
             android:parentActivityName=".activity.CleanManagerActivity"

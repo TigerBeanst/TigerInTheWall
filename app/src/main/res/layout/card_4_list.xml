@@ -55,12 +55,11 @@
                 app:cardCornerRadius="12dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/card_one_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:clickable="true"
                     android:paddingTop="16dp"
                     android:paddingBottom="16dp">
-
 
                     <TextView
                         android:id="@+id/card_one_title"
@@ -68,7 +67,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:alpha="0.8"
-                        android:text="@string/misc_quick_clean_title"
+                        android:text="@string/misc_backup_and_restore_title"
                         android:textColor="?attr/colorOnBackground"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,8 +79,8 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginStart="20dp"
-                        android:contentDescription="@string/misc_quick_clean_title"
-                        android:src="@drawable/ic_twotone_auto_fix_high_24"
+                        android:contentDescription="@string/misc_backup_and_restore_title"
+                        android:src="@drawable/ic_twotone_backup_24"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -104,51 +103,9 @@
                     android:paddingTop="16dp"
                     android:paddingBottom="16dp">
 
+
                     <TextView
                         android:id="@+id/card_two_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:alpha="0.8"
-                        android:text="@string/misc_backup_and_restore_title"
-                        android:textColor="?attr/colorOnBackground"
-                        android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/card_two_icon"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ImageView
-                        android:id="@+id/card_two_icon"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="20dp"
-                        android:contentDescription="@string/misc_backup_and_restore_title"
-                        android:src="@drawable/ic_twotone_backup_24"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_list_3"
-                style="?attr/materialCardViewFilledStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@android:color/transparent"
-                app:cardCornerRadius="12dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/card_three_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp">
-
-
-                    <TextView
-                        android:id="@+id/card_three_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -157,11 +114,11 @@
                         android:textColor="?attr/colorOnBackground"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/card_three_icon"
+                        app:layout_constraintStart_toEndOf="@+id/card_two_icon"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
-                        android:id="@+id/card_three_icon"
+                        android:id="@+id/card_two_icon"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginStart="20dp"
@@ -174,7 +131,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_list_4"
+                android:id="@+id/card_list_3"
                 style="?attr/materialCardViewFilledStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -189,7 +146,7 @@
 
 
                     <TextView
-                        android:id="@+id/card_four_title"
+                        android:id="@+id/card_three_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -198,11 +155,11 @@
                         android:textColor="?attr/colorOnBackground"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/card_four_icon"
+                        app:layout_constraintStart_toEndOf="@+id/card_three_icon"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
-                        android:id="@+id/card_four_icon"
+                        android:id="@+id/card_three_icon"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginStart="20dp"

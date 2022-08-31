@@ -10,11 +10,9 @@ import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
-import com.drake.brv.utils.BRV
 import com.drake.brv.utils.linear
 import com.drake.brv.utils.models
 import com.drake.brv.utils.setup
-import com.jakting.shareclean.BR
 import com.jakting.shareclean.BaseActivity
 import com.jakting.shareclean.R
 import com.jakting.shareclean.data.App
@@ -63,7 +61,8 @@ class CleanManagerActivity : BaseActivity() {
         searchView.findViewById<View>(androidx.appcompat.R.id.search_edit_frame).layoutDirection =
             View.LAYOUT_DIRECTION_INHERIT
         searchView.findViewById<View>(androidx.appcompat.R.id.search_plate).background = null
-        searchView.findViewById<View>(androidx.appcompat.R.id.search_mag_icon).visibility = View.GONE
+        searchView.findViewById<View>(androidx.appcompat.R.id.search_mag_icon).visibility =
+            View.GONE
         return super.onPrepareOptionsMenu(menu)
     }
 
@@ -89,10 +88,29 @@ class CleanManagerActivity : BaseActivity() {
             }
         }
 
-        BRV.modelId = BR.app
         binding.managerCleanRecyclerView.linear().setup {
             addType<App>(R.layout.item_manager_clean)
             onBind {
+                findView<TextView>(R.id.app_name).text = getModel<App>().appName
+                findView<TextView>(R.id.app_package_name).text = getModel<App>().packageName
+
+                findView<ImageView>(R.id.app_icon_share).visibility =
+                    if (getModel<App>().hasType.share) View.VISIBLE else View.GONE
+                findView<TextView>(R.id.app_intent_count_share).visibility =
+                    if (getModel<App>().hasType.share) View.VISIBLE else View.GONE
+                findView<ImageView>(R.id.app_icon_view).visibility =
+                    if (getModel<App>().hasType.view) View.VISIBLE else View.GONE
+                findView<TextView>(R.id.app_intent_count_view).visibility =
+                    if (getModel<App>().hasType.view) View.VISIBLE else View.GONE
+                findView<ImageView>(R.id.app_icon_text).visibility =
+                    if (getModel<App>().hasType.text) View.VISIBLE else View.GONE
+                findView<TextView>(R.id.app_intent_count_text).visibility =
+                    if (getModel<App>().hasType.text) View.VISIBLE else View.GONE
+                findView<ImageView>(R.id.app_icon_browser).visibility =
+                    if (getModel<App>().hasType.browser) View.VISIBLE else View.GONE
+                findView<TextView>(R.id.app_intent_count_browser).visibility =
+                    if (getModel<App>().hasType.browser) View.VISIBLE else View.GONE
+
                 val appIcon = findView<ImageView>(R.id.app_icon)
                 lifecycleScope.launch {
                     appIcon.setImageDrawable(
@@ -156,10 +174,12 @@ class CleanManagerActivity : BaseActivity() {
         binding.managerCleanStateLayout.onRefresh {
             lifecycleScope.launch {
                 setChip(false)
-                data = if(settingSharedPreferences.getBoolean("pref_system_app",true)){
+                data = if (settingSharedPreferences.getBoolean("pref_system_app", true)) {
                     AppInfo().getAppList()
-                }else{
-                    AppInfo().getAppList().filter { !it.isSystem }
+                        .filter { !it.packageName.startsWith("com.jakting.shareclean") }
+                } else {
+                    AppInfo().getAppList()
+                        .filter { !it.isSystem && !it.packageName.startsWith("com.jakting.shareclean") }
                 }
                 binding.managerCleanRecyclerView.models = data
                 setChip(true)

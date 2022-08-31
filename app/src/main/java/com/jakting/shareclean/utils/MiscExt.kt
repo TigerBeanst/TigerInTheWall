@@ -166,4 +166,14 @@ fun Context.restoreTIW(uri: Uri): Boolean {
     return true
 }
 
+fun getBaseApi(): String {
+    return when (settingSharedPreferences.getString("pref_mirrors", "0")) {
+        "0" -> "https://raw.githubusercontent.com/TigerBeanst/TigerInTheWall-files/master/quick-clean-rules"
+        "1" -> "https://cdn.jsdelivr.net/gh/TigerBeanst/TigerInTheWall-files@master/quick-clean-rules"
+        "2" -> "https://raw.fastgit.org/TigerBeanst/TigerInTheWall-files/master/quick-clean-rules"
+        "99" -> settingSharedPreferences.getString("pref_mirrors_custom", "")!!
+        else -> "https://raw.githubusercontent.com/TigerBeanst/TigerInTheWall-files/master/quick-clean-rules"
+    }
+}
+
 

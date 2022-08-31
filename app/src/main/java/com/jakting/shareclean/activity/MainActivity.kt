@@ -44,11 +44,10 @@ class MainActivity : BaseActivity() {
             startActivity(Intent(this, CleanManagerActivity::class.java))
         }
         binding.contentMain.card3ManageIntent.cardManager.setOnClickListener {
-            startActivity(Intent(this, CleanManagerActivity::class.java))
+            startActivity(Intent(this, QuickCleanActivity::class.java))
         }
 
-        binding.contentMain.card4List.cardList1.setOnClickListener {}
-        binding.contentMain.card4List.cardList2.setOnClickListener {
+        binding.contentMain.card4List.cardList1.setOnClickListener {
             MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.misc_backup_and_restore_title)
                 .setMessage(R.string.misc_backup_and_restore_msg)
@@ -70,10 +69,10 @@ class MainActivity : BaseActivity() {
                 }
                 .show()
         }
-        binding.contentMain.card4List.cardList3.setOnClickListener {
+        binding.contentMain.card4List.cardList2.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
-        binding.contentMain.card4List.cardList4.setOnClickListener {}
+        binding.contentMain.card4List.cardList3.setOnClickListener {}
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {

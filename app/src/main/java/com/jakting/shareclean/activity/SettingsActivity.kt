@@ -4,13 +4,16 @@ import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.EditTextPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jakting.shareclean.R
 import com.jakting.shareclean.utils.*
 import com.jakting.shareclean.utils.application.Companion.kv
+import com.jakting.shareclean.utils.application.Companion.settingSharedPreferences
 import rikka.material.preference.MaterialSwitchPreference
+import rikka.preference.SimpleMenuPreference
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -63,6 +66,31 @@ class SettingsActivity : AppCompatActivity() {
                 }
             }
 
+            //设置规则镜像
+            val mirrorPreference = findPreference<SimpleMenuPreference>("pref_mirrors")
+            val customPreference = findPreference<EditTextPreference>("pref_mirrors_custom")
+            customPreference?.isVisible =
+                settingSharedPreferences.getString("pref_mirrors", "0") == "99"
+            customPreference?.summary = settingSharedPreferences.getString("pref_mirrors_custom", "")
+            customPreference?.setOnPreferenceChangeListener { preference, newValue ->
+                customPreference.summary = newValue as String
+                true
+            }
+            mirrorPreference?.setOnPreferenceChangeListener { preference, newValue ->
+                val mirrorName = when (newValue) {
+                    "0" -> "Github"
+                    "1" -> "jsDelivr"
+                    "2" -> "FastGit"
+                    "99" -> getString(R.string.setting_rules_mirror_custom)
+                    else -> getString(R.string.setting_rules_mirror_custom)
+                }
+                preference.summary =
+                    String.format(getString(R.string.setting_rules_mirror_summary), mirrorName)
+                customPreference?.isVisible = newValue == "99"
+                true
+            }
+
+            //重置 IFW
             findPreference<Preference>("pref_reset_ifw")?.setOnPreferenceClickListener {
                 MaterialAlertDialogBuilder(activity as Context)
                     .setTitle(R.string.setting_reset_secondary_confirmation)
@@ -79,6 +107,7 @@ class SettingsActivity : AppCompatActivity() {
                 true
             }
 
+            //重置配置
             findPreference<Preference>("pref_reset_configuration")?.setOnPreferenceClickListener {
                 MaterialAlertDialogBuilder(activity as Context)
                     .setTitle(R.string.setting_reset_secondary_confirmation)

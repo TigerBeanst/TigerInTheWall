@@ -34,7 +34,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:elevation="0dp"
                 app:layout_collapseMode="pin"
-                app:menu="@menu/manager_intent_bar"
+                app:menu="@menu/menu_details"
                 app:navigationIcon="@drawable/ic_twotone_arrow_back_24"
                 app:title="@string/manager_clean_detail_title" />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -211,6 +211,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv"
+                android:nestedScrollingEnabled="false"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingBottom="56dp"

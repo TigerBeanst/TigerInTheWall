@@ -22,7 +22,9 @@ data class QuickCleanListApiResult(
     @SerialName("updateTime")
     val updateTime: Long,
     @SerialName("uploadTime")
-    val uploadTime: Long
+    val uploadTime: Long,
+    @SerialName("author")
+    val author: String
 )
 
 @Serializable

@@ -31,24 +31,35 @@ import com.drake.statelayout.StateLayout
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.chip.Chip
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.jakting.shareclean.BaseActivity
 import com.jakting.shareclean.R
 import com.jakting.shareclean.data.AppIntent
 import com.jakting.shareclean.data.QuickCleanListApiResult
 import com.jakting.shareclean.data.QuickCleanRuleEntityListApiResult
 import com.jakting.shareclean.databinding.ActivityQuickCleanBinding
-import com.jakting.shareclean.utils.*
+import com.jakting.shareclean.utils.SerializationConverter
+import com.jakting.shareclean.utils.application
 import com.jakting.shareclean.utils.application.Companion.appContext
+import com.jakting.shareclean.utils.deleteIfwFiles
+import com.jakting.shareclean.utils.getBaseApi
+import com.jakting.shareclean.utils.getColorFromAttr
+import com.jakting.shareclean.utils.getIFWAction
+import com.jakting.shareclean.utils.isInstall
+import com.jakting.shareclean.utils.logd
+import com.jakting.shareclean.utils.toast
+import com.jakting.shareclean.utils.writeIfwFiles
 import kotlinx.coroutines.launch
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
-import java.util.*
+import java.util.Locale
 
 
 private var tempRuleId = ""
 private var tempRuleName = ""
 private var tempRuleDesc = ""
+private var tempRuleAuthor = ""
 private var tempRuleUpdate: Long = 0
 private var tempRuleUpload: Long = 0
 private var firstShare = -1
@@ -76,12 +87,12 @@ class QuickCleanActivity : BaseActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.manager_intent_bar, menu)
+        menuInflater.inflate(R.menu.menu_manager_clean, menu)
         return true
     }
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
-        val searchView = menu.findItem(R.id.menu_search).actionView as SearchView
+        val searchView = menu.findItem(R.id.menu_manager_clean_search).actionView as SearchView
         searchView.setOnQueryTextListener(searchListener)
         searchView.addOnAttachStateChangeListener(object : OnAttachStateChangeListener {
             override fun onViewAttachedToWindow(arg0: View) {
@@ -131,6 +142,9 @@ class QuickCleanActivity : BaseActivity() {
             }
         }
 
+
+
+
         binding.managerQuickCleanRecyclerView.linear().setup {
             addType<QuickCleanListApiResult>(R.layout.item_list_quick_clean_rules)
             onBind {
@@ -162,6 +176,7 @@ class QuickCleanActivity : BaseActivity() {
                 tempRuleId = model.ruleId
                 tempRuleName = model.ruleInfo.defaultLang.ruleName
                 tempRuleDesc = model.ruleInfo.defaultLang.ruleDesc
+                tempRuleAuthor = model.author
                 tempRuleUpdate = model.updateTime
                 tempRuleUpload = model.uploadTime
                 if (model.ruleInfo.i18n.any {
@@ -197,9 +212,15 @@ class QuickCleanActivity : BaseActivity() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
         ): View? {
+            val ruleList = mutableListOf<AppIntent>()
             val view = inflater.inflate(R.layout.sheet_quick_clean, container, false)
+            val cleanButton = view.findViewById(R.id.sheet_clean_button) as ExtendedFloatingActionButton
             view.findViewById<TextView>(R.id.sheet_rule_name).text = tempRuleName
             view.findViewById<TextView>(R.id.sheet_rule_desc).text = tempRuleDesc
+            view.findViewById<TextView>(R.id.sheet_rule_author).text = String.format(
+                getString(R.string.manager_quick_clean_author),
+                tempRuleAuthor
+            )
             view.findViewById<TextView>(R.id.sheet_rule_update_time).text = String.format(
                 getString(R.string.manager_quick_clean_update_at),
                 DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(
@@ -214,6 +235,16 @@ class QuickCleanActivity : BaseActivity() {
                         .toLocalDateTime()
                 )
             )
+
+            cleanButton.setOnClickListener {
+                for (intentIndex in ruleList.indices) {
+                    val keyName =
+                        "${ruleList[intentIndex].type}/${ruleList[intentIndex].packageName}/${ruleList[intentIndex].component}"
+                    application.kv.encode(keyName, ruleList[intentIndex].checked)
+                    activity.logd(keyName + " " + ruleList[intentIndex].checked)
+                }
+                if (deleteIfwFiles("all") && activity.writeIfwFiles()) activity.toast(getString(R.string.manage_apply_success))
+            }
 
             val sl = view.findViewById<StateLayout>(R.id.sheet_state_layout)
             val rv = view.findViewById<RecyclerView>(R.id.sheet_recycler_view)
@@ -319,7 +350,6 @@ class QuickCleanActivity : BaseActivity() {
             }
 
 
-            val ruleList = mutableListOf<AppIntent>()
             sl.onRefresh {
                 scopeNetLife {
                     // 这里后端直接返回的Json数组
@@ -354,6 +384,7 @@ class QuickCleanActivity : BaseActivity() {
                     ruleList.sortData()
                     rv.models = ruleList
                     sl.showContent()
+                    cleanButton.visibility = View.VISIBLE
                 }
             }.showLoading()
 

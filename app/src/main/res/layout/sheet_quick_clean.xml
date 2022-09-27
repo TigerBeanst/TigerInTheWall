@@ -2,8 +2,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
     android:layout_height="match_parent"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
     tools:context=".activity.QuickCleanActivity">
 
     <com.google.android.material.bottomsheet.BottomSheetDragHandleView
@@ -15,77 +15,124 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:paddingBottom="30dp"
         android:layout_marginEnd="20dp"
+        android:paddingBottom="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/drag_handle">
 
-        <TextView
-            android:id="@+id/sheet_rule_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-            android:textColor="?attr/colorOnBackground"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="小米" />
-
-        <TextView
-            android:id="@+id/sheet_rule_desc"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="3dp"
-            android:alpha="0.8"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-            android:textColor="?attr/colorOnBackground"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sheet_rule_name"
-            tools:text="介绍" />
-
-        <TextView
-            android:id="@+id/sheet_rule_update_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.6"
-            android:textSize="12sp"
-            android:textColor="?attr/colorOnBackground"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sheet_rule_desc"
-            tools:text="更新于" />
-        <TextView
-            android:id="@+id/sheet_rule_upload_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.6"
-            android:textSize="12sp"
-            android:textColor="?attr/colorOnBackground"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sheet_rule_update_time"
-            tools:text="上传于" />
-
-        <com.drake.statelayout.StateLayout
-            android:id="@+id/sheet_state_layout"
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
             android:layout_height="match_parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sheet_rule_upload_time"
-            app:loading_layout="@layout/layout_loading">
+            android:fillViewport="true">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/sheet_recycler_view"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </com.drake.statelayout.StateLayout>
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/sheet_rule_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                    android:textColor="?attr/colorOnBackground"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="小米" />
+
+                <TextView
+                    android:id="@+id/sheet_rule_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:alpha="0.8"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                    android:textColor="?attr/colorOnBackground"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sheet_rule_name"
+                    tools:text="介绍" />
+
+                <TextView
+                    android:id="@+id/sheet_rule_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:textColor="?attr/colorOnBackground"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sheet_rule_desc"
+                    tools:text="作者" />
+
+                <TextView
+                    android:id="@+id/sheet_rule_update_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.6"
+                    android:textColor="?attr/colorOnBackground"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sheet_rule_author"
+                    tools:text="更新于" />
+
+                <TextView
+                    android:id="@+id/sheet_rule_upload_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.6"
+                    android:textColor="?attr/colorOnBackground"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@id/nestedScrollView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sheet_rule_update_time"
+                    tools:text="上传于" />
+
+                <com.drake.statelayout.StateLayout
+                    android:id="@+id/sheet_state_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sheet_rule_upload_time"
+                    app:loading_layout="@layout/layout_loading">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/sheet_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingBottom="56dp" />
+                </com.drake.statelayout.StateLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/sheet_clean_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/manager_clean_detail_clean"
+        android:text="@string/manager_clean_detail_clean"
+        android:textColor="?attr/colorOnPrimary"
+        android:visibility="gone"
+        app:backgroundTint="?attr/colorPrimary"
+        app:icon="@drawable/ic_twotone_cleaning_services_24"
+        app:iconPadding="0dp"
+        app:iconTint="?attr/colorOnPrimary"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/drag_handle"
+        app:layout_constraintStart_toStartOf="@+id/drag_handle" />
 </androidx.constraintlayout.widget.ConstraintLayout>

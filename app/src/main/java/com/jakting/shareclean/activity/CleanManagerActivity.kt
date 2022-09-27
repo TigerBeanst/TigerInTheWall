@@ -42,12 +42,12 @@ class CleanManagerActivity : BaseActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.manager_intent_bar, menu)
+        menuInflater.inflate(R.menu.menu_manager_clean, menu)
         return true
     }
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
-        val searchView = menu.findItem(R.id.menu_search).actionView as SearchView
+        val searchView = menu.findItem(R.id.menu_manager_clean_search).actionView as SearchView
         searchView.setOnQueryTextListener(searchListener)
         searchView.addOnAttachStateChangeListener(object : OnAttachStateChangeListener {
             override fun onViewAttachedToWindow(arg0: View) {

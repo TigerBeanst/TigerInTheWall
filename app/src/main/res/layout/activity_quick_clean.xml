@@ -34,7 +34,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:elevation="0dp"
                 app:layout_collapseMode="pin"
-                app:menu="@menu/manager_intent_bar"
+                app:menu="@menu/menu_details"
                 app:navigationIcon="@drawable/ic_twotone_arrow_back_24"
                 app:title="@string/manager_quick_clean_title" />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -60,6 +60,7 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/manager_quick_clean_recycler_view"
+                    android:nestedScrollingEnabled="false"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </com.drake.statelayout.StateLayout>

@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             app:chipBackgroundColor="@color/colorBackgroundLittleDarker"
             app:chipIcon="@drawable/ic_twotone_share_24"
+            app:chipIconTint="?attr/colorOnPrimaryContainer"
             app:chipStrokeColor="@android:color/transparent"
             app:ensureMinTouchTargetSize="true"
             app:layout_constraintBottom_toBottomOf="parent"

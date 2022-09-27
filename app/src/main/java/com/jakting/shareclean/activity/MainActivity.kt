@@ -12,8 +12,17 @@ import com.jakting.shareclean.BaseActivity
 import com.jakting.shareclean.BuildConfig
 import com.jakting.shareclean.R
 import com.jakting.shareclean.databinding.ActivityMainBinding
-import com.jakting.shareclean.utils.*
 import com.jakting.shareclean.utils.application.Companion.shell
+import com.jakting.shareclean.utils.backupTIW
+import com.jakting.shareclean.utils.deleteIfwFiles
+import com.jakting.shareclean.utils.getAppIconByPackageName
+import com.jakting.shareclean.utils.getColorFromAttr
+import com.jakting.shareclean.utils.moduleApplyAvailable
+import com.jakting.shareclean.utils.moduleInfo
+import com.jakting.shareclean.utils.openLink
+import com.jakting.shareclean.utils.restoreTIW
+import com.jakting.shareclean.utils.toast
+import com.jakting.shareclean.utils.writeIfwFiles
 import kotlinx.coroutines.launch
 
 
@@ -117,8 +126,6 @@ class MainActivity : BaseActivity() {
                         )
                     binding.contentMain.card1Module.cardStatusInjectWhich.text = injectIf[0]
                     binding.contentMain.card1Module.cardStatusIcon.setImageResource(R.drawable.ic_twotone_check_circle_24)
-//                binding.contentMain.card1Module.cardStatus.backgroundTintList =
-//                    backgroundColor(this)
                     binding.contentMain.card1Module.cardStatus.backgroundTintList =
                         ColorStateList.valueOf(getColorFromAttr(R.attr.colorPrimary))
                     var clickCount = 0

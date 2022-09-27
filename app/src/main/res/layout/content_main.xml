@@ -34,7 +34,7 @@
 
         <include
             android:id="@+id/card_3_manage_intent"
-            layout="@layout/card_3_manage_intent" />
+            layout="@layout/card_3_manage_quick" />
 
     </LinearLayout>
 

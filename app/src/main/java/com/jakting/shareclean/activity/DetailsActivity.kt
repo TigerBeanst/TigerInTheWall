@@ -1,9 +1,14 @@
 package com.jakting.shareclean.activity
 
 import android.annotation.SuppressLint
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -23,9 +28,15 @@ import com.jakting.shareclean.R
 import com.jakting.shareclean.data.App
 import com.jakting.shareclean.data.AppIntent
 import com.jakting.shareclean.databinding.ActivityDetailsBinding
-import com.jakting.shareclean.utils.*
 import com.jakting.shareclean.utils.application.Companion.intentIconMap
 import com.jakting.shareclean.utils.application.Companion.kv
+import com.jakting.shareclean.utils.deleteIfwFiles
+import com.jakting.shareclean.utils.getAppDetail
+import com.jakting.shareclean.utils.getAppIconByPackageName
+import com.jakting.shareclean.utils.getColorFromAttr
+import com.jakting.shareclean.utils.logd
+import com.jakting.shareclean.utils.toast
+import com.jakting.shareclean.utils.writeIfwFiles
 import kotlinx.coroutines.launch
 
 
@@ -60,6 +71,8 @@ class DetailsActivity : BaseActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun initView() {
+        setSupportActionBar(findViewById(R.id.toolbar))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.appName.text = app.appName
         binding.appPackageName.text = app.packageName
         binding.appVersionName.text =
@@ -314,5 +327,33 @@ class DetailsActivity : BaseActivity() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_details, menu)
+        return true
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.menu_intent_output -> {
+            var resultText = ""
+            for (intentIndex in app.intentList.indices) {
+                if(app.intentList[intentIndex].checked){
+                    val keyName =
+                        app.intentList[intentIndex].type + "/" + app.intentList[intentIndex].packageName + "/" + app.intentList[intentIndex].component
+                    resultText += "\"$keyName\", "
+                }
+            }
+
+            val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clip: ClipData = ClipData.newPlainText(null, resultText)
+            clipboard.setPrimaryClip(clip)
+            toast("已复制到剪贴板")
+            true
+        }
+
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
+    }
 
 }

@@ -26,6 +26,7 @@
     <string name="manager_clean_detail">Clean sh*t</string>
     <string name="manager_quick_clean_title">Quick Clean</string>
     <string name="manager_quick_clean_detail">Cloud Clean Rules</string>
+    <string name="manager_quick_clean_author">Author: %s</string>
     <string name="manager_quick_clean_update_at">Update At %s</string>
     <string name="manager_quick_clean_upload_at">Upload At %s</string>
     <string name="net_url_error">Failed to request rule list. If you use a custom repository, check whether the url is correct</string>
@@ -40,6 +41,7 @@
 
     <string name="manager_clean_detail_title">App Detail</string>
     <string name="manager_clean_detail_version">Version v%s(%s)</string>
+    <string name="manager_clean_detail_output">Output Rules</string>
     <string name="manager_clean_system_warning_title">WARNING</string>
     <string name="manager_clean_system_warning_detail">This is a system application. Cleaning it MAY cause serious consequences, please think carefully.</string>
 

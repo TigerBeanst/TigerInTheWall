@@ -9,9 +9,14 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jakting.shareclean.R
-import com.jakting.shareclean.utils.*
 import com.jakting.shareclean.utils.application.Companion.kv
 import com.jakting.shareclean.utils.application.Companion.settingSharedPreferences
+import com.jakting.shareclean.utils.deleteIfwFiles
+import com.jakting.shareclean.utils.ifw_direct_share
+import com.jakting.shareclean.utils.ifw_direct_share_file_path
+import com.jakting.shareclean.utils.logd
+import com.jakting.shareclean.utils.runShell
+import com.jakting.shareclean.utils.toast
 import rikka.material.preference.MaterialSwitchPreference
 import rikka.preference.SimpleMenuPreference
 

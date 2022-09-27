@@ -20,7 +20,11 @@ import com.jakting.shareclean.utils.application.Companion.kv
 import com.jakting.shareclean.utils.application.Companion.settingSharedPreferences
 import com.jakting.shareclean.utils.application.Companion.settingSharedPreferencesEditor
 import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.*
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.contentOrNull
+import kotlinx.serialization.json.jsonArray
+import kotlinx.serialization.json.jsonObject
 import java.io.BufferedReader
 import java.io.FileOutputStream
 import java.io.InputStreamReader

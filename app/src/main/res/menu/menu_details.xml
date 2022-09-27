@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/menu_intent_output"
+        android:title="@string/manager_clean_detail_output"
+        android:icon="@drawable/ic_twotone_output_24"
+        app:showAsAction="always" />
+
+</menu>

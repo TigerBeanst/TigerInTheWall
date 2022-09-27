@@ -11,7 +11,8 @@ import com.jakting.shareclean.utils.getAppDetail
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.text.Collator
-import java.util.*
+import java.util.Collections
+import java.util.Locale
 
 class AppInfo() {
 

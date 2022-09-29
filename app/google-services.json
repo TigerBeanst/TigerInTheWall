@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "240473123357",
+    "firebase_url": "https://jakting-intentclean.firebaseio.com",
+    "project_id": "jakting-intentclean",
+    "storage_bucket": "jakting-intentclean.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240473123357:android:490ce874c36e969f8a34f4",
+        "android_client_info": {
+          "package_name": "com.jakting.shareclean"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240473123357-bt7ns29qcthdi0c94mqre0r9smsfv567.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jakting.shareclean",
+            "certificate_hash": "19775111b88991e47f1a102916dc0ef81f0aa9d3"
+          }
+        },
+        {
+          "client_id": "240473123357-fosu6hha2ioc3s4sfq41mselfnekmrd1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrRRu1TVMyz_kKHetieHm-7heXgYiV7VQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240473123357-fosu6hha2ioc3s4sfq41mselfnekmrd1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

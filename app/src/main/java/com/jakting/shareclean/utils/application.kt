@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
-import android.graphics.drawable.Drawable
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.ktx.Firebase
@@ -33,14 +32,12 @@ class application : Application() {
         appContext = applicationContext
         settingSharedPreferences = getSharedPreferences(appContext.packageName+"_preferences", MODE_PRIVATE)
         settingSharedPreferencesEditor = getSharedPreferences(appContext.packageName+"_preferences", MODE_PRIVATE).edit()
-        intentIconMap = HashMap()
     }
 
     companion object {
         lateinit var appContext: Context
         lateinit var settingSharedPreferences: SharedPreferences
         lateinit var settingSharedPreferencesEditor: SharedPreferences.Editor
-        lateinit var intentIconMap: HashMap<String, Drawable>
         lateinit var kv: MMKV
         lateinit var shell: Shell
         private lateinit var firebaseAnalytics: FirebaseAnalytics

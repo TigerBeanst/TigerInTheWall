@@ -6,7 +6,6 @@ import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.net.Uri
 import com.jakting.shareclean.utils.application.Companion.appContext
-import com.jakting.shareclean.utils.application.Companion.intentIconMap
 import com.jakting.shareclean.utils.getAppDetail
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -105,8 +104,6 @@ class AppInfo() {
                     oneApp.setHasType(key)
                     finalList.add(oneApp)
                 }
-                intentIconMap[resolveInfo.activityInfo.packageName + "/" + resolveInfo.activityInfo.name] =
-                    resolveInfo.loadIcon(appContext.packageManager!!)
             }
         }
 

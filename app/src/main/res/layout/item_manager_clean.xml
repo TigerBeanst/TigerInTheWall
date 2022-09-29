@@ -40,7 +40,6 @@
                 android:layout_marginEnd="5dp"
                 android:ellipsize="middle"
                 android:singleLine="true"
-                android:text="@{String.valueOf(app.appName)}"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                 android:textColor="?attr/colorOnBackground"
                 app:layout_constrainedWidth="true"
@@ -142,7 +141,6 @@
             android:alpha="0.8"
             android:ellipsize="middle"
             android:singleLine="true"
-            android:text="@{String.valueOf(app.packageName)}"
             android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
             android:textColor="?attr/colorOnBackground"
             android:textSize="14sp" />

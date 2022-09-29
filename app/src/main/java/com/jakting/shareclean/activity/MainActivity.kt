@@ -16,7 +16,7 @@ import com.jakting.shareclean.databinding.ActivityMainBinding
 import com.jakting.shareclean.utils.application.Companion.shell
 import com.jakting.shareclean.utils.backupTIW
 import com.jakting.shareclean.utils.deleteIfwFiles
-import com.jakting.shareclean.utils.getAppIconByPackageName
+import com.jakting.shareclean.utils.getAppIcon
 import com.jakting.shareclean.utils.getColorFromAttr
 import com.jakting.shareclean.utils.moduleApplyAvailable
 import com.jakting.shareclean.utils.moduleInfo
@@ -41,12 +41,9 @@ class MainActivity : BaseActivity() {
 
     private fun initView() {
         lifecycleScope.launch {
-            binding.appSelfIcon.setImageDrawable(
-                getAppIconByPackageName(
-                    this@MainActivity,
-                    BuildConfig.APPLICATION_ID
-                )
-            )
+            getAppIcon(BuildConfig.APPLICATION_ID)?.let {
+                binding.appSelfIcon.setImageDrawable(it)
+            }
         }
 
         checkStatus()

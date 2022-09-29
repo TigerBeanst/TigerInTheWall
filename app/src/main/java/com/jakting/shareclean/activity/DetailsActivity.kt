@@ -28,11 +28,10 @@ import com.jakting.shareclean.R
 import com.jakting.shareclean.data.App
 import com.jakting.shareclean.data.AppIntent
 import com.jakting.shareclean.databinding.ActivityDetailsBinding
-import com.jakting.shareclean.utils.application.Companion.intentIconMap
 import com.jakting.shareclean.utils.application.Companion.kv
 import com.jakting.shareclean.utils.deleteIfwFiles
 import com.jakting.shareclean.utils.getAppDetail
-import com.jakting.shareclean.utils.getAppIconByPackageName
+import com.jakting.shareclean.utils.getAppIcon
 import com.jakting.shareclean.utils.getColorFromAttr
 import com.jakting.shareclean.utils.logd
 import com.jakting.shareclean.utils.toast
@@ -82,12 +81,9 @@ class DetailsActivity : BaseActivity() {
                 getAppDetail(app.packageName).versionCode
             )
         lifecycleScope.launch {
-            binding.appIcon.setImageDrawable(
-                getAppIconByPackageName(
-                    this@DetailsActivity,
-                    app.packageName
-                )
-            )
+            getAppIcon(app.packageName)?.let {
+                binding.appIcon.setImageDrawable(it)
+            }
         }
         binding.cardSystemAppWarning.visibility = if (app.isSystem) View.VISIBLE else View.GONE
 
@@ -97,9 +93,9 @@ class DetailsActivity : BaseActivity() {
                 //加载应用图标
                 val appIcon = findView<ImageView>(R.id.app_component_icon)
                 lifecycleScope.launch {
-                    val keyIcon =
-                        getModel<AppIntent>().packageName + "/" + getModel<AppIntent>().component
-                    appIcon.setImageDrawable(intentIconMap[keyIcon])
+                    getAppIcon(getModel<AppIntent>().packageName,getModel<AppIntent>().component)?.let {
+                        appIcon.setImageDrawable(it)
+                    }
                 }
                 //显示应用分类
                 val appComponentScheme =

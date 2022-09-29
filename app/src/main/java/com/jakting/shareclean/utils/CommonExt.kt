@@ -1,6 +1,8 @@
 package com.jakting.shareclean.utils
 
+import android.content.ComponentName
 import android.content.Context
+import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
@@ -30,31 +32,55 @@ fun getAppDetail(packageName: String): AppDetail {
     return appDetail
 }
 
-suspend fun getAppIconByPackageName(context: Context, ApkTempSendActivityName: String): Drawable =
-    withContext(
+//suspend fun getAppIconByPackageName(context: Context, ApkTempSendActivityName: String): Drawable =
+//    withContext(
+//        Dispatchers.IO
+//    ) {
+//        val drawable: Drawable? = try {
+//            context.packageManager?.getApplicationIcon(ApkTempSendActivityName)
+//        } catch (e: PackageManager.NameNotFoundException) {
+//            e.printStackTrace()
+//            context.packageManager?.let { ContextCompat.getDrawable(context, R.mipmap.ic_launcher) }
+//        }
+//        drawable!!
+//    }
+
+suspend fun Context.getAppIcon(packageName: String, activityName: String = ""): Drawable? {
+    val pm = packageManager
+    return if(activityName==""){
+        withContext(
         Dispatchers.IO
     ) {
         val drawable: Drawable? = try {
-            context.packageManager?.getApplicationIcon(ApkTempSendActivityName)
+            pm.getApplicationIcon(packageName)
         } catch (e: PackageManager.NameNotFoundException) {
             e.printStackTrace()
-            context.packageManager?.let { ContextCompat.getDrawable(context, R.mipmap.ic_launcher) }
+            packageManager?.let { ContextCompat.getDrawable(this@getAppIcon, R.mipmap.ic_launcher) }
         }
-        drawable!!
+            return@withContext drawable!!
+    }
+    }else{
+        val intent = Intent()
+        intent.component = ComponentName(packageName, activityName)
+        val resolveInfo = pm.resolveActivity(intent, 0)
+        resolveInfo?.loadIcon(pm)
     }
 
+}
 
 fun isSystemPackage(resolveInfo: ResolveInfo): Boolean {
     return resolveInfo.activityInfo.applicationInfo.flags and ApplicationInfo.FLAG_SYSTEM != 0
 }
 
-fun String?.isInstall():Boolean{
+fun String?.isInstall(): Boolean {
     return try {
-        if(this==null){
+        if (this == null) {
             false
-        }else{
-            var pkgInfo: PackageInfo = appContext.packageManager.getPackageInfo(this.trim(),
-                PackageManager.GET_ACTIVITIES)
+        } else {
+            var pkgInfo: PackageInfo = appContext.packageManager.getPackageInfo(
+                this.trim(),
+                PackageManager.GET_ACTIVITIES
+            )
             true
         }
     } catch (e: PackageManager.NameNotFoundException) {

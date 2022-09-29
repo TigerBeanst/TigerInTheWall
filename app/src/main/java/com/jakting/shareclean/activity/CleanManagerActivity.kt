@@ -1,6 +1,7 @@
 package com.jakting.shareclean.activity
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
@@ -23,7 +24,7 @@ import com.jakting.shareclean.utils.application.Companion.chipShare
 import com.jakting.shareclean.utils.application.Companion.chipText
 import com.jakting.shareclean.utils.application.Companion.chipView
 import com.jakting.shareclean.utils.application.Companion.settingSharedPreferences
-import com.jakting.shareclean.utils.getAppIconByPackageName
+import com.jakting.shareclean.utils.getAppIcon
 import kotlinx.coroutines.launch
 import java.util.Locale
 
@@ -31,7 +32,7 @@ import java.util.Locale
 class CleanManagerActivity : BaseActivity() {
 
     private lateinit var binding: ActivityCleanManagerBinding
-    private lateinit var searchView: SearchView
+    private var applicationIconMap = hashMapOf<String, Drawable>()
     private lateinit var searchListener: SearchView.OnQueryTextListener
     lateinit var data: List<App>
 
@@ -77,16 +78,16 @@ class CleanManagerActivity : BaseActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         searchListener = object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-                binding.managerCleanRecyclerView.models =
-                    data.filter { it.appName.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT))
-                            || it.packageName.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT)) }
                 return false
             }
 
             override fun onQueryTextChange(query: String): Boolean {
                 binding.managerCleanRecyclerView.models =
-                    data.filter { it.appName.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT))
-                            || it.packageName.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT)) }
+                    data.filter {
+                        it.appName.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT))
+                                || it.packageName.lowercase(Locale.ROOT)
+                            .contains(query.lowercase(Locale.ROOT))
+                    }
                 return false
             }
         }
@@ -116,12 +117,15 @@ class CleanManagerActivity : BaseActivity() {
 
                 val appIcon = findView<ImageView>(R.id.app_icon)
                 lifecycleScope.launch {
-                    appIcon.setImageDrawable(
-                        getAppIconByPackageName(
-                            this@CleanManagerActivity,
-                            getModel<App>().packageName
-                        )
-                    )
+                    if (applicationIconMap.containsKey(getModel<App>().packageName)) {
+                        appIcon.setImageDrawable(applicationIconMap[getModel<App>().packageName])
+                    } else {
+                        getAppIcon(getModel<App>().packageName)?.let {
+                            appIcon.setImageDrawable(it)
+                            applicationIconMap[getModel<App>().packageName] = it
+                        }
+
+                    }
                 }
                 val shareSize =
                     getModel<App>().intentList.filter { it.type == "1_share" || it.type == "2_share_multi" }.size

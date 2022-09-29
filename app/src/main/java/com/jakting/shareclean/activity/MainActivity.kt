@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import android.net.Uri
 import android.os.Bundle
+import android.view.HapticFeedbackConstants
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jakting.shareclean.BaseActivity
@@ -49,11 +50,13 @@ class MainActivity : BaseActivity() {
         }
 
         checkStatus()
-        binding.contentMain.card2ManageClean.cardManager.setOnClickListener { view ->
+        binding.contentMain.card2ManageClean.cardManager.setOnClickListener {
             startActivity(Intent(this, CleanManagerActivity::class.java))
+            it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
         }
         binding.contentMain.card3ManageIntent.cardManager.setOnClickListener {
             startActivity(Intent(this, QuickCleanActivity::class.java))
+            it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
         }
 
         binding.contentMain.card4List.cardList1.setOnClickListener {
@@ -77,11 +80,15 @@ class MainActivity : BaseActivity() {
                     startActivityForResult(intent, READ_REQUEST_CODE)
                 }
                 .show()
+            it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
         }
         binding.contentMain.card4List.cardList2.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
+            it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
         }
-        binding.contentMain.card4List.cardList3.setOnClickListener {}
+        binding.contentMain.card4List.cardList3.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
@@ -151,12 +158,13 @@ class MainActivity : BaseActivity() {
                                 clickCount = 0
                             }
                         }
+                        it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
                     }
                 }
             } else {
                 binding.contentMain.card1Module.cardStatusTitle.text =
                     getString(R.string.status_card_no_module)
-                binding.contentMain.card1Module.cardStatus.setOnClickListener { view ->
+                binding.contentMain.card1Module.cardStatus.setOnClickListener {
                     MaterialAlertDialogBuilder(this)
                         .setTitle(getString(R.string.status_card_dialog_no_module_title))
                         .setMessage(getString(R.string.status_card_dialog_no_module_content))
@@ -167,6 +175,7 @@ class MainActivity : BaseActivity() {
                             openLink(getString(R.string.status_card_dialog_more_url))
                         }
                         .show()
+                    it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
                 }
             }
 

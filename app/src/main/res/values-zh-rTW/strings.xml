@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">TigerInTheWall</string>
+    <string name="error">錯誤</string>
+    <string name="ok">確定</string>
+    <string name="cancel">取消</string>
+    <string name="please_wait">請稍後…</string>
+    <string name="coming_soon">即將來到…？</string>
+
+    <string name="status_card_click">啥都沒有。哇呼！💩</string>
+    <string name="status_card_unknown">狀態未知🤔</string>
+    <string name="status_card_no_module">模組未安裝💩</string>
+    <string name="status_card_unknown_detail">點此獲取細節</string>
+    <string name="status_card_exist">已啟用🥳</string>
+    <string name="status_card_exist_module">已安裝模組版本：%s(%s)</string>
+    <string name="status_card_exist_inject">注入方式：</string>
+    <string name="status_card_dialog_title">狀態未知</string>
+    <string name="status_card_dialog_content">由於缺少許可權，無法獲得「IFW Enhance TIW」模組狀態。\n\n「TigerInTheWall」需要較高的系統許可權以檢查模組狀態與清理意圖。\n\n請確保您擁有 MagiskSU 之類的完整 Root 許可權。諸如 MIUI 之類的系統自帶的 Root 可能不完整。</string>
+    <string name="status_card_dialog_no_module_title">模組未安裝</string>
+    <string name="status_card_dialog_no_module_content">TigerInTheWall 無法找到模組「IFW Enhance TIW」。\n\n這通常意味著您所做的所有操作都不會生效，請確保您已正確安裝模組。\n\n自新版本開始， TigerInTheWall 需要使用經過修改後的「IFW Enhance TIW」（而不是「IFW Enhance」）</string>
+    <string name="status_card_dialog_more">更多</string>
+    <string name="status_card_dialog_more_url">https://ic.into.icu/zh-CN/download/</string>
+
+    <string name="manager_clean_title">清理管理</string>
+    <string name="manager_clean_detail">鯊了他們</string>
+    <string name="manager_quick_clean_title">快速清理</string>
+    <string name="manager_quick_clean_detail">雲端規則</string>
+    <string name="manager_quick_clean_author">作者：%s</string>
+    <string name="manager_quick_clean_update_at">更新於 %s</string>
+    <string name="manager_quick_clean_upload_at">上傳於 %s</string>
+    <string name="net_url_error">規則獲取失敗，請檢查自定義規則地址是否正確</string>
+
+    <string name="manager_clean_type_send">分享到</string>
+    <string name="manager_clean_type_send_multi">分享多份到</string>
+    <string name="manager_clean_type_view">開啟方式</string>
+    <string name="manager_clean_type_text">長按文字</string>
+    <string name="manager_clean_type_browser">瀏覽器</string>
+    <string name="manager_search">搜尋</string>
+
+    <string name="manager_clean_detail_title">詳細資訊</string>
+    <string name="manager_clean_detail_version">版本 v%s(%s)</string>
+    <string name="manager_clean_detail_output">匯出規則</string>
+    <string name="manager_clean_system_warning_title">警告</string>
+    <string name="manager_clean_system_warning_detail">這是一個系統應用程式。清理它很有可能會引起嚴重後果，請慎重考慮。</string>
+
+    <string name="manager_clean_detail_clean">清理</string>
+    <string name="manager_clean_detail_select_all">選擇全部</string>
+    <string name="manager_clean_detail_select_none">取消全選</string>
+    <string name="manager_clean_detail_advanced">進階</string>
+    <string name="manage_apply_success">清理完成</string>
+
+
+    <string name="misc_list_title">其它</string>
+    <string name="misc_backup_and_restore_title">備份 &amp;amp; 還原</string>
+    <string name="misc_setting_title">設定</string>
+    <string name="misc_about_title">關於</string>
+    <string name="misc_title">雜項</string>
+
+    <string name="misc_backup_and_restore_backup">備份</string>
+    <string name="misc_backup_and_restore_restore">還原</string>
+    <string name="misc_backup_and_restore_msg">為「TigerInTheWall」建立一個備份檔，包括意圖清理條目與設定。\n還原功能相容「氡·意圖清理」的備份。</string>
+    <string name="misc_backup_and_restore_backup_ok">備份完成</string>
+    <string name="misc_backup_and_restore_error">備份時出現錯誤</string>
+    <string name="misc_backup_and_restore_restore_ok">還原完成</string>
+
+
+    <string name="setting_function">活動</string>
+    <string name="setting_blacklist">黑名單模式</string>
+    <string name="setting_blacklist_summary">目前為黑名單模式，被選中的活動將會被清除，且永不出現在意圖列表裡。</string>
+    <string name="setting_blacklist_summary_no">目前為白名單模式，僅有選中的活動會保留在意圖列表裡。</string>
+    <string name="setting_system_app">顯示系統應用程式</string>
+    <string name="setting_system_app_summary">顯示系統應用程式，禁用系統應用程式意圖可能會帶來未知錯誤。</string>
+    <string name="setting_system_app_summary_no">不顯示系統應用程式，但您此前對系統應用程式進行的清理不會消失。</string>
+    <string name="setting_disable_direct">禁用「直接分享」</string>
+    <string name="setting_disable_direct_summary">禁用未遭修改的分享面板中的「直接分享」。無法禁用 Android 10+ 裝置上的直接分享。</string>
+    <string name="setting_disable_direct_summary_no">啟用未遭修改的分享面板中的「直接分享」。無法禁用 Android 10+ 裝置上的直接分享。</string>
+
+    <string name="setting_network">網路</string>
+    <string name="setting_rules_mirror">規則映象</string>
+    <string name="setting_rules_mirror_summary">如果您連線 Github 的速率不佳，您可以嘗試切換規則映象。當前使用：%s</string>
+    <string name="setting_rules_mirror_custom">自定</string>
+    <string name="setting_rules_mirror_custom_repo">自定規則倉庫</string>
+
+    <string name="setting_troubleshooting">故障排除</string>
+    <string name="setting_reset_success">重置成功</string>
+    <string name="setting_reset_error">重置失敗</string>
+    <string name="setting_reset_ifw">重置 IFW 檔案</string>
+    <string name="setting_reset_ifw_summary">這將刪除所有由 TigerInTheWall 所建立的 IFW 檔案（其它 IFW 檔案不受影響），此操作不會清除您的配置。</string>
+    <string name="setting_reset_configuration">重置設定</string>
+    <string name="setting_reset_configuration_summary">這將清除 TigerInTheWall 的設定，請確保您做好了備份。</string>
+    <string name="setting_reset_secondary_confirmation">再次確認</string>
+    <string name="setting_reset_secondary_confirmation_summary">此動作不可取消，請僅在 TigerInTheWall 出現問題時操作。</string>
+
+    <string name="about_page_info">簡介</string>
+    <string name="about_page_dev">開發人員</string>
+    <string name="about_page_dev_1">TigerInTheWall 開發人員</string>
+    <string name="about_page_dev_2">Riru - Core 開發人員</string>
+    <string name="about_page_dev_3">Riru - IFWEnhance 開發人員</string>
+    <string name="about_page_open_source">開源許可證</string>
+
+    <string name="manage_start">此應用程式編寫的 IFW 規則已被清除。請再次提交以生效。</string>
+</resources>

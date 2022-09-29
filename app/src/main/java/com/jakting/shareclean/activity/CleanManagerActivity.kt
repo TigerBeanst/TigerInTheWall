@@ -25,6 +25,7 @@ import com.jakting.shareclean.utils.application.Companion.chipView
 import com.jakting.shareclean.utils.application.Companion.settingSharedPreferences
 import com.jakting.shareclean.utils.getAppIconByPackageName
 import kotlinx.coroutines.launch
+import java.util.Locale
 
 
 class CleanManagerActivity : BaseActivity() {
@@ -77,13 +78,15 @@ class CleanManagerActivity : BaseActivity() {
         searchListener = object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 binding.managerCleanRecyclerView.models =
-                    data.filter { it.appName.contains(query) || it.packageName.contains(query) }
+                    data.filter { it.appName.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT))
+                            || it.packageName.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT)) }
                 return false
             }
 
             override fun onQueryTextChange(query: String): Boolean {
                 binding.managerCleanRecyclerView.models =
-                    data.filter { it.appName.contains(query) || it.packageName.contains(query) }
+                    data.filter { it.appName.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT))
+                            || it.packageName.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT)) }
                 return false
             }
         }

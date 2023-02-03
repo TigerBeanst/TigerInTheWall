@@ -31,7 +31,7 @@ fun getIFWContent(tag: String, intentString: String): String {
 }
 
 fun isBrowser(tag: String): String {
-    return if (tag == "browser") {
+    return if (tag == "5_browser") {
         "      <cat name=\"android.intent.category.BROWSABLE\" />\n" +
                 "      <scheme name=\"http\" />\n" +
                 "      <scheme name=\"https\" />\n"

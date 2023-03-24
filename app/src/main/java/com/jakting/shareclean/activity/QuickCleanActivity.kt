@@ -71,7 +71,6 @@ lateinit var thisActivity: Context
 class QuickCleanActivity : BaseActivity() {
 
     private lateinit var binding: ActivityQuickCleanBinding
-    private lateinit var searchView: SearchView
     private lateinit var searchListener: SearchView.OnQueryTextListener
     lateinit var dataList: MutableList<QuickCleanListApiResult>
 
@@ -113,7 +112,6 @@ class QuickCleanActivity : BaseActivity() {
 
     private fun initView() {
         setSupportActionBar(findViewById(R.id.toolbar))
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         searchListener = object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 binding.managerQuickCleanRecyclerView.models =

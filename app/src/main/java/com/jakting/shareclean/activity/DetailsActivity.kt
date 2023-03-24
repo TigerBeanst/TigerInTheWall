@@ -71,7 +71,6 @@ class DetailsActivity : BaseActivity() {
     @SuppressLint("SetTextI18n")
     private fun initView() {
         setSupportActionBar(findViewById(R.id.toolbar))
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.appName.text = app.appName
         binding.appPackageName.text = app.packageName
         binding.appVersionName.text =
@@ -240,7 +239,7 @@ class DetailsActivity : BaseActivity() {
         }
     }
 
-    fun MaterialButton.setState(selectAllOrNoneTypeBoolean: Boolean) {
+    private fun MaterialButton.setState(selectAllOrNoneTypeBoolean: Boolean) {
         if (selectAllOrNoneTypeBoolean) {
             text = getString(R.string.manager_clean_detail_select_none)
             icon = ContextCompat.getDrawable(

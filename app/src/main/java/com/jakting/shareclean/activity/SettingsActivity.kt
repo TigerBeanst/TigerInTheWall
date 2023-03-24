@@ -3,31 +3,26 @@ package com.jakting.shareclean.activity
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.EditTextPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.jakting.shareclean.BaseActivity
 import com.jakting.shareclean.R
+import com.jakting.shareclean.utils.*
 import com.jakting.shareclean.utils.application.Companion.kv
 import com.jakting.shareclean.utils.application.Companion.settingSharedPreferences
-import com.jakting.shareclean.utils.deleteIfwFiles
-import com.jakting.shareclean.utils.ifw_direct_share
-import com.jakting.shareclean.utils.ifw_direct_share_file_path
-import com.jakting.shareclean.utils.logd
-import com.jakting.shareclean.utils.runShell
-import com.jakting.shareclean.utils.toast
 import rikka.material.preference.MaterialSwitchPreference
 import rikka.preference.SimpleMenuPreference
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.theme.applyStyle(
             rikka.material.preference.R.style.ThemeOverlay_Rikka_Material3_Preference,
             true
-        );
+        )
         setContentView(R.layout.activity_settings)
         if (savedInstanceState == null) {
             supportFragmentManager
@@ -35,7 +30,7 @@ class SettingsActivity : AppCompatActivity() {
                 .replace(R.id.settings, SettingsFragment())
                 .commit()
         }
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        setSupportActionBar(findViewById(R.id.toolbar))
     }
 
     class SettingsFragment : PreferenceFragmentCompat() {
@@ -48,7 +43,7 @@ class SettingsActivity : AppCompatActivity() {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                     directShareSwitch.isEnabled = false
                 } else {
-                    directShareSwitch.setOnPreferenceChangeListener { preference, newValue ->
+                    directShareSwitch.setOnPreferenceChangeListener { _, newValue ->
                         if (newValue as Boolean) {
                             if (runShell("touch $ifw_direct_share_file_path").isSuccess &&
                                 runShell("echo '$ifw_direct_share' > $ifw_direct_share_file_path").isSuccess
@@ -76,8 +71,9 @@ class SettingsActivity : AppCompatActivity() {
             val customPreference = findPreference<EditTextPreference>("pref_mirrors_custom")
             customPreference?.isVisible =
                 settingSharedPreferences.getString("pref_mirrors", "0") == "99"
-            customPreference?.summary = settingSharedPreferences.getString("pref_mirrors_custom", "")
-            customPreference?.setOnPreferenceChangeListener { preference, newValue ->
+            customPreference?.summary =
+                settingSharedPreferences.getString("pref_mirrors_custom", "")
+            customPreference?.setOnPreferenceChangeListener { _, newValue ->
                 customPreference.summary = newValue as String
                 true
             }

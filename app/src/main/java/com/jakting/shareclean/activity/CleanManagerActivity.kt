@@ -75,7 +75,6 @@ class CleanManagerActivity : BaseActivity() {
 
     private fun initView() {
         setSupportActionBar(findViewById(R.id.toolbar))
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         searchListener = object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 return false

@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="TigerBeanstTheme.TigerColor" parent="Theme.Material3.Dark.NoActionBar">
         <item name="android:windowActivityTransitions">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
@@ -34,5 +36,6 @@
         <item name="colorInversePrimary">@color/md_theme_dark_inversePrimary</item>
         <item name="colorShadow">@color/md_theme_dark_shadow</item>
         <item name="colorPrimaryInverse">@color/md_theme_dark_primaryInverse</item>
+        <item name="android:forceDarkAllowed">false</item>
     </style>
 </resources>

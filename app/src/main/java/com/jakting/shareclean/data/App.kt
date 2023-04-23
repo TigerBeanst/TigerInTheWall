@@ -1,6 +1,5 @@
 package com.jakting.shareclean.data
 
-import android.graphics.drawable.Drawable
 import androidx.databinding.BaseObservable
 import java.io.Serializable
 
@@ -9,8 +8,7 @@ data class AppIntent(
     val component: String,
     val componentName: String,
     var checked: Boolean = false,
-    val type: String,
-    var icon:Drawable? = null
+    val type: String
 ) : Serializable, BaseObservable()
 
 data class IntentType(

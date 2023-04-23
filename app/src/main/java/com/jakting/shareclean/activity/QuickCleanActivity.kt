@@ -42,6 +42,7 @@ import com.jakting.shareclean.utils.SerializationConverter
 import com.jakting.shareclean.utils.application
 import com.jakting.shareclean.utils.application.Companion.appContext
 import com.jakting.shareclean.utils.deleteIfwFiles
+import com.jakting.shareclean.utils.getAppIcon
 import com.jakting.shareclean.utils.getBaseApi
 import com.jakting.shareclean.utils.getColorFromAttr
 import com.jakting.shareclean.utils.getIFWAction
@@ -250,11 +251,12 @@ class QuickCleanActivity : BaseActivity() {
                 addType<AppIntent>(R.layout.item_quick_clean_rule)
                 onBind {
                     val model = getModel<AppIntent>()
-
                     //加载应用图标
                     val appIcon = findView<ImageView>(R.id.quick_clean_component_icon)
                     lifecycleScope.launch {
-                        appIcon.setImageDrawable(model.icon)
+                        appContext.getAppIcon(model.packageName,model.component)?.let {
+                            appIcon.setImageDrawable(it)
+                        }
                     }
                     //显示应用分类
                     val appComponentScheme =
@@ -277,6 +279,7 @@ class QuickCleanActivity : BaseActivity() {
                         0
                     )
                     appComponent.text = appComponentContent
+
                     //选中时状态变更
                     val cardView = findView<MaterialCardView>(R.id.quick_clean_card)
                     val appComponentName = findView<TextView>(R.id.quick_clean_component_name)
@@ -372,8 +375,7 @@ class QuickCleanActivity : BaseActivity() {
                                     (resolveInfoList[0].loadLabel(appContext.packageManager!!) as String)
                                         .replace("\n", ""),
                                     true,
-                                    realType,
-                                    resolveInfoList[0].loadIcon(appContext.packageManager!!)
+                                    realType
                                 )
                                 ruleList.add(appIntent)
                             }

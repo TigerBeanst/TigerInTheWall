@@ -38,15 +38,16 @@ class MainActivity : BaseActivity() {
 
         checkStatus()
         binding.contentMain.card2ManageClean.cardManager.setOnClickListener {
-            startActivity(Intent(this, CleanManagerActivity::class.java))
             it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+            startActivity(Intent(this, CleanManagerActivity::class.java))
         }
         binding.contentMain.card3ManageIntent.cardManager.setOnClickListener {
-            startActivity(Intent(this, QuickCleanActivity::class.java))
             it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+            startActivity(Intent(this, QuickCleanActivity::class.java))
         }
 
         binding.contentMain.card4List.cardList1.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
             MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.misc_backup_and_restore_title)
                 .setMessage(R.string.misc_backup_and_restore_msg)
@@ -67,11 +68,10 @@ class MainActivity : BaseActivity() {
                     restoreResultLauncher.launch(intent)
                 }
                 .show()
-            it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
         }
         binding.contentMain.card4List.cardList2.setOnClickListener {
-            startActivity(Intent(this, SettingsActivity::class.java))
             it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+            startActivity(Intent(this, SettingsActivity::class.java))
         }
         binding.contentMain.card4List.cardList3.setOnClickListener {
             it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)

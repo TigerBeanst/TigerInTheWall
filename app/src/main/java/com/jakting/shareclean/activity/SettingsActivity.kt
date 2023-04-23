@@ -98,6 +98,7 @@ class SettingsActivity : BaseActivity() {
                     .setMessage(R.string.setting_reset_secondary_confirmation_summary)
                     .setPositiveButton(R.string.ok) { _, _ ->
                         if (deleteIfwFiles("all")) {
+                            deleteIfwFiles("old")
                             activity.toast(R.string.setting_reset_success, true)
                         } else {
                             activity.toast(R.string.setting_reset_error, true)

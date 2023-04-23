@@ -115,9 +115,9 @@ fun Context?.writeIfwFiles(): Boolean {
 
 
 fun deleteIfwFiles(type: String): Boolean {
-    return if (type == "all") {
-        runShell("find /data/system/ifw/ -name \"TigerInTheWall_Intent*.xml\" -exec rm -rf {} \\; ").isSuccess
-    } else {
-        runShell("rm -f ${getIFWPath(ifw_send_file_path)}").isSuccess
+    return when(type){
+        "all" -> runShell("find /data/system/ifw/ -name \"TigerInTheWall_Intent*.xml\" -exec rm -rf {} \\; ").isSuccess
+        "old" -> runShell("find /data/system/ifw/ -name \"RnIntentClean*.xml\" -exec rm -rf {} \\; ").isSuccess
+        else -> runShell("rm -f ${getIFWPath(type)}").isSuccess
     }
 }

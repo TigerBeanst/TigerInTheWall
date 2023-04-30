@@ -89,13 +89,4 @@
     <string name="setting_reset_configuration_summary">這將清除 TigerInTheWall 的設定，請確保您做好了備份。</string>
     <string name="setting_reset_secondary_confirmation">再次確認</string>
     <string name="setting_reset_secondary_confirmation_summary">此動作不可取消，請僅在 TigerInTheWall 出現問題時操作。</string>
-
-    <string name="about_page_info">簡介</string>
-    <string name="about_page_dev">開發人員</string>
-    <string name="about_page_dev_1">TigerInTheWall 開發人員</string>
-    <string name="about_page_dev_2">Riru - Core 開發人員</string>
-    <string name="about_page_dev_3">Riru - IFWEnhance 開發人員</string>
-    <string name="about_page_open_source">開源許可證</string>
-
-    <string name="manage_start">此應用程式編寫的 IFW 規則已被清除。請再次提交以生效。</string>
 </resources>

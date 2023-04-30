@@ -16,6 +16,7 @@ import com.jakting.shareclean.R
 import com.jakting.shareclean.databinding.ActivityMainBinding
 import com.jakting.shareclean.utils.*
 import com.jakting.shareclean.utils.application.Companion.shell
+import com.mikepenz.aboutlibraries.LibsBuilder
 import kotlinx.coroutines.launch
 
 
@@ -75,6 +76,21 @@ class MainActivity : BaseActivity() {
         }
         binding.contentMain.card4List.cardList3.setOnClickListener {
             it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+            MaterialAlertDialogBuilder(this)
+                .setMessage(
+                    String.format(
+                        getString(R.string.about_message),
+                        BuildConfig.VERSION_NAME,
+                        BuildConfig.VERSION_CODE
+                    )
+                )
+                .setPositiveButton(R.string.ok) { _, _ -> }
+                .setNeutralButton(R.string.about_lib) { _, _ ->
+                    LibsBuilder()
+                        .start(this)
+                }
+                .show()
+
         }
     }
 
@@ -135,14 +151,17 @@ class MainActivity : BaseActivity() {
                                 binding.contentMain.card1Module.cardStatusInjectWhich.text =
                                     injectIf[0] + "🤥"
                             }
+
                             10 -> {
                                 binding.contentMain.card1Module.cardStatusInjectWhich.text =
                                     injectIf[0] + "🤕"
                             }
+
                             15 -> {
                                 binding.contentMain.card1Module.cardStatusInjectWhich.text =
                                     injectIf[0] + "🤡"
                             }
+
                             20 -> {
                                 binding.contentMain.card1Module.cardStatusInjectWhich.text =
                                     injectIf[0] + "👻"

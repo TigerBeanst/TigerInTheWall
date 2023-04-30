@@ -78,5 +78,7 @@
     <string name="setting_reset_configuration_summary">这将清除墙中虎的配置，请确保您做好了备份。</string>
     <string name="setting_reset_secondary_confirmation">二次确认</string>
     <string name="setting_reset_secondary_confirmation_summary">此操作不可撤销，请仅在墙中虎出现问题时操作。</string>
+    <string name="about_message">墙中虎\nv%s(%s)</string>
+    <string name="about_lib">依赖库</string>
 
 </resources>

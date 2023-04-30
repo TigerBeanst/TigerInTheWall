@@ -5,6 +5,7 @@ plugins {
     id 'kotlinx-serialization'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
+    id 'com.mikepenz.aboutlibraries.plugin'
 }
 
 android {
@@ -75,6 +76,9 @@ dependencies {
     implementation 'com.github.topjohnwu.libsu:core:5.0.1'
 
     implementation 'dev.rikka.rikkax.material:material-preference:2.0.0'
+
+    implementation "com.mikepenz:aboutlibraries-core:10.6.2"
+    implementation "com.mikepenz:aboutlibraries:10.6.2"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

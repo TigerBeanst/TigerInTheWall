@@ -93,29 +93,9 @@
     <string name="setting_reset_secondary_confirmation">Secondary confirmation</string>
     <string name="setting_reset_secondary_confirmation_summary">This action is irrevocable. Only do this if there is a problem with TigerInTheWall</string>
 
-    <string name="about_page_info">Introduction</string>
-    <string name="about_page_info_desc">Are you tired of scouring through long lists of apps when sharing pictures or open a file just to find a few apps that you use a lot?\n\nWhy you app occupy my sheet?? If I needed you, I\'d open the app myself to use it!\n\nTigerInTheWall is an App that allow you to clean up your sheets, just like sharesheet, open mode sheet and more!\n\nWorks with the Magisk modules Riru - Core and Riru - IFWEnhance, and root permission.</string>
-    <string name="about_page_dev">Developers</string>
-    <string name="about_page_dev_1">TigerInTheWall Developers</string>
-    <string name="about_page_dev_2">Riru - Core Developers</string>
-    <string name="about_page_dev_3">Riru - IFWEnhance Developers</string>
-    <string name="about_page_open_source">Open Source Licenses</string>
+    <string name="about_message">TigerInTheWall\nv%s(%s)</string>
+    <string name="about_lib">Libraries</string>
 
-    <string name="manage_start">The IFW rules written by this application have been cleared. Please submit again to take effect.</string>
-
-    <string name="misc_disable">Disable</string>
-    <string name="misc_disable_direct">Disable Direct Share</string>
-    <string name="misc_disable_direct_msg">Disable Direct Share in the unmodified Android Sharesheet. This is not available on Android 10+ devices.</string>
-    <string name="misc_disable_direct_msgNo">Enable Direct Share in the unmodified Android Sharesheet. This is not available on Android 10+ devices.</string>
-    <string name="misc_disable_direct_No">This is not available on Android 10+ devices.</string>
-    <string name="misc_disable_direct_toastEnable">Direct Share has been enabled</string>
-    <string name="misc_disable_direct_toastDisable">Direct Share has been disabled</string>
-
-    <string name="dialog_positive">Got it</string>
-
-    <string name="menu_select_all">Select all</string>
-    <string name="menu_clear">Unselect All</string>
-    <string name="fab_submit">Apply Clean</string>
 
 
     <string-array name="entry_values" translatable="false">
@@ -126,21 +106,5 @@
         <item>4</item>
         <item>5</item>
     </string-array>
-    <string name="title_activity_settings">SettingsActivity</string>
-
-    <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
-
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
 </resources>

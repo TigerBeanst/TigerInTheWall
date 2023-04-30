@@ -124,6 +124,8 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/manager_clean_recycler_view"
                     android:nestedScrollingEnabled="false"
+                    android:paddingBottom="12dp"
+                    android:clipToPadding="false"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </com.drake.statelayout.StateLayout>

@@ -15,7 +15,7 @@ android {
         applicationId "com.jakting.shareclean"
         minSdk 26
         targetSdk 33
-        versionCode 202207130
+        versionCode 202304300
         versionName "2.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
